@@ -3,7 +3,7 @@
 
 ## Document Information
 
-**Version:** 3.0
+**Version:** 4.0
 **Last Updated:** October 2025
 **Status:** Active
 
@@ -230,8 +230,16 @@ Two-factor authentication is **required for all consortium members**. This is a 
 
 #### For New Consortium Members
 
-```
-New Member → WP/Group Lead → Technical Coordinator → Access Granted
+```mermaid
+flowchart LR
+    NM[New Member] --> WPL[WP/Group Lead]
+    WPL --> TC[Technical Coordinator]
+    TC --> AG[Access Granted]
+
+    style NM fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    style WPL fill:#fff3e0,stroke:#ff6f00,stroke-width:2px
+    style TC fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    style AG fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
 ```
 
 **Process:**
@@ -280,6 +288,27 @@ Subject: GitHub Access Request - [Member Name]
 
 ### Access Review and Maintenance
 
+```mermaid
+gantt
+    title Access Review Schedule
+    dateFormat YYYY-MM-DD
+    section Monthly Reviews
+    Review new access grants           :m1, 2025-01-01, 30d
+    Check for anomalies               :m2, 2025-02-01, 30d
+    Verify active users               :m3, 2025-03-01, 30d
+
+    section Quarterly Reviews
+    Full access audit                 :q1, 2025-01-01, 90d
+    Remove inactive users             :q2, 2025-04-01, 90d
+    Update permissions                :q3, 2025-07-01, 90d
+    Document changes                  :q4, 2025-10-01, 90d
+
+    section Annual Reviews
+    Comprehensive security review     :a1, 2025-01-01, 365d
+    Update access policies            :crit, a2, 2025-12-01, 30d
+    Refresh training                  :a3, 2025-12-01, 30d
+```
+
 Access rights are reviewed on a regular basis to ensure that:
 
 - Permissions remain appropriate for each member's current role in the consortium
@@ -314,6 +343,21 @@ Access must be revoked immediately when:
 - Security incident involving the account
 - Violation of policies or code of conduct
 
+```mermaid
+flowchart LR
+    Trigger[Revocation Trigger] --> Notify[WP/Group Lead<br/>Notifies TC]
+    Notify --> Remove[TC Removes<br/>Organization Access]
+    Remove --> Auto[All Repository<br/>Access Revoked]
+    Auto --> Log{Security<br/>Related?}
+    Log -->|Yes| Incident[Log Security<br/>Incident]
+    Log -->|No| Complete[Revocation<br/>Complete]
+    Incident --> Complete
+
+    style Trigger fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style Remove fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Complete fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
+
 **Revocation Process:**
 
 1. WP/Group lead notifies Technical Coordinator
@@ -328,6 +372,27 @@ Access must be revoked immediately when:
 ### Branching Strategy
 
 The consortium employs the **Feature Branch Workflow** as the standard branching strategy. This approach balances stability with the need for ongoing development:
+
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Setup project"
+    branch feature/123-add-auth
+    checkout feature/123-add-auth
+    commit id: "Add auth module"
+    commit id: "Add tests"
+    checkout main
+    branch feature/456-fix-bug
+    checkout feature/456-fix-bug
+    commit id: "Fix bug"
+    checkout main
+    merge feature/456-fix-bug tag: "v1.1.0"
+    checkout feature/123-add-auth
+    commit id: "Update docs"
+    checkout main
+    merge feature/123-add-auth tag: "v1.2.0"
+    commit id: "Release prep"
+```
 
 **Main Branch**
 The [`main`](main) branch represents the stable, production-ready state of the repository. Content in the main branch should be thoroughly reviewed, tested, and approved. This branch serves as the authoritative source for released versions of specifications, stable APIs, and production-ready code.
@@ -360,6 +425,36 @@ This branching strategy provides clear separation between stable outputs and ind
 ### Pull Request Workflow
 
 All contributions to repositories must follow the pull request (PR) workflow. This requirement is fundamental to maintaining quality and fostering collaboration:
+
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant FB as Feature Branch
+    participant PR as Pull Request
+    participant Rev as Reviewer
+    participant CI as CI/CD
+    participant Main as Main Branch
+
+    Dev->>FB: Create feature branch
+    Dev->>FB: Commit changes
+    Dev->>PR: Open pull request
+    PR->>Rev: Request review
+    PR->>CI: Trigger automated checks
+    CI-->>PR: Report test results
+    Rev->>PR: Review code
+
+    alt Changes requested
+        Rev->>Dev: Request changes
+        Dev->>FB: Make updates
+        Dev->>PR: Push updates
+        PR->>Rev: Re-request review
+    end
+
+    Rev->>PR: Approve
+    CI-->>PR: All checks pass ✓
+    PR->>Main: Merge to main
+    Main-->>Dev: Delete feature branch
+```
 
 **Why Pull Requests Matter**
 Pull requests serve multiple critical functions. They provide a structured mechanism for proposing changes, create a forum for technical discussion and review, maintain a permanent record of what changed and why, and ensure that at least two people (the author and a reviewer) have examined every change.
@@ -573,8 +668,33 @@ git tag -l
 
 Repositories progress through distinct lifecycle stages:
 
-```
-Planning → Approval → Creation → Setup → Active → Deprecated → Archived
+```mermaid
+stateDiagram-v2
+    [*] --> Planning
+    Planning --> Approval: Submit request
+    Approval --> Creation: Approved
+    Creation --> Setup: Repository created
+    Setup --> Active: Configuration complete
+    Active --> Deprecated: End of maintenance
+    Active --> Archived: Project complete
+    Deprecated --> Archived: Archival date reached
+    Archived --> [*]
+
+    note right of Planning
+        Identify need
+        Define scope
+    end note
+
+    note right of Active
+        Regular development
+        Issue management
+        Releases
+    end note
+
+    note right of Archived
+        Read-only
+        Preserved for reference
+    end note
 ```
 
 **Lifecycle Stages:**
@@ -974,6 +1094,38 @@ config/secrets.yml
 
 ### Dependency Security
 
+```mermaid
+flowchart TD
+    Scan[Dependency Scan] --> Detect{Vulnerability<br/>Detected?}
+    Detect -->|No| Monitor[Continue Monitoring]
+    Detect -->|Yes| Assess[Assess Severity]
+
+    Assess --> Critical{Critical?}
+    Assess --> High{High?}
+    Assess --> Medium{Medium?}
+    Assess --> Low{Low?}
+
+    Critical -->|24 hours| ImmediatePatch[Immediate Patch]
+    High -->|7 days| PriorityFix[Priority Fix]
+    Medium -->|30 days| ScheduledUpdate[Scheduled Update]
+    Low -->|90 days| RegularMaint[Regular Maintenance]
+
+    ImmediatePatch --> Test[Test Update]
+    PriorityFix --> Test
+    ScheduledUpdate --> Test
+    RegularMaint --> Test
+
+    Test --> Deploy[Deploy Fix]
+    Deploy --> Verify[Verify Resolution]
+    Verify --> Monitor
+
+    style Critical fill:#ffcdd2,stroke:#c62828,stroke-width:3px
+    style High fill:#ffccbc,stroke:#d84315,stroke-width:2px
+    style Medium fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    style Low fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style Deploy fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+```
+
 **Dependency Management:**
 
 **Enable GitHub Features:**
@@ -1034,6 +1186,38 @@ config/secrets.yml
 | **Restricted** | Credentials, personal data | Never in repos |
 
 ### Incident Response
+
+```mermaid
+flowchart TD
+    Detect[Detect Security Incident] --> Assess{Assess Severity}
+    Assess -->|Critical| Immediate[Immediate Action]
+    Assess -->|High| Priority[Priority Response]
+    Assess -->|Medium/Low| Standard[Standard Process]
+
+    Immediate --> Contain[Contain Threat]
+    Priority --> Contain
+    Standard --> Contain
+
+    Contain --> Document[Document Everything]
+    Document --> Report[Report to Authorities]
+    Report --> TC[Technical Coordinator]
+    Report --> WPL[WP/Group Lead]
+    Report --> ST[Security Team]
+
+    TC --> Investigate[Investigate Incident]
+    WPL --> Investigate
+    ST --> Investigate
+
+    Investigate --> Remediate[Remediate Issue]
+    Remediate --> Review[Post-Incident Review]
+    Review --> Update[Update Policies]
+    Update --> End([Incident Closed])
+
+    style Detect fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style Immediate fill:#ffcdd2,stroke:#d32f2f,stroke-width:3px
+    style Contain fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style End fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
 
 **What is a Security Incident?**
 
@@ -1104,6 +1288,32 @@ Before contributing, ensure you have:
 - Familiarity with Git workflows
 
 ### Contribution Workflow
+
+```mermaid
+flowchart TD
+    Start([Start Contribution]) --> Issue[Find or Create Issue]
+    Issue --> Discuss{Discuss with Team}
+    Discuss -->|Approved| Branch[Create Feature Branch]
+    Discuss -->|Not Approved| Issue
+    Branch --> Develop[Develop Feature]
+    Develop --> Commit[Commit Changes]
+    Commit --> Update[Keep Branch Updated]
+    Update --> Push[Push to Remote]
+    Push --> PR[Create Pull Request]
+    PR --> Review{Code Review}
+    Review -->|Changes Requested| Develop
+    Review -->|Approved| Checks{All Checks Pass?}
+    Checks -->|No| Develop
+    Checks -->|Yes| Merge[Merge PR]
+    Merge --> Delete[Delete Feature Branch]
+    Delete --> End([Contribution Complete])
+
+    style Start fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style End fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style Merge fill:#c8e6c9,stroke:#388e3c,stroke-width:2px
+    style Review fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Checks fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+```
 
 **Step-by-Step Process:**
 
@@ -1292,6 +1502,29 @@ Never:
 
 ## Onboarding Procedures
 
+```mermaid
+journey
+    title New Member Onboarding Journey
+    section Pre-Onboarding
+      Create GitHub account: 5: Member
+      Enable 2FA: 5: Member
+      Sign consortium agreement: 4: Member
+      Complete training: 4: Member
+    section Access Request
+      Submit access request: 3: Member, Lead
+      Review request: 4: Lead
+      Grant access: 5: TC
+    section Initial Setup
+      Configure Git: 5: Member
+      Setup SSH keys: 4: Member
+      Clone repositories: 5: Member
+    section First Week
+      Read documentation: 4: Member
+      Attend team meeting: 5: Member, Team
+      Make first contribution: 5: Member
+      Get first PR merged: 5: Member, Reviewer
+```
+
 ### Pre-Onboarding Requirements
 
 Before requesting access, new members must:
@@ -1363,6 +1596,36 @@ cat ~/.ssh/id_ed25519.pub
 - [ ] Set up communication channels
 
 ### Offboarding Procedures
+
+```mermaid
+flowchart TD
+    Start[Offboarding Initiated] --> Reason{Reason}
+    Reason -->|Leaves Consortium| Process[Start Offboarding]
+    Reason -->|Role Change| Process
+    Reason -->|Contract End| Process
+    Reason -->|Security Incident| Urgent[Urgent Offboarding]
+
+    Process --> Member[Member Tasks]
+    Urgent --> Member
+
+    Member --> Complete[Complete/Handover Work]
+    Complete --> Document[Document Tasks]
+    Document --> Transfer[Transfer Knowledge]
+    Transfer --> Close[Close/Reassign Issues]
+
+    Close --> TC[TC Tasks]
+    TC --> RemoveOrg[Remove from Organization]
+    RemoveOrg --> RemoveTeams[Remove from Teams]
+    RemoveTeams --> RevokeAccess[Revoke Repository Access]
+    RevokeAccess --> UpdateLogs[Update Access Logs]
+    UpdateLogs --> Verify[Verify Revocation]
+    Verify --> DocComplete[Document Completion]
+    DocComplete --> End([Offboarding Complete])
+
+    style Start fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Urgent fill:#ffcdd2,stroke:#c62828,stroke-width:3px
+    style End fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
 
 **When Offboarding is Required:**
 
@@ -1771,6 +2034,7 @@ As the consortium's work evolves, these policies may be refined based on practic
 | 1.0 | October 2025 | Initial version based on Project Management Handbook | WEBUILD Technical Coordination |
 | 2.0 | October 2025 | Enhanced with content from 7 policy documents: GitHub Policies and Guidelines, Contribution Guidelines, Onboarding Procedures, Repository Management, Licensing Guidelines, Security and Compliance, and Branching and Workflow | WEBUILD Technical Coordination |
 | 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WEBUILD Technical Coordination |
+| 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WEBUILD Technical Coordination |
 
 **Next Review Date:** January 2026
 
