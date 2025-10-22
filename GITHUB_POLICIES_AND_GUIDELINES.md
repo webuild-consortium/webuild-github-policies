@@ -1,8 +1,9 @@
+
 # WEBUILD GitHub Policies and Guidelines
 
 ## Document Information
 
-**Version:** 1.0
+**Version:** 2.0
 **Last Updated:** October 2025
 **Status:** Active
 
@@ -46,16 +47,45 @@ Ensure that all GitHub activities comply with project governance requirements, d
 
 ### Consortium GitHub Organization
 
-The WEBUILD Consortium maintains a dedicated GitHub organization at `https://github.com/webuild-consortium/`. This organization serves as the authoritative location for all technical collaboration within the project. Hosting all repositories under a single organization provides several key benefits:
+The WEBUILD Consortium maintains a dedicated GitHub organization at [`https://github.com/webuild-consortium/`](https://github.com/webuild-consortium/). This organization serves as the authoritative location for all technical collaboration within the project. Hosting all repositories under a single organization provides several key benefits:
 
 - **Centralized Access Management:** Simplifies the process of granting and revoking access as partners join or leave the consortium
 - **Unified Visibility:** Enables consortium leadership to maintain oversight of all technical activities
 - **Consistent Branding:** Presents a cohesive identity for the consortium's technical work
 - **Simplified Archival:** Facilitates long-term preservation of project outputs at the conclusion of the consortium
 
+### Organizational Hierarchy
+
+The governance structure follows a clear hierarchy:
+
+```
+Technical Coordinator
+(Overall GitHub Administration)
+    |
+    +--- WP Leads (WP-level oversight)
+    |
+    +--- Group Leads (Group-level management)
+    |
+    +--- Repository Maintainers (Day-to-day operations)
+    |
+    +--- Contributors (Active participation)
+```
+
 ### Repository Organization
 
 Each Work Package (WP) and specialized groups within Work Packages maintain their own repositories within the consortium organization. This distributed ownership model recognizes that different technical areas require autonomy while still benefiting from the shared organizational infrastructure.
+
+The repository structure follows this pattern:
+
+```
+webuild-consortium/
+├── wp4-qtsp-group/
+├── wp4-trust-group/
+├── wp4-semantics-group/
+├── wp4-wallets-group/
+├── wp4-interop-test-bed/
+└── webuild-policies/
+```
 
 Repositories typically contain:
 
@@ -65,13 +95,79 @@ Repositories typically contain:
 - **Example Implementations:** Reference code demonstrating how to implement specifications
 - **Supporting Documentation:** Guides, tutorials, and explanatory materials
 
-### Coordination and Oversight
+### Roles and Responsibilities
 
-**Technical Coordinator Role**
-The Technical Coordinator serves as the primary authority for GitHub-related policies and practices across the consortium. This role ensures consistency in how repositories are structured and managed, facilitates knowledge sharing between Work Packages, and resolves any conflicts or ambiguities in GitHub usage.
+#### Technical Coordinator
 
-**Work Package Lead Collaboration**
-Repository management decisions are made collaboratively between the Technical Coordinator and relevant WP Leads. This collaborative approach ensures that governance policies are practical and aligned with the actual needs of technical work while maintaining consortium-wide consistency.
+**Responsibilities:**
+- Overall GitHub organization administration
+- Policy definition and enforcement
+- Organization-wide settings and security management
+- Owner consolidation and management
+- Cross-WP coordination
+- Dispute resolution
+
+**Permissions:** Organization Owner
+
+#### Work Package (WP) Leads
+
+**Responsibilities:**
+- WP-level repository oversight
+- Team member access management within WP
+- WP-specific policy implementation
+- Repository creation approval
+- Quality assurance for WP outputs
+- Coordination with Technical Coordinator
+
+**Permissions:** Team Admin for WP team
+
+#### Group Leads
+
+**Responsibilities:**
+- Group-level repository management
+- Team member access for their group
+- Day-to-day repository operations
+- Code review coordination
+- Issue and project management
+- Documentation maintenance
+
+**Permissions:** Repository Admin or Team Maintainer
+
+#### Repository Maintainers
+
+**Responsibilities:**
+- Code review and merge approval
+- Issue triage and management
+- Branch protection enforcement
+- Release management
+- Documentation updates
+- Community engagement
+
+**Permissions:** Repository Write access with review rights
+
+#### Contributors
+
+**Responsibilities:**
+- Code and documentation contributions
+- Issue reporting and discussion
+- Pull request submission
+- Code review participation
+- Adherence to contribution guidelines
+
+**Permissions:** Repository Write or Read access (depending on contribution model)
+
+### Decision-Making Authority
+
+| Decision Type | Authority | Consultation Required |
+|--------------|-----------|----------------------|
+| Organization settings | Technical Coordinator | WP Leads |
+| New repository creation | WP/Group Lead | Technical Coordinator |
+| Repository deletion | Technical Coordinator | WP Lead, Group Lead |
+| Access grants (WP-level) | WP Lead | Group Lead |
+| Access grants (Group-level) | Group Lead | - |
+| Making repository public | WP Lead + Technical Coordinator | All maintainers |
+| License changes | Technical Coordinator | Legal team, WP Lead |
+| Policy updates | Technical Coordinator | WP Leads, Group Leads |
 
 ### Essential Repository Components
 
@@ -81,7 +177,7 @@ Every repository within the consortium organization must include these foundatio
 The README serves as the entry point for anyone accessing the repository. It should clearly explain the repository's purpose, provide orientation for new contributors, and link to other relevant documentation. A well-crafted README significantly reduces the barrier to entry for partners joining ongoing technical work.
 
 **LICENSE File**
-The LICENSE file specifies the legal terms under which the repository's contents can be used, modified, and distributed. Clear licensing is essential for ensuring that consortium outputs can be properly utilized by partners and, where appropriate, by the broader community.
+The LICENSE file specifies the legal terms under which the repository's contents can be used, modified, and distributed. The default license is Apache License 2.0. Clear licensing is essential for ensuring that consortium outputs can be properly utilized by partners and, where appropriate, by the broader community.
 
 **CONTRIBUTING Guide**
 The CONTRIBUTING guide explains how partners can contribute to the repository. It should detail the expected workflow for proposing changes, coding standards or documentation conventions to follow, and the review process that contributions will undergo.
@@ -104,21 +200,78 @@ All consortium members participating in GitHub activities must use their own per
 
 Partners should use professional email addresses associated with their organizations when configuring their GitHub accounts for consortium work.
 
-### Role Hierarchy and Responsibilities
+### Two-Factor Authentication (2FA)
 
-The consortium employs a tiered access model that balances the need for broad participation with appropriate controls:
+Two-factor authentication is **required for all consortium members**. This is a mandatory security requirement.
 
-**Organization Owners**
-Owners have full administrative control over the consortium GitHub organization. This role is typically reserved for project leadership and the Technical Coordinator. Owners can manage organization-wide settings, create new repositories, and manage access for all members.
+**Setup Steps:**
 
-**Repository Administrators**
-Administrators (typically WP Leads and Group Leads) have full control over specific repositories. They can modify repository settings, manage access for their repositories, merge pull requests, and create releases. This role carries significant responsibility for maintaining the quality and integrity of technical outputs.
+1. Go to GitHub Settings → Password and authentication
+2. Click "Enable two-factor authentication"
+3. Choose authentication method:
+   - **Recommended:** Authenticator app (Google Authenticator, Authy, 1Password)
+   - **Alternative:** Security key (YubiKey, etc.)
+   - **Fallback:** SMS (least secure)
+4. Save recovery codes securely
+5. Verify 2FA is enabled
 
-**Maintainers**
-Maintainers have write access to repositories and can merge pull requests after appropriate review. They play a crucial role in keeping technical work moving forward while ensuring that quality standards are maintained. Maintainers are typically experienced contributors who understand the technical domain and the consortium's quality expectations.
+**Recovery Codes:**
+- Store in secure password manager
+- Keep offline backup
+- Never share with anyone
+- Generate new codes if compromised
 
-**Contributors**
-Contributors can create issues, comment on discussions, and submit pull requests. This role is appropriate for most consortium members who are actively participating in technical work. While contributors cannot directly modify repository contents, they can propose changes through the pull request process.
+### Access Request Process
+
+#### For New Consortium Members
+
+```
+New Member → WP/Group Lead → Technical Coordinator → Access Granted
+```
+
+**Process:**
+
+1. New member completes onboarding
+2. WP/Group lead submits access request to Technical Coordinator
+3. Technical Coordinator adds member to organization
+4. WP/Group lead adds member to appropriate team(s)
+5. Member receives welcome email with guidelines
+
+**Access Request Template:**
+
+```markdown
+Subject: GitHub Access Request - [Member Name]
+
+## Member Information
+- Name: [Full Name]
+- GitHub Username: [@username]
+- Email: [work.email@organization.com]
+- Organization: [Partner Organization]
+- Work Package: [WP Number]
+- Group: [Group Name]
+- Role: [Developer/Researcher/etc.]
+
+## Access Requirements
+- Organization Access: Yes
+- Teams: [@webuild-consortium/wp4-trust]
+- Repositories: [List specific repos if limited access]
+- Permission Level: [Read/Write/Admin]
+
+## Duration
+- Start Date: [YYYY-MM-DD]
+- End Date: [YYYY-MM-DD or "Ongoing"]
+```
+
+### Permission Levels
+
+| Level | Capabilities | Typical Role |
+|-------|-------------|--------------|
+| **Read** | View code, clone, download | External collaborators, observers |
+| **Triage** | Read + manage issues/PRs | Community managers |
+| **Write** | Triage + push to branches | Contributors |
+| **Maintain** | Write + manage repo settings | Maintainers |
+| **Admin** | Full control except deletion | Group leads |
+| **Owner** | Full organizational control | Technical Coordinator |
 
 ### Access Review and Maintenance
 
@@ -129,26 +282,75 @@ Access rights are reviewed on a regular basis to ensure that:
 - New partners receive appropriate access in a timely manner
 - The principle of least privilege is maintained (members have only the access they need)
 
-These regular reviews are essential for maintaining security and ensuring compliance with consortium governance requirements.
+**Review Schedule:**
+
+**Monthly:**
+- Review new access grants
+- Check for anomalies
+- Verify active users
+
+**Quarterly:**
+- Full access audit
+- Remove inactive users
+- Update permissions
+- Document changes
+
+**Annually:**
+- Comprehensive security review
+- Update access policies
+- Refresh training
+- Audit compliance
+
+### Access Revocation
+
+Access must be revoked immediately when:
+- Member leaves the consortium
+- Member changes role (no longer needs access)
+- Security incident involving the account
+- Violation of policies or code of conduct
+
+**Revocation Process:**
+
+1. WP/Group lead notifies Technical Coordinator
+2. Technical Coordinator removes organization access
+3. All repository access automatically revoked
+4. Incident logged if security-related
 
 ---
 
 ## Working Practices and Workflows
 
-### Branch Strategy
+### Branching Strategy
 
-The consortium employs a structured branching strategy that balances stability with the need for ongoing development:
+The consortium employs the **Feature Branch Workflow** as the standard branching strategy. This approach balances stability with the need for ongoing development:
 
 **Main Branch**
-The `main` branch represents the stable, production-ready state of the repository. Content in the main branch should be thoroughly reviewed, tested, and approved. This branch serves as the authoritative source for released versions of specifications, stable APIs, and production-ready code.
-
-**Develop Branch**
-The `develop` branch serves as the integration point for ongoing work. Features and improvements are merged into develop first, where they can be tested together before being promoted to main. This branch allows for continuous integration of work from multiple contributors while protecting the stability of the main branch.
+The [`main`](main) branch represents the stable, production-ready state of the repository. Content in the main branch should be thoroughly reviewed, tested, and approved. This branch serves as the authoritative source for released versions of specifications, stable APIs, and production-ready code.
 
 **Feature Branches**
-Feature branches are created for specific pieces of work—whether implementing a new capability, fixing a bug, or drafting a section of a specification. Feature branches are typically short-lived and are deleted after their changes have been merged. Naming conventions for feature branches should clearly indicate their purpose (e.g., `feature/authentication-api`, `fix/typo-in-section-3`, `docs/deployment-guide`).
+Feature branches are created for specific pieces of work—whether implementing a new capability, fixing a bug, or drafting a section of a specification. Feature branches are typically short-lived and are deleted after their changes have been merged.
 
-This branching strategy provides clear separation between stable outputs, integrated work in progress, and individual contributions, making it easier to manage complex collaborative efforts.
+**Branch Naming Convention:**
+
+```
+<type>/<issue-number>-<description>
+
+Examples:
+feature/123-add-jwt-authentication
+bugfix/456-fix-memory-leak
+hotfix/789-patch-security-vulnerability
+docs/012-update-api-documentation
+```
+
+**Types:**
+- `feature/` - New features
+- `bugfix/` - Bug fixes
+- `hotfix/` - Production hotfixes
+- `docs/` - Documentation only
+- `refactor/` - Code refactoring
+- `test/` - Test additions/changes
+
+This branching strategy provides clear separation between stable outputs and individual contributions, making it easier to manage complex collaborative efforts.
 
 ### Pull Request Workflow
 
@@ -166,8 +368,81 @@ Every pull request should:
 - Pass any automated checks or tests that have been configured for the repository
 - Address any feedback or concerns raised during the review process
 
+**Pull Request Template:**
+
+```markdown
+## Description
+Brief description of changes.
+
+## Related Issues
+Closes #[issue-number]
+
+## Type of Change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation update
+
+## Testing
+- [ ] Tests pass locally
+- [ ] New tests added
+- [ ] Manual testing completed
+
+## Checklist
+- [ ] Code follows style guidelines
+- [ ] Self-review completed
+- [ ] Documentation updated
+- [ ] No new warnings
+```
+
 **Cross-Partner Review**
 The requirement that pull requests be reviewed by another partner (not just another person from the same organization) is particularly important. This cross-partner review ensures that technical decisions consider multiple perspectives and that knowledge is shared across organizational boundaries.
+
+### Commit Guidelines
+
+**Commit Message Format:**
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Commit Types:**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| `feat` | New feature | `feat: add user registration` |
+| `fix` | Bug fix | `fix: resolve login timeout` |
+| `docs` | Documentation only | `docs: update API guide` |
+| `style` | Code style changes | `style: format code with prettier` |
+| `refactor` | Code refactoring | `refactor: simplify auth logic` |
+| `test` | Test additions/changes | `test: add integration tests` |
+| `chore` | Maintenance tasks | `chore: update dependencies` |
+
+**Example:**
+
+```
+feat(auth): implement JWT authentication
+
+- Add JWT token generation
+- Implement token validation middleware
+- Add refresh token support
+- Update API documentation
+
+Closes #123
+```
+
+**Best Practices:**
+
+- Write clear, descriptive messages
+- Use imperative mood ("add" not "added")
+- Keep subject line under 50 characters
+- Explain what and why, not how
+- Reference issues and PRs
+- Make atomic commits (one logical change)
 
 ### Issue Tracking
 
@@ -182,6 +457,23 @@ Issues are used to:
 - **Report Problems:** Document bugs, inconsistencies, or areas needing improvement
 - **Propose Enhancements:** Suggest new features or improvements to existing work
 
+**Issue Labels**
+
+**Standard Labels:**
+
+| Label | Description |
+|-------|-------------|
+| `bug` | Something isn't working |
+| `enhancement` | New feature or request |
+| `documentation` | Documentation improvements |
+| `question` | Further information requested |
+| `help wanted` | Extra attention needed |
+| `good first issue` | Good for newcomers |
+| `security` | Security-related |
+| `priority: high` | Critical, needs immediate attention |
+| `priority: medium` | Important, should be addressed soon |
+| `priority: low` | Nice to have, can wait |
+
 **Issue Best Practices**
 Effective issue management requires:
 
@@ -194,7 +486,27 @@ Effective issue management requires:
 
 ### Version Tagging and Releases
 
-Version tags mark important milestones in the evolution of technical artifacts. Tags should follow semantic versioning principles (e.g., v1.0.0, v1.1.0, v2.0.0) where appropriate:
+Version tags mark important milestones in the evolution of technical artifacts. Tags should follow semantic versioning principles:
+
+**Semantic Versioning:**
+
+```
+MAJOR.MINOR.PATCH
+
+Example: 1.2.3
+```
+
+**Version Increments:**
+
+- **MAJOR (1.0.0 → 2.0.0):** Breaking changes
+- **MINOR (1.0.0 → 1.1.0):** New features (backwards compatible)
+- **PATCH (1.0.0 → 1.0.1):** Bug fixes (backwards compatible)
+
+**Pre-release Versions:**
+
+- `1.0.0-alpha.1` - Alpha release
+- `1.0.0-beta.1` - Beta release
+- `1.0.0-rc.1` - Release candidate
 
 **When to Create Tags**
 Tags should be created for:
@@ -209,48 +521,805 @@ Each tag should be accompanied by release notes that explain what has changed si
 
 ---
 
+## Repository Management
+
+### Repository Lifecycle
+
+Repositories progress through distinct lifecycle stages:
+
+```
+Planning → Approval → Creation → Setup → Active → Deprecated → Archived
+```
+
+**Lifecycle Stages:**
+
+1. **Planning:** Identify need, define purpose and scope
+2. **Approval:** Submit creation request, review by WP/Group lead, approval by Technical Coordinator
+3. **Creation:** Repository created in organization, initial structure set up
+4. **Setup:** Complete configuration, add required files, configure branch protection
+5. **Active:** Regular development activity, issue management, releases
+6. **Deprecated:** No longer actively maintained, security updates only
+7. **Archived:** Read-only status, preserved for reference
+
+### Creating New Repositories
+
+**When to Create a New Repository:**
+
+Create a new repository when:
+
+- Starting a new component or service
+- Separating concerns (e.g., API from UI)
+- Creating standalone tools or libraries
+- Establishing new group workspace
+- Developing specifications or standards
+- Setting up test frameworks
+
+**Do not create new repository for:**
+
+- Small features (use branches instead)
+- Temporary experiments (use personal repos)
+- Duplicate functionality
+- Single files or scripts
+
+**Repository Creation Request Template:**
+
+```markdown
+## Repository Creation Request
+
+### Basic Information
+- **Repository Name:** wp4-trust-api
+- **Purpose:** Trust infrastructure API implementation
+- **Type:** Code Repository
+- **Work Package:** WP4
+- **Group:** Trust Infrastructure
+- **Visibility:** Public
+
+### Justification
+Explain why this repository is needed and how it fits into the project architecture.
+
+### Scope
+- What will be included
+- What will NOT be included
+- Boundaries and interfaces
+
+### Team
+- **Owner:** [Group Lead Name]
+- **Maintainers:** [List names]
+- **Initial Contributors:** [List names]
+
+### Approvals
+- [ ] Group Lead: [Name]
+- [ ] WP Lead: [Name]
+- [ ] Technical Coordinator: [Pending]
+```
+
+### Repository Configuration
+
+#### Required Files
+
+Every repository MUST include:
+
+- **README.md** - Project overview and documentation
+- **LICENSE** - Apache License 2.0 (default)
+- **CONTRIBUTING.md** - Contribution guidelines
+- **.gitignore** - Files to exclude from version control
+- **CODE_OF_CONDUCT.md** - Community standards
+- **SECURITY.md** - Security policy
+
+#### Branch Protection Rules
+
+**For [`main`](main) branch:**
+
+- Require pull request reviews (minimum 1 approval)
+- Require status checks to pass before merging
+- Require conversation resolution before merging
+- Include administrators in restrictions
+- Restrict force pushes (disabled)
+- Restrict deletions (disabled)
+
+#### Security Settings
+
+**Enable:**
+
+- Dependency graph
+- Dependabot alerts
+- Dependabot security updates
+- Secret scanning
+- Code scanning (if applicable)
+
+### Repository Maintenance
+
+**Regular Maintenance Tasks:**
+
+**Daily/Weekly:**
+- Monitor and triage new issues
+- Review pull requests within 2 days
+- Check CI/CD status
+- Fix failing builds
+
+**Monthly:**
+- Review Dependabot PRs
+- Update dependencies
+- Check security alerts
+- Update documentation
+
+**Quarterly:**
+- Review team access
+- Remove inactive users
+- Analyze repository metrics
+- Plan improvements
+
+### Archiving and Deprecation
+
+**When to Archive:**
+
+- Project completed
+- No longer maintained
+- Replaced by newer version
+- End of project phase
+- Historical reference only
+
+**Deprecation Process:**
+
+1. Add deprecation notice to README
+2. Create migration guide
+3. Update documentation
+4. Notify users
+5. Set deprecation timeline
+6. Plan archival date
+
+**Deprecation Notice Template:**
+
+```markdown
+# ⚠️ DEPRECATED
+
+**This repository is deprecated and no longer maintained.**
+
+**Reason:** [Explain why deprecated]
+
+**Alternative:** Please use [new-repository](link) instead.
+
+**Migration Guide:** See [MIGRATION.md](MIGRATION.md) for migration instructions.
+
+**Support:** Security fixes only until [date]. No new features will be added.
+```
+
+---
+
+## Licensing and Intellectual Property
+
+### Default License Policy
+
+**Standard License:** Apache License 2.0
+
+**Rationale:**
+- Permissive open-source license
+- Compatible with commercial use
+- Provides patent protection
+- Widely recognized and understood
+- Allows derivative works
+- Minimal restrictions on use
+
+### License Implementation
+
+**Every repository MUST include:**
+
+1. **LICENSE file** in repository root
+2. **License headers** in source files (where applicable)
+3. **README notice** stating the license
+4. **NOTICE file** for attributions (if needed)
+
+**Copyright Notice:**
+
+```
+Copyright 2025 WEBUILD Consortium
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+**Source File Headers:**
+
+```python
+# Copyright 2025 WEBUILD Consortium
+# SPDX-License-Identifier: Apache-2.0
+```
+
+### Third-Party Dependencies
+
+**Before Adding Dependencies:**
+
+- Check dependency license
+- Verify license compatibility
+- Review license obligations
+- Check for patent clauses
+- Assess security implications
+- Document license in project
+
+**Acceptable Licenses:**
+
+- Apache 2.0
+- MIT
+- BSD 2-Clause, 3-Clause
+- ISC
+- Python Software Foundation
+- Unlicense / Public Domain
+
+**Problematic Licenses (avoid):**
+
+- GPL 2.0 (incompatible with Apache 2.0)
+- AGPL (strong copyleft)
+- Proprietary licenses
+- Licenses with field-of-use restrictions
+
+### Intellectual Property
+
+**Key Points:**
+
+1. **Background IP:** Each partner retains ownership of pre-existing IP
+2. **Foreground IP:** New IP created during project is jointly owned
+3. **Access Rights:** Partners have access rights per consortium agreement
+4. **Publication:** Open access publication required by EU grant
+5. **Exploitation:** Partners may exploit results per agreement
+
+**Contributors retain copyright** to their contributions, but grant rights to the consortium.
+
+---
+
 ## Security and Compliance
 
-### Repository Visibility
+### Security Principles
 
-**Default Privacy**
-All repositories within the consortium organization are private by default. This default privacy setting protects consortium intellectual property, prevents premature disclosure of work in progress, allows partners to work freely without external scrutiny during development, and ensures compliance with consortium agreements regarding information sharing.
+**Core Principles:**
 
-**Public Repository Approval**
-Repositories may be made public only after explicit approval through the appropriate governance channels. The decision to make a repository public should consider:
+1. **Defense in Depth:** Implement multiple layers of security
+2. **Least Privilege:** Grant minimum necessary permissions
+3. **Secure by Default:** Security should be the default state
+4. **Zero Trust:** Never trust, always verify
 
-- Whether the content is ready for external consumption
-- Whether making the content public aligns with consortium dissemination strategies
-- Whether all partners have agreed to public release
-- Whether the content contains any sensitive information that should not be disclosed
+**Mandatory Requirements:**
 
-### Data Protection
+All members MUST:
 
-**Prohibited Content**
-GitHub repositories must never contain:
+- Enable two-factor authentication (2FA)
+- Use strong, unique passwords
+- Protect credentials and secrets
+- Report security incidents immediately
+- Follow secure coding practices
+- Complete security training
+- Review code for security issues
+- Keep dependencies updated
 
-- **Personal Data:** Information that can identify individuals (names, email addresses, phone numbers, etc.) beyond what is necessary for attribution of contributions
-- **Sensitive Business Information:** Confidential business data from consortium partners
-- **Credentials or Secrets:** Passwords, API keys, certificates, or other authentication credentials
-- **Regulated Data:** Any data subject to special regulatory protections
+**Prohibited Activities:**
 
-**Why These Restrictions Matter**
-These restrictions are not merely bureaucratic requirements—they are essential for:
+Never:
 
-- Compliance with GDPR and other data protection regulations
-- Maintaining trust between consortium partners
-- Preventing security breaches that could compromise partner systems
-- Ensuring that the consortium meets its legal and contractual obligations
+- Commit secrets or credentials
+- Store sensitive data in repositories
+- Share accounts or credentials
+- Disable security features
+- Ignore security warnings
+- Use weak or reused passwords
+- Access unauthorized resources
+- Bypass security controls
+
+### Secrets Management
+
+**What Are Secrets?**
+
+- API keys and tokens
+- Passwords and passphrases
+- Private keys and certificates
+- Database credentials
+- OAuth tokens
+- Encryption keys
+- Service account credentials
+
+**Never Commit Secrets**
+
+**Use .gitignore:**
+
+```gitignore
+# Secrets and credentials
+.env
+.env.local
+.env.*.local
+secrets/
+*.key
+*.pem
+*.p12
+credentials.json
+config/secrets.yml
+```
+
+**If Secrets Are Committed:**
+
+1. **Rotate the secret immediately**
+2. **Remove from history** using BFG Repo-Cleaner or git filter-branch
+3. **Notify** Technical Coordinator and security team
+4. **Document** the incident
+
+**Secure Storage:**
+
+- **Local development:** Use environment variables and `.env` files
+- **CI/CD:** Use GitHub Secrets
+- **Production:** Use dedicated secret management services (AWS Secrets Manager, Azure Key Vault, HashiCorp Vault)
+
+### Code Security
+
+**Secure Coding Practices:**
+
+**Input Validation:**
+- Always validate and sanitize input
+- Use parameterized queries
+- Validate data type, length, and format
+- Whitelist allowed values
+- Encode output properly
+
+**Authentication and Authorization:**
+- Use strong password hashing (bcrypt, Argon2)
+- Implement rate limiting
+- Use secure session management
+- Implement proper authorization checks
+- Use HTTPS for all communications
+
+**Error Handling:**
+- Log detailed errors server-side
+- Return generic messages to users
+- Don't expose stack traces
+- Don't reveal system information
+- Handle errors gracefully
+
+**Cryptography:**
+- Use established libraries (cryptography, libsodium)
+- Use strong algorithms (AES-256, RSA-2048+)
+- Generate secure random keys
+- Protect encryption keys
+- Never implement your own crypto
+
+### Dependency Security
+
+**Dependency Management:**
+
+**Enable GitHub Features:**
+
+1. Dependency graph
+2. Dependabot alerts
+3. Dependabot security updates
+
+**Vulnerability Response:**
+
+| Severity | Response Time | Action |
+|----------|--------------|--------|
+| Critical | 24 hours | Immediate patch |
+| High | 7 days | Priority fix |
+| Medium | 30 days | Scheduled update |
+| Low | 90 days | Regular maintenance |
+
+**Update Strategy:**
+
+- **Patch versions:** Update automatically (1.2.3 → 1.2.4)
+- **Minor versions:** Review and test (1.2.0 → 1.3.0)
+- **Major versions:** Careful review and testing (1.0.0 → 2.0.0)
+
+### Data Protection and GDPR Compliance
+
+**Never store in repositories:**
+
+- Names and contact information
+- Email addresses
+- Phone numbers
+- Physical addresses
+- IP addresses
+- User IDs (if personally identifiable)
+- Any other personal data
+
+**If personal data needed for testing:**
+
+- Use synthetic/fake data
+- Anonymize real data
+- Use data generators
+- Obtain explicit consent (if real data required)
+
+**Data Classification:**
+
+| Level | Examples | Handling |
+|-------|----------|----------|
+| **Public** | Published docs, open source code | No restrictions |
+| **Internal** | Internal docs, non-sensitive code | Consortium only |
+| **Confidential** | Partner data, unpublished research | Restricted access |
+| **Restricted** | Credentials, personal data | Never in repos |
+
+### Incident Response
+
+**What is a Security Incident?**
+
+- Unauthorized access to repositories
+- Compromised credentials
+- Data breach or exposure
+- Malware or malicious code
+- Denial of service attack
+- Vulnerability exploitation
+
+**Reporting Incidents:**
+
+**Immediate Actions:**
+
+1. Don't panic
+2. Document everything
+3. Report immediately to:
+   - Technical Coordinator
+   - WP/Group Lead
+   - Security team
+
+**Include in report:**
+
+- What happened
+- When it happened
+- What was affected
+- Current status
+- Actions taken
+- Evidence collected
 
 ### Compliance Requirements
 
-All partners participating in GitHub activities must:
+**EU Regulations:**
 
-- **Follow Consortium Data Management Policies:** Adhere to the consortium's broader policies regarding data handling and information security
-- **Respect GDPR Requirements:** Ensure that any processing of personal data complies with GDPR principles
-- **Honor Intellectual Property Agreements:** Respect the intellectual property rights defined in consortium agreements
-- **Maintain Confidentiality:** Protect confidential information shared by other partners
-- **Report Security Concerns:** Promptly report any suspected security issues or policy violations
+**GDPR (General Data Protection Regulation):**
+
+- Lawful basis for data processing
+- Explicit consent when required
+- Data minimization
+- Purpose limitation
+- Storage limitation
+- Appropriate security measures
+- Accountability and documentation
+
+**Implementation:**
+
+- Data protection impact assessment
+- Privacy by design
+- Data processing records
+- Data breach procedures
+- Data subject rights procedures
+
+---
+
+## Contribution Guidelines
+
+### Getting Started
+
+**Prerequisites:**
+
+Before contributing, ensure you have:
+
+- GitHub account with 2FA enabled
+- Access to WEBUILD organization
+- Appropriate repository permissions
+- Git installed and configured
+- Development environment set up
+- Familiarity with Git workflows
+
+### Contribution Workflow
+
+**Step-by-Step Process:**
+
+#### Step 1: Find or Create an Issue
+
+- Search existing issues for similar work
+- If no issue exists, create one describing the problem or feature
+- Discuss approach with team
+- Get approval from maintainer
+- Get issue assigned to you
+
+#### Step 2: Create Feature Branch
+
+```bash
+# Update local main
+git checkout main
+git pull origin main
+
+# Create feature branch
+git checkout -b feature/123-add-user-profile
+
+# Verify branch
+git branch
+```
+
+#### Step 3: Develop the Feature
+
+```bash
+# Make changes
+# ... edit files ...
+
+# Stage changes
+git add src/profile.py tests/test_profile.py
+
+# Commit with clear message
+git commit -m "feat: add user profile management
+
+- Implement profile CRUD operations
+- Add profile validation
+- Create profile API endpoints
+- Add comprehensive tests
+
+Closes #123"
+```
+
+#### Step 4: Keep Branch Updated
+
+```bash
+# Fetch latest changes
+git fetch origin
+
+# Rebase on main (preferred)
+git rebase origin/main
+
+# Resolve conflicts if any
+# ... fix conflicts ...
+git add .
+git rebase --continue
+```
+
+#### Step 5: Push and Create PR
+
+```bash
+# Push feature branch
+git push origin feature/123-add-user-profile
+
+# If rebased, may need force push
+git push origin feature/123-add-user-profile --force-with-lease
+```
+
+#### Step 6: Address Review Feedback
+
+```bash
+# Make requested changes
+# ... edit files ...
+
+# Commit changes
+git add .
+git commit -m "refactor: address review feedback"
+
+# Push updates
+git push origin feature/123-add-user-profile
+```
+
+#### Step 7: Merge
+
+After approval:
+
+1. Ensure all checks pass
+2. Resolve any conflicts
+3. Squash commits if needed
+4. Merge pull request
+5. Delete feature branch
+
+### Code Standards
+
+**General Principles:**
+
+- Write clean, readable code
+- Follow SOLID principles
+- Keep it simple
+- Use meaningful variable names
+- Add comments for complex logic
+- Write self-documenting code where possible
+
+**Language-Specific Standards:**
+
+Follow established style guides for each language:
+
+- **Python:** PEP 8, use pylint, flake8, black
+- **JavaScript/TypeScript:** Airbnb style guide, use ESLint, Prettier
+- **Java:** Google Java Style Guide, use checkstyle
+
+**Security Considerations:**
+
+Always:
+
+- Validate all inputs
+- Sanitize user data
+- Use parameterized queries
+- Implement proper authentication
+- Follow principle of least privilege
+- Keep dependencies updated
+
+Never:
+
+- Store passwords in plain text
+- Commit secrets or credentials
+- Trust user input
+- Use deprecated security libraries
+- Ignore security warnings
+
+### Testing Requirements
+
+**All code changes must include tests:**
+
+- New features require new tests
+- Bug fixes require regression tests
+- Refactoring maintains test coverage
+- Tests must pass before merging
+
+**Types of Tests:**
+
+- **Unit Tests:** Test individual components in isolation
+- **Integration Tests:** Test component interactions
+- **End-to-End Tests:** Test complete user workflows
+
+**Minimum Requirements:**
+
+- Unit test coverage: 80%
+- Critical paths: 100%
+- New code: Must include tests
+- Bug fixes: Must include regression tests
+
+### Code Review Guidelines
+
+**For Authors:**
+
+- Self-review first
+- Provide clear PR description
+- Link to relevant issues
+- Explain design decisions
+- Be responsive to feedback
+- Make requested changes promptly
+
+**For Reviewers:**
+
+- Review promptly (within 2 days)
+- Be respectful and constructive
+- Focus on important issues
+- Explain reasoning
+- Approve when satisfied
+- Test if possible
+
+**Review Checklist:**
+
+- Functionality: Does it work as intended?
+- Code Quality: Is it well-written and maintainable?
+- Tests: Are there adequate tests?
+- Documentation: Is it properly documented?
+- Security: Are there security concerns?
+- Performance: Are there performance issues?
+- Standards: Does it follow coding standards?
+
+---
+
+## Onboarding Procedures
+
+### Pre
+
+## Onboarding Procedures
+
+### Pre-Onboarding Requirements
+
+Before requesting access, new members must:
+
+**Have a GitHub Account:**
+- Create account at [github.com](https://github.com)
+- Use professional username (preferably real name)
+- Add profile picture
+- Enable two-factor authentication (2FA)
+
+**Complete Consortium Onboarding:**
+- Sign consortium agreement
+- Complete data protection training
+- Acknowledge code of conduct
+- Receive partner organization approval
+
+**Understand Project Context:**
+- Review project overview
+- Understand WP/Group objectives
+- Identify role and responsibilities
+- Know reporting structure
+
+### Initial Setup
+
+**Git Configuration:**
+
+```bash
+# Set your name and email
+git config --global user.name "Your Full Name"
+git config --global user.email "your.email@organization.com"
+
+# Set default branch name
+git config --global init.defaultBranch main
+
+# Enable credential caching
+git config --global credential.helper cache
+
+# Verify configuration
+git config --list
+```
+
+**SSH Key Setup (Recommended):**
+
+```bash
+# Generate SSH key
+ssh-keygen -t ed25519 -C "your.email@organization.com"
+
+# Start SSH agent
+eval "$(ssh-agent -s)"
+
+# Add key to agent
+ssh-add ~/.ssh/id_ed25519
+
+# Copy public key and add to GitHub
+cat ~/.ssh/id_ed25519.pub
+```
+
+### First Week Goals
+
+**Week 1 Checklist:**
+
+- [ ] Complete environment setup
+- [ ] Clone relevant repositories
+- [ ] Read all documentation
+- [ ] Attend team meeting
+- [ ] Make first contribution (even if small)
+- [ ] Get first PR merged
+- [ ] Introduce yourself to team
+- [ ] Set up communication channels
+
+### Offboarding Procedures
+
+**When Offboarding is Required:**
+
+- Member leaves the consortium
+- Partner organization exits project
+- Contract/assignment ends
+- Role changes (no longer needs access)
+- Security incident requires access revocation
+
+**Offboarding Checklist:**
+
+**For Departing Member:**
+- [ ] Complete assigned work or hand over
+- [ ] Document ongoing tasks
+- [ ] Transfer knowledge to team
+- [ ] Update documentation
+- [ ] Close or reassign issues
+- [ ] Finish open pull requests
+
+**For Technical Coordinator:**
+- [ ] Remove from organization
+- [ ] Remove from all teams
+- [ ] Revoke repository access
+- [ ] Update access logs
+- [ ] Verify access revocation complete
+- [ ] Document offboarding completion
+
+---
+
+## EU Funding Acknowledgment
+
+All repositories MUST include EU funding acknowledgment:
+
+**Required Text:**
+
+```markdown
+## Funding
+
+![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
+
+The WEBUILD project is co-funded by the European Union. However, the views and
+opinions expressed are those of the author(s) only and do not necessarily reflect
+those of the European Union or the granting authority. Neither the European Union
+nor the granting authority can be held responsible.
+```
+
+**Placement:** In README.md and major documentation files
 
 ---
 
@@ -290,6 +1359,277 @@ Archived repositories remain readable, allowing former partners and the broader 
 
 ---
 
+## Best Practices Summary
+
+### General Best Practices
+
+**Do:**
+
+- Keep branches short-lived (< 2 weeks)
+- Update from main frequently
+- Write clear commit messages
+- Make atomic commits
+- Test before pushing
+- Review your own code first
+- Delete merged branches
+- Use branch protection rules
+- Follow naming conventions
+- Document significant decisions
+
+**Don't:**
+
+- Commit directly to main
+- Force push to shared branches
+- Leave branches unmerged for long
+- Mix unrelated changes
+- Commit broken code
+- Ignore CI failures
+- Skip code review
+- Rewrite published history
+
+### Security Best Practices
+
+**Always:**
+
+- Enable 2FA on all accounts
+- Use strong, unique passwords
+- Protect credentials and secrets
+- Validate all inputs
+- Use parameterized queries
+- Keep dependencies updated
+- Review code for security issues
+- Report incidents immediately
+
+**Never:**
+
+- Commit secrets or credentials
+- Store sensitive data in repositories
+- Share accounts or credentials
+- Disable security features
+- Ignore security warnings
+- Trust user input without validation
+- Use deprecated security libraries
+
+### Code Quality Best Practices
+
+**Write Clean Code:**
+
+- Clear and readable
+- Self-documenting where possible
+- Consistent style
+- Properly formatted
+- Well-tested
+- Adequately documented
+
+**Follow SOLID Principles:**
+
+- Single Responsibility
+- Open/Closed
+- Liskov Substitution
+- Interface Segregation
+- Dependency Inversion
+
+**Keep It Simple:**
+
+- Avoid over-engineering
+- Use appropriate abstractions
+- Prefer clarity over cleverness
+- Make code maintainable
+
+---
+
+## Support and Resources
+
+### Getting Help
+
+**For GitHub Issues:**
+
+1. Check repository documentation
+2. Search existing issues
+3. Ask in repository discussions
+4. Contact repository maintainers
+5. Escalate to WP/Group lead
+
+**For Policy Questions:**
+
+1. Review this documentation
+2. Contact your WP/Group lead
+3. Reach out to Technical Coordinator
+
+### Training and Resources
+
+**Internal Resources:**
+
+- Repository documentation
+- Wiki pages
+- Past pull requests and issues
+- Team meeting notes
+- Architecture diagrams
+
+**External Resources:**
+
+- [GitHub Documentation](https://docs.github.com)
+- [Git Documentation](https://git-scm.com/doc)
+- [Pro Git Book](https://git-scm.com/book)
+- [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- [SPDX License List](https://spdx.org/licenses/)
+
+### Contact Information
+
+**Technical Coordinator:** [Contact via consortium channels]
+
+**WP4 Lead:** [Contact via consortium channels]
+
+**Group Leads:**
+- QTSP Group: [Contact info]
+- Trust Group: [Contact info]
+- Semantics Group: [Contact info]
+- Wallets Group: [Contact info]
+- Interop Test Bed: [Contact info]
+
+---
+
+## Appendices
+
+### Appendix A: Quick Reference Checklist
+
+**New Repository Setup:**
+
+- [ ] Repository created with appropriate name
+- [ ] README.md with required content
+- [ ] LICENSE file (Apache 2.0)
+- [ ] CONTRIBUTING.md
+- [ ] .gitignore configured
+- [ ] Branch protection rules set
+- [ ] Topics added
+- [ ] Team access configured
+- [ ] EU funding acknowledgment included
+- [ ] Security settings enabled
+
+**Before Making Repository Public:**
+
+- [ ] Pre-publication checklist completed
+- [ ] No secrets or credentials
+- [ ] No sensitive data
+- [ ] Appropriate license
+- [ ] Documentation complete
+- [ ] Approvals obtained
+- [ ] Announcement prepared
+
+**Pull Request Checklist:**
+
+- [ ] Code follows style guidelines
+- [ ] All tests pass locally
+- [ ] New tests added for new functionality
+- [ ] Documentation updated
+- [ ] Commit messages are clear
+- [ ] No merge conflicts with main
+- [ ] Self-review completed
+- [ ] No debugging code or console logs
+
+### Appendix B: Common Git Commands
+
+**Branch Management:**
+
+```bash
+# Create branch
+git checkout -b feature/123-name
+
+# Update branch
+git fetch origin
+git rebase origin/main
+
+# Delete branch
+git branch -d feature/123-name
+```
+
+**Commit and Push:**
+
+```bash
+# Commit
+git add .
+git commit -m "type: description"
+
+# Push
+git push origin feature/123-name
+
+# Force push (use with caution)
+git push origin feature/123-name --force-with-lease
+```
+
+**Sync with Main:**
+
+```bash
+git checkout main
+git pull origin main
+git checkout feature/123-name
+git rebase main
+```
+
+**Stash Changes:**
+
+```bash
+# Save work in progress
+git stash save "WIP: feature implementation"
+
+# Apply stash
+git stash pop
+```
+
+### Appendix C: Troubleshooting
+
+**Common Issues:**
+
+**Issue: Merge Conflicts**
+
+```bash
+# Update your branch
+git fetch origin
+git rebase origin/main
+
+# Fix conflicts in files
+git add .
+git rebase --continue
+```
+
+**Issue: Accidentally Committed to Main**
+
+```bash
+# Move commit to new branch
+git branch feature/accidental-commit
+git reset --hard HEAD~1
+git checkout feature/accidental-commit
+```
+
+**Issue: Need to Change Last Commit Message**
+
+```bash
+git commit --amend -m "New commit message"
+git push origin branch-name --force-with-lease
+```
+
+**Issue: Pushed Sensitive Data**
+
+1. Rotate the secret immediately
+2. Remove from history using BFG Repo-Cleaner
+3. Notify Technical Coordinator
+4. Document the incident
+
+### Appendix D: Glossary
+
+- **Consortium:** WEBUILD project partners
+- **WP:** Work Package
+- **PR:** Pull Request
+- **CI/CD:** Continuous Integration/Continuous Deployment
+- **GDPR:** General Data Protection Regulation
+- **IP:** Intellectual Property
+- **EUDI:** European Digital Identity
+- **2FA:** Two-Factor Authentication
+- **SSH:** Secure Shell
+- **API:** Application Programming Interface
+
+---
+
 ## Conclusion
 
 These policies and guidelines establish the foundation for effective, secure, and compliant use of GitHub within the WEBUILD Consortium. By following these practices, partners can collaborate effectively across organizational boundaries while maintaining the quality, security, and integrity of technical work.
@@ -305,3 +1645,10 @@ As the consortium's work evolves, these policies may be refined based on practic
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
 | 1.0 | October 2025 | Initial version based on Project Management Handbook | WEBUILD Technical Coordination |
+| 2.0 | October 2025 | Enhanced with content from 7 policy documents: GitHub Policies and Guidelines, Contribution Guidelines, Onboarding Procedures, Repository Management, Licensing Guidelines, Security and Compliance, and Branching and Workflow | WEBUILD Technical Coordination |
+
+**Next Review Date:** January 2026
+
+---
+
+*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator.*
