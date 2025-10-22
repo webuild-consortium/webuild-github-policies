@@ -471,13 +471,21 @@ Topics: webuild-consortium, eudi-wallet, trust-infrastructure, api
 
 ❌ **Allow deletions** (disabled)
 
-#### 4.2.2 Protect Develop Branch (if using GitFlow)
+#### 4.2.2 Additional Branch Protection (Optional)
+
+**For repositories using alternative branching strategies:**
+
+If your repository uses GitFlow or another strategy requiring a `develop` branch (see [07-branching-and-workflow.md](07-branching-and-workflow.md) Appendix D), you may configure additional branch protection:
 
 **Branch name pattern:** `develop`
 
-**Similar rules to main, but:**
+**Protection rules:**
+- Require pull request reviews: 1
+- Require status checks to pass
 - May allow force pushes for maintainers
-- May have different status check requirements
+- May have different status check requirements than `main`
+
+**Note:** Most WEBUILD repositories use Feature Branch Workflow and only need to protect the `main` branch.
 
 ### 4.3 Access and Permissions
 
@@ -897,64 +905,61 @@ Follow [Semantic Versioning 2.0.0](https://semver.org/):
 
 #### 5.3.3 Creating a Release
 
-**Steps:**
+**For Feature Branch Workflow (Standard):**
 
-1. **Prepare Release Branch:**
-```bash
-git checkout develop
-git pull origin develop
-git checkout -b release/v1.2.0
-```
+Since `main` is always in a deployable state, releases are created directly from `main`:
 
-2. **Update Version:**
 ```bash
-# Update version in package.json, setup.py, etc.
-# Update CHANGELOG.md
+# 1. Ensure main is up to date
+git checkout main
+git pull origin main
+
+# 2. Update version and CHANGELOG
+# Edit version files (package.json, setup.py, etc.)
+# Update CHANGELOG.md with release notes
 git add .
 git commit -m "chore: prepare release v1.2.0"
-```
-
-3. **Test Release:**
-```bash
-# Run all tests
-# Perform manual testing
-# Fix any issues
-```
-
-4. **Merge to Main:**
-```bash
-git checkout main
-git merge release/v1.2.0
 git push origin main
-```
 
-5. **Create Tag:**
-```bash
+# 3. Create and push tag
 git tag -a v1.2.0 -m "Release version 1.2.0"
 git push origin v1.2.0
+
+# 4. Create GitHub Release
+# - Go to repository → Releases
+# - Click "Draft a new release"
+# - Select tag: v1.2.0
+# - Title: "Version 1.2.0"
+# - Description: Copy from CHANGELOG
+# - Attach binaries if applicable
+# - Click "Publish release"
 ```
 
-6. **Create GitHub Release:**
-   - Go to repository → Releases
-   - Click "Draft a new release"
-   - Select tag: v1.2.0
-   - Title: "Version 1.2.0"
-   - Description: Copy from CHANGELOG
-   - Attach binaries if applicable
-   - Click "Publish release"
+**For Scheduled Releases with Preparation:**
 
-7. **Merge Back to Develop:**
-```bash
-git checkout develop
-git merge main
-git push origin develop
-```
+If you need a preparation period before release:
 
-8. **Clean Up:**
 ```bash
+# 1. Create release branch from main
+git checkout main
+git pull origin main
+git checkout -b release/v1.2.0
+
+# 2. Prepare release (version updates, CHANGELOG, bug fixes only)
+git add .
+git commit -m "chore: prepare release v1.2.0"
+git push origin release/v1.2.0
+
+# 3. Create PR to merge back to main
+# After approval and merge, tag the release on main
+
+# 4. Delete release branch
 git branch -d release/v1.2.0
-git push origin --delete release/v1.2.0
 ```
+
+**For GitFlow Workflow:**
+
+If your repository uses GitFlow (see [07-branching-and-workflow.md](07-branching-and-workflow.md) Appendix D), follow the GitFlow release process with `develop` and `main` branches.
 
 #### 5.3.4 CHANGELOG.md Format
 

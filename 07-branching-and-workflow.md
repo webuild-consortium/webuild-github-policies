@@ -46,131 +46,147 @@ These guidelines apply to:
 
 ### 1.4 Choosing a Strategy
 
-**Default Strategy:** Feature Branch Workflow with optional GitFlow for complex projects
+**Standard Strategy:** Feature Branch Workflow
 
-**Selection Criteria:**
+**Why Feature Branching?**
 
-| Project Type | Recommended Strategy | Reason |
-|-------------|---------------------|---------|
-| Small projects (1-3 developers) | Feature Branch | Simple, flexible |
-| Medium projects (4-10 developers) | Feature Branch or GitFlow | Balance complexity/control |
-| Large projects (10+ developers) | GitFlow | Structured release management |
-| Continuous deployment | Trunk-Based Development | Rapid iteration |
-| Library/Framework | GitFlow | Multiple version support |
+Feature Branch Workflow is the **recommended standard approach** for WEBUILD consortium repositories because it:
+
+- ✅ **Simple and flexible** - Easy to understand and adopt
+- ✅ **Supports parallel development** - Multiple features can be developed simultaneously
+- ✅ **Maintains stability** - Main branch always remains deployable
+- ✅ **Facilitates code review** - Clear pull request workflow
+- ✅ **Scales well** - Works for teams of all sizes
+- ✅ **Minimal overhead** - No complex branching hierarchy to manage
+
+**When to Consider Alternatives:**
+
+| Scenario | Alternative Strategy | Reason |
+|----------|---------------------|---------|
+| Multiple production versions | GitFlow | Structured release management |
+| Very large teams (20+ developers) | GitFlow | Formal release processes |
+| Continuous deployment with very short cycles | Trunk-Based Development | Rapid iteration |
+| Library with LTS versions | GitFlow | Multiple version support |
+
+**Note:** Most WEBUILD repositories should use Feature Branch Workflow. Alternative strategies are documented in [Appendix D](#appendix-d-alternative-branching-strategies) for specific use cases.
 
 ---
 
 ## 2. Branching Strategy
 
-### 2.1 Feature Branch Workflow (Default)
+### 2.1 Feature Branch Workflow (Standard Approach)
 
 **Overview:**
 
+The Feature Branch Workflow is the **standard branching strategy** for all WEBUILD repositories. It provides a simple, effective approach to parallel development while maintaining code quality and stability.
+
 ```
-main (production-ready)
+main (production-ready, always deployable)
   │
-  ├─── feature/user-authentication
+  ├─── feature/123-user-authentication
   │     │
-  │     └─── (develop, test, merge)
+  │     └─── (develop, test, PR, merge)
   │
-  ├─── feature/api-integration
+  ├─── feature/456-api-integration
   │     │
-  │     └─── (develop, test, merge)
+  │     └─── (develop, test, PR, merge)
   │
-  └─── bugfix/login-timeout
+  ├─── bugfix/789-login-timeout
+  │     │
+  │     └─── (fix, test, PR, merge)
+  │
+  └─── hotfix/012-security-patch
         │
-        └─── (fix, test, merge)
+        └─── (urgent fix, test, PR, merge)
 ```
 
-**Key Principles:**
+### 2.2 Core Principles
 
-- `main` branch is always stable and deployable
-- All work happens in feature branches
-- Features merged via pull requests
+**1. Single Main Branch**
+- `main` branch is the single source of truth
+- Always stable and deployable to production
+- Protected with branch protection rules
+- All releases tagged from `main`
+
+**2. Feature Branches**
+- All development work happens in feature branches
+- Branch from latest `main`
+- One feature/fix per branch
+- Short-lived (typically < 2 weeks)
+- Descriptive naming convention
+
+**3. Pull Request Workflow**
+- All changes merged via pull requests
 - Code review required before merge
 - Automated tests must pass
+- Conversations must be resolved
+- Squash merge recommended for clean history
 
-**When to Use:**
+**4. Continuous Integration**
+- Automated testing on every push
+- CI/CD pipeline validates changes
+- Quality gates enforced
+- Fast feedback loop
 
-✅ Most WEBUILD repositories
-✅ Projects with continuous deployment
-✅ Small to medium teams
-✅ Rapid development cycles
+### 2.3 Branch Types
 
-### 2.2 GitFlow Workflow
+#### 2.3.1 Main Branch
+- **Purpose:** Production-ready code
+- **Protection:** Fully protected, no direct commits
+- **Merges:** Only via approved pull requests
+- **Tags:** All releases tagged here
 
-**Overview:**
+#### 2.3.2 Feature Branches
+- **Naming:** `feature/[issue-number]-[description]`
+- **Source:** Branch from `main`
+- **Target:** Merge back to `main`
+- **Lifetime:** Short-lived, deleted after merge
+- **Example:** `feature/123-add-jwt-authentication`
 
-```
-main (production releases)
-  │
-  ├─── Tag: v1.0.0
-  │
-develop (integration branch)
-  │
-  ├─── feature/new-feature
-  │     │
-  │     └─── (merge to develop)
-  │
-  ├─── release/v1.1.0
-  │     │
-  │     ├─── (bug fixes)
-  │     ├─── (merge to main)
-  │     └─── (merge back to develop)
-  │
-  └─── hotfix/critical-bug
-        │
-        ├─── (merge to main)
-        └─── (merge to develop)
-```
+#### 2.3.3 Bugfix Branches
+- **Naming:** `bugfix/[issue-number]-[description]`
+- **Source:** Branch from `main`
+- **Target:** Merge back to `main`
+- **Priority:** Higher than features
+- **Example:** `bugfix/456-fix-login-timeout`
 
-**Key Principles:**
+#### 2.3.4 Hotfix Branches
+- **Naming:** `hotfix/[issue-number]-[description]`
+- **Source:** Branch from `main`
+- **Target:** Merge back to `main`
+- **Priority:** Highest, urgent production fixes
+- **Example:** `hotfix/789-patch-security-vulnerability`
 
-- `main` contains production releases only
-- `develop` is the integration branch
-- Features branch from and merge to `develop`
-- Releases prepared in release branches
-- Hotfixes branch from `main`
+### 2.4 Why Feature Branch Workflow?
 
-**When to Use:**
+**Advantages:**
 
-✅ Complex projects with scheduled releases
-✅ Multiple versions in production
-✅ Strict release management needed
-✅ Large teams with formal processes
+✅ **Simple to understand and adopt** - Minimal learning curve
+✅ **Flexible** - Adapts to different team sizes and project types
+✅ **Maintains stability** - Main branch always deployable
+✅ **Supports parallel work** - Multiple features developed simultaneously
+✅ **Clear history** - Each feature is a distinct unit
+✅ **Easy rollback** - Can revert specific features
+✅ **Facilitates code review** - Natural PR workflow
+✅ **Scales well** - Works for 1-100+ developers
 
-### 2.3 Trunk-Based Development
+**When It Works Best:**
 
-**Overview:**
+- ✅ Most software development projects
+- ✅ Continuous deployment environments
+- ✅ Teams of any size
+- ✅ Projects requiring code review
+- ✅ Agile/iterative development
+- ✅ Open source projects
 
-```
-main (trunk)
-  │
-  ├─── short-lived feature branch (< 2 days)
-  │     │
-  │     └─── (quick merge)
-  │
-  ├─── short-lived feature branch
-  │     │
-  │     └─── (quick merge)
-  │
-  └─── (continuous integration)
-```
+### 2.5 Alternative Strategies
 
-**Key Principles:**
+For specific use cases that require different approaches, see [Appendix D: Alternative Branching Strategies](#appendix-d-alternative-branching-strategies) which covers:
 
-- Single main branch (trunk)
-- Very short-lived feature branches
-- Frequent integration (multiple times per day)
-- Feature flags for incomplete features
-- Strong CI/CD pipeline required
+- **GitFlow** - For projects with scheduled releases and multiple production versions
+- **Trunk-Based Development** - For teams with mature CI/CD and very short development cycles
 
-**When to Use:**
-
-✅ Mature CI/CD practices
-✅ Experienced teams
-✅ Continuous deployment
-✅ High automation
+**Note:** These alternatives should only be adopted after careful consideration and approval from the Technical Coordinator.
 
 ---
 
@@ -238,8 +254,8 @@ feature/456-api-rate-limiting
 **Lifecycle:**
 
 ```bash
-# Create feature branch
-git checkout main  # or develop for GitFlow
+# Create feature branch from main
+git checkout main
 git pull origin main
 git checkout -b feature/123-user-authentication
 
@@ -266,11 +282,11 @@ git branch -d feature/123-user-authentication
 
 **Best Practices:**
 
-- ✅ Branch from latest main/develop
+- ✅ Always branch from latest `main`
 - ✅ Keep branches focused and small
-- ✅ Update regularly from main/develop
+- ✅ Update regularly from `main`
 - ✅ Delete after merge
-- ❌ Don't let branches live too long
+- ❌ Don't let branches live too long (< 2 weeks ideal)
 - ❌ Don't mix unrelated changes
 
 #### 3.2.2 Bugfix Branches
@@ -320,14 +336,11 @@ git pull origin main
 git tag -a v1.2.1 -m "Hotfix: Critical security patch"
 git push origin v1.2.1
 
-# 2. Merge back to develop (if using GitFlow)
-git checkout develop
-git merge main
-git push origin develop
-
-# 3. Delete hotfix branch
+# 2. Delete hotfix branch
 git branch -d hotfix/345-fix-critical-security-issue
 ```
+
+**Note:** If using GitFlow (see [Appendix D](#appendix-d-alternative-branching-strategies)), also merge to `develop` branch.
 
 **Best Practices:**
 
@@ -338,62 +351,20 @@ git branch -d hotfix/345-fix-critical-security-issue
 - ✅ Tag immediately after merge
 - ✅ Document in CHANGELOG
 
-#### 3.2.4 Release Branches (GitFlow)
+#### 3.2.4 Documentation Branches (Optional)
 
-**Purpose:** Prepare for production release
+**Purpose:** Major documentation updates
 
 **Naming Convention:**
 ```
-release/v[version]
-release/v1.2.0
-release/v2.0.0-beta
+docs/[issue-number]-[description]
+docs/123-update-api-documentation
+docs/456-add-deployment-guide
 ```
 
-**Lifecycle:**
+**Usage:** Same workflow as feature branches, but for documentation-only changes.
 
-```bash
-# Create release branch from develop
-git checkout develop
-git pull origin develop
-git checkout -b release/v1.2.0
-
-# Prepare release
-# - Update version numbers
-# - Update CHANGELOG
-# - Fix release-specific bugs
-# - Update documentation
-
-git add .
-git commit -m "chore: prepare release v1.2.0"
-
-# Push release branch
-git push origin release/v1.2.0
-
-# After testing and approval:
-# 1. Merge to main
-git checkout main
-git merge release/v1.2.0
-git tag -a v1.2.0 -m "Release version 1.2.0"
-git push origin main --tags
-
-# 2. Merge back to develop
-git checkout develop
-git merge release/v1.2.0
-git push origin develop
-
-# 3. Delete release branch
-git branch -d release/v1.2.0
-git push origin --delete release/v1.2.0
-```
-
-**Best Practices:**
-
-- ✅ Only bug fixes and release prep
-- ✅ No new features
-- ✅ Update all version references
-- ✅ Complete CHANGELOG
-- ✅ Thorough testing
-- ❌ Don't add new features
+**Note:** For minor documentation updates, use feature branches or commit directly to documentation PRs.
 
 ### 3.3 Branch Naming Rules
 
@@ -579,7 +550,7 @@ git push origin --delete feature/123-add-user-profile
 
 **Similar to feature workflow but:**
 
-1. **Branch from:** main (or develop)
+1. **Branch from:** `main`
 2. **Branch name:** `bugfix/[issue]-[description]`
 3. **Commit prefix:** `fix:`
 4. **Priority:** Higher than features
@@ -656,65 +627,65 @@ git pull origin main
 git tag -a v1.2.1 -m "Hotfix: Security patch"
 git push origin v1.2.1
 
-# Merge to develop (if using GitFlow)
-git checkout develop
-git merge main
-git push origin develop
 ```
 
-### 4.4 Release Workflow (GitFlow)
+**Note:** In Feature Branch Workflow, hotfixes follow the same process as regular fixes but with highest priority.
 
-**For scheduled releases:**
+### 4.4 Release Workflow
+
+**For Feature Branch Workflow:**
+
+Releases are created directly from the `main` branch since it's always in a deployable state.
 
 ```bash
-# 1. Create release branch from develop
-git checkout develop
-git pull origin develop
-git checkout -b release/v1.3.0
-
-# 2. Prepare release
-# Update version in:
-# - package.json / setup.py / pom.xml
-# - README.md
-# - CHANGELOG.md
-
-# 3. Commit release preparation
-git add .
-git commit -m "chore: prepare release v1.3.0
-
-- Update version to 1.3.0
-- Update CHANGELOG
-- Update documentation"
-
-# 4. Push release branch
-git push origin release/v1.3.0
-
-# 5. Test thoroughly
-# - Run all tests
-# - Perform manual testing
-# - Fix any release-blocking bugs
-
-# 6. Merge to main
+# 1. Ensure main is up to date
 git checkout main
-git merge release/v1.3.0
+git pull origin main
+
+# 2. Update version and CHANGELOG
+# Edit version files (package.json, setup.py, etc.)
+# Update CHANGELOG.md with release notes
+
+git add .
+git commit -m "chore: prepare release v1.3.0"
+git push origin main
+
+# 3. Create and push tag
 git tag -a v1.3.0 -m "Release version 1.3.0"
-git push origin main --tags
+git push origin v1.3.0
 
-# 7. Merge back to develop
-git checkout develop
-git merge release/v1.3.0
-git push origin develop
-
-# 8. Delete release branch
-git branch -d release/v1.3.0
-git push origin --delete release/v1.3.0
-
-# 9. Create GitHub Release
+# 4. Create GitHub Release
 # - Go to Releases → Draft new release
 # - Select tag v1.3.0
 # - Add release notes from CHANGELOG
 # - Publish release
+
+# 5. Deploy to production (via CI/CD or manual process)
 ```
+
+**For scheduled releases with preparation period:**
+
+If you need a preparation period before release, create a release branch:
+
+```bash
+# 1. Create release branch
+git checkout main
+git pull origin main
+git checkout -b release/v1.3.0
+
+# 2. Prepare release (version updates, CHANGELOG, bug fixes only)
+git add .
+git commit -m "chore: prepare release v1.3.0"
+git push origin release/v1.3.0
+
+# 3. Create PR to merge back to main
+# After approval and merge, tag the release on main
+
+# 4. Delete release branch
+git branch -d release/v1.3.0
+```
+
+**Note:** For GitFlow release process, see [Appendix D](#appendix-d-alternative-branching-strategies).
 
 ---
 
@@ -914,17 +885,19 @@ git merge feature/123-new-feature
 
 ### 6.2 Merge Strategy Selection
 
-**Default:** Squash and Merge
+**Recommended:** Squash and Merge
 
 **Decision Matrix:**
 
 | Scenario | Strategy | Reason |
 |----------|----------|--------|
-| Small feature, many commits | Squash | Clean history |
-| Large feature, clean commits | Rebase | Preserve commits |
-| Multiple developers | Merge commit | Preserve collaboration |
+| Most feature branches | Squash | Clean, linear history |
+| Small feature, many commits | Squash | Single logical unit |
+| Large feature, clean commits | Rebase | Preserve meaningful commits |
 | Hotfix | Squash | Single logical fix |
-| Release branch | Merge commit | Preserve release history |
+| Documentation updates | Squash | Clean history |
+
+**Note:** For Feature Branch Workflow, squash and merge is recommended for most cases to maintain a clean, readable history on `main`.
 
 ### 6.3 Handling Merge Conflicts
 
@@ -1347,8 +1320,229 @@ git config --global alias.visual 'log --oneline --graph --all'
 
 - [Pro Git Book](https://git-scm.com/book)
 - [GitHub Flow Guide](https://guides.github.com/introduction/flow/)
-- [GitFlow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 - [Conventional Commits](https://www.conventionalcommits.org/)
+
+### Appendix D: Alternative Branching Strategies
+
+**⚠️ Note:** These strategies are alternatives to the standard Feature Branch Workflow. They should only be adopted for specific use cases and require approval from the Technical Coordinator.
+
+---
+
+#### D.1 GitFlow Workflow
+
+**Overview:**
+
+GitFlow is a more structured branching model suitable for projects with scheduled releases and multiple production versions.
+
+```
+main (production releases only)
+  │
+  ├─── Tag: v1.0.0
+  │
+develop (integration branch)
+  │
+  ├─── feature/new-feature
+  │     │
+  │     └─── (merge to develop)
+  │
+  ├─── release/v1.1.0
+  │     │
+  │     ├─── (bug fixes)
+  │     ├─── (merge to main)
+  │     └─── (merge back to develop)
+  │
+  └─── hotfix/critical-bug
+        │
+        ├─── (merge to main)
+        └─── (merge to develop)
+```
+
+**Key Principles:**
+
+- `main` contains production releases only
+- `develop` is the integration branch
+- Features branch from and merge to `develop`
+- Releases prepared in release branches
+- Hotfixes branch from `main` and merge to both `main` and `develop`
+
+**When to Use:**
+
+✅ Projects with scheduled release cycles
+✅ Multiple versions in production simultaneously
+✅ Need for strict release management
+✅ Large teams with formal processes
+✅ Libraries or frameworks with LTS versions
+
+**Branch Types:**
+
+1. **Main Branch** - Production releases only
+2. **Develop Branch** - Integration branch for features
+3. **Feature Branches** - `feature/*` branch from `develop`
+4. **Release Branches** - `release/*` branch from `develop`
+5. **Hotfix Branches** - `hotfix/*` branch from `main`
+
+**Release Process:**
+
+```bash
+# 1. Create release branch from develop
+git checkout develop
+git pull origin develop
+git checkout -b release/v1.2.0
+
+# 2. Prepare release (version updates, bug fixes only)
+git add .
+git commit -m "chore: prepare release v1.2.0"
+git push origin release/v1.2.0
+
+# 3. Merge to main
+git checkout main
+git merge release/v1.2.0
+git tag -a v1.2.0 -m "Release version 1.2.0"
+git push origin main --tags
+
+# 4. Merge back to develop
+git checkout develop
+git merge release/v1.2.0
+git push origin develop
+
+# 5. Delete release branch
+git branch -d release/v1.2.0
+```
+
+**Advantages:**
+- Clear separation of development and production code
+- Structured release process
+- Supports multiple production versions
+- Well-documented and widely understood
+
+**Disadvantages:**
+- More complex than Feature Branch Workflow
+- Additional overhead with `develop` branch
+- Can slow down deployment cycles
+- Requires discipline to maintain properly
+
+---
+
+#### D.2 Trunk-Based Development
+
+**Overview:**
+
+Trunk-Based Development emphasizes very short-lived branches and frequent integration to a single trunk (main branch).
+
+```
+main (trunk - always deployable)
+  │
+  ├─── short-lived feature branch (< 2 days)
+  │     │
+  │     └─── (quick merge)
+  │
+  ├─── short-lived feature branch (< 2 days)
+  │     │
+  │     └─── (quick merge)
+  │
+  └─── (continuous integration, multiple times per day)
+```
+
+**Key Principles:**
+
+- Single main branch (trunk)
+- Very short-lived feature branches (< 2 days)
+- Frequent integration (multiple times per day)
+- Feature flags for incomplete features
+- Strong CI/CD pipeline required
+- High test automation coverage
+
+**When to Use:**
+
+✅ Mature CI/CD practices in place
+✅ Experienced development teams
+✅ Continuous deployment environment
+✅ High degree of test automation
+✅ Small, incremental changes preferred
+
+**Requirements:**
+
+- **Robust CI/CD pipeline** - Automated testing and deployment
+- **Feature flags** - To hide incomplete features in production
+- **High test coverage** - Comprehensive automated tests
+- **Team discipline** - Commitment to frequent integration
+- **Monitoring** - Strong production monitoring and rollback capabilities
+
+**Workflow:**
+
+```bash
+# 1. Create short-lived branch
+git checkout main
+git pull origin main
+git checkout -b feature/123-small-change
+
+# 2. Make small, focused change
+# ... implement change ...
+git add .
+git commit -m "feat: add small feature"
+
+# 3. Push and create PR immediately
+git push origin feature/123-small-change
+
+# 4. Merge quickly (same day)
+# After review and CI passes, merge to main
+
+# 5. Delete branch
+git branch -d feature/123-small-change
+```
+
+**Feature Flags Example:**
+
+```python
+# Use feature flags for incomplete features
+if feature_flags.is_enabled('new-feature'):
+    # New feature code
+    new_implementation()
+else:
+    # Existing code
+    old_implementation()
+```
+
+**Advantages:**
+- Reduces merge conflicts
+- Faster feedback loops
+- Encourages small, incremental changes
+- Simplifies branching model
+- Supports continuous deployment
+
+**Disadvantages:**
+- Requires mature engineering practices
+- High initial setup cost
+- Requires feature flag management
+- Not suitable for all team sizes
+- Steep learning curve
+
+---
+
+#### D.3 Choosing the Right Strategy
+
+**Decision Framework:**
+
+| Factor | Feature Branch | GitFlow | Trunk-Based |
+|--------|---------------|---------|-------------|
+| **Team Size** | Any | Large (10+) | Small-Medium |
+| **Release Cycle** | Continuous | Scheduled | Continuous |
+| **Complexity** | Low | High | Medium |
+| **CI/CD Maturity** | Medium | Medium | High |
+| **Learning Curve** | Easy | Medium | Hard |
+| **Flexibility** | High | Medium | Low |
+| **Overhead** | Low | High | Medium |
+
+**Recommendation:**
+
+- **Default:** Use Feature Branch Workflow for most WEBUILD repositories
+- **Consider GitFlow:** Only for projects with strict release schedules and multiple production versions
+- **Consider Trunk-Based:** Only for teams with mature CI/CD and high automation
+
+**Migration:**
+
+If you need to switch strategies, consult with the Technical Coordinator and plan a gradual transition with team training.
 
 ---
 
