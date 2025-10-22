@@ -61,14 +61,10 @@ The governance structure follows a clear hierarchy:
 ```
 Technical Coordinator
 (Overall GitHub Administration)
-    |
-    +--- WP Leads (WP-level oversight)
-    |
-    +--- Group Leads (Group-level management)
-    |
-    +--- Repository Maintainers (Day-to-day operations)
-    |
-    +--- Contributors (Active participation)
+├── WP Leads (WP-level oversight)
+├── Group Leads (Group-level management)
+├── Repository Maintainers (Day-to-day operations)
+└── Contributors (Active participation)
 ```
 
 ### Repository Organization
