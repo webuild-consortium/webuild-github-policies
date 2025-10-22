@@ -3,7 +3,7 @@
 
 ## Document Information
 
-**Version:** 2.0
+**Version:** 3.0
 **Last Updated:** October 2025
 **Status:** Active
 
@@ -198,11 +198,16 @@ All consortium members participating in GitHub activities must use their own per
 - **Security Best Practices:** Prevents the security risks associated with shared accounts
 - **Professional Recognition:** Allows individuals to receive proper credit for their contributions
 
-Partners should use professional email addresses associated with their organizations when configuring their GitHub accounts for consortium work.
+Partners should use professional email addresses associated with their organizations when configuring their GitHub accounts for consortium work. Configure your Git client with the correct email address to ensure commits are properly attributed:
+
+```bash
+git config --global user.name "Your Full Name"
+git config --global user.email "your.email@organization.com"
+```
 
 ### Two-Factor Authentication (2FA)
 
-Two-factor authentication is **required for all consortium members**. This is a mandatory security requirement.
+Two-factor authentication is **required for all consortium members**. This is a mandatory security requirement that significantly enhances account security.
 
 **Setup Steps:**
 
@@ -328,7 +333,7 @@ The consortium employs the **Feature Branch Workflow** as the standard branching
 The [`main`](main) branch represents the stable, production-ready state of the repository. Content in the main branch should be thoroughly reviewed, tested, and approved. This branch serves as the authoritative source for released versions of specifications, stable APIs, and production-ready code.
 
 **Feature Branches**
-Feature branches are created for specific pieces of work—whether implementing a new capability, fixing a bug, or drafting a section of a specification. Feature branches are typically short-lived and are deleted after their changes have been merged.
+Feature branches are created for specific pieces of work—whether implementing a new capability, fixing a bug, or drafting a section of a specification. Feature branches should be short-lived (ideally less than 2 weeks) and are deleted after their changes have been merged. Keeping branches short-lived reduces integration conflicts and ensures code remains synchronized with the main branch.
 
 **Branch Naming Convention:**
 
@@ -350,7 +355,7 @@ docs/012-update-api-documentation
 - `refactor/` - Code refactoring
 - `test/` - Test additions/changes
 
-This branching strategy provides clear separation between stable outputs and individual contributions, making it easier to manage complex collaborative efforts.
+This branching strategy provides clear separation between stable outputs and individual contributions, making it easier to manage complex collaborative efforts. The strategy isolates work in progress from stable code, enables parallel development, and facilitates easier testing and rollback if needed.
 
 ### Pull Request Workflow
 
@@ -367,6 +372,7 @@ Every pull request should:
 - Be reviewed and approved by at least one other consortium partner before merging
 - Pass any automated checks or tests that have been configured for the repository
 - Address any feedback or concerns raised during the review process
+- Be reviewed within 2 business days to maintain development momentum
 
 **Pull Request Template:**
 
@@ -397,6 +403,23 @@ Closes #[issue-number]
 
 **Cross-Partner Review**
 The requirement that pull requests be reviewed by another partner (not just another person from the same organization) is particularly important. This cross-partner review ensures that technical decisions consider multiple perspectives and that knowledge is shared across organizational boundaries.
+
+**Code Review Best Practices:**
+
+For Authors:
+- Perform self-review before requesting review
+- Keep pull requests focused and reasonably sized
+- Provide context in the description
+- Respond to feedback constructively
+- Update the PR based on review comments
+
+For Reviewers:
+- Review promptly (within 2 business days)
+- Be respectful and constructive
+- Focus on important issues
+- Explain your reasoning
+- Test changes when possible
+- Approve when satisfied with the quality
 
 ### Commit Guidelines
 
@@ -437,12 +460,21 @@ Closes #123
 
 **Best Practices:**
 
-- Write clear, descriptive messages
-- Use imperative mood ("add" not "added")
+- Write clear, descriptive messages in imperative mood
+- Use present tense ("add" not "added")
 - Keep subject line under 50 characters
 - Explain what and why, not how
 - Reference issues and PRs
-- Make atomic commits (one logical change)
+- Make atomic commits (one logical change per commit)
+- Commit frequently to avoid losing work
+- Each commit should represent a complete, working state
+
+**Atomic Commits:**
+Keep commits atomic—each commit should represent a single unit of work. This makes it easier to:
+- Understand the purpose of each change
+- Review code more effectively
+- Revert specific changes without side effects
+- Track down bugs using git bisect
 
 ### Issue Tracking
 
@@ -483,6 +515,7 @@ Effective issue management requires:
 - Assignment to specific individuals when someone is actively working on the issue
 - Regular updates to keep other partners informed of progress
 - Closure with a summary of the resolution when work is complete
+- Linking related issues and pull requests for traceability
 
 ### Version Tagging and Releases
 
@@ -518,6 +551,19 @@ Tags should be created for:
 
 **Tag Documentation**
 Each tag should be accompanied by release notes that explain what has changed since the previous version, highlight any breaking changes or important updates, and acknowledge contributors to that release.
+
+**Creating Tags:**
+
+```bash
+# Create annotated tag
+git tag -a v1.0.0 -m "First production release"
+
+# Push tag to remote
+git push origin v1.0.0
+
+# List all tags
+git tag -l
+```
 
 ---
 
@@ -560,6 +606,16 @@ Create a new repository when:
 - Temporary experiments (use personal repos)
 - Duplicate functionality
 - Single files or scripts
+
+**Repository Naming Best Practices:**
+
+Follow a clear naming convention:
+- Use descriptive, specific names
+- Include project or team prefix if applicable
+- Indicate technology stack when relevant
+- Use lowercase with hyphens (e.g., `wp4-trust-api`)
+- Avoid special characters
+- Keep names concise but meaningful
 
 **Repository Creation Request Template:**
 
@@ -606,6 +662,15 @@ Every repository MUST include:
 - **CODE_OF_CONDUCT.md** - Community standards
 - **SECURITY.md** - Security policy
 
+#### Repository Topics
+
+Classify repositories with topics to improve discoverability and organization:
+
+- Navigate to repository Settings → About
+- Add relevant topics (e.g., `api`, `python`, `authentication`, `wp4`)
+- Topics help with searching, filtering, and organizing repositories
+- Use consistent topics across similar repositories
+
 #### Branch Protection Rules
 
 **For [`main`](main) branch:**
@@ -616,6 +681,7 @@ Every repository MUST include:
 - Include administrators in restrictions
 - Restrict force pushes (disabled)
 - Restrict deletions (disabled)
+- Require linear history (optional, for cleaner history)
 
 #### Security Settings
 
@@ -642,6 +708,7 @@ Every repository MUST include:
 - Update dependencies
 - Check security alerts
 - Update documentation
+- Review and clean up stale branches
 
 **Quarterly:**
 - Review team access
@@ -671,7 +738,7 @@ Every repository MUST include:
 **Deprecation Notice Template:**
 
 ```markdown
-# ⚠️ DEPRECATED
+# DEPRECATED
 
 **This repository is deprecated and no longer maintained.**
 
@@ -761,6 +828,14 @@ limitations under the License.
 - Proprietary licenses
 - Licenses with field-of-use restrictions
 
+**Dependency Management Best Practices:**
+
+- Lock package versions in manifest files
+- Align package versions across projects when possible
+- Document all dependencies and their licenses
+- Regularly review and update dependencies
+- Use automated tools to track dependency vulnerabilities
+
 ### Intellectual Property
 
 **Key Points:**
@@ -826,6 +901,8 @@ Never:
 
 **Never Commit Secrets**
 
+Secrets should never be committed to version control. Use environment variables and secure secret management tools instead.
+
 **Use .gitignore:**
 
 ```gitignore
@@ -850,9 +927,18 @@ config/secrets.yml
 
 **Secure Storage:**
 
-- **Local development:** Use environment variables and `.env` files
-- **CI/CD:** Use GitHub Secrets
+- **Local development:** Use environment variables and `.env` files (excluded from git)
+- **CI/CD:** Use GitHub Secrets for workflow automation
 - **Production:** Use dedicated secret management services (AWS Secrets Manager, Azure Key Vault, HashiCorp Vault)
+
+**GitHub Secrets Best Practices:**
+
+- Store secrets at appropriate level (repository, environment, or organization)
+- Use environment secrets for deployment-specific credentials
+- Limit access to secrets through environment protection rules
+- Rotate secrets regularly
+- Never print secrets in logs or output
+- Use secret scanning to detect accidental commits
 
 ### Code Security
 
@@ -910,6 +996,14 @@ config/secrets.yml
 - **Patch versions:** Update automatically (1.2.3 → 1.2.4)
 - **Minor versions:** Review and test (1.2.0 → 1.3.0)
 - **Major versions:** Careful review and testing (1.0.0 → 2.0.0)
+
+**Best Practices:**
+
+- Don't commit dependencies to source code (use package managers)
+- Lock dependency versions to ensure reproducible builds
+- Regularly review and update dependencies
+- Monitor security advisories
+- Test updates in non-production environments first
 
 ### Data Protection and GDPR Compliance
 
@@ -1052,8 +1146,8 @@ git commit -m "feat: add user profile management
 - Create profile API endpoints
 - Add comprehensive tests
 
-Closes #123"
-```
+Closes #123
+"
 
 #### Step 4: Keep Branch Updated
 
@@ -1195,10 +1289,6 @@ Never:
 - Standards: Does it follow coding standards?
 
 ---
-
-## Onboarding Procedures
-
-### Pre
 
 ## Onboarding Procedures
 
@@ -1375,6 +1465,8 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Use branch protection rules
 - Follow naming conventions
 - Document significant decisions
+- Commit frequently to avoid losing work
+- Pull before you push to avoid conflicts
 
 **Don't:**
 
@@ -1386,6 +1478,8 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Ignore CI failures
 - Skip code review
 - Rewrite published history
+- Commit dependencies or configuration files
+- Hardcode secrets or credentials
 
 ### Security Best Practices
 
@@ -1399,6 +1493,8 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Keep dependencies updated
 - Review code for security issues
 - Report incidents immediately
+- Rotate secrets regularly
+- Use environment variables for configuration
 
 **Never:**
 
@@ -1409,6 +1505,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Ignore security warnings
 - Trust user input without validation
 - Use deprecated security libraries
+- Expose secrets in logs
 
 ### Code Quality Best Practices
 
@@ -1435,6 +1532,24 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Use appropriate abstractions
 - Prefer clarity over cleverness
 - Make code maintainable
+
+### Repository Management Best Practices
+
+**Organization:**
+
+- Use clear naming conventions
+- Classify repositories with topics
+- Maintain comprehensive README files
+- Keep repositories focused and scoped appropriately
+- Archive dead or unmaintained repositories
+
+**Collaboration:**
+
+- Use pull requests for all changes
+- Conduct thorough code reviews
+- Leverage issue tracking effectively
+- Use GitHub Projects for planning
+- Communicate clearly and frequently
 
 ---
 
@@ -1627,6 +1742,15 @@ git push origin branch-name --force-with-lease
 - **2FA:** Two-Factor Authentication
 - **SSH:** Secure Shell
 - **API:** Application Programming Interface
+- **Atomic Commit:** A commit containing a single logical change
+- **Branch Protection:** Rules that prevent direct commits to protected branches
+- **Code Owner:** Person or team responsible for reviewing changes to specific code
+- **Dependency:** External library or package used by the project
+- **Fork:** Personal copy of a repository
+- **Merge Conflict:** When Git cannot automatically merge changes
+- **Rebase:** Reapplying commits on top of another base
+- **Semantic Versioning:** Version numbering scheme (MAJOR.MINOR.PATCH)
+- **Tag:** Named reference to a specific commit
 
 ---
 
@@ -1646,6 +1770,7 @@ As the consortium's work evolves, these policies may be refined based on practic
 |---------|------|---------|--------|
 | 1.0 | October 2025 | Initial version based on Project Management Handbook | WEBUILD Technical Coordination |
 | 2.0 | October 2025 | Enhanced with content from 7 policy documents: GitHub Policies and Guidelines, Contribution Guidelines, Onboarding Procedures, Repository Management, Licensing Guidelines, Security and Compliance, and Branching and Workflow | WEBUILD Technical Coordination |
+| 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WEBUILD Technical Coordination |
 
 **Next Review Date:** January 2026
 
