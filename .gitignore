@@ -67,6 +67,9 @@ site/
 # Markdown Preview
 *.html
 
+# Markdown to DOCX Conversion
+temp_with_images.md
+
 # Local Environment Files
 .env
 .env.local
