@@ -16,7 +16,9 @@ This repository contains the comprehensive GitHub policies, guidelines, and proc
 
 ## 🎯 Main Deliverable
 
-**📄 [GITHUB_POLICIES_AND_GUIDELINES.md](GITHUB_POLICIES_AND_GUIDELINES.md)** | **📄 [GITHUB_POLICIES_AND_GUIDELINES.docx](GITHUB_POLICIES_AND_GUIDELINES.docx)**
+**📄 [GITHUB_POLICIES_AND_GUIDELINES.md](GITHUB_POLICIES_AND_GUIDELINES.md)**
+
+**📄 [GITHUB_POLICIES_AND_GUIDELINES.docx](GITHUB_POLICIES_AND_GUIDELINES.docx)**
 
 This is the **primary deliverable document** that consolidates all GitHub policies, guidelines, and procedures for the WEBUILD consortium. It serves as the comprehensive, single-source reference for:
 
