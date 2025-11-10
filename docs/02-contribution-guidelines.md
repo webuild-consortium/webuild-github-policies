@@ -200,12 +200,12 @@ Before contributing:
 
 #### Step 1: Find or Create an Issue
 
-https://github.com/user-attachments/assets/1-how-to-open-an-issue.webm
+![How to open an issue](../gifs/1-how-to-open-an-issue.gif)
 
 <details>
 <summary>📹 Video: How to open an issue</summary>
 
-https://github.com/user-attachments/assets/1-how-to-open-an-issue.webm
+![How to open an issue](../gifs/1-how-to-open-an-issue.gif)
 
 </details>
 
@@ -221,12 +221,12 @@ https://github.com/user-attachments/assets/1-how-to-open-an-issue.webm
 3. Wait for maintainer feedback/approval
 4. Get issue assigned to you
 
-https://github.com/user-attachments/assets/2-discussion-on-the-issue.webm
+![Discussion on the issue](../gifs/2-discussion-on-the-issue.gif)
 
 <details>
 <summary>📹 Video: Discussion on the issue</summary>
 
-https://github.com/user-attachments/assets/2-discussion-on-the-issue.webm
+![Discussion on the issue](../gifs/2-discussion-on-the-issue.gif)
 
 </details>
 
@@ -256,12 +256,12 @@ Any other relevant information
 
 #### Step 2: Create a Feature Branch
 
-https://github.com/user-attachments/assets/3-1-crete-new-branch.webm
+![Create a new branch](../gifs/3-1-crete-new-branch.gif)
 
 <details>
 <summary>📹 Video: Create a new branch</summary>
 
-https://github.com/user-attachments/assets/3-1-crete-new-branch.webm
+![Create a new branch](../gifs/3-1-crete-new-branch.gif)
 
 </details>
 
@@ -304,12 +304,12 @@ git checkout -b bugfix/issue-456-fix-login-error
 
 #### Step 4: Commit Your Changes
 
-https://github.com/user-attachments/assets/3-2-how-to-commit-changes.webm
+![How to commit changes](../gifs/3-2-how-to-commit-changes.gif)
 
 <details>
 <summary>📹 Video: How to commit changes</summary>
 
-https://github.com/user-attachments/assets/3-2-how-to-commit-changes.webm
+![How to commit changes](../gifs/3-2-how-to-commit-changes.gif)
 
 </details>
 
@@ -374,12 +374,12 @@ git push origin feature/issue-123-add-authentication --force-with-lease
 
 #### Step 6: Create a Pull Request
 
-https://github.com/user-attachments/assets/3-3-how-to-open-a-pr.webm
+![How to open a pull request](../gifs/3-3-how-to-open-a-pr.gif)
 
 <details>
 <summary>📹 Video: How to open a pull request</summary>
 
-https://github.com/user-attachments/assets/3-3-how-to-open-a-pr.webm
+![How to open a pull request](../gifs/3-3-how-to-open-a-pr.gif)
 
 </details>
 
@@ -1048,12 +1048,12 @@ Use draft PRs for:
 
 #### Option 1: Leave Quick Feedback
 
-https://github.com/user-attachments/assets/4-1-review-with-comment.webm
+![Review with comment](../gifs/4-1-review-with-comment.gif)
 
 <details>
 <summary>📹 Video: Review with comment</summary>
 
-https://github.com/user-attachments/assets/4-1-review-with-comment.webm
+![Review with comment](../gifs/4-1-review-with-comment.gif)
 
 </details>
 
@@ -1061,12 +1061,12 @@ Point your cursor over a line number so that a blue "+" icon will appear. Click 
 
 #### Option 2: Make a Suggestion
 
-https://github.com/user-attachments/assets/4-2-review-with-suggestion.webm
+![Review with suggestion](../gifs/4-2-review-with-suggestion.gif)
 
 <details>
 <summary>📹 Video: Review with suggestion</summary>
 
-https://github.com/user-attachments/assets/4-2-review-with-suggestion.webm
+![Review with suggestion](../gifs/4-2-review-with-suggestion.gif)
 
 </details>
 
@@ -1074,12 +1074,12 @@ If you want to propose an actual edit to that line of code or text, add a code s
 
 #### Option 3: Submit a Complete Review
 
-https://github.com/user-attachments/assets/4-3-submit-a-review.webm
+![Submit a review](../gifs/4-3-submit-a-review.gif)
 
 <details>
 <summary>📹 Video: Submit a review</summary>
 
-https://github.com/user-attachments/assets/4-3-submit-a-review.webm
+![Submit a review](../gifs/4-3-submit-a-review.gif)
 
 </details>
 
