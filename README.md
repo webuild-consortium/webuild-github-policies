@@ -18,25 +18,25 @@ This repository contains the comprehensive GitHub policies, guidelines, and proc
 
 ### Core Policy Documents
 
-1. **[GitHub Policies and Guidelines](01-github-policies-and-guidelines.md)**
+1. **[GitHub Policies and Guidelines](docs/01-github-policies-and-guidelines.md)**
    Comprehensive policies governing GitHub usage, repository management, access control, and governance structure within the WEBUILD consortium.
 
-2. **[Contribution Guidelines](02-contribution-guidelines.md)**
+2. **[Contribution Guidelines](docs/02-contribution-guidelines.md)**
    Detailed instructions for contributing code, documentation, and other materials to WEBUILD repositories, including pull request workflows and code review processes.
 
-3. **[Onboarding Procedures](03-onboarding-procedures.md)**
+3. **[Onboarding Procedures](docs/03-onboarding-procedures.md)**
    Step-by-step procedures for onboarding new consortium members, granting access, and getting started with WEBUILD repositories.
 
-4. **[Repository Management](04-repository-management.md)**
+4. **[Repository Management](docs/04-repository-management.md)**
    Guidelines for creating, maintaining, archiving, and managing the lifecycle of repositories within the consortium.
 
-5. **[Licensing Guidelines](05-licensing-guidelines.md)**
+5. **[Licensing Guidelines](docs/05-licensing-guidelines.md)**
    Policies and procedures for licensing consortium outputs, including default licenses, license selection criteria, and compliance requirements.
 
-6. **[Security and Compliance](06-security-and-compliance.md)**
+6. **[Security and Compliance](docs/06-security-and-compliance.md)**
    Security best practices, compliance requirements, and procedures for handling sensitive data and maintaining repository security.
 
-7. **[Branching and Workflow](07-branching-and-workflow.md)**
+7. **[Branching and Workflow](docs/07-branching-and-workflow.md)**
    Standardized Git workflows, branching strategies, and version control practices for the consortium.
 
 ---
@@ -44,16 +44,16 @@ This repository contains the comprehensive GitHub policies, guidelines, and proc
 ## 🎯 Quick Start
 
 ### For New Members
-Start with the [Onboarding Procedures](03-onboarding-procedures.md) to get access and understand the basics.
+Start with the [Onboarding Procedures](docs/03-onboarding-procedures.md) to get access and understand the basics.
 
 ### For Contributors
-Review the [Contribution Guidelines](02-contribution-guidelines.md) before making your first contribution.
+Review the [Contribution Guidelines](docs/02-contribution-guidelines.md) before making your first contribution.
 
 ### For WP/Group Leads
-Familiarize yourself with [Repository Management](04-repository-management.md) and the governance structure in [GitHub Policies and Guidelines](01-github-policies-and-guidelines.md).
+Familiarize yourself with [Repository Management](docs/04-repository-management.md) and the governance structure in [GitHub Policies and Guidelines](docs/01-github-policies-and-guidelines.md).
 
 ### For Repository Maintainers
-Ensure you understand [Security and Compliance](06-security-and-compliance.md) and [Branching and Workflow](07-branching-and-workflow.md) standards.
+Ensure you understand [Security and Compliance](docs/06-security-and-compliance.md) and [Branching and Workflow](docs/07-branching-and-workflow.md) standards.
 
 ---
 
