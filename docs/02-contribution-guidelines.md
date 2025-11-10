@@ -200,8 +200,6 @@ Before contributing:
 
 #### Step 1: Find or Create an Issue
 
-![How to open an issue](../gifs/1-how-to-open-an-issue.gif)
-
 <details>
 <summary>📹 Video: How to open an issue</summary>
 
@@ -220,8 +218,6 @@ Before contributing:
 
 3. Wait for maintainer feedback/approval
 4. Get issue assigned to you
-
-![Discussion on the issue](../gifs/2-discussion-on-the-issue.gif)
 
 <details>
 <summary>📹 Video: Discussion on the issue</summary>
@@ -255,8 +251,6 @@ Any other relevant information
 ```
 
 #### Step 2: Create a Feature Branch
-
-![Create a new branch](../gifs/3-1-crete-new-branch.gif)
 
 <details>
 <summary>📹 Video: Create a new branch</summary>
@@ -303,8 +297,6 @@ git checkout -b bugfix/issue-456-fix-login-error
 - Break existing functionality
 
 #### Step 4: Commit Your Changes
-
-![How to commit changes](../gifs/3-2-how-to-commit-changes.gif)
 
 <details>
 <summary>📹 Video: How to commit changes</summary>
@@ -373,8 +365,6 @@ git push origin feature/issue-123-add-authentication --force-with-lease
 ⚠️ **Note:** Use `--force-with-lease` instead of `--force` to avoid overwriting others' work.
 
 #### Step 6: Create a Pull Request
-
-![How to open a pull request](../gifs/3-3-how-to-open-a-pr.gif)
 
 <details>
 <summary>📹 Video: How to open a pull request</summary>
@@ -1048,8 +1038,6 @@ Use draft PRs for:
 
 #### Option 1: Leave Quick Feedback
 
-![Review with comment](../gifs/4-1-review-with-comment.gif)
-
 <details>
 <summary>📹 Video: Review with comment</summary>
 
@@ -1061,8 +1049,6 @@ Point your cursor over a line number so that a blue "+" icon will appear. Click 
 
 #### Option 2: Make a Suggestion
 
-![Review with suggestion](../gifs/4-2-review-with-suggestion.gif)
-
 <details>
 <summary>📹 Video: Review with suggestion</summary>
 
@@ -1073,8 +1059,6 @@ Point your cursor over a line number so that a blue "+" icon will appear. Click 
 If you want to propose an actual edit to that line of code or text, add a code suggestion block using markdown syntax. GitHub automatically formats this as a suggested change box in your comment. When the PR author sees it, they'll have a button labeled "Apply suggestion" that automatically updates the code.
 
 #### Option 3: Submit a Complete Review
-
-![Submit a review](../gifs/4-3-submit-a-review.gif)
 
 <details>
 <summary>📹 Video: Submit a review</summary>
