@@ -200,6 +200,8 @@ Before contributing:
 
 #### Step 1: Find or Create an Issue
 
+<video src="../webm/1-how-to-open-an-issue.webm" controls loop muted autoplay width="100%"></video>
+
 **Before starting work:**
 
 1. Search existing issues for similar work
@@ -211,6 +213,8 @@ Before contributing:
 
 3. Wait for maintainer feedback/approval
 4. Get issue assigned to you
+
+<video src="../webm/2-discussion-on-the-issue.webm" controls loop muted autoplay width="100%"></video>
 
 **Issue Template Example:**
 
@@ -237,6 +241,8 @@ Any other relevant information
 ```
 
 #### Step 2: Create a Feature Branch
+
+<video src="../webm/3-1-crete-new-branch.webm" controls loop muted autoplay width="100%"></video>
 
 ```bash
 # Update your local main branch
@@ -276,6 +282,8 @@ git checkout -b bugfix/issue-456-fix-login-error
 - Break existing functionality
 
 #### Step 4: Commit Your Changes
+
+<video src="../webm/3-2-how-to-commit-changes.webm" controls loop muted autoplay width="100%"></video>
 
 **Commit Message Format:**
 
@@ -337,6 +345,8 @@ git push origin feature/issue-123-add-authentication --force-with-lease
 ⚠️ **Note:** Use `--force-with-lease` instead of `--force` to avoid overwriting others' work.
 
 #### Step 6: Create a Pull Request
+
+<video src="../webm/3-3-how-to-open-a-pr.webm" controls loop muted autoplay width="100%"></video>
 
 1. Navigate to repository on GitHub
 2. Click "Pull requests" → "New pull request"
@@ -1000,6 +1010,29 @@ Use draft PRs for:
 - [ ] **Standards:** Does it follow coding standards?
 
 **Providing Feedback:**
+
+#### Option 1: Leave Quick Feedback
+
+<video src="../webm/4-1-review-with-comment.webm" controls loop muted autoplay width="100%"></video>
+
+Point your cursor over a line number so that a blue "+" icon will appear. Click the "+" to open a comment box on that specific line, then write your comment and click "Add single comment".
+
+#### Option 2: Make a Suggestion
+
+<video src="../webm/4-2-review-with-suggestion.webm" controls loop muted autoplay width="100%"></video>
+
+If you want to propose an actual edit to that line of code or text, add a code suggestion block using markdown syntax. GitHub automatically formats this as a suggested change box in your comment. When the PR author sees it, they'll have a button labeled "Apply suggestion" that automatically updates the code.
+
+#### Option 3: Submit a Complete Review
+
+<video src="../webm/4-3-submit-a-review.webm" controls loop muted autoplay width="100%"></video>
+
+If you want to review several changes together, click "Add review comment" on multiple lines. When finished, click "Review changes" → "Submit review", then choose:
+- **Comment:** General feedback
+- **Approve:** Ready to merge
+- **Request changes:** Needs updates before merging
+
+**Feedback Examples:**
 
 ✅ **Good feedback:**
 ```markdown
