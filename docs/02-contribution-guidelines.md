@@ -203,7 +203,7 @@ Before contributing:
 <details>
 <summary>📹 Video: How to open an issue</summary>
 
-![How to open an issue](../gifs/1-how-to-open-an-issue.gif)
+![How to open an issue](gifs/1-how-to-open-an-issue.gif)
 
 </details>
 
@@ -222,7 +222,7 @@ Before contributing:
 <details>
 <summary>📹 Video: Discussion on the issue</summary>
 
-![Discussion on the issue](../gifs/2-discussion-on-the-issue.gif)
+![Discussion on the issue](gifs/2-discussion-on-the-issue.gif)
 
 </details>
 
@@ -255,7 +255,7 @@ Any other relevant information
 <details>
 <summary>📹 Video: Create a new branch</summary>
 
-![Create a new branch](../gifs/3-1-crete-new-branch.gif)
+![Create a new branch](gifs/3-1-crete-new-branch.gif)
 
 </details>
 
@@ -301,7 +301,7 @@ git checkout -b bugfix/issue-456-fix-login-error
 <details>
 <summary>📹 Video: How to commit changes</summary>
 
-![How to commit changes](../gifs/3-2-how-to-commit-changes.gif)
+![How to commit changes](gifs/3-2-how-to-commit-changes.gif)
 
 </details>
 
@@ -369,7 +369,7 @@ git push origin feature/issue-123-add-authentication --force-with-lease
 <details>
 <summary>📹 Video: How to open a pull request</summary>
 
-![How to open a pull request](../gifs/3-3-how-to-open-a-pr.gif)
+![How to open a pull request](gifs/3-3-how-to-open-a-pr.gif)
 
 </details>
 
@@ -1041,7 +1041,7 @@ Use draft PRs for:
 <details>
 <summary>📹 Video: Review with comment</summary>
 
-![Review with comment](../gifs/4-1-review-with-comment.gif)
+![Review with comment](gifs/4-1-review-with-comment.gif)
 
 </details>
 
@@ -1052,7 +1052,7 @@ Point your cursor over a line number so that a blue "+" icon will appear. Click 
 <details>
 <summary>📹 Video: Review with suggestion</summary>
 
-![Review with suggestion](../gifs/4-2-review-with-suggestion.gif)
+![Review with suggestion](gifs/4-2-review-with-suggestion.gif)
 
 </details>
 
@@ -1063,7 +1063,7 @@ If you want to propose an actual edit to that line of code or text, add a code s
 <details>
 <summary>📹 Video: Submit a review</summary>
 
-![Submit a review](../gifs/4-3-submit-a-review.gif)
+![Submit a review](gifs/4-3-submit-a-review.gif)
 
 </details>
 
