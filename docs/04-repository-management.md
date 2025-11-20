@@ -1208,3 +1208,402 @@ Deleted By: [Name]
 **Do:**
 - Use clear, descriptive names
 - Follow naming conventions
+- Maintain consistent structure
+- Keep documentation up to date
+- Use meaningful commit messages
+- Tag releases appropriately
+
+**Don't:**
+- Create repositories without approval
+- Mix unrelated concerns
+- Ignore naming conventions
+- Leave repositories unmaintained
+
+### 9.2 Naming Conventions
+
+**Repository Names:**
+- Use lowercase with hyphens
+- Include WP prefix if applicable
+- Be descriptive but concise
+- Avoid abbreviations unless standard
+
+**Examples:**
+- ✅ `wp4-trust-infrastructure`
+- ✅ `webuild-documentation`
+- ✅ `interoperability-test-suite`
+- ❌ `WP4_Trust`
+- ❌ `repo1`
+- ❌ `temp-test`
+
+### 9.3 Documentation Standards
+
+**Every repository must have:**
+- Clear README with purpose and usage
+- Contributing guidelines
+- License information
+- Security policy
+- Code of conduct
+
+**Documentation should be:**
+- Up to date
+- Clear and concise
+- Well-structured
+- Accessible to newcomers
+- Maintained regularly
+
+### 9.4 Security Best Practices
+
+**Always:**
+- Enable security features
+- Review Dependabot alerts
+- Use branch protection
+- Require code reviews
+- Keep dependencies updated
+- Follow security policies
+
+**Never:**
+- Commit secrets or credentials
+- Disable security features
+- Ignore security alerts
+- Grant excessive permissions
+- Skip security reviews
+
+### 9.5 Collaboration Best Practices
+
+**Communication:**
+- Use issues for discussions
+- Provide clear PR descriptions
+- Respond to feedback promptly
+- Be respectful and constructive
+- Document decisions
+
+**Code Review:**
+- Review PRs within 2 days
+- Provide constructive feedback
+- Test changes locally
+- Check documentation updates
+- Verify CI/CD passes
+
+### 9.6 Maintenance Best Practices
+
+**Regular Tasks:**
+- Triage issues weekly
+- Review PRs promptly
+- Update dependencies monthly
+- Review access quarterly
+- Clean up stale branches
+
+**Long-term Health:**
+- Monitor repository metrics
+- Gather user feedback
+- Plan improvements
+- Update documentation
+- Maintain roadmap
+
+---
+
+## 10. Troubleshooting
+
+### 10.1 Common Issues
+
+#### 10.1.1 Permission Denied
+
+**Problem:** Cannot push to repository
+
+**Solutions:**
+1. Verify you have write access
+2. Check if branch is protected
+3. Ensure you're authenticated
+4. Contact repository maintainer
+
+```bash
+# Check your access level
+gh repo view webuild-consortium/[repo-name]
+
+# Verify authentication
+gh auth status
+```
+
+#### 10.1.2 Branch Protection Conflicts
+
+**Problem:** Cannot merge PR due to protection rules
+
+**Solutions:**
+1. Ensure all required reviews are approved
+2. Verify CI/CD checks pass
+3. Resolve all conversations
+4. Update branch with latest main
+5. Check if signed commits are required
+
+#### 10.1.3 Failed CI/CD Builds
+
+**Problem:** Automated tests failing
+
+**Solutions:**
+1. Review build logs
+2. Run tests locally
+3. Check for dependency issues
+4. Verify environment configuration
+5. Update failing tests if needed
+
+```bash
+# Run tests locally
+npm test
+# or
+pytest tests/
+# or
+go test ./...
+```
+
+#### 10.1.4 Merge Conflicts
+
+**Problem:** Cannot merge due to conflicts
+
+**Solutions:**
+1. Update your branch with latest main
+2. Resolve conflicts locally
+3. Test after resolving
+4. Push resolved changes
+
+```bash
+# Update branch
+git checkout main
+git pull origin main
+git checkout feature-branch
+git merge main
+
+# Resolve conflicts in editor
+# Then:
+git add .
+git commit -m "fix: resolve merge conflicts"
+git push origin feature-branch
+```
+
+#### 10.1.5 Missing Required Files
+
+**Problem:** Repository lacks required files
+
+**Solutions:**
+1. Add missing files from templates
+2. Follow repository structure guidelines
+3. Update documentation
+4. Commit and push changes
+
+### 10.2 Access Issues
+
+#### 10.2.1 Cannot Access Repository
+
+**Problem:** Repository not visible or accessible
+
+**Checklist:**
+- [ ] Verify you're logged into GitHub
+- [ ] Check if you're member of organization
+- [ ] Confirm repository exists
+- [ ] Verify repository visibility (public/private)
+- [ ] Check if you have required team membership
+
+**Contact:** Technical Coordinator or WP Lead
+
+#### 10.2.2 Cannot Create Repository
+
+**Problem:** No permission to create repository
+
+**Solution:**
+- Only Technical Coordinator can create repositories
+- Submit repository creation request
+- Follow approval process
+- Wait for repository to be created
+
+#### 10.2.3 Lost Access to Repository
+
+**Problem:** Previously had access, now don't
+
+**Possible Causes:**
+- Team membership changed
+- Repository archived
+- Access permissions updated
+- Organization membership changed
+
+**Solution:** Contact repository maintainer or Technical Coordinator
+
+### 10.3 Configuration Issues
+
+#### 10.3.1 Branch Protection Not Working
+
+**Problem:** Protection rules not enforced
+
+**Verification:**
+1. Go to Settings → Branches
+2. Check rule configuration
+3. Verify pattern matches branch name
+4. Ensure "Include administrators" is checked
+5. Test with a PR
+
+#### 10.3.2 CI/CD Not Running
+
+**Problem:** GitHub Actions not executing
+
+**Checklist:**
+- [ ] Workflow file exists in `.github/workflows/`
+- [ ] Workflow syntax is correct
+- [ ] Trigger conditions are met
+- [ ] Actions are enabled for repository
+- [ ] No workflow run limits exceeded
+
+**Debug:**
+```bash
+# Validate workflow syntax locally
+gh workflow view [workflow-name]
+
+# Check workflow runs
+gh run list
+```
+
+#### 10.3.3 Dependabot Not Creating PRs
+
+**Problem:** No automatic dependency updates
+
+**Solutions:**
+1. Verify Dependabot is enabled
+2. Check for `dependabot.yml` configuration
+3. Review Dependabot logs
+4. Ensure dependencies are outdated
+5. Check if PRs are being created but closed
+
+### 10.4 Repository Management Issues
+
+#### 10.4.1 Cannot Archive Repository
+
+**Problem:** Archive option not available
+
+**Requirements:**
+- Must be repository admin
+- Must have organization permissions
+- Repository must not have active dependencies
+- All issues/PRs should be resolved
+
+**Process:**
+1. Complete pre-archive checklist
+2. Get necessary approvals
+3. Contact Technical Coordinator if needed
+
+#### 10.4.2 Cannot Delete Repository
+
+**Problem:** Delete option not available or fails
+
+**Requirements:**
+- Must be organization owner
+- Must have written justification
+- Must have approvals
+- Must have backup created
+
+**Note:** Repository deletion is restricted. Contact Technical Coordinator.
+
+#### 10.4.3 Repository Transfer Issues
+
+**Problem:** Need to transfer repository
+
+**Process:**
+1. Contact Technical Coordinator
+2. Provide justification
+3. Specify target organization/user
+4. Wait for approval and transfer
+5. Update references in other repositories
+
+### 10.5 Getting Help
+
+#### 10.5.1 Internal Support
+
+**For repository-specific issues:**
+1. Check repository documentation
+2. Search existing issues
+3. Ask in repository discussions
+4. Contact repository maintainer
+
+**For organization-level issues:**
+1. Contact WP Lead
+2. Contact Technical Coordinator
+3. Refer to this documentation
+4. Check FAQ in appendices
+
+#### 10.5.2 GitHub Support
+
+**For GitHub platform issues:**
+- [GitHub Documentation](https://docs.github.com)
+- [GitHub Community](https://github.community)
+- [GitHub Support](https://support.github.com)
+
+#### 10.5.3 Escalation Path
+
+```mermaid
+graph TD
+    A[Issue Occurs]
+    B[Check Documentation]
+    C[Repository<br/>Maintainer]
+    D[Group Lead]
+    E[WP Lead]
+    F[Technical<br/>Coordinator]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+```
+
+**Escalation Guidelines:**
+1. Try to resolve using documentation
+2. Contact repository maintainer
+3. Escalate to Group Lead if unresolved
+4. Escalate to WP Lead if needed
+5. Contact Technical Coordinator for organization-level issues
+
+### 10.6 Preventive Measures
+
+**To avoid common issues:**
+
+- [ ] Read documentation before starting
+- [ ] Follow established processes
+- [ ] Use templates and examples
+- [ ] Test changes locally first
+- [ ] Keep dependencies updated
+- [ ] Monitor security alerts
+- [ ] Maintain clear documentation
+- [ ] Communicate with team
+- [ ] Request help early
+- [ ] Learn from past issues
+
+---
+
+## Appendices
+
+### A. Quick Reference
+
+**Repository Creation:**
+1. Submit request to WP/Group lead
+2. Wait for approval
+3. Technical Coordinator creates repository
+4. Complete post-creation setup
+
+**Repository Maintenance:**
+- Daily: Monitor issues and PRs
+- Weekly: Triage and respond
+- Monthly: Update dependencies and docs
+- Quarterly: Review access and metrics
+
+**Repository Lifecycle:**
+Planning → Approval → Creation → Setup → Active → Deprecated/Archived
+
+---
+
+**Document Control:**
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | October 2025 | Technical Coordinator | Initial draft |
+
+**Next Review Date:** January 2026
+
+---
+
+*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator.*
