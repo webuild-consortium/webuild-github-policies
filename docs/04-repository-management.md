@@ -162,7 +162,7 @@ Create a new repository when:
 
 Submit to WP/Group lead:
 
-```markdown
+`````markdown
 ## Repository Creation Request
 
 ### Basic Information
@@ -209,7 +209,7 @@ Explain why this repository is needed and how it fits into the project.
 - [ ] Group Lead: [Name]
 - [ ] WP Lead: [Name]
 - [ ] Technical Coordinator: [Pending]
-```
+`````
 
 #### 3.2.2 Approval Process
 
