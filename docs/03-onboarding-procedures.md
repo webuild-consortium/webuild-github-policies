@@ -142,41 +142,20 @@ Before requesting access, gather:
 
 ### 3.1 Request Workflow
 
-```
-┌─────────────────┐
-│  New Member     │
-│  Provides Info  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  WP/Group Lead  │
-│  Submits Request│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Tech Coord     │
-│  Reviews Request│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Tech Coord     │
-│  Grants Access  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  WP/Group Lead  │
-│  Assigns Teams  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  New Member     │
-│  Receives Access│
-└─────────────────┘
+```mermaid
+graph TD
+    A[New Member<br/>Provides Info]
+    B[WP/Group Lead<br/>Submits Request]
+    C[Tech Coord<br/>Reviews Request]
+    D[Tech Coord<br/>Grants Access]
+    E[WP/Group Lead<br/>Assigns Teams]
+    F[New Member<br/>Receives Access]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
 
 ### 3.2 For WP/Group Leads: Submitting Access Request
@@ -749,35 +728,18 @@ Offboarding is necessary when:
 
 ### 8.2 Offboarding Workflow
 
-```
-┌─────────────────┐
-│  Departure      │
-│  Notification   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  WP/Group Lead  │
-│  Notifies TC    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Knowledge      │
-│  Transfer       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Tech Coord     │
-│  Revokes Access │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Documentation  │
-│  & Handover     │
-└─────────────────┘
+```mermaid
+graph TD
+    A[Departure<br/>Notification]
+    B[WP/Group Lead<br/>Notifies TC]
+    C[Knowledge<br/>Transfer]
+    D[Tech Coord<br/>Revokes Access]
+    E[Documentation<br/>& Handover]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 ### 8.3 Offboarding Checklist

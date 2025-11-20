@@ -68,34 +68,16 @@ Security is everyone's responsibility:
 
 Implement multiple layers of security:
 
-```
-┌─────────────────────────────────┐
-│  Organization Security          │
-│  ├─ 2FA Required                │
-│  ├─ Access Controls             │
-│  └─ Audit Logging               │
-└──────────────┬──────────────────┘
-               │
-┌──────────────▼──────────────────┐
-│  Repository Security            │
-│  ├─ Branch Protection           │
-│  ├─ Required Reviews            │
-│  └─ Status Checks               │
-└──────────────┬──────────────────┘
-               │
-┌──────────────▼──────────────────┐
-│  Code Security                  │
-│  ├─ Secure Coding               │
-│  ├─ Input Validation            │
-│  └─ Security Testing            │
-└──────────────┬──────────────────┘
-               │
-┌──────────────▼──────────────────┐
-│  Infrastructure Security        │
-│  ├─ Secrets Management          │
-│  ├─ Encrypted Communications    │
-│  └─ Secure Deployment           │
-└─────────────────────────────────┘
+```mermaid
+graph TD
+    A[Organization Security<br/>- 2FA Required<br/>- Access Controls<br/>- Audit Logging]
+    B[Repository Security<br/>- Branch Protection<br/>- Required Reviews<br/>- Status Checks]
+    C[Code Security<br/>- Secure Coding<br/>- Input Validation<br/>- Security Testing]
+    D[Infrastructure Security<br/>- Secrets Management<br/>- Encrypted Communications<br/>- Secure Deployment]
+
+    A --> B
+    B --> C
+    C --> D
 ```
 
 #### 2.1.2 Least Privilege
@@ -806,45 +788,25 @@ updates:
 
 **When vulnerability detected:**
 
-```
-┌─────────────────┐
-│  Alert          │
-│  Received       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Assess         │
-│  Severity       │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-    ▼         ▼
-┌────────┐ ┌──────────┐
-│Critical│ │ Low/Med  │
-│  High  │ │          │
-└───┬────┘ └────┬─────┘
-    │           │
-    ▼           ▼
-┌────────┐ ┌──────────┐
-│Immediate│ │ Schedule │
-│  Fix    │ │   Fix    │
-└───┬────┘ └────┬─────┘
-    │           │
-    └─────┬─────┘
-          │
-          ▼
-    ┌──────────┐
-    │   Test   │
-    │  & Deploy│
-    └────┬─────┘
-         │
-         ▼
-    ┌──────────┐
-    │  Verify  │
-    │   Fix    │
-    └──────────┘
+```mermaid
+graph TD
+    A[Alert<br/>Received]
+    B[Assess<br/>Severity]
+    C[Critical/High]
+    D[Low/Med]
+    E[Immediate<br/>Fix]
+    F[Schedule<br/>Fix]
+    G[Test<br/>& Deploy]
+    H[Verify<br/>Fix]
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> F
+    E --> G
+    F --> G
+    G --> H
 ```
 
 **Response Times:**
@@ -1047,40 +1009,22 @@ pip freeze > requirements.txt
 
 #### 8.1.2 Incident Response Process
 
-```
-┌─────────────────┐
-│   Detection     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Reporting     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Assessment    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Containment    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Eradication    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Recovery      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Lessons Learned │
-└─────────────────┘
+```mermaid
+graph TD
+    A[Detection]
+    B[Reporting]
+    C[Assessment]
+    D[Containment]
+    E[Eradication]
+    F[Recovery]
+    G[Lessons Learned]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
 ```
 
 #### 8.1.3 Reporting Incidents

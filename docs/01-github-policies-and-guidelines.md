@@ -93,25 +93,17 @@ These GitHub policies complement and must be read in conjunction with:
 
 ### 3.1 Organizational Hierarchy
 
-```
-┌─────────────────────────────────────┐
-│     Technical Coordinator           │
-│  (Overall GitHub Administration)    │
-└──────────────┬──────────────────────┘
-               │
-    ┌──────────┴──────────┐
-    │                     │
-┌───▼────────┐    ┌──────▼─────────┐
-│  WP Leads  │    │  Group Leads   │
-│ (WP-level) │    │ (Group-level)  │
-└───┬────────┘    └──────┬─────────┘
-    │                    │
-    └──────────┬─────────┘
-               │
-        ┌──────▼──────┐
-        │ Maintainers │
-        │Contributors │
-        └─────────────┘
+```mermaid
+graph TD
+    TC[Technical Coordinator<br/>Overall GitHub Administration]
+    WP[WP Leads<br/>WP-level]
+    GL[Group Leads<br/>Group-level]
+    MC[Maintainers<br/>Contributors]
+
+    TC --> WP
+    TC --> GL
+    WP --> MC
+    GL --> MC
 ```
 
 ### 3.2 Roles and Responsibilities
@@ -246,15 +238,12 @@ webuild-consortium/
 
 ### 4.3 Repository Lifecycle
 
-```
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│ Planning │───▶│ Creation │───▶│  Active  │───▶│ Archived │
-└──────────┘    └──────────┘    └──────────┘    └──────────┘
-                                      │
-                                      ▼
-                                ┌──────────┐
-                                │Deprecated│
-                                └──────────┘
+```mermaid
+graph LR
+    Planning --> Creation
+    Creation --> Active
+    Active --> Archived
+    Active --> Deprecated
 ```
 
 See [Repository Management](04-repository-management.md) for detailed lifecycle procedures.
@@ -274,29 +263,16 @@ See [Repository Management](04-repository-management.md) for detailed lifecycle 
 
 #### 5.2.1 For New Consortium Members
 
-```
-┌─────────────────┐
-│ New Member      │
-│ Joins Project   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ WP/Group Lead   │
-│ Requests Access │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Technical Coord │
-│ Adds to Org     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ WP/Group Lead   │
-│ Adds to Team    │
-└─────────────────┘
+```mermaid
+graph TD
+    A[New Member<br/>Joins Project]
+    B[WP/Group Lead<br/>Requests Access]
+    C[Technical Coord<br/>Adds to Org]
+    D[WP/Group Lead<br/>Adds to Team]
+
+    A --> B
+    B --> C
+    C --> D
 ```
 
 **Process:**
@@ -439,42 +415,20 @@ Before making a repository public, verify:
 
 #### 6.3.2 Approval Process
 
-```
-┌─────────────────┐
-│ Repository      │
-│ Maintainer      │
-│ Requests Public │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Complete        │
-│ Checklist       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Group Lead      │
-│ Reviews         │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ WP Lead         │
-│ Approves        │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Tech Coord      │
-│ Final Approval  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Make Public     │
-│ + Announce      │
-└─────────────────┘
+```mermaid
+graph TD
+    A[Repository Maintainer<br/>Requests Public]
+    B[Complete<br/>Checklist]
+    C[Group Lead<br/>Reviews]
+    D[WP Lead<br/>Approves]
+    E[Tech Coord<br/>Final Approval]
+    F[Make Public<br/>+ Announce]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
 
 **Steps:**

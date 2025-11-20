@@ -312,24 +312,18 @@ Copyright [year] [Third Party Name]
 
 ### 4.1 Decision Framework
 
-```
-┌─────────────────┐
-│  What type of   │
-│    content?     │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-    ▼         ▼
-┌────────┐ ┌──────────┐
-│  Code  │ │   Docs   │
-└───┬────┘ └────┬─────┘
-    │           │
-    ▼           ▼
-┌────────┐ ┌──────────┐
-│Apache  │ │    CC    │
-│  2.0   │ │   BY 4.0 │
-└────────┘ └──────────┘
+```mermaid
+graph TD
+    A[What type of<br/>content?]
+    B[Code]
+    C[Docs]
+    D[Apache<br/>2.0]
+    E[CC<br/>BY 4.0]
+
+    A --> B
+    A --> C
+    B --> D
+    C --> E
 ```
 
 ### 4.2 License Options
@@ -884,38 +878,20 @@ jobs:
 
 #### 8.2.2 Remediation Process
 
-```
-┌─────────────────┐
-│   Violation     │
-│   Detected      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Assess        │
-│   Severity      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Notify        │
-│   Responsible   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Remediate     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Verify Fix    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Document      │
-└─────────────────┘
+```mermaid
+graph TD
+    A[Violation<br/>Detected]
+    B[Assess<br/>Severity]
+    C[Notify<br/>Responsible]
+    D[Remediate]
+    E[Verify Fix]
+    F[Document]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
 
 **Steps:**

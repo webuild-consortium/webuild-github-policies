@@ -80,24 +80,37 @@ Feature Branch Workflow is the **recommended standard approach** for WEBUILD con
 
 The Feature Branch Workflow is the **standard branching strategy** for all WEBUILD repositories. It provides a simple, effective approach to parallel development while maintaining code quality and stability.
 
-```
-main (production-ready, always deployable)
-  │
-  ├─── feature/123-user-authentication
-  │     │
-  │     └─── (develop, test, PR, merge)
-  │
-  ├─── feature/456-api-integration
-  │     │
-  │     └─── (develop, test, PR, merge)
-  │
-  ├─── bugfix/789-login-timeout
-  │     │
-  │     └─── (fix, test, PR, merge)
-  │
-  └─── hotfix/012-security-patch
-        │
-        └─── (urgent fix, test, PR, merge)
+```mermaid
+graph TD
+    main[main - production-ready, always deployable]
+
+    f1[feature/123-user-authentication]
+    f1_work[develop, test, PR, merge]
+
+    f2[feature/456-api-integration]
+    f2_work[develop, test, PR, merge]
+
+    b1[bugfix/789-login-timeout]
+    b1_work[fix, test, PR, merge]
+
+    h1[hotfix/012-security-patch]
+    h1_work[urgent fix, test, PR, merge]
+
+    main --> f1
+    f1 --> f1_work
+    f1_work --> main
+
+    main --> f2
+    f2 --> f2_work
+    f2_work --> main
+
+    main --> b1
+    b1 --> b1_work
+    b1_work --> main
+
+    main --> h1
+    h1 --> h1_work
+    h1_work --> main
 ```
 
 ### 2.2 Core Principles
@@ -1335,27 +1348,41 @@ git config --global alias.visual 'log --oneline --graph --all'
 
 GitFlow is a more structured branching model suitable for projects with scheduled releases and multiple production versions.
 
-```
-main (production releases only)
-  │
-  ├─── Tag: v1.0.0
-  │
-develop (integration branch)
-  │
-  ├─── feature/new-feature
-  │     │
-  │     └─── (merge to develop)
-  │
-  ├─── release/v1.1.0
-  │     │
-  │     ├─── (bug fixes)
-  │     ├─── (merge to main)
-  │     └─── (merge back to develop)
-  │
-  └─── hotfix/critical-bug
-        │
-        ├─── (merge to main)
-        └─── (merge to develop)
+```mermaid
+graph TD
+    main[main - production releases only]
+    tag[Tag: v1.0.0]
+    develop[develop - integration branch]
+
+    feature[feature/new-feature]
+    feature_merge[merge to develop]
+
+    release[release/v1.1.0]
+    release_fix[bug fixes]
+    release_main[merge to main]
+    release_dev[merge back to develop]
+
+    hotfix[hotfix/critical-bug]
+    hotfix_main[merge to main]
+    hotfix_dev[merge to develop]
+
+    main --> tag
+    develop --> feature
+    feature --> feature_merge
+    feature_merge --> develop
+
+    develop --> release
+    release --> release_fix
+    release_fix --> release_main
+    release_main --> main
+    release_fix --> release_dev
+    release_dev --> develop
+
+    main --> hotfix
+    hotfix --> hotfix_main
+    hotfix_main --> main
+    hotfix --> hotfix_dev
+    hotfix_dev --> develop
 ```
 
 **Key Principles:**
@@ -1430,18 +1457,27 @@ git branch -d release/v1.2.0
 
 Trunk-Based Development emphasizes very short-lived branches and frequent integration to a single trunk (main branch).
 
-```
-main (trunk - always deployable)
-  │
-  ├─── short-lived feature branch (< 2 days)
-  │     │
-  │     └─── (quick merge)
-  │
-  ├─── short-lived feature branch (< 2 days)
-  │     │
-  │     └─── (quick merge)
-  │
-  └─── (continuous integration, multiple times per day)
+```mermaid
+graph TD
+    main[main - trunk, always deployable]
+
+    f1[short-lived feature branch < 2 days]
+    f1_merge[quick merge]
+
+    f2[short-lived feature branch < 2 days]
+    f2_merge[quick merge]
+
+    ci[continuous integration, multiple times per day]
+
+    main --> f1
+    f1 --> f1_merge
+    f1_merge --> main
+
+    main --> f2
+    f2 --> f2_merge
+    f2_merge --> main
+
+    main --> ci
 ```
 
 **Key Principles:**

@@ -147,29 +147,51 @@ GitHub provides five permission levels:
 
 ### Recommended Team Organization
 
-```
-WEBUILD Consortium Organization
-│
-├── Owners (Organization-level)
-│   └── Project Coordinators
-│
-├── WP Teams (Work Package specific)
-│   ├── WP1-Team (Write)
-│   ├── WP2-Team (Write)
-│   ├── WP3-Team (Write)
-│   └── WP4-Team (Write)
-│
-├── Role-Based Teams
-│   ├── Developers (Write)
-│   ├── Reviewers (Write)
-│   ├── Documentation (Write)
-│   ├── Security (Maintain)
-│   └── DevOps (Maintain)
-│
-└── Special Access Teams
-    ├── External-Collaborators (Read/Triage)
-    ├── Stakeholders (Read)
-    └── Admins (Admin)
+```mermaid
+graph TD
+    Org[WEBUILD Consortium Organization]
+
+    Owners[Owners - Organization-level]
+    PC[Project Coordinators]
+
+    WP[WP Teams - Work Package specific]
+    WP1[WP1-Team - Write]
+    WP2[WP2-Team - Write]
+    WP3[WP3-Team - Write]
+    WP4[WP4-Team - Write]
+
+    Role[Role-Based Teams]
+    Dev[Developers - Write]
+    Rev[Reviewers - Write]
+    Doc[Documentation - Write]
+    Sec[Security - Maintain]
+    DevOps[DevOps - Maintain]
+
+    Special[Special Access Teams]
+    Ext[External-Collaborators - Read/Triage]
+    Stake[Stakeholders - Read]
+    Admins[Admins - Admin]
+
+    Org --> Owners
+    Owners --> PC
+
+    Org --> WP
+    WP --> WP1
+    WP --> WP2
+    WP --> WP3
+    WP --> WP4
+
+    Org --> Role
+    Role --> Dev
+    Role --> Rev
+    Role --> Doc
+    Role --> Sec
+    Role --> DevOps
+
+    Org --> Special
+    Special --> Ext
+    Special --> Stake
+    Special --> Admins
 ```
 
 ### Creating Teams
@@ -428,11 +450,16 @@ Create parent-child team relationships:
 4. Click **"Update"**
 
 **Example hierarchy**:
-```
-WP4-Team (Parent)
-├── WP4-Developers (Child)
-├── WP4-Reviewers (Child)
-└── WP4-Documentation (Child)
+```mermaid
+graph TD
+    Parent[WP4-Team - Parent]
+    Child1[WP4-Developers - Child]
+    Child2[WP4-Reviewers - Child]
+    Child3[WP4-Documentation - Child]
+
+    Parent --> Child1
+    Parent --> Child2
+    Parent --> Child3
 ```
 
 **Benefits**:

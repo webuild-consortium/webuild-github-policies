@@ -148,52 +148,24 @@ Before contributing:
 
 ### 3.1 Standard Workflow Overview
 
-```
-┌─────────────┐
-│ Find/Create │
-│   Issue     │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Create    │
-│   Branch    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│    Make     │
-│   Changes   │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Commit    │
-│   Changes   │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│    Push     │
-│   Branch    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Create    │
-│     PR      │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Address   │
-│   Review    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│    Merge    │
-└─────────────┘
+```mermaid
+graph TD
+    A[Find/Create<br/>Issue]
+    B[Create<br/>Branch]
+    C[Make<br/>Changes]
+    D[Commit<br/>Changes]
+    E[Push<br/>Branch]
+    F[Create<br/>PR]
+    G[Address<br/>Review]
+    H[Merge]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
 ```
 
 ### 3.2 Step-by-Step Process

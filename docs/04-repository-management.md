@@ -53,36 +53,17 @@ These guidelines apply to:
 
 ### 2.1 Lifecycle Stages
 
-```
-┌──────────┐
-│ Planning │ ─────┐
-└──────────┘      │
-                  ▼
-┌──────────┐   ┌──────────┐
-│ Creation │◄──│ Approval │
-└────┬─────┘   └──────────┘
-     │
-     ▼
-┌──────────┐
-│  Setup   │
-└────┬─────┘
-     │
-     ▼
-┌──────────┐
-│  Active  │◄─────┐
-└────┬─────┘      │
-     │            │
-     ├────────────┘
-     │
-     ▼
-┌──────────┐   ┌────────────┐
-│Deprecated│──▶│  Archived  │
-└──────────┘   └────────────┘
-     │
-     ▼
-┌──────────┐
-│ Deleted  │
-└──────────┘
+```mermaid
+graph TD
+    Planning --> Approval
+    Approval --> Creation
+    Creation --> Setup
+    Setup --> Active
+    Active --> Active
+    Active --> Deprecated
+    Active --> Archived
+    Deprecated --> Archived
+    Deprecated --> Deleted
 ```
 
 ### 2.2 Stage Descriptions
@@ -232,34 +213,18 @@ Explain why this repository is needed and how it fits into the project.
 
 #### 3.2.2 Approval Process
 
-```
-┌─────────────────┐
-│ Submit Request  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Group Lead     │
-│  Reviews        │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  WP Lead        │
-│  Approves       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Tech Coord     │
-│  Final Approval │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Repository     │
-│  Created        │
-└─────────────────┘
+```mermaid
+graph TD
+    A[Submit Request]
+    B[Group Lead<br/>Reviews]
+    C[WP Lead<br/>Approves]
+    D[Tech Coord<br/>Final Approval]
+    E[Repository<br/>Created]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 **Approval Criteria:**
@@ -749,32 +714,18 @@ Closes #
 
 #### 5.2.1 Issue Triage Process
 
-```
-┌─────────────┐
-│  New Issue  │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Review    │
-│   Content   │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│    Label    │
-│   & Assign  │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Prioritize │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Action    │
-└─────────────┘
+```mermaid
+graph TD
+    A[New Issue]
+    B[Review<br/>Content]
+    C[Label<br/>& Assign]
+    D[Prioritize]
+    E[Action]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 **Triage Checklist:**
@@ -826,45 +777,22 @@ Closes #
 
 #### 5.3.1 Release Process
 
-```
-┌─────────────┐
-│   Plan      │
-│   Release   │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Create    │
-│   Branch    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Test &    │
-│   Fix       │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Update    │
-│   Changelog │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Tag &     │
-│   Release   │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   Deploy    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Announce   │
-└─────────────┘
+```mermaid
+graph TD
+    A[Plan<br/>Release]
+    B[Create<br/>Branch]
+    C[Test &<br/>Fix]
+    D[Update<br/>Changelog]
+    E[Tag &<br/>Release]
+    F[Deploy]
+    G[Announce]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
 ```
 
 #### 5.3.2 Semantic Versioning
