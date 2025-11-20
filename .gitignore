@@ -6,8 +6,10 @@ docs/mp4
 docs/webm
 docs/convert*.sh
 docs/PROJECT_MANAGEMENT_HANDBOOK.md
-build/
 tasks/
+.github/workflows/Makefile
+.github/workflows/mermaid-diagrams/
+.github/workflows/*.md
 
 # Operating System Files
 .DS_Store

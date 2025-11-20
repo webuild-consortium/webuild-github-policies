@@ -1,0 +1,87 @@
+name: Build Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'GITHUB_POLICIES_AND_GUIDELINES.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r .github/workflows/requirements.txt
+
+      - name: Install Mermaid CLI
+        run: |
+          npm install -g @mermaid-js/mermaid-cli
+
+      - name: Install Chrome for Puppeteer
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Prepare for conversion
+        run: |
+          cp GITHUB_POLICIES_AND_GUIDELINES.md .github/workflows/
+
+      - name: Process Mermaid diagrams
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+        run: |
+          cd .github/workflows
+          python3 create_styled_conversion.py
+
+      - name: Convert to DOCX using Pandoc
+        uses: docker://pandoc/core:3.8
+        with:
+          args: >-
+            --from=markdown
+            --to=docx
+            --output=.github/workflows/GITHUB_POLICIES_AND_GUIDELINES.docx
+            --reference-doc=.github/workflows/custom-reference.docx
+            .github/workflows/temp_with_images.md
+
+      - name: Add table borders
+        run: |
+          cd .github/workflows
+          python3 add_table_borders.py
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-docx
+          path: .github/workflows/GITHUB_POLICIES_AND_GUIDELINES.docx
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/main'
+        with:
+          files: .github/workflows/GITHUB_POLICIES_AND_GUIDELINES.docx
+          tag_name: v${{ github.run_number }}
+          name: Release v${{ github.run_number }}
+          draft: false
+          prerelease: false
