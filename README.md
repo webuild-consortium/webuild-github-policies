@@ -18,8 +18,6 @@ This repository contains GitHub policies, guidelines, and procedures for the WEB
 
 **[GITHUB_POLICIES_AND_GUIDELINES.md](GITHUB_POLICIES_AND_GUIDELINES.md)**
 
-**[GITHUB_POLICIES_AND_GUIDELINES.docx](GITHUB_POLICIES_AND_GUIDELINES.docx)**
-
 This is the primary deliverable document that consolidates all GitHub policies, guidelines, and procedures for the WEBUILD consortium. It covers:
 
 - Repository management and governance
@@ -28,21 +26,6 @@ This is the primary deliverable document that consolidates all GitHub policies, 
 - Branching strategies and version control
 - Licensing and compliance requirements
 - Onboarding procedures for new members
-
-### Available Formats
-
-- **Markdown:** [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) - Source document
-- **Word Document:** [`GITHUB_POLICIES_AND_GUIDELINES.docx`](GITHUB_POLICIES_AND_GUIDELINES.docx) - Pre-converted for distribution
-- **Diagrams:** [`mermaid_images/`](mermaid_images/) - Rendered Mermaid diagrams used in the document
-
-### Document Conversion
-
-The Word document has been pre-generated using Pandoc with rendered Mermaid diagrams. If you need to regenerate it:
-
-1. **Setup:** Follow the instructions in [`INSTALLATION.md`](INSTALLATION.md) to install Pandoc, Mermaid CLI, and required dependencies
-2. **Usage:** See [`USAGE.md`](USAGE.md) for detailed conversion instructions and customization options
-3. **Quick Convert:** Use the provided [`Makefile`](Makefile) for convenient conversion commands (`make docx`)
-4. **Diagrams:** Mermaid diagrams are pre-rendered and cached in the [`mermaid_images/`](mermaid_images/) folder for efficient regeneration
 
 > **Note:** The `docs/` folder contains supporting reference materials that were used to build the main deliverable. The [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) file is the authoritative source.
 
