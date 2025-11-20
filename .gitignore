@@ -10,6 +10,7 @@ tasks/
 .github/workflows/Makefile
 .github/workflows/mermaid-diagrams/
 .github/workflows/*.md
+.github/workflows/*.docx
 
 # Operating System Files
 .DS_Store
