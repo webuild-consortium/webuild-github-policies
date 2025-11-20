@@ -307,7 +307,7 @@ git push origin main
 
 #### 3.4.2 README.md Template
 
-```markdown
+`````markdown
 # [Repository Name]
 
 Brief description of the repository purpose.
@@ -356,6 +356,7 @@ The WeBuild project is co-funded by the European Union. However, the views and o
 ## Contact
 
 For questions and support, please open an issue in this repository.
+`````
 
 ## 4. Repository Configuration
 
