@@ -358,6 +358,8 @@ The WeBuild project is co-funded by the European Union. However, the views and o
 For questions and support, please open an issue in this repository.
 `````
 
+---
+
 ## 4. Repository Configuration
 
 ### 4.1 General Settings
@@ -633,6 +635,8 @@ Closes #
 - [ ] Documentation updated
 - [ ] No new warnings
 ```
+
+---
 
 ## 5. Maintaining Repositories
 
@@ -956,6 +960,8 @@ docs/
 - [ ] Add missing sections
 - [ ] Update examples
 - [ ] Review screenshots
+
+---
 
 ## 6. Repository Templates
 
