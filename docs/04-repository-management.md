@@ -32,10 +32,10 @@ This document provides comprehensive guidelines for managing repositories throug
 
 These guidelines apply to:
 
-✅ All repositories in the `webuild-consortium` organization
-✅ All repository types (code, documentation, specifications)
-✅ All Work Packages and groups
-✅ All stages of repository lifecycle
+- All repositories in the `webuild-consortium` organization
+- All repository types (code, documentation, specifications)
+- All Work Packages and groups
+- All stages of repository lifecycle
 
 ### 1.3 Roles and Responsibilities
 
@@ -143,14 +143,14 @@ graph TD
 
 Create a new repository when:
 
-✅ **Starting a new component or service**
-✅ **Separating concerns** (e.g., API from UI)
-✅ **Creating standalone tools or libraries**
-✅ **Establishing new group workspace**
-✅ **Developing specifications or standards**
-✅ **Setting up test frameworks**
+**Starting a new component or service**
+**Separating concerns** (e.g., API from UI)
+**Creating standalone tools or libraries**
+**Establishing new group workspace**
+**Developing specifications or standards**
+**Setting up test frameworks**
 
-❌ **Don't create new repository for:**
+**Don't create new repository for:**
 - Small features (use branches instead)
 - Temporary experiments (use personal repos)
 - Duplicate functionality
@@ -400,26 +400,26 @@ Topics: webuild-consortium, eudi-wallet, [relevant-topics]
 
 **Protection Rules:**
 
-✅ **Require pull request reviews before merging**
+**Require pull request reviews before merging**
 - Required approving reviews: 1
 - Dismiss stale pull request approvals when new commits are pushed
 - Require review from Code Owners (if CODEOWNERS file exists)
 
-✅ **Require status checks to pass before merging**
+**Require status checks to pass before merging**
 - Require branches to be up to date before merging
 - Status checks: (add CI/CD checks)
 
-✅ **Require conversation resolution before merging**
+**Require conversation resolution before merging**
 
-✅ **Require signed commits** (optional, recommended)
+**Require signed commits** (optional, recommended)
 
-✅ **Require linear history** (optional)
+**Require linear history** (optional)
 
-✅ **Include administrators**
+**Include administrators**
 
-❌ **Allow force pushes** (disabled)
+**Allow force pushes** (disabled)
 
-❌ **Allow deletions** (disabled)
+**Allow deletions** (disabled)
 
 #### 4.2.2 Additional Branch Protection (Optional)
 
@@ -468,22 +468,22 @@ Only add individual collaborators for:
 
 **Enable:**
 
-✅ **Dependency graph**
+**Dependency graph**
 - Automatically enabled for public repos
 - Shows repository dependencies
 
-✅ **Dependabot alerts**
+**Dependabot alerts**
 - Get notified of security vulnerabilities
 - Automatic security updates
 
-✅ **Dependabot security updates**
+**Dependabot security updates**
 - Automatically create PRs for security fixes
 
-✅ **Secret scanning**
+**Secret scanning**
 - Detect committed secrets
 - Receive alerts for exposed secrets
 
-✅ **Code scanning** (if applicable)
+**Code scanning** (if applicable)
 - Automated code security analysis
 - Configure via GitHub Actions
 
@@ -1028,11 +1028,11 @@ template-repo/
 
 Archive a repository when:
 
-✅ Project completed
-✅ No longer maintained
-✅ Replaced by newer version
-✅ End of project phase
-✅ Historical reference only
+- Project completed
+- No longer maintained
+- Replaced by newer version
+- End of project phase
+- Historical reference only
 
 ### 7.2 Deprecation Process
 
@@ -1205,6 +1205,6 @@ Deleted By: [Name]
 
 ### 9.1 Repository Organization
 
-✅ **Do:**
+**Do:**
 - Use clear, descriptive names
 - Follow naming conventions

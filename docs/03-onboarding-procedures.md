@@ -29,10 +29,10 @@ This document outlines the procedures for onboarding new members to the WEBUILD 
 
 Onboarding is required for:
 
-✅ New consortium partners joining the project
-✅ New team members from existing partners
-✅ External collaborators requiring repository access
-✅ Temporary contributors (interns, contractors)
+- New consortium partners joining the project
+- New team members from existing partners
+- External collaborators requiring repository access
+- Temporary contributors (interns, contractors)
 
 ### 1.3 Onboarding Timeline
 
@@ -61,17 +61,17 @@ Ongoing: Continuous Learning
 
 New members must:
 
-✅ **Have a GitHub Account:**
+**Have a GitHub Account:**
 - Create account at [github.com](https://github.com)
 - Use professional username (preferably real name)
 - Add profile picture
 - Enable two-factor authentication (2FA)
 
-✅ **Complete Consortium Onboarding:**
+**Complete Consortium Onboarding:**
 - Sign consortium agreement
 - Receive partner organization approval
 
-✅ **Understand Project Context:**
+**Understand Project Context:**
 - Review project overview
 - Understand WP/Group objectives
 - Identify role and responsibilities
@@ -91,8 +91,8 @@ If you don't have a GitHub account:
 6. Complete the setup wizard
 
 **Username Guidelines:**
-- ✅ Good: `john-smith`, `jsmith`, `john.smith`
-- ❌ Avoid: `cooldude123`, `hackerman`, random strings
+- Good: `john-smith`, `jsmith`, `john.smith`
+- Avoid: `cooldude123`, `hackerman`, random strings
 
 #### 2.2.2 Enabling Two-Factor Authentication (2FA)
 

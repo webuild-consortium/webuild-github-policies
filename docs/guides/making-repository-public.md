@@ -30,24 +30,24 @@ Making repositories public supports:
 
 Consider making a repository public when:
 
-- ✅ Code is stable and well-documented
-- ✅ Security review is complete
-- ✅ No sensitive information is present
-- ✅ Project coordinator approval obtained
-- ✅ Documentation is comprehensive
-- ✅ License is properly applied
-- ✅ EU funding acknowledgments are in place
+- Code is stable and well-documented
+- Security review is complete
+- No sensitive information is present
+- Project coordinator approval obtained
+- Documentation is comprehensive
+- License is properly applied
+- EU funding acknowledgments are in place
 
 ### When to Keep Private
 
 Keep repositories private if:
 
-- ❌ Contains work in progress or experimental code
-- ❌ Includes sensitive or proprietary information
-- ❌ Not yet ready for external contributions
-- ❌ Under embargo or confidentiality agreement
-- ❌ Requires additional security hardening
-- ❌ Documentation is incomplete
+- Contains work in progress or experimental code
+- Includes sensitive or proprietary information
+- Not yet ready for external contributions
+- Under embargo or confidentiality agreement
+- Requires additional security hardening
+- Documentation is incomplete
 
 ## Before You Start
 
@@ -76,11 +76,11 @@ Work Package: WP[X]
 Purpose: [Brief description]
 
 Readiness Checklist:
-✅ Security review completed
-✅ Documentation complete
-✅ No sensitive information
-✅ License properly applied
-✅ EU acknowledgments in place
+- Security review completed
+- Documentation complete
+- No sensitive information
+- License properly applied
+- EU acknowledgments in place
 
 Reason for making public:
 [Explain why this should be public now]

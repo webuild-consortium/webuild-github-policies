@@ -29,12 +29,12 @@ This document establishes licensing policies and guidelines for all code, docume
 
 These guidelines apply to:
 
-✅ All source code repositories
-✅ Documentation and specifications
-✅ Test suites and tools
-✅ Examples and tutorials
-✅ Configuration files and scripts
-✅ Any other project outputs
+- All source code repositories
+- Documentation and specifications
+- Test suites and tools
+- Examples and tutorials
+- Configuration files and scripts
+- Any other project outputs
 
 ### 1.3 Legal Framework
 
@@ -73,23 +73,23 @@ Most WeBuild repositories use Apache License 2.0, including:
 **Note:** Some repositories may not have license properly configured in GitHub metadata. All new repositories should explicitly include Apache 2.0 license.
 
 **Rationale:**
-- ✅ Permissive open-source license
-- ✅ Compatible with commercial use
-- ✅ Provides patent protection
-- ✅ Widely recognized and understood
-- ✅ Allows derivative works
-- ✅ Minimal restrictions on use
+- Permissive open-source license
+- Compatible with commercial use
+- Provides patent protection
+- Widely recognized and understood
+- Allows derivative works
+- Minimal restrictions on use
 
 ### 2.2 When to Use Apache 2.0
 
 Use Apache License 2.0 for:
 
-✅ **Source code** - All programming languages
-✅ **Libraries and frameworks** - Reusable components
-✅ **Tools and utilities** - Development tools
-✅ **APIs and interfaces** - Public interfaces
-✅ **Examples and samples** - Code examples
-✅ **Scripts and automation** - Build and deployment scripts
+**Source code** - All programming languages
+**Libraries and frameworks** - Reusable components
+**Tools and utilities** - Development tools
+**APIs and interfaces** - Public interfaces
+**Examples and samples** - Code examples
+**Scripts and automation** - Build and deployment scripts
 
 ### 2.3 Exceptions to Default License
 
@@ -126,11 +126,11 @@ Every repository MUST include:
 ### 3.2 Key Terms
 
 **Permissions:**
-- ✅ Commercial use
-- ✅ Modification
-- ✅ Distribution
-- ✅ Patent use
-- ✅ Private use
+- Commercial use
+- Modification
+- Distribution
+- Patent use
+- Private use
 
 **Conditions:**
 - ⚠️ License and copyright notice
@@ -138,9 +138,9 @@ Every repository MUST include:
 - ⚠️ Include NOTICE file (if present)
 
 **Limitations:**
-- ❌ Trademark use
-- ❌ Liability
-- ❌ Warranty
+- Trademark use
+- Liability
+- Warranty
 
 ### 3.3 License Text
 
@@ -264,17 +264,17 @@ limitations under the License.
 #### 3.5.3 When to Include Headers
 
 **Include headers in:**
-- ✅ All source code files
-- ✅ Configuration files (where comments allowed)
-- ✅ Build scripts
-- ✅ SQL files
-- ✅ Shell scripts
+- All source code files
+- Configuration files (where comments allowed)
+- Build scripts
+- SQL files
+- Shell scripts
 
 **May omit headers in:**
-- ❌ Generated files (note generation in header)
-- ❌ Very small files (< 10 lines)
-- ❌ Data files (JSON, CSV, etc.)
-- ❌ Binary files
+- Generated files (note generation in header)
+- Very small files (< 10 lines)
+- Data files (JSON, CSV, etc.)
+- Binary files
 
 ### 3.6 NOTICE File
 
@@ -381,13 +381,13 @@ graph TD
 
 Apache 2.0 is compatible with:
 
-✅ **Permissive Licenses:**
+**Permissive Licenses:**
 - MIT License
 - BSD 2-Clause and 3-Clause
 - ISC License
 - Python Software Foundation License
 
-✅ **Copyleft Licenses (one-way):**
+**Copyleft Licenses (one-way):**
 - GPL 3.0 (can incorporate Apache code)
 - LGPL 3.0
 - AGPL 3.0
@@ -403,13 +403,13 @@ Apache 2.0 is compatible with:
 
 | License | Compatible with Apache 2.0 | Notes |
 |---------|---------------------------|-------|
-| MIT | ✅ Yes | Fully compatible |
-| BSD 3-Clause | ✅ Yes | Fully compatible |
-| GPL 2.0 | ❌ No | Incompatible |
-| GPL 3.0 | ✅ Yes (one-way) | Can use Apache in GPL |
-| LGPL 3.0 | ✅ Yes | Compatible |
-| MPL 2.0 | ✅ Yes | Compatible |
-| CC BY 4.0 | ⚠️ Partial | For docs, not code |
+| MIT | Yes | Fully compatible |
+| BSD 3-Clause | Yes | Fully compatible |
+| GPL 2.0 | No | Incompatible |
+| GPL 3.0 | Yes (one-way) | Can use Apache in GPL |
+| LGPL 3.0 | Yes | Compatible |
+| MPL 2.0 | Yes | Compatible |
+| CC BY 4.0 | Partial | For docs, not code |
 
 ---
 
@@ -620,12 +620,12 @@ license = {text = "Apache-2.0"}
 #### 6.1.2 Acceptable Licenses
 
 **Permissive licenses (generally acceptable):**
-- ✅ Apache 2.0
-- ✅ MIT
-- ✅ BSD 2-Clause, 3-Clause
-- ✅ ISC
-- ✅ Python Software Foundation
-- ✅ Unlicense / Public Domain
+- Apache 2.0
+- MIT
+- BSD 2-Clause, 3-Clause
+- ISC
+- Python Software Foundation
+- Unlicense / Public Domain
 
 **Copyleft licenses (use with caution):**
 - ⚠️ LGPL 2.1, 3.0 (linking allowed)
@@ -633,11 +633,11 @@ license = {text = "Apache-2.0"}
 - ⚠️ EPL 2.0 (Eclipse Public License)
 
 **Problematic licenses (avoid):**
-- ❌ GPL 2.0 (incompatible with Apache 2.0)
-- ❌ AGPL (strong copyleft)
-- ❌ Proprietary licenses
-- ❌ "Commons Clause" additions
-- ❌ Licenses with field-of-use restrictions
+- GPL 2.0 (incompatible with Apache 2.0)
+- AGPL (strong copyleft)
+- Proprietary licenses
+- "Commons Clause" additions
+- Licenses with field-of-use restrictions
 
 #### 6.1.3 License Scanning
 

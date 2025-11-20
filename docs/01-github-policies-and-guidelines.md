@@ -72,11 +72,11 @@ These policies aim to:
 
 These policies apply to:
 
-✅ All repositories under the `webuild-consortium` GitHub organization
-✅ All consortium members with GitHub access
-✅ All Work Packages and technical groups
-✅ All types of content (code, documentation, specifications, tests)
-✅ All development environments (DEV, TEST, PROD)
+- All repositories under the `webuild-consortium` GitHub organization
+- All consortium members with GitHub access
+- All Work Packages and technical groups
+- All types of content (code, documentation, specifications, tests)
+- All development environments (DEV, TEST, PROD)
 
 ### 2.3 Relationship to Other Policies
 
@@ -374,7 +374,7 @@ This reflects the consortium's commitment to:
 
 #### 6.2.2 Content Suitable for Public Repositories
 
-✅ **Appropriate for public repositories:**
+**Appropriate for public repositories:**
 - Open source code and libraries
 - Technical specifications and standards
 - API documentation and examples
@@ -485,7 +485,7 @@ In rare cases, repositories may remain private:
 
 #### 7.1.2 Naming Rules
 
-✅ **Do:**
+**Do:**
 - Use lowercase letters
 - Use hyphens (-) to separate words
 - Be descriptive and specific
@@ -493,7 +493,7 @@ In rare cases, repositories may remain private:
 - Keep names concise (< 50 characters)
 - Use consistent terminology
 
-❌ **Don't:**
+**Don't:**
 - Use spaces or special characters
 - Use camelCase or PascalCase
 - Create ambiguous names
@@ -623,21 +623,21 @@ Repositories SHOULD include:
 - **Website:** Link to project website or documentation
 - **Topics:** Relevant tags for discoverability (e.g., `eudi-wallet`, `digital-identity`, `webuild`)
 - **Features:**
-  - ✅ Issues enabled
-  - ✅ Projects enabled (if used)
-  - ✅ Wiki disabled (use docs/ instead)
-  - ✅ Discussions enabled (optional, for community engagement)
+  - Issues enabled
+  - Projects enabled (if used)
+  - Wiki disabled (use docs/ instead)
+  - Discussions enabled (optional, for community engagement)
 
 #### 8.3.2 Branch Protection
 
 **For `main` branch:**
-- ✅ Require pull request reviews (minimum 1 approval)
-- ✅ Require status checks to pass
-- ✅ Require conversation resolution
-- ✅ Require linear history (optional, recommended)
-- ✅ Include administrators in restrictions
-- ❌ Allow force pushes (disabled)
-- ❌ Allow deletions (disabled)
+- Require pull request reviews (minimum 1 approval)
+- Require status checks to pass
+- Require conversation resolution
+- Require linear history (optional, recommended)
+- Include administrators in restrictions
+- Allow force pushes (disabled)
+- Allow deletions (disabled)
 
 See [Branching and Workflow](07-branching-and-workflow.md) for complete branch protection rules.
 
@@ -673,24 +673,24 @@ All code changes MUST:
 
 Reviewers should verify:
 
-✅ **Functionality:**
+**Functionality:**
 - Code works as intended
 - Meets requirements
 - Handles edge cases
 
-✅ **Quality:**
+**Quality:**
 - Follows coding standards
 - Well-structured and maintainable
 - Properly documented
 - Includes appropriate tests
 
-✅ **Security:**
+**Security:**
 - No security vulnerabilities
 - No hardcoded credentials
 - Proper input validation
 - Secure dependencies
 
-✅ **Compliance:**
+**Compliance:**
 - Follows repository guidelines
 - Appropriate license headers
 - No sensitive data

@@ -31,25 +31,25 @@ Thank you for contributing to the WEBUILD consortium! These guidelines help ensu
 
 We welcome various types of contributions:
 
-✅ **Code Contributions:**
+**Code Contributions:**
 - Bug fixes
 - New features
 - Performance improvements
 - Refactoring
 
-✅ **Documentation:**
+**Documentation:**
 - User guides
 - API documentation
 - Tutorials and examples
 - Translation improvements
 
-✅ **Testing:**
+**Testing:**
 - Test cases
 - Test automation
 - Bug reports
 - Quality assurance
 
-✅ **Community:**
+**Community:**
 - Issue triage
 - Code reviews
 - Discussions and feedback
@@ -73,17 +73,17 @@ All contributors must adhere to our Code of Conduct:
 
 Before contributing, ensure you have:
 
-✅ **Access:**
+**Access:**
 - GitHub account
 - Access to WEBUILD organization (see [Onboarding Procedures](03-onboarding-procedures.md))
 - Appropriate repository permissions
 
-✅ **Tools:**
+**Tools:**
 - Git installed and configured
 - Development environment set up
 - Required dependencies installed
 
-✅ **Knowledge:**
+**Knowledge:**
 - Familiarity with Git workflows
 - Understanding of repository purpose
 - Awareness of coding standards
@@ -253,7 +253,7 @@ git checkout -b bugfix/issue-456-fix-login-error
 
 **Best Practices:**
 
-✅ **Do:**
+**Do:**
 - Make focused, logical changes
 - Follow coding standards
 - Write clear, self-documenting code
@@ -261,7 +261,7 @@ git checkout -b bugfix/issue-456-fix-login-error
 - Update relevant documentation
 - Add/update tests
 
-❌ **Don't:**
+**Don't:**
 - Mix unrelated changes
 - Include debugging code
 - Commit commented-out code
@@ -312,13 +312,13 @@ Closes #123"
 
 **Commit Best Practices:**
 
-✅ **Good commits:**
+**Good commits:**
 - Atomic (one logical change)
 - Clear, descriptive messages
 - Reference related issues
 - Explain "why" not just "what"
 
-❌ **Bad commits:**
+**Bad commits:**
 - Multiple unrelated changes
 - Vague messages ("fix stuff", "updates")
 - No context or explanation
@@ -434,20 +434,20 @@ git branch -d feature/issue-123-add-authentication
 
 ### 4.1 General Principles
 
-✅ **Write Clean Code:**
+**Write Clean Code:**
 - Clear and readable
 - Self-documenting where possible
 - Consistent style
 - Properly formatted
 
-✅ **Follow SOLID Principles:**
+**Follow SOLID Principles:**
 - Single Responsibility
 - Open/Closed
 - Liskov Substitution
 - Interface Segregation
 - Dependency Inversion
 
-✅ **Keep It Simple:**
+**Keep It Simple:**
 - Avoid over-engineering
 - Use appropriate abstractions
 - Prefer clarity over cleverness
@@ -584,7 +584,7 @@ except Exception:
 
 ### 4.5 Security Considerations
 
-✅ **Always:**
+**Always:**
 - Validate all inputs
 - Sanitize user data
 - Use parameterized queries
@@ -592,7 +592,7 @@ except Exception:
 - Follow principle of least privilege
 - Keep dependencies updated
 
-❌ **Never:**
+**Never:**
 - Store passwords in plain text
 - Commit secrets or credentials
 - Trust user input
@@ -748,7 +748,7 @@ Use tools like:
 
 ### 6.1 Testing Principles
 
-✅ **All code changes must include tests:**
+**All code changes must include tests:**
 - New features require new tests
 - Bug fixes require regression tests
 - Refactoring maintains test coverage
@@ -840,7 +840,7 @@ mvn test jacoco:report
 
 ### 6.4 Test Best Practices
 
-✅ **Do:**
+**Do:**
 - Write clear, descriptive test names
 - Test one thing per test
 - Use arrange-act-assert pattern
@@ -848,7 +848,7 @@ mvn test jacoco:report
 - Use fixtures and mocks appropriately
 - Keep tests maintainable
 
-❌ **Don't:**
+**Don't:**
 - Write flaky tests
 - Test implementation details
 - Create test dependencies
@@ -980,14 +980,14 @@ Use draft PRs for:
 
 **Responding to Feedback:**
 
-✅ **Do:**
+**Do:**
 - Be open to suggestions
 - Explain your reasoning
 - Make changes promptly
 - Mark conversations as resolved
 - Request re-review when ready
 
-❌ **Don't:**
+**Don't:**
 - Take feedback personally
 - Argue defensively
 - Ignore comments
@@ -1046,20 +1046,20 @@ If you want to review several changes together, click "Add review comment" on mu
 
 **Feedback Examples:**
 
-✅ **Good feedback:**
+**Good feedback:**
 ```markdown
 Consider using a more descriptive variable name here.
 `userAuthToken` would be clearer than `token`.
 ```
 
-❌ **Poor feedback:**
+**Poor feedback:**
 ```markdown
 This is wrong.
 ```
 
 **Review Etiquette:**
 
-✅ **Do:**
+**Do:**
 - Be respectful and constructive
 - Explain the "why" behind suggestions
 - Praise good work
@@ -1067,7 +1067,7 @@ This is wrong.
 - Suggest alternatives
 - Focus on the code, not the person
 
-❌ **Don't:**
+**Don't:**
 - Be dismissive or rude
 - Make personal comments
 - Nitpick minor style issues

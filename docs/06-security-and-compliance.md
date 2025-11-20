@@ -32,11 +32,11 @@ This document establishes security policies and compliance requirements for all 
 
 These guidelines apply to:
 
-✅ All repositories in the organization
-✅ All consortium members and contributors
-✅ All development, testing, and production environments
-✅ All code, documentation, and data
-✅ All third-party integrations and services
+- All repositories in the organization
+- All consortium members and contributors
+- All development, testing, and production environments
+- All code, documentation, and data
+- All third-party integrations and services
 
 ### 1.3 Security Objectives
 
@@ -84,13 +84,13 @@ graph TD
 
 Grant minimum necessary permissions:
 
-✅ **Do:**
+**Do:**
 - Start with minimal access
 - Grant additional access as needed
 - Review permissions regularly
 - Revoke unused access promptly
 
-❌ **Don't:**
+**Don't:**
 - Give admin access by default
 - Share accounts or credentials
 - Leave inactive accounts active
@@ -100,7 +100,7 @@ Grant minimum necessary permissions:
 
 Security should be the default state:
 
-✅ **Default Settings:**
+**Default Settings:**
 - 2FA required for all members
 - Branch protection enabled
 - Secret scanning active
@@ -136,14 +136,15 @@ Never trust, always verify:
 
 **Never:**
 
-❌ Commit secrets or credentials
-❌ Store sensitive data in repositories
-❌ Share accounts or credentials
-❌ Disable security features
-❌ Ignore security warnings
-❌ Use weak or reused passwords
-❌ Access unauthorized resources
-❌ Bypass security controls
+**Never:**
+- Commit secrets or credentials
+- Store sensitive data in repositories
+- Share accounts or credentials
+- Disable security features
+- Ignore security warnings
+- Use weak or reused passwords
+- Access unauthorized resources
+- Bypass security controls
 
 ---
 
@@ -225,14 +226,14 @@ cat ~/.ssh/id_ed25519.pub
 7. Store securely (never commit to code)
 
 **Token Security:**
-- ✅ Use fine-grained tokens when possible
-- ✅ Set shortest practical expiration
-- ✅ Limit scopes to minimum needed
-- ✅ Rotate tokens regularly
-- ✅ Revoke unused tokens
-- ❌ Never commit tokens to code
-- ❌ Don't share tokens
-- ❌ Don't use tokens in URLs
+- Use fine-grained tokens when possible
+- Set shortest practical expiration
+- Limit scopes to minimum needed
+- Rotate tokens regularly
+- Revoke unused tokens
+- Never commit tokens to code
+- Don't share tokens
+- Don't use tokens in URLs
 
 ### 3.2 Authorization
 
@@ -274,13 +275,13 @@ Follow least privilege principle:
 
 **Best Practices:**
 
-- ✅ Log out when finished
-- ✅ Use private browsing for shared devices
-- ✅ Lock screen when away
-- ✅ Clear browser cache on shared devices
-- ✅ Review active sessions regularly
-- ❌ Stay logged in on public computers
-- ❌ Save passwords in browsers on shared devices
+- Log out when finished
+- Use private browsing for shared devices
+- Lock screen when away
+- Clear browser cache on shared devices
+- Review active sessions regularly
+- Stay logged in on public computers (don't)
+- Save passwords in browsers on shared devices (don't)
 
 **Review Active Sessions:**
 
@@ -570,14 +571,14 @@ def require_auth(f):
 
 **Security Requirements:**
 
-- ✅ Use strong password hashing (bcrypt, Argon2)
-- ✅ Implement rate limiting
-- ✅ Use secure session management
-- ✅ Implement proper authorization checks
-- ✅ Use HTTPS for all communications
-- ❌ Never store passwords in plain text
-- ❌ Don't use weak hashing (MD5, SHA1)
-- ❌ Don't trust client-side validation alone
+- Use strong password hashing (bcrypt, Argon2)
+- Implement rate limiting
+- Use secure session management
+- Implement proper authorization checks
+- Use HTTPS for all communications
+- Never store passwords in plain text
+- Don't use weak hashing (MD5, SHA1)
+- Don't trust client-side validation alone
 
 #### 5.1.3 Error Handling
 
@@ -600,11 +601,11 @@ except DatabaseError as e:
 
 **Best Practices:**
 
-- ✅ Log detailed errors server-side
-- ✅ Return generic messages to users
-- ✅ Don't expose stack traces
-- ✅ Don't reveal system information
-- ✅ Handle errors gracefully
+- Log detailed errors server-side
+- Return generic messages to users
+- Don't expose stack traces
+- Don't reveal system information
+- Handle errors gracefully
 
 #### 5.1.4 Cryptography
 
@@ -630,13 +631,13 @@ def decrypt(encrypted_data, key):
 
 **Cryptography Rules:**
 
-- ✅ Use established libraries (cryptography, libsodium)
-- ✅ Use strong algorithms (AES-256, RSA-2048+)
-- ✅ Generate secure random keys
-- ✅ Protect encryption keys
-- ❌ Never implement your own crypto
-- ❌ Don't use weak algorithms (DES, RC4)
-- ❌ Don't hardcode keys
+- Use established libraries (cryptography, libsodium)
+- Use strong algorithms (AES-256, RSA-2048+)
+- Generate secure random keys
+- Protect encryption keys
+- Never implement your own crypto
+- Don't use weak algorithms (DES, RC4)
+- Don't hardcode keys
 
 ### 5.2 Code Review for Security
 
@@ -894,20 +895,22 @@ pip freeze > requirements.txt
 
 **Never store in repositories:**
 
-❌ Names and contact information
-❌ Email addresses
-❌ Phone numbers
-❌ Physical addresses
-❌ IP addresses
-❌ User IDs (if personally identifiable)
-❌ Any other personal data
+**Never store in repositories:**
+- Names and contact information
+- Email addresses
+- Phone numbers
+- Physical addresses
+- IP addresses
+- User IDs (if personally identifiable)
+- Any other personal data
 
 **If personal data needed for testing:**
 
-✅ Use synthetic/fake data
-✅ Anonymize real data
-✅ Use data generators
-✅ Obtain explicit consent (if real data required)
+**If personal data needed for testing:**
+- Use synthetic/fake data
+- Anonymize real data
+- Use data generators
+- Obtain explicit consent (if real data required)
 
 #### 7.1.2 Data Minimization
 
@@ -972,11 +975,12 @@ pip freeze > requirements.txt
 
 **Encrypt:**
 
-✅ Data at rest (databases, files)
-✅ Data in transit (HTTPS, TLS)
-✅ Backups
-✅ Sensitive configuration
-✅ Communication channels
+**Encrypt:**
+- Data at rest (databases, files)
+- Data in transit (HTTPS, TLS)
+- Backups
+- Sensitive configuration
+- Communication channels
 
 #### 7.3.2 Encryption Standards
 
@@ -1058,16 +1062,17 @@ graph TD
 **For security researchers:**
 
 **Do:**
-- ✅ Report privately first
-- ✅ Provide detailed information
-- ✅ Allow time for fix (90 days)
-- ✅ Coordinate disclosure
+**Do:**
+- Report privately first
+- Provide detailed information
+- Allow time for fix (90 days)
+- Coordinate disclosure
 
 **Don't:**
-- ❌ Publicly disclose immediately
-- ❌ Exploit vulnerabilities
-- ❌ Access unauthorized data
-- ❌ Disrupt services
+- Publicly disclose immediately
+- Exploit vulnerabilities
+- Access unauthorized data
+- Disrupt services
 
 #### 8.2.2 Reporting Vulnerabilities
 
@@ -1101,8 +1106,8 @@ Include:
 
 | Version | Supported |
 |---------|-----------|
-| 1.x.x   | ✅ Yes    |
-| < 1.0   | ❌ No     |
+| 1.x.x   | Yes    |
+| < 1.0   | No     |
 ```
 
 #### 8.2.3 Security Advisories

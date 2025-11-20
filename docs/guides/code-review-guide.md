@@ -415,24 +415,24 @@ Use parameterized queries instead.
 
 #### Do's
 
-✅ **Be respectful and professional**
-✅ **Focus on the code, not the person**
-✅ **Assume good intentions**
-✅ **Ask questions rather than make demands**
-✅ **Praise good work**
-✅ **Provide constructive feedback**
-✅ **Explain your reasoning**
-✅ **Offer to discuss complex issues**
+**Be respectful and professional**
+**Focus on the code, not the person**
+**Assume good intentions**
+**Ask questions rather than make demands**
+**Praise good work**
+**Provide constructive feedback**
+**Explain your reasoning**
+**Offer to discuss complex issues**
 
 #### Don'ts
 
-❌ **Don't be condescending**
-❌ **Don't use sarcasm**
-❌ **Don't make it personal**
-❌ **Don't nitpick excessively**
-❌ **Don't block on style preferences**
-❌ **Don't approve without reviewing**
-❌ **Don't delay reviews unnecessarily**
+**Don't be condescending**
+**Don't use sarcasm**
+**Don't make it personal**
+**Don't nitpick excessively**
+**Don't block on style preferences**
+**Don't approve without reviewing**
+**Don't delay reviews unnecessarily**
 
 ### Example Comments
 

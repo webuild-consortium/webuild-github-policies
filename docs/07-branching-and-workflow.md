@@ -31,10 +31,10 @@ This document establishes standardized Git branching strategies and workflows fo
 
 These guidelines apply to:
 
-✅ All consortium repositories
-✅ All contributors and maintainers
-✅ All development activities
-✅ All environments (DEV, TEST, PROD)
+- All consortium repositories
+- All contributors and maintainers
+- All development activities
+- All environments (DEV, TEST, PROD)
 
 ### 1.3 Workflow Goals
 
@@ -174,23 +174,23 @@ graph TD
 
 **Advantages:**
 
-✅ **Simple to understand and adopt** - Minimal learning curve
-✅ **Flexible** - Adapts to different team sizes and project types
-✅ **Maintains stability** - Main branch always deployable
-✅ **Supports parallel work** - Multiple features developed simultaneously
-✅ **Clear history** - Each feature is a distinct unit
-✅ **Easy rollback** - Can revert specific features
-✅ **Facilitates code review** - Natural PR workflow
-✅ **Scales well** - Works for 1-100+ developers
+**Simple to understand and adopt** - Minimal learning curve
+**Flexible** - Adapts to different team sizes and project types
+**Maintains stability** - Main branch always deployable
+**Supports parallel work** - Multiple features developed simultaneously
+**Clear history** - Each feature is a distinct unit
+**Easy rollback** - Can revert specific features
+**Facilitates code review** - Natural PR workflow
+**Scales well** - Works for 1-100+ developers
 
 **When It Works Best:**
 
-- ✅ Most software development projects
-- ✅ Continuous deployment environments
-- ✅ Teams of any size
-- ✅ Projects requiring code review
-- ✅ Agile/iterative development
-- ✅ Open source projects
+- Most software development projects
+- Continuous deployment environments
+- Teams of any size
+- Projects requiring code review
+- Agile/iterative development
+- Open source projects
 
 ### 2.5 Alternative Strategies
 
@@ -295,12 +295,12 @@ git branch -d feature/123-user-authentication
 
 **Best Practices:**
 
-- ✅ Always branch from latest `main`
-- ✅ Keep branches focused and small
-- ✅ Update regularly from `main`
-- ✅ Delete after merge
-- ❌ Don't let branches live too long (< 2 weeks ideal)
-- ❌ Don't mix unrelated changes
+- Always branch from latest `main`
+- Keep branches focused and small
+- Update regularly from `main`
+- Delete after merge
+- Don't let branches live too long (< 2 weeks ideal)
+- Don't mix unrelated changes
 
 #### 3.2.2 Bugfix Branches
 
@@ -357,12 +357,12 @@ git branch -d hotfix/345-fix-critical-security-issue
 
 **Best Practices:**
 
-- ✅ Branch from main (production)
-- ✅ Keep changes minimal
-- ✅ Test thoroughly
-- ✅ Merge to both main and develop
-- ✅ Tag immediately after merge
-- ✅ Document in CHANGELOG
+- Branch from main (production)
+- Keep changes minimal
+- Test thoroughly
+- Merge to both main and develop
+- Tag immediately after merge
+- Document in CHANGELOG
 
 #### 3.2.4 Documentation Branches (Optional)
 
@@ -398,14 +398,14 @@ docs/456-add-deployment-guide
 
 **Description Rules:**
 
-✅ **Do:**
+**Do:**
 - Use lowercase
 - Use hyphens for spaces
 - Be descriptive but concise
 - Include issue number
 - Use present tense
 
-❌ **Don't:**
+**Don't:**
 - Use spaces or special characters
 - Make it too long (> 50 chars)
 - Use vague descriptions
@@ -413,7 +413,7 @@ docs/456-add-deployment-guide
 
 **Examples:**
 
-✅ Good:
+**Good:**
 ```
 feature/123-add-jwt-authentication
 bugfix/456-fix-memory-leak-in-cache
@@ -421,7 +421,7 @@ hotfix/789-patch-sql-injection
 docs/012-update-api-documentation
 ```
 
-❌ Bad:
+**Bad:**
 ```
 my-feature
 fix
@@ -747,7 +747,7 @@ Closes #123
 
 ### 5.3 Commit Best Practices
 
-✅ **Do:**
+**Do:**
 
 - Write clear, descriptive messages
 - Use imperative mood ("add" not "added")
@@ -758,7 +758,7 @@ Closes #123
 - Reference issues and PRs
 - Make atomic commits (one logical change)
 
-❌ **Don't:**
+**Don't:**
 
 - Write vague messages ("fix stuff", "updates")
 - Include multiple unrelated changes
@@ -818,12 +818,12 @@ Updated files
 
 **When to Commit:**
 
-✅ After completing a logical unit
-✅ Before taking a break
-✅ Before switching branches
-✅ After fixing a bug
-✅ After adding tests
-✅ Before rebasing
+- After completing a logical unit
+- Before taking a break
+- Before switching branches
+- After fixing a bug
+- After adding tests
+- Before rebasing
 
 ---
 
@@ -949,12 +949,12 @@ git push origin feature/123 --force-with-lease
 
 **Conflict Resolution Tips:**
 
-- ✅ Understand both changes
-- ✅ Test after resolution
-- ✅ Ask for help if unsure
-- ✅ Communicate with team
-- ❌ Don't blindly accept one side
-- ❌ Don't leave conflict markers
+- Understand both changes
+- Test after resolution
+- Ask for help if unsure
+- Communicate with team
+- Don't blindly accept one side
+- Don't leave conflict markers
 
 ---
 
@@ -1065,7 +1065,7 @@ Example: 1.2.3
 
 ### 8.1 General Best Practices
 
-✅ **Do:**
+**Do:**
 
 - Keep branches short-lived (< 2 weeks)
 - Update from main/develop frequently
@@ -1078,7 +1078,7 @@ Example: 1.2.3
 - Follow naming conventions
 - Document significant decisions
 
-❌ **Don't:**
+**Don't:**
 
 - Commit directly to main
 - Force push to shared branches
@@ -1395,11 +1395,11 @@ graph TD
 
 **When to Use:**
 
-✅ Projects with scheduled release cycles
-✅ Multiple versions in production simultaneously
-✅ Need for strict release management
-✅ Large teams with formal processes
-✅ Libraries or frameworks with LTS versions
+- Projects with scheduled release cycles
+- Multiple versions in production simultaneously
+- Need for strict release management
+- Large teams with formal processes
+- Libraries or frameworks with LTS versions
 
 **Branch Types:**
 
@@ -1491,11 +1491,11 @@ graph TD
 
 **When to Use:**
 
-✅ Mature CI/CD practices in place
-✅ Experienced development teams
-✅ Continuous deployment environment
-✅ High degree of test automation
-✅ Small, incremental changes preferred
+- Mature CI/CD practices in place
+- Experienced development teams
+- Continuous deployment environment
+- High degree of test automation
+- Small, incremental changes preferred
 
 **Requirements:**
 
