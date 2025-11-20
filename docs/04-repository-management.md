@@ -356,9 +356,6 @@ The WeBuild project is co-funded by the European Union. However, the views and o
 ## Contact
 
 For questions and support, please open an issue in this repository.
-```
-
----
 
 ## 4. Repository Configuration
 
@@ -400,26 +397,26 @@ Topics: webuild-consortium, eudi-wallet, [relevant-topics]
 
 **Protection Rules:**
 
-**Require pull request reviews before merging**
-- Required approving reviews: 1
-- Dismiss stale pull request approvals when new commits are pushed
-- Require review from Code Owners (if CODEOWNERS file exists)
+- Require pull request reviews before merging
+  - Required approving reviews: 1
+  - Dismiss stale pull request approvals when new commits are pushed
+  - Require review from Code Owners (if CODEOWNERS file exists)
 
-**Require status checks to pass before merging**
-- Require branches to be up to date before merging
-- Status checks: (add CI/CD checks)
+- Require status checks to pass before merging
+  - Require branches to be up to date before merging
+  - Status checks: (add CI/CD checks)
 
-**Require conversation resolution before merging**
+- Require conversation resolution before merging
 
-**Require signed commits** (optional, recommended)
+- Require signed commits (optional, recommended)
 
-**Require linear history** (optional)
+- Require linear history (optional)
 
-**Include administrators**
+- Include administrators
 
-**Allow force pushes** (disabled)
+- Allow force pushes (disabled)
 
-**Allow deletions** (disabled)
+- Allow deletions (disabled)
 
 #### 4.2.2 Additional Branch Protection (Optional)
 
@@ -468,24 +465,24 @@ Only add individual collaborators for:
 
 **Enable:**
 
-**Dependency graph**
-- Automatically enabled for public repos
-- Shows repository dependencies
+- **Dependency graph**
+  - Automatically enabled for public repos
+  - Shows repository dependencies
 
-**Dependabot alerts**
-- Get notified of security vulnerabilities
-- Automatic security updates
+- **Dependabot alerts**
+  - Get notified of security vulnerabilities
+  - Automatic security updates
 
-**Dependabot security updates**
-- Automatically create PRs for security fixes
+- **Dependabot security updates**
+  - Automatically create PRs for security fixes
 
-**Secret scanning**
-- Detect committed secrets
-- Receive alerts for exposed secrets
+- **Secret scanning**
+  - Detect committed secrets
+  - Receive alerts for exposed secrets
 
-**Code scanning** (if applicable)
-- Automated code security analysis
-- Configure via GitHub Actions
+- **Code scanning** (if applicable)
+  - Automated code security analysis
+  - Configure via GitHub Actions
 
 #### 4.4.2 Security Policy
 
@@ -635,8 +632,6 @@ Closes #
 - [ ] Documentation updated
 - [ ] No new warnings
 ```
-
----
 
 ## 5. Maintaining Repositories
 
@@ -960,8 +955,6 @@ docs/
 - [ ] Add missing sections
 - [ ] Update examples
 - [ ] Review screenshots
-
----
 
 ## 6. Repository Templates
 
