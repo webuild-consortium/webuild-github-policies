@@ -1685,19 +1685,15 @@ repos:
 
 ---
 
-## Document Maintenance
+**Document Control:**
 
-**Review Schedule:**
-- **Quarterly:** Review and update security practices
-- **Annually:** Comprehensive policy review
-- **As Needed:** Update for new threats or regulations
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | October 2025 | Technical Coordinator | Initial draft |
+| 1.1 | November 2025 | Technical Coordinator | General improvements |
 
-**Change Log:**
-
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | 2025-10 | Initial version | [Author] |
+**Next Review Date:** January 2026
 
 ---
 
-**Document End**
+*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator.*

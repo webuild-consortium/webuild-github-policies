@@ -1004,6 +1004,7 @@ Submit feedback via:
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
+| 1.1 | November 2025 | Technical Coordinator | General improvements |
 
 **Next Review Date:** January 2026
 

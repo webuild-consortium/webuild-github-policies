@@ -924,4 +924,15 @@ We're excited to have you on the team. If you have any questions during onboardi
 
 ---
 
-*Last updated: October 2025*
+**Document Control:**
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | October 2025 | Technical Coordinator | Initial draft |
+| 1.1 | November 2025 | Technical Coordinator | General improvements |
+
+**Next Review Date:** January 2026
+
+---
+
+*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator.*
