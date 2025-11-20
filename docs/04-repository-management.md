@@ -1228,12 +1228,12 @@ Deleted By: [Name]
 - Avoid abbreviations unless standard
 
 **Examples:**
-- ✅ `wp4-trust-infrastructure`
-- ✅ `webuild-documentation`
-- ✅ `interoperability-test-suite`
-- ❌ `WP4_Trust`
-- ❌ `repo1`
-- ❌ `temp-test`
+- Good: `wp4-trust-infrastructure`
+- Good: `webuild-documentation`
+- Good: `interoperability-test-suite`
+- Bad: `WP4_Trust`
+- Bad: `repo1`
+- Bad: `temp-test`
 
 ### 9.3 Documentation Standards
 
