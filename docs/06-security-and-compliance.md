@@ -1198,3 +1198,506 @@ Include:
 - [ ] Data subject rights procedures
 
 #### 9.1.2 NIS2 Directive (Network an
+d Information Systems Security)
+
+**Key Requirements:**
+
+- **Risk Management:** Implement cybersecurity risk management measures
+- **Incident Handling:** Establish incident response procedures
+- **Business Continuity:** Ensure operational continuity
+- **Supply Chain Security:** Secure supply chain and supplier relationships
+- **Security Measures:** Implement appropriate technical and organizational measures
+- **Reporting:** Report significant incidents to authorities
+
+**Implementation:**
+
+- [ ] Cybersecurity risk assessment
+- [ ] Incident response plan
+- [ ] Business continuity plan
+- [ ] Supply chain security measures
+- [ ] Security monitoring and logging
+- [ ] Incident reporting procedures
+
+#### 9.1.3 eIDAS Regulation
+
+**For digital identity and trust services:**
+
+- **Electronic Identification:** Secure authentication mechanisms
+- **Electronic Signatures:** Legally binding digital signatures
+- **Trust Services:** Certified trust service providers
+- **Security Requirements:** High security standards
+- **Cross-Border Recognition:** EU-wide interoperability
+
+**Implementation:**
+
+- [ ] Secure authentication implementation
+- [ ] Digital signature support
+- [ ] Trust service integration
+- [ ] Security certification
+- [ ] Compliance documentation
+
+### 9.2 Consortium Agreements
+
+#### 9.2.1 Grant Agreement Compliance
+
+**EU Horizon Europe Requirements:**
+
+- **Open Access:** Research outputs publicly accessible
+- **Data Management:** FAIR data principles
+- **Intellectual Property:** IP rights management
+- **Ethical Requirements:** Ethics compliance
+- **Reporting:** Regular progress reporting
+
+**Implementation:**
+
+- [ ] Open access publication plan
+- [ ] Data management plan
+- [ ] IP agreement documentation
+- [ ] Ethics approval (if required)
+- [ ] Reporting procedures
+
+#### 9.2.2 Consortium Agreement
+
+**Internal Consortium Rules:**
+
+- **Access Rights:** Background and foreground IP
+- **Confidentiality:** Confidential information handling
+- **Publication:** Publication approval process
+- **Liability:** Liability and indemnification
+- **Dispute Resolution:** Conflict resolution procedures
+
+**Implementation:**
+
+- [ ] Access rights documentation
+- [ ] Confidentiality procedures
+- [ ] Publication approval workflow
+- [ ] Liability insurance
+- [ ] Dispute resolution process
+
+### 9.3 Licensing Compliance
+
+#### 9.3.1 Open Source Licenses
+
+**Apache License 2.0 (Default):**
+
+- Permissive license
+- Patent grant included
+- Trademark protection
+- Attribution required
+- Compatible with most licenses
+
+**License Compatibility:**
+
+| Our License | Compatible With | Incompatible With |
+|-------------|----------------|-------------------|
+| Apache 2.0 | MIT, BSD, GPL 3.0 | GPL 2.0 |
+
+#### 9.3.2 Dependency Licenses
+
+**Check all dependencies:**
+
+```bash
+# Python
+pip-licenses
+
+# Node.js
+npm install -g license-checker
+license-checker --summary
+
+# Check for incompatible licenses
+license-checker --failOn 'GPL-2.0'
+```
+
+**License Review:**
+
+- [ ] Review all dependency licenses
+- [ ] Check compatibility with Apache 2.0
+- [ ] Document license obligations
+- [ ] Avoid incompatible licenses
+- [ ] Update LICENSE file if needed
+
+### 9.4 Export Control
+
+#### 9.4.1 Cryptography Export
+
+**EU Dual-Use Regulation:**
+
+- Strong cryptography may require export authorization
+- Open source exemptions may apply
+- Check country-specific restrictions
+- Document cryptographic capabilities
+
+**Implementation:**
+
+- [ ] Identify cryptographic components
+- [ ] Check export control requirements
+- [ ] Obtain necessary authorizations
+- [ ] Document compliance
+- [ ] Update export documentation
+
+#### 9.4.2 Restricted Countries
+
+**Be aware of:**
+
+- EU sanctions and embargoes
+- US export restrictions
+- Country-specific regulations
+- Contributor location restrictions
+
+---
+
+## 10. Security Best Practices
+
+### 10.1 Development Environment
+
+#### 10.1.1 Secure Workstation
+
+**Workstation Security:**
+
+- [ ] Keep OS and software updated
+- [ ] Use full disk encryption
+- [ ] Enable firewall
+- [ ] Install antivirus/antimalware
+- [ ] Use strong passwords
+- [ ] Enable screen lock
+- [ ] Regular backups
+- [ ] Secure Wi-Fi connections
+
+#### 10.1.2 Development Tools
+
+**Secure Tool Configuration:**
+
+```bash
+# Git configuration
+git config --global user.signingkey [GPG-KEY-ID]
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+
+# SSH configuration
+# ~/.ssh/config
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+```
+
+**IDE Security:**
+
+- Use trusted extensions only
+- Review extension permissions
+- Keep IDE updated
+- Configure security plugins
+- Disable telemetry if concerned
+
+### 10.2 Secure Communication
+
+#### 10.2.1 Communication Channels
+
+**Approved Channels:**
+
+| Purpose | Channel | Security |
+|---------|---------|----------|
+| General Discussion | GitHub Discussions | Public |
+| Code Review | GitHub Pull Requests | Public/Private |
+| Security Issues | Private Security Advisory | Private |
+| Sensitive Topics | Encrypted Email | Encrypted |
+| Real-time Chat | Secure Messaging | Encrypted |
+
+#### 10.2.2 Email Security
+
+**Best Practices:**
+
+- Use PGP/GPG encryption for sensitive emails
+- Verify sender identity
+- Don't click suspicious links
+- Don't open unexpected attachments
+- Use secure email providers
+- Enable spam filtering
+
+**PGP Setup:**
+
+```bash
+# Generate PGP key
+gpg --full-generate-key
+
+# Export public key
+gpg --armor --export your.email@example.com > public-key.asc
+
+# Add to GitHub
+# Settings → SSH and GPG keys → New GPG key
+```
+
+### 10.3 Security Training
+
+#### 10.3.1 Required Training
+
+**All members must complete:**
+
+- [ ] Security awareness training
+- [ ] GDPR compliance training
+- [ ] Secure coding practices
+- [ ] Incident response procedures
+- [ ] Phishing awareness
+
+**Training Resources:**
+
+- OWASP Security Training
+- GitHub Security Lab
+- SANS Security Awareness
+- EU Cybersecurity Training
+- Consortium-specific training
+
+#### 10.3.2 Ongoing Education
+
+**Stay Updated:**
+
+- Follow security blogs and news
+- Attend security conferences
+- Participate in security workshops
+- Review security advisories
+- Share knowledge with team
+
+**Recommended Resources:**
+
+- OWASP Top 10
+- SANS Reading Room
+- Krebs on Security
+- Schneier on Security
+- GitHub Security Blog
+
+### 10.4 Security Checklist
+
+#### 10.4.1 Daily Security Tasks
+
+- [ ] Review security alerts
+- [ ] Check for suspicious activity
+- [ ] Verify access logs
+- [ ] Monitor CI/CD pipelines
+- [ ] Review new issues/PRs for security concerns
+
+#### 10.4.2 Weekly Security Tasks
+
+- [ ] Review Dependabot alerts
+- [ ] Update dependencies
+- [ ] Check security scan results
+- [ ] Review access permissions
+- [ ] Backup important data
+
+#### 10.4.3 Monthly Security Tasks
+
+- [ ] Full security audit
+- [ ] Access review
+- [ ] Update security documentation
+- [ ] Review incident logs
+- [ ] Security training updates
+- [ ] Compliance check
+
+#### 10.4.4 Quarterly Security Tasks
+
+- [ ] Comprehensive security assessment
+- [ ] Penetration testing (if applicable)
+- [ ] Policy review and updates
+- [ ] Team security training
+- [ ] Disaster recovery testing
+- [ ] Compliance audit
+
+### 10.5 Security Metrics
+
+#### 10.5.1 Key Metrics
+
+**Track and monitor:**
+
+| Metric | Target | Frequency |
+|--------|--------|-----------|
+| Time to patch critical vulnerabilities | < 24 hours | Continuous |
+| Dependency vulnerabilities | 0 high/critical | Weekly |
+| Failed login attempts | < 5 per user/day | Daily |
+| Security incidents | 0 | Monthly |
+| Security training completion | 100% | Quarterly |
+| Code security scan pass rate | > 95% | Per PR |
+
+#### 10.5.2 Reporting
+
+**Monthly Security Report:**
+
+```markdown
+# Security Report - [Month Year]
+
+## Summary
+- Total security alerts: [number]
+- Critical vulnerabilities: [number]
+- Incidents: [number]
+- Response time: [average]
+
+## Vulnerabilities
+- Detected: [number]
+- Resolved: [number]
+- Pending: [number]
+
+## Access Management
+- New users: [number]
+- Removed users: [number]
+- Permission changes: [number]
+
+## Training
+- Completion rate: [percentage]
+- New training modules: [number]
+
+## Recommendations
+- [Action items]
+```
+
+---
+
+## Appendix A: Security Tools
+
+### A.1 Recommended Tools
+
+**Static Analysis:**
+- Bandit (Python)
+- ESLint Security (JavaScript)
+- Semgrep (Multi-language)
+- SonarQube
+- CodeQL
+
+**Dependency Scanning:**
+- Dependabot (GitHub)
+- Snyk
+- OWASP Dependency-Check
+- npm audit
+- pip-audit
+
+**Secret Scanning:**
+- TruffleHog
+- git-secrets
+- detect-secrets
+- GitHub Secret Scanning
+
+**Container Security:**
+- Trivy
+- Clair
+- Anchore
+- Docker Bench
+
+**Infrastructure Security:**
+- Terraform security scanner
+- Checkov
+- tfsec
+
+### A.2 Tool Configuration
+
+**Example: Pre-commit Configuration**
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ['-r', 'src/']
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: detect-private-key
+```
+
+---
+
+## Appendix B: Incident Response Playbooks
+
+### B.1 Compromised Credentials
+
+**Immediate Actions:**
+
+1. Revoke compromised credentials
+2. Generate new credentials
+3. Update all services
+4. Review access logs
+5. Notify affected parties
+6. Document incident
+
+### B.2 Data Breach
+
+**Immediate Actions:**
+
+1. Contain the breach
+2. Assess scope and impact
+3. Notify authorities (within 72 hours for GDPR)
+4. Notify affected individuals
+5. Implement remediation
+6. Document and report
+
+### B.3 Malware Detection
+
+**Immediate Actions:**
+
+1. Isolate affected systems
+2. Scan all systems
+3. Remove malware
+4. Restore from clean backups
+5. Update security measures
+6. Document incident
+
+---
+
+## Appendix C: Security Contacts
+
+### C.1 Internal Contacts
+
+- **Technical Coordinator:** [Name, Email]
+- **Security Team:** [Email]
+- **WP Leads:** [Contact list]
+- **Emergency Contact:** [Phone]
+
+### C.2 External Contacts
+
+- **CERT-EU:** cert-eu@ec.europa.eu
+- **National CERT:** [Country-specific]
+- **GitHub Security:** security@github.com
+- **EU Data Protection:** [Contact]
+
+---
+
+## Appendix D: Glossary
+
+**2FA:** Two-Factor Authentication
+**CVE:** Common Vulnerabilities and Exposures
+**GDPR:** General Data Protection Regulation
+**NIS2:** Network and Information Systems Security Directive
+**OWASP:** Open Web Application Security Project
+**PAT:** Personal Access Token
+**SAST:** Static Application Security Testing
+**DAST:** Dynamic Application Security Testing
+**XSS:** Cross-Site Scripting
+**CSRF:** Cross-Site Request Forgery
+**SQL Injection:** Structured Query Language Injection
+
+---
+
+## Document Maintenance
+
+**Review Schedule:**
+- **Quarterly:** Review and update security practices
+- **Annually:** Comprehensive policy review
+- **As Needed:** Update for new threats or regulations
+
+**Change Log:**
+
+| Version | Date | Changes | Author |
+|---------|------|---------|--------|
+| 1.0 | 2025-10 | Initial version | [Author] |
+
+---
+
+**Document End**
