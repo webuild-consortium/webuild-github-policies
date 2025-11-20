@@ -1,7 +1,7 @@
 # WEBUILD Consortium - GitHub Policies and Guidelines
 
 **Version:** 1.0
-**Date:** October 2025
+**Date:** November 2025
 **Status:** Draft for Review
 
 ---
@@ -146,7 +146,7 @@ The WEBUILD project is co-funded by the European Union. However, the views and o
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | October 2025 | Initial draft for review | Technical Coordinator |
+| 1.0 | November 2025 | Initial draft for review | Technical Coordinator |
 
 ---
 
@@ -156,5 +156,5 @@ For questions or support regarding these policies and guidelines, please contact
 
 ---
 
-**Last Updated:** October 2025
+**Last Updated:** November 2025
 **Next Review:** January 2026
