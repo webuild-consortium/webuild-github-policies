@@ -2,6 +2,12 @@
 WEBUILD-GitHub-Policies-and-Guidelines-v*.md
 tips/*.md
 tasks/*.md
+docs/mp4
+docs/webm
+docs/convert*.sh
+docs/PROJECT_MANAGEMENT_HANDBOOK.md
+build/
+tasks/
 
 # Operating System Files
 .DS_Store
