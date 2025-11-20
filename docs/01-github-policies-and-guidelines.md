@@ -118,75 +118,70 @@ These GitHub policies complement and must be read in conjunction with:
 
 #### 3.2.1 Technical Coordinator
 
-**Responsibilities:**
-- Overall GitHub organization administration
-- Policy definition and updates
-- Organization-wide settings and security
-- Owner consolidation and management
-- Cross-WP coordination
-- Dispute resolution
+**Who:** [Technical Coordinator Name]
 
-**Permissions:** Organization Owner
+**What they do:**
+- Manages GitHub organization settings and security
+- Adds/removes members from the organization
+- Approves new repositories and major changes
+- Updates policies when needed
+- Helps resolve conflicts between teams
+
+**GitHub Permission:** Organization Owner
 
 #### 3.2.2 Work Package (WP) Leads
 
-**Responsibilities:**
-- WP-level repository oversight
-- Team member access management within WP
-- WP-specific policy implementation
-- Repository creation approval
-- Quality assurance for WP outputs
-- Coordination with Technical Coordinator
+**What they do:**
+- Oversee repositories in their Work Package
+- Approve repository creation requests
+- Manage team member access within their WP
+- Ensure quality of WP deliverables
 
-**Permissions:** Team Admin for WP team
+**GitHub Permission:** Admin on WP team
 
 #### 3.2.3 Group Leads
 
-**Responsibilities:**
-- Group-level repository management
-- Team member access for their group
-- Day-to-day repository operations
-- Code review coordination
-- Issue and project management
-- Documentation maintenance
+**What they do:**
+- Manage day-to-day repository operations
+- Add/remove team members in their group
+- Coordinate code reviews
+- Manage issues and project boards
+- Keep documentation up to date
 
-**Permissions:** Repository Admin or Team Maintainer
+**GitHub Permission:** Admin on repositories they manage
 
-#### 3.2.4 Repository Maintainers
+#### 3.2.4 Maintainers
 
-**Responsibilities:**
-- Code review and merge approval
-- Issue triage and management
-- Branch protection enforcement
-- Release management
-- Documentation updates
-- Community engagement
+**What they do:**
+- Review and merge pull requests
+- Triage and manage issues
+- Create releases
+- Update documentation
+- Help contributors
 
-**Permissions:** Repository Write access with review rights
+**GitHub Permission:** Write access with merge rights
 
 #### 3.2.5 Contributors
 
-**Responsibilities:**
-- Code and documentation contributions
-- Issue reporting and discussion
-- Pull request submission
-- Code review participation
-- Adherence to contribution guidelines
+**What they do:**
+- Submit code and documentation changes
+- Report issues and bugs
+- Participate in discussions
+- Review others' pull requests
 
-**Permissions:** Repository Write or Read access (depending on contribution model)
+**GitHub Permission:** Write or Read (depending on repository)
 
 ### 3.3 Decision-Making Authority
 
-| Decision Type | Authority | Consultation Required |
-|--------------|-----------|----------------------|
+| Decision | Who Decides | Who to Consult |
+|----------|-------------|----------------|
 | Organization settings | Technical Coordinator | WP Leads |
-| New repository creation | WP/Group Lead | Technical Coordinator |
-| Repository deletion | Technical Coordinator | WP Lead, Group Lead |
-| Access grants (WP-level) | WP Lead | Group Lead |
-| Access grants (Group-level) | Group Lead | - |
-| Making repository public | WP Lead + Technical Coordinator | All maintainers |
-| License changes | Technical Coordinator | Legal team, WP Lead |
-| Policy updates | Technical Coordinator | WP Leads, Group Leads |
+| Create new repository | WP/Group Lead | Technical Coordinator (for approval) |
+| Delete repository | Technical Coordinator | WP Lead, Group Lead |
+| Add team members | Group Lead | - |
+| Make repository public | WP Lead + Technical Coordinator | - |
+| Change license | Technical Coordinator | WP Lead |
+| Update policies | Technical Coordinator | WP Leads |
 
 ### 3.4 Owner Consolidation
 
