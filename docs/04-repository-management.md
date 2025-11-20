@@ -185,15 +185,15 @@ Submit to WP/Group lead:
 ## Repository Creation Request
 
 ### Basic Information
-- **Repository Name:** wp4-trust-api
-- **Purpose:** Trust infrastructure API implementation
-- **Type:** Code Repository
-- **Work Package:** WP4
-- **Group:** Trust Infrastructure
-- **Visibility:** Public
+- **Repository Name:** [e.g., wp4-new-component]
+- **Purpose:** [Brief description of purpose]
+- **Type:** [Code/Documentation/Specification]
+- **Work Package:** [e.g., WP4]
+- **Group:** [e.g., Trust Infrastructure]
+- **Visibility:** Public (default)
 
 ### Justification
-Explain why this repository is needed and how it fits into the project architecture.
+Explain why this repository is needed and how it fits into the project.
 
 ### Scope
 - What will be included
@@ -205,18 +205,16 @@ Explain why this repository is needed and how it fits into the project architect
 - **Maintainers:** [List names]
 - **Initial Contributors:** [List names]
 
-### Technical Details
-- **Primary Language:** Python
-- **Framework:** FastAPI
-- **Dependencies:** [Key dependencies]
+### Technical Details (if applicable)
+- **Primary Language:** [e.g., Python, TypeScript]
+- **Key Dependencies:** [List main dependencies]
 - **Integration Points:** [Other repos/services]
 
 ### Initial Structure
 ```
-wp4-trust-api/
-├── src/
-├── tests/
+[repository-name]/
 ├── docs/
+├── [src/ or other relevant directories]
 ├── README.md
 ├── LICENSE
 └── CONTRIBUTING.md
@@ -224,12 +222,7 @@ wp4-trust-api/
 
 ### Timeline
 - **Requested Start Date:** [YYYY-MM-DD]
-- **Expected First Release:** [YYYY-MM-DD]
-
-### Resources Required
-- CI/CD pipeline: Yes
-- External services: [List if any]
-- Special permissions: [List if any]
+- **Expected First Activity:** [YYYY-MM-DD]
 
 ### Approvals
 - [ ] Group Lead: [Name]
@@ -289,12 +282,12 @@ wp4-trust-api/
 
 2. **Configure Repository:**
    ```
-   Repository name: wp4-trust-api
-   Description: Trust infrastructure API implementation for WEBUILD
-   Visibility: Public
+   Repository name: [as approved in request]
+   Description: [Brief description for WeBuild project]
+   Visibility: Public (default for WeBuild)
    Initialize with:
    ☑ README
-   ☑ .gitignore (select template)
+   ☑ .gitignore (select appropriate template)
    ☑ License: Apache License 2.0
    ```
 
@@ -317,18 +310,18 @@ wp4-trust-api/
 
 ```bash
 # Create repository
-gh repo create webuild-consortium/wp4-trust-api \
+gh repo create webuild-consortium/[repository-name] \
   --public \
-  --description "Trust infrastructure API implementation" \
+  --description "[Repository description]" \
   --license apache-2.0 \
-  --gitignore Python
+  --gitignore [template]
 
 # Clone locally
-gh repo clone webuild-consortium/wp4-trust-api
+gh repo clone webuild-consortium/[repository-name]
 
 # Set up initial structure
-cd wp4-trust-api
-mkdir -p src tests docs
+cd [repository-name]
+mkdir -p docs
 touch CONTRIBUTING.md
 git add .
 git commit -m "chore: initial repository structure"
@@ -356,42 +349,34 @@ Brief description of the repository purpose.
 
 ## Overview
 
-Detailed description of what this repository contains and its role in the WEBUILD project.
-
-## Features
-
-- Feature 1
-- Feature 2
-- Feature 3
+Detailed description of what this repository contains and its role in the WeBuild project.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Requirement 1
-- Requirement 2
+- [List any prerequisites]
 
 ### Installation
 
 ```bash
-# Installation commands
+# Installation commands if applicable
 ```
 
 ### Usage
 
 ```bash
-# Usage examples
+# Usage examples if applicable
 ```
 
 ## Documentation
 
-- [API Documentation](docs/api.md)
-- [Architecture](docs/architecture.md)
+- [Additional documentation](docs/)
 - [Contributing Guidelines](CONTRIBUTING.md)
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
 
 ## License
 
@@ -401,11 +386,11 @@ Licensed under the Apache License 2.0 - see [LICENSE](LICENSE) file for details.
 
 ![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
 
-The WEBUILD project is co-funded by the European Union. However, the views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the granting authority. Neither the European Union nor the granting authority can be held responsible.
+The WeBuild project is co-funded by the European Union. However, the views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the granting authority. Neither the European Union nor the granting authority can be held responsible.
 
 ## Contact
 
-For questions and support, please open an issue or contact the maintainers.
+For questions and support, please open an issue in this repository.
 ```
 
 ---
@@ -420,10 +405,10 @@ For questions and support, please open an issue or contact the maintainers.
 
 **Configure:**
 ```
-Name: wp4-trust-api
-Description: Trust infrastructure API implementation for WEBUILD
-Website: https://webuild-consortium.eu (if applicable)
-Topics: webuild-consortium, eudi-wallet, trust-infrastructure, api
+Name: [repository-name]
+Description: [Brief description for WeBuild project]
+Website: https://www.webuildconsortium.eu (if applicable)
+Topics: webuild-consortium, eudi-wallet, [relevant-topics]
 ```
 
 **Features:**
@@ -497,9 +482,9 @@ If your repository uses GitFlow or another strategy requiring a `develop` branch
 
 | Team | Permission Level | Purpose |
 |------|-----------------|---------|
-| `@webuild-consortium/wp4-trust` | Write | Group members |
-| `@webuild-consortium/wp4-all` | Read | WP visibility |
-| `@webuild-consortium/trust-maintainers` | Maintain | Repository maintainers |
+| `@webuild-consortium/[group-team]` | Write | Group members |
+| `@webuild-consortium/wp4-all` | Read | WP visibility (if applicable) |
+| `@webuild-consortium/[group]-maintainers` | Maintain | Repository maintainers (if team exists) |
 
 #### 4.3.2 Individual Collaborators
 

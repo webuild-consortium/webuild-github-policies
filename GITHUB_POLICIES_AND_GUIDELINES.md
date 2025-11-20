@@ -1,5 +1,5 @@
 
-# WEBUILD GitHub Policies and Guidelines
+# WeBuild GitHub Policies and Guidelines
 
 ## Document Information
 
@@ -11,7 +11,7 @@
 
 ## Introduction
 
-The WEBUILD Consortium leverages GitHub as its primary platform for technology collaboration across all Work Packages (WPs). This document establishes the foundational policies and guidelines that govern how GitHub is utilized throughout the consortium to facilitate joint development, review, and management of technical artifacts.
+The WeBuild Consortium leverages GitHub as its primary platform for technology collaboration across all Work Packages (WPs). This document establishes the foundational policies and guidelines that govern how GitHub is utilized throughout the consortium to facilitate joint development, review, and management of technical artifacts.
 
 GitHub serves as the central hub where consortium partners collaborate on specifications, interface definitions, test environments, source code, and other technical deliverables. By standardizing our approach to GitHub usage, we ensure that all partners can work together efficiently while maintaining the highest standards of transparency, security, and accountability.
 
@@ -24,7 +24,7 @@ This policy framework serves multiple critical purposes within the WEBUILD Conso
 ### Primary Objectives
 
 **Establish a Common Framework**
-Create a unified approach to using GitHub that all consortium partners can follow, regardless of their individual organizational practices. This common framework reduces friction in cross-organizational collaboration and ensures that all partners understand the expected workflows and procedures.
+Create a unified approach to using GitHub that all consortium partners can follow. This common framework reduces friction in cross-organizational collaboration and ensures that all partners understand the expected workflows and procedures.
 
 **Support Collaborative Technical Work**
 Enable seamless collaboration between partners on technical deliverables. GitHub's collaborative features—including pull requests, code reviews, and issue tracking—are leveraged to facilitate meaningful technical discussions and joint development efforts.
@@ -47,7 +47,7 @@ Ensure that all GitHub activities comply with project governance requirements, d
 
 ### Consortium GitHub Organization
 
-The WEBUILD Consortium maintains a dedicated GitHub organization at [`https://github.com/webuild-consortium/`](https://github.com/webuild-consortium/). This organization serves as the authoritative location for all technical collaboration within the project. Hosting all repositories under a single organization provides several key benefits:
+The WeBuild Consortium maintains a dedicated GitHub organization at [`https://github.com/webuild-consortium/`](https://github.com/webuild-consortium/). This organization serves as the authoritative location for all technical collaboration within the project. Hosting all repositories under a single organization provides several key benefits:
 
 - **Centralized Access Management:** Simplifies the process of granting and revoking access as partners join or leave the consortium
 - **Unified Visibility:** Enables consortium leadership to maintain oversight of all technical activities
@@ -74,12 +74,13 @@ The repository structure follows this pattern:
 
 ```
 webuild-consortium/
-├── wp4-qtsp-group/
-├── wp4-trust-group/
-├── wp4-semantics-group/
-├── wp4-wallets-group/
-├── wp4-interop-test-bed/
-└── webuild-policies/
+├── .github/                    # Organization profile
+├── architecture/               # Conformance Specifications and ADRs
+├── wp4-interop-test-bed/      # Interoperability test bed
+├── wp4-qtsp-group/            # QTSP group resources
+├── wp4-semantics-group/       # Semantics group resources
+├── wp4-trust-group/           # Trust infrastructure group
+└── wp4-wallets-group/         # Wallet providers group
 ```
 
 Repositories typically contain:
@@ -167,7 +168,7 @@ Every repository within the consortium organization must include these foundatio
 The README serves as the entry point for anyone accessing the repository. It should clearly explain the repository's purpose, provide orientation for new contributors, and link to other relevant documentation. A well-crafted README significantly reduces the barrier to entry for partners joining ongoing technical work.
 
 **LICENSE File**
-The LICENSE file specifies the legal terms under which the repository's contents can be used, modified, and distributed. The default license is Apache License 2.0. Clear licensing is essential for ensuring that consortium outputs can be properly utilized by partners and, where appropriate, by the broader community.
+The LICENSE file specifies the legal terms under which the repository's contents can be used, modified, and distributed. The default license is Apache License 2.0, which is used by most WeBuild repositories. Clear licensing is essential for ensuring that consortium outputs can be properly utilized by partners and, where appropriate, by the broader community.
 
 **CONTRIBUTING Guide**
 The CONTRIBUTING guide explains how partners can contribute to the repository. It should detail the expected workflow for proposing changes, coding standards or documentation conventions to follow, and the review process that contributions will undergo.
@@ -253,7 +254,7 @@ Subject: GitHub Access Request - [Member Name]
 
 ## Access Requirements
 - Organization Access: Yes
-- Teams: [@webuild-consortium/wp4-trust]
+- Teams: [@webuild-consortium/[team-name]]
 - Repositories: [List specific repos if limited access]
 - Permission Level: [Read/Write/Admin]
 
@@ -694,15 +695,15 @@ Follow a clear naming convention:
 ## Repository Creation Request
 
 ### Basic Information
-- **Repository Name:** wp4-trust-api
-- **Purpose:** Trust infrastructure API implementation
-- **Type:** Code Repository
-- **Work Package:** WP4
-- **Group:** Trust Infrastructure
-- **Visibility:** Public
+- **Repository Name:** [e.g., wp4-new-component]
+- **Purpose:** [Brief description]
+- **Type:** [Code/Documentation/Specification]
+- **Work Package:** [e.g., WP4]
+- **Group:** [e.g., Trust Infrastructure]
+- **Visibility:** Public (default)
 
 ### Justification
-Explain why this repository is needed and how it fits into the project architecture.
+Explain why this repository is needed and how it fits into the project.
 
 ### Scope
 - What will be included
@@ -830,6 +831,16 @@ Classify repositories with topics to improve discoverability and organization:
 
 **Standard License:** Apache License 2.0
 
+**Current Status in WeBuild:**
+Most WeBuild repositories use Apache License 2.0, including:
+- [`architecture`](https://github.com/webuild-consortium/architecture)
+- [`wp4-interop-test-bed`](https://github.com/webuild-consortium/wp4-interop-test-bed)
+- [`wp4-qtsp-group`](https://github.com/webuild-consortium/wp4-qtsp-group)
+- [`wp4-trust-group`](https://github.com/webuild-consortium/wp4-trust-group)
+- [`.github`](https://github.com/webuild-consortium/.github)
+
+**Note:** Some repositories may not have license properly configured in GitHub metadata. All new repositories should explicitly include Apache 2.0 license.
+
 **Rationale:**
 - Permissive open-source license
 - Compatible with commercial use
@@ -850,7 +861,7 @@ Classify repositories with topics to improve discoverability and organization:
 **Copyright Notice:**
 
 ```
-Copyright 2025 WEBUILD Consortium
+Copyright 2025 WeBuild Consortium
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -868,7 +879,7 @@ limitations under the License.
 **Source File Headers:**
 
 ```python
-# Copyright 2025 WEBUILD Consortium
+# Copyright 2025 WeBuild Consortium
 # SPDX-License-Identifier: Apache-2.0
 ```
 
@@ -1615,7 +1626,7 @@ All repositories MUST include EU funding acknowledgment:
 
 ![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
 
-The WEBUILD project is co-funded by the European Union. However, the views and
+The WeBuild project is co-funded by the European Union. However, the views and
 opinions expressed are those of the author(s) only and do not necessarily reflect
 those of the European Union or the granting authority. Neither the European Union
 nor the granting authority can be held responsible.
@@ -1645,7 +1656,7 @@ Maintaining the quality and integrity of repository contents through consistent 
 
 ### Project Closure and Archival
 
-At the conclusion of the WEBUILD project, all repositories will be archived under the consortium GitHub organization. This archival process ensures:
+At the conclusion of the WeBuild project, all repositories will be archived under the consortium GitHub organization. This archival process ensures:
 
 **Long-Term Preservation**
 Technical outputs remain accessible for future reference, even after the consortium has concluded its active work. This preservation is important for demonstrating project impact and enabling future work to build on consortium achievements.
@@ -1773,7 +1784,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 
 1. Check repository documentation
 2. Search existing issues
-3. Ask in repository discussions
+3. Open an issue in the relevant repository
 4. Contact repository maintainers
 5. Escalate to WP/Group lead
 
@@ -1782,6 +1793,11 @@ Archived repositories remain readable, allowing former partners and the broader 
 1. Review this documentation
 2. Contact your WP/Group lead
 3. Reach out to Technical Coordinator
+
+**Communication Channels:**
+- GitHub Issues (for technical questions)
+- Consortium internal channels (for policy/administrative questions)
+- Note: Additional support channels (e.g., Slack) may be established as needed
 
 ### Training and Resources
 
@@ -1803,16 +1819,16 @@ Archived repositories remain readable, allowing former partners and the broader 
 
 ### Contact Information
 
-**Technical Coordinator:** [Contact via consortium channels]
+**Technical Coordinator:** Contact via consortium internal channels
 
-**WP4 Lead:** [Contact via consortium channels]
+**WP4 Lead:** Contact via consortium internal channels
 
-**Group Leads:**
-- QTSP Group: [Contact info]
-- Trust Group: [Contact info]
-- Semantics Group: [Contact info]
-- Wallets Group: [Contact info]
-- Interop Test Bed: [Contact info]
+**Group Leads:** Contact via consortium internal channels or repository discussions
+
+**Support:**
+- For technical issues: Open an issue in the relevant repository
+- For policy questions: Contact your WP/Group lead
+- For access requests: Contact Technical Coordinator through consortium channels
 
 ---
 
@@ -1968,7 +1984,7 @@ git push origin branch-name --force-with-lease
 
 ## Conclusion
 
-These policies and guidelines establish the foundation for effective, secure, and compliant use of GitHub within the WEBUILD Consortium. By following these practices, partners can collaborate effectively across organizational boundaries while maintaining the quality, security, and integrity of technical work.
+These policies and guidelines establish the foundation for effective, secure, and compliant use of GitHub within the WeBuild Consortium. By following these practices, partners can collaborate effectively across organizational boundaries while maintaining the quality, security, and integrity of technical work.
 
 Success in collaborative technical work requires more than just tools—it requires shared understanding of how those tools should be used. These guidelines provide that shared understanding, enabling partners to focus on the technical challenges at hand rather than on process questions.
 
@@ -1980,10 +1996,11 @@ As the consortium's work evolves, these policies may be refined based on practic
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | October 2025 | Initial version based on Project Management Handbook | WEBUILD Technical Coordination |
-| 2.0 | October 2025 | Enhanced with content from 7 policy documents: GitHub Policies and Guidelines, Contribution Guidelines, Onboarding Procedures, Repository Management, Licensing Guidelines, Security and Compliance, and Branching and Workflow | WEBUILD Technical Coordination |
-| 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WEBUILD Technical Coordination |
-| 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WEBUILD Technical Coordination |
+| 1.0 | October 2025 | Initial version based on Project Management Handbook | WeBuild Technical Coordination |
+| 2.0 | October 2025 | Enhanced with content from 7 policy documents: GitHub Policies and Guidelines, Contribution Guidelines, Onboarding Procedures, Repository Management, Licensing Guidelines, Security and Compliance, and Branching and Workflow | WeBuild Technical Coordination |
+| 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WeBuild Technical Coordination |
+| 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WeBuild Technical Coordination |
+| 4.1 | November 2025 | Updated to reflect actual WeBuild repository structure, licenses, and communication channels | WeBuild Technical Coordination |
 
 **Next Review Date:** January 2026
 

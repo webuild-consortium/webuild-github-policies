@@ -209,13 +209,13 @@ The WEBUILD consortium organizes repositories by Work Package and functional gro
 
 ```
 webuild-consortium/
-├── wp4-qtsp-group/
-├── wp4-trust-group/
-├── wp4-semantics-group/
-├── wp4-wallets-group/
-├── wp4-interop-test-bed/
-├── webuild-policies/          (this repository)
-└── [other WP repositories]/
+├── .github/                    # Organization profile
+├── architecture/               # Conformance Specifications and ADRs
+├── wp4-interop-test-bed/      # Interoperability test bed
+├── wp4-qtsp-group/            # QTSP group resources
+├── wp4-semantics-group/       # Semantics group resources
+├── wp4-trust-group/           # Trust infrastructure group
+└── wp4-wallets-group/         # Wallet providers group
 ```
 
 ### 4.2 Repository Categories
@@ -521,11 +521,13 @@ In rare cases, repositories may remain private:
 [wp-number]-[group-name]-[purpose]
 ```
 
-**Examples:**
-- `wp4-qtsp-group` - WP4 QTSP group repository
-- `wp4-trust-group` - WP4 Trust Infrastructure group
-- `wp4-interop-test-bed` - WP4 Interoperability test bed
-- `wp4-semantics-group` - WP4 Semantics group
+**Examples from actual WeBuild repositories:**
+- `architecture` - Conformance Specifications and ADRs
+- `wp4-qtsp-group` - QTSP group public resources
+- `wp4-trust-group` - Trust Infrastructure group resources
+- `wp4-interop-test-bed` - Interoperability test bed
+- `wp4-semantics-group` - Semantics group resources
+- `wp4-wallets-group` - Wallet providers group
 
 #### 7.1.2 Naming Rules
 
@@ -922,7 +924,7 @@ nor the granting authority can be held responsible.
 **For GitHub Issues:**
 1. Check repository documentation
 2. Search existing issues
-3. Ask in repository discussions
+3. Open an issue in the relevant repository
 4. Contact repository maintainers
 5. Escalate to WP/Group lead
 
@@ -930,6 +932,11 @@ nor the granting authority can be held responsible.
 1. Review this documentation
 2. Contact your WP/Group lead
 3. Reach out to Technical Coordinator
+
+**Communication Channels:**
+- GitHub Issues (for technical questions)
+- Consortium internal channels (for policy/administrative questions)
+- Note: Additional support channels (e.g., Slack) may be established as needed
 
 ### 13.2 Training and Onboarding
 
@@ -1015,16 +1022,16 @@ Submit feedback via:
 
 ### Appendix B: Contact Information
 
-**Technical Coordinator:** [Contact via consortium channels]
+**Technical Coordinator:** Contact via consortium internal channels
 
-**WP4 Lead:** [Contact via consortium channels]
+**WP4 Lead:** Contact via consortium internal channels
 
-**Group Leads:**
-- QTSP Group: [Contact info]
-- Trust Group: [Contact info]
-- Semantics Group: [Contact info]
-- Wallets Group: [Contact info]
-- Interop Test Bed: [Contact info]
+**Group Leads:** Contact via consortium internal channels or repository discussions
+
+**Support:**
+- For technical issues: Open an issue in the relevant repository
+- For policy questions: Contact your WP/Group lead
+- For access requests: Contact Technical Coordinator through consortium channels
 
 ### Appendix C: Glossary
 

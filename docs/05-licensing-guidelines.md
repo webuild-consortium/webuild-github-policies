@@ -62,6 +62,16 @@ Licensing within WEBUILD must comply with:
 
 **Default License:** Apache License 2.0
 
+**Current Status in WeBuild:**
+Most WeBuild repositories use Apache License 2.0, including:
+- [`architecture`](https://github.com/webuild-consortium/architecture) - Apache 2.0
+- [`wp4-interop-test-bed`](https://github.com/webuild-consortium/wp4-interop-test-bed) - Apache 2.0
+- [`wp4-qtsp-group`](https://github.com/webuild-consortium/wp4-qtsp-group) - Apache 2.0
+- [`wp4-trust-group`](https://github.com/webuild-consortium/wp4-trust-group) - Apache 2.0 (per README)
+- [`.github`](https://github.com/webuild-consortium/.github) - Apache 2.0
+
+**Note:** Some repositories may not have license properly configured in GitHub metadata. All new repositories should explicitly include Apache 2.0 license.
+
 **Rationale:**
 - ✅ Permissive open-source license
 - ✅ Compatible with commercial use
@@ -153,7 +163,7 @@ Every repository MUST include:
 **Standard Copyright Notice:**
 
 ```
-Copyright [year] WEBUILD Consortium
+Copyright [year] WeBuild Consortium
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -168,6 +178,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
+**Note:** Use "WeBuild Consortium" (not "WEBUILD") to match actual repository usage.
+
 ### 3.5 Source File Headers
 
 #### 3.5.1 Recommended Header Format
@@ -176,7 +188,7 @@ limitations under the License.
 
 ```
 /*
- * Copyright 2025 WEBUILD Consortium
+ * Copyright 2025 WeBuild Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,7 +208,7 @@ limitations under the License.
 
 **Python:**
 ```python
-# Copyright 2025 WEBUILD Consortium
+# Copyright 2025 WeBuild Consortium
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -214,7 +226,7 @@ limitations under the License.
 **JavaScript/TypeScript:**
 ```javascript
 /**
- * Copyright 2025 WEBUILD Consortium
+ * Copyright 2025 WeBuild Consortium
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,7 +245,7 @@ limitations under the License.
 **HTML/XML:**
 ```html
 <!--
-  Copyright 2025 WEBUILD Consortium
+  Copyright 2025 WeBuild Consortium
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -277,11 +289,11 @@ Create a NOTICE file when:
 **NOTICE File Format:**
 
 ```
-WEBUILD Consortium
-Copyright 2025 WEBUILD Consortium
+WeBuild Consortium
+Copyright 2025 WeBuild Consortium
 
-This product includes software developed by the WEBUILD Consortium
-(https://webuild-consortium.eu).
+This product includes software developed by the WeBuild Consortium
+(https://www.webuildconsortium.eu).
 
 This project is co-funded by the European Union.
 
@@ -450,8 +462,8 @@ Add to README.md:
 ```markdown
 ## License
 
-Licensed to the WEBUILD Consortium under the consortium agreements.
-The WEBUILD Consortium licenses this file to you under the
+Licensed to the WeBuild Consortium under the consortium agreements.
+The WeBuild Consortium licenses this file to you under the
 [Apache License, Version 2.0](LICENSE) (the "License"); you may not
 use these files except in compliance with the License.
 
@@ -477,7 +489,7 @@ Add badge to README.md:
 For new files, include header at the top:
 
 ```python
-# Copyright 2025 WEBUILD Consortium
+# Copyright 2025 WeBuild Consortium
 # SPDX-License-Identifier: Apache-2.0
 
 # [Your code here]
@@ -492,7 +504,7 @@ For new files, include header at the top:
 go install github.com/google/addlicense@latest
 
 # Add headers to all files
-addlicense -c "WEBUILD Consortium" -l apache .
+addlicense -c "WeBuild Consortium" -l apache .
 
 # Check for missing headers
 addlicense -check .
@@ -525,7 +537,7 @@ Create snippet in `.vscode/snippets.code-snippets`:
     "prefix": "apache-header",
     "body": [
       "/*",
-      " * Copyright 2025 WEBUILD Consortium",
+      " * Copyright 2025 WeBuild Consortium",
       " *",
       " * Licensed under the Apache License, Version 2.0 (the \"License\");",
       " * you may not use this file except in compliance with the License.",
@@ -989,7 +1001,7 @@ A: Stack Overflow content is licensed under CC BY-SA. Small snippets (< 10 lines
 
 **Apache 2.0 Short Header:**
 ```
-Copyright 2025 WEBUILD Consortium
+Copyright 2025 WeBuild Consortium
 SPDX-License-Identifier: Apache-2.0
 ```
 
@@ -1017,9 +1029,9 @@ SPDX-License-Identifier: Apache-2.0
 ### Appendix C: Contact Information
 
 **For licensing questions:**
-- Technical Coordinator: [Contact via consortium channels]
-- Legal Team: [Contact via consortium channels]
-- WP Leads: [Contact via consortium channels]
+- Technical Coordinator: Contact via consortium internal channels
+- WP Leads: Contact via consortium internal channels
+- Repository maintainers: Open an issue in the relevant repository
 
 ---
 
