@@ -1,0 +1,84 @@
+docs/mp4
+docs/webm
+docs/convert*.sh
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+*~
+
+# Node.js (if documentation tools are used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python (if documentation tools are used)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Build and Distribution
+dist/
+build/
+*.egg-info/
+.cache/
+
+# Documentation Build Outputs
+_site/
+.jekyll-cache/
+.jekyll-metadata
+docs/_build/
+site/
+
+# Markdown Preview
+*.html
+
+# Markdown to DOCX Conversion
+temp_with_images.md
+
+# Local Environment Files
+.env
+.env.local
+.env.*.local
+
+# Personal Notes (not to be committed)
+NOTES.md
+TODO.md
+personal/
+scratch/
+
+# Backup Files
+*.orig
