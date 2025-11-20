@@ -69,8 +69,6 @@ New members must:
 
 ✅ **Complete Consortium Onboarding:**
 - Sign consortium agreement
-- Complete data protection training
-- Acknowledge code of conduct
 - Receive partner organization approval
 
 ✅ **Understand Project Context:**
@@ -86,7 +84,7 @@ New members must:
 If you don't have a GitHub account:
 
 1. Go to [https://github.com/signup](https://github.com/signup)
-2. Enter your email address (use work email)
+2. Enter your email address
 3. Create a strong password
 4. Choose a username (professional, preferably your name)
 5. Verify your email address
@@ -120,30 +118,23 @@ Complete your GitHub profile:
 
 ```markdown
 Name: Your Full Name
-Bio: Role at Organization | WEBUILD Consortium
-Company: Your Organization Name
-Location: Your City, Country
-Email: your.work.email@organization.com
+Bio: Role | WEBUILD Consortium
 ```
 
-**Add Profile Picture:**
+**Add Profile Picture (Optional):**
 - Professional photo preferred
 - Clear, recognizable image
-- Appropriate for professional context
 
 ### 2.3 Required Information
 
 Before requesting access, gather:
 
 - [ ] GitHub username
-- [ ] Work email address
+- [ ] Email address
 - [ ] Organization/Partner name
 - [ ] Work Package assignment
 - [ ] Group assignment (if applicable)
-- [ ] Role in the project
 - [ ] Required repository access
-- [ ] Start date
-- [ ] Expected duration (if temporary)
 
 ---
 
@@ -366,7 +357,7 @@ sudo dnf install git
 # Set your name (use real name)
 git config --global user.name "Your Full Name"
 
-# Set your email (use work email)
+# Set your email
 git config --global user.email "your.email@organization.com"
 
 # Set default branch name
@@ -564,12 +555,8 @@ Complete within first week:
 - [ ] Read [GitHub Policies and Guidelines](01-github-policies-and-guidelines.md)
 - [ ] Review [Contribution Guidelines](02-contribution-guidelines.md)
 - [ ] Understand [Branching and Workflow](07-branching-and-workflow.md)
-- [ ] Review [Security and Compliance](06-security-and-compliance.md)
 - [ ] Read repository README files
-- [ ] Attend onboarding session (if scheduled)
-- [ ] Meet with WP/Group lead
-- [ ] Meet assigned buddy/mentor
-- [ ] Join communication channels
+- [ ] Meet with WP/Group lead (if needed)
 - [ ] Set up development environment
 
 ### 6.2 Training Materials

@@ -181,14 +181,11 @@ Additional documentation may include architecture diagrams, decision records, me
 
 ### Account Requirements
 
-All consortium members participating in GitHub activities must use their own personal GitHub accounts. This requirement serves several important purposes:
+All consortium members participating in GitHub activities must have their own GitHub accounts.
 
-- **Individual Accountability:** Ensures that all actions can be traced to specific individuals
-- **Audit Trail Integrity:** Maintains the authenticity of contribution histories
-- **Security Best Practices:** Prevents the security risks associated with shared accounts
-- **Professional Recognition:** Allows individuals to receive proper credit for their contributions
+**You may use your personal GitHub account.** There is no requirement to create a separate work account or use a work email address in your GitHub account.
 
-Partners should use professional email addresses associated with their organizations when configuring their GitHub accounts for consortium work. Configure your Git client with the correct email address to ensure commits are properly attributed:
+Configure your Git client to ensure commits are properly attributed:
 
 ```bash
 git config --global user.name "Your Full Name"
@@ -278,52 +275,16 @@ Subject: GitHub Access Request - [Member Name]
 
 ### Access Review and Maintenance
 
-```mermaid
-gantt
-    title Access Review Schedule
-    dateFormat YYYY-MM-DD
-    section Monthly Reviews
-    Review new access grants           :m1, 2025-01-01, 30d
-    Check for anomalies               :m2, 2025-02-01, 30d
-    Verify active users               :m3, 2025-03-01, 30d
-
-    section Quarterly Reviews
-    Full access audit                 :q1, 2025-01-01, 90d
-    Remove inactive users             :q2, 2025-04-01, 90d
-    Update permissions                :q3, 2025-07-01, 90d
-    Document changes                  :q4, 2025-10-01, 90d
-
-    section Annual Reviews
-    Comprehensive security review     :a1, 2025-01-01, 365d
-    Update access policies            :crit, a2, 2025-12-01, 30d
-    Refresh training                  :a3, 2025-12-01, 30d
-```
-
-Access rights are reviewed on a regular basis to ensure that:
+Access rights are reviewed as needed to ensure that:
 
 - Permissions remain appropriate for each member's current role in the consortium
 - Former partners or members who have left the consortium have their access revoked
 - New partners receive appropriate access in a timely manner
 - The principle of least privilege is maintained (members have only the access they need)
 
-**Review Schedule:**
+**Review Process:**
 
-**Monthly:**
-- Review new access grants
-- Check for anomalies
-- Verify active users
-
-**Quarterly:**
-- Full access audit
-- Remove inactive users
-- Update permissions
-- Document changes
-
-**Annually:**
-- Comprehensive security review
-- Update access policies
-- Refresh training
-- Audit compliance
+WP/Group leads review team membership when changes occur and submit access updates to the Technical Coordinator as needed.
 
 ### Access Revocation
 
@@ -1527,8 +1488,6 @@ Before requesting access, new members must:
 
 **Complete Consortium Onboarding:**
 - Sign consortium agreement
-- Complete data protection training
-- Acknowledge code of conduct
 - Receive partner organization approval
 
 **Understand Project Context:**

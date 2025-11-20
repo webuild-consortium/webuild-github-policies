@@ -268,8 +268,7 @@ See [Repository Management](04-repository-management.md) for detailed lifecycle 
 1. **Least Privilege:** Users receive minimum necessary permissions
 2. **Need-to-Know:** Access granted based on role requirements
 3. **Hierarchical Control:** WP/Group leads manage their team access
-4. **Regular Review:** Access rights reviewed quarterly
-5. **Prompt Revocation:** Access removed when no longer needed
+4. **Prompt Revocation:** Access removed when no longer needed
 
 ### 5.2 Access Request Process
 
@@ -346,10 +345,12 @@ Teams are organized hierarchically:
 
 ### 5.5 Access Review and Revocation
 
-#### 5.5.1 Regular Reviews
+#### 5.5.1 Access Reviews
 
-**Quarterly Review Process:**
-1. WP/Group leads review team membership
+Access rights are reviewed as needed to ensure members have appropriate permissions.
+
+**Review Process:**
+1. WP/Group leads review team membership when changes occur
 2. Identify inactive or departed members
 3. Submit revocation requests to Technical Coordinator
 4. Update team documentation
