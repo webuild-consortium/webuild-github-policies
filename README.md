@@ -6,21 +6,21 @@
 
 ---
 
-## 📋 Overview
+## Overview
 
-This repository contains the comprehensive GitHub policies, guidelines, and procedures for the WEBUILD consortium. These documents establish the framework for collaborative technical development, version control, and repository management across all Work Packages (WPs) and partner organizations.
+This repository contains GitHub policies, guidelines, and procedures for the WEBUILD consortium. These documents establish the framework for collaborative technical development, version control, and repository management across all Work Packages (WPs) and partner organizations.
 
 **Organization:** [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
 
 ---
 
-## 🎯 Main Deliverable
+## Main Deliverable
 
-**📄 [GITHUB_POLICIES_AND_GUIDELINES.md](GITHUB_POLICIES_AND_GUIDELINES.md)**
+**[GITHUB_POLICIES_AND_GUIDELINES.md](GITHUB_POLICIES_AND_GUIDELINES.md)**
 
-**📄 [GITHUB_POLICIES_AND_GUIDELINES.docx](GITHUB_POLICIES_AND_GUIDELINES.docx)**
+**[GITHUB_POLICIES_AND_GUIDELINES.docx](GITHUB_POLICIES_AND_GUIDELINES.docx)**
 
-This is the **primary deliverable document** that consolidates all GitHub policies, guidelines, and procedures for the WEBUILD consortium. It serves as the comprehensive, single-source reference for:
+This is the primary deliverable document that consolidates all GitHub policies, guidelines, and procedures for the WEBUILD consortium. It covers:
 
 - Repository management and governance
 - Contribution workflows and code review processes
@@ -29,28 +29,26 @@ This is the **primary deliverable document** that consolidates all GitHub polici
 - Licensing and compliance requirements
 - Onboarding procedures for new members
 
-**Start here for the complete, consolidated policies and guidelines.**
-
-### 📦 Available Formats
+### Available Formats
 
 - **Markdown:** [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) - Source document
-- **Word Document:** [`GITHUB_POLICIES_AND_GUIDELINES.docx`](GITHUB_POLICIES_AND_GUIDELINES.docx) - Pre-converted for easy distribution
+- **Word Document:** [`GITHUB_POLICIES_AND_GUIDELINES.docx`](GITHUB_POLICIES_AND_GUIDELINES.docx) - Pre-converted for distribution
 - **Diagrams:** [`mermaid_images/`](mermaid_images/) - Rendered Mermaid diagrams used in the document
 
-### 🔧 Document Conversion
+### Document Conversion
 
-The Word document has been pre-generated using Pandoc with rendered Mermaid diagrams. If you need to regenerate it or customize the conversion:
+The Word document has been pre-generated using Pandoc with rendered Mermaid diagrams. If you need to regenerate it:
 
 1. **Setup:** Follow the instructions in [`INSTALLATION.md`](INSTALLATION.md) to install Pandoc, Mermaid CLI, and required dependencies
 2. **Usage:** See [`USAGE.md`](USAGE.md) for detailed conversion instructions and customization options
 3. **Quick Convert:** Use the provided [`Makefile`](Makefile) for convenient conversion commands (`make docx`)
 4. **Diagrams:** Mermaid diagrams are pre-rendered and cached in the [`mermaid_images/`](mermaid_images/) folder for efficient regeneration
 
-> 💡 **Note:** The `docs/` folder contains supporting reference materials that were used to build the main deliverable. While these documents provide additional context and detailed breakdowns, the [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) file is the authoritative source.
+> **Note:** The `docs/` folder contains supporting reference materials that were used to build the main deliverable. The [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) file is the authoritative source.
 
 ---
 
-## 📚 Documentation Structure
+## Documentation Structure
 
 ### Core Policy Documents
 
@@ -77,7 +75,7 @@ The Word document has been pre-generated using Pandoc with rendered Mermaid diag
 
 ---
 
-## 🎯 Quick Start
+## Quick Start
 
 ### For New Members
 Start with the [Onboarding Procedures](docs/03-onboarding-procedures.md) to get access and understand the basics.
@@ -93,7 +91,7 @@ Ensure you understand [Security and Compliance](docs/06-security-and-compliance.
 
 ---
 
-## 🏗️ WEBUILD Consortium Structure
+## WEBUILD Consortium Structure
 
 The WEBUILD consortium uses GitHub for collaborative technical development across multiple Work Packages:
 
@@ -108,30 +106,30 @@ Each group maintains its own repositories while following consortium-wide polici
 
 ---
 
-## 🔑 Key Principles
+## Key Principles
 
 1. **Transparency:** All repositories are currently public, promoting open collaboration
 2. **Hierarchical Access:** WP/Group leads manage team access and permissions
 3. **Quality First:** All contributions undergo review before merging
-4. **Security Conscious:** Sensitive data protection and compliance are paramount
+4. **Security Conscious:** Sensitive data protection and compliance are priorities
 5. **Well Documented:** Clear documentation accompanies all technical work
 6. **EU Compliance:** All work acknowledges EU funding and follows consortium agreements
 
 ---
 
-## 📖 Document Conventions
+## Document Conventions
 
 Throughout these documents, you'll find:
 
-- ✅ **Best Practices:** Recommended approaches
-- ⚠️ **Important Notes:** Critical information requiring attention
-- 📋 **Checklists:** Step-by-step procedures
-- 💡 **Examples:** Practical illustrations
-- 🔗 **Cross-References:** Links to related sections
+- **Best Practices:** Recommended approaches
+- **Important Notes:** Critical information requiring attention
+- **Checklists:** Step-by-step procedures
+- **Examples:** Practical illustrations
+- **Cross-References:** Links to related sections
 
 ---
 
-## 🤝 Governance
+## Governance
 
 These policies are maintained by the Technical Coordinator in collaboration with WP leads. For questions, clarifications, or proposed changes:
 
@@ -141,7 +139,7 @@ These policies are maintained by the Technical Coordinator in collaboration with
 
 ---
 
-## 📄 Deliverable Information
+## Deliverable Information
 
 This documentation forms the basis of **Deliverable D4.2: Initial Source Code Repositories Setup and Contribution Guidelines** for the WEBUILD project.
 
@@ -153,7 +151,7 @@ This documentation forms the basis of **Deliverable D4.2: Initial Source Code Re
 
 ---
 
-## 🇪🇺 Funding Acknowledgment
+## Funding Acknowledgment
 
 ![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
 
@@ -161,7 +159,7 @@ The WEBUILD project is co-funded by the European Union. However, the views and o
 
 ---
 
-## 📝 Version History
+## Version History
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
@@ -169,7 +167,7 @@ The WEBUILD project is co-funded by the European Union. However, the views and o
 
 ---
 
-## 📞 Contact
+## Contact
 
 For questions or support regarding these policies and guidelines, please contact your WP/Group lead or the Technical Coordinator through the consortium communication channels.
 
