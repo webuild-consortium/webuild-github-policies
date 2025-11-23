@@ -2,11 +2,20 @@
 """
 Convert markdown with Mermaid diagrams to .docx with custom styling.
 Uses python-docx to create a properly styled reference document.
+
+Usage:
+    python3 create_styled_conversion.py <input_markdown_file> [output_docx_file]
+
+Arguments:
+    input_markdown_file: Path to the input markdown file (required)
+    output_docx_file: Path to the output DOCX file (optional, defaults to same name as input with .docx extension)
 """
 
 import re
 import subprocess
 import os
+import sys
+import argparse
 import tempfile
 from pathlib import Path
 
@@ -168,16 +177,54 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
     print("  (Pandoc conversion will be handled by the workflow)")
 
 if __name__ == '__main__':
-    input_file = 'GITHUB_POLICIES_AND_GUIDELINES.md'
-    output_file = 'GITHUB_POLICIES_AND_GUIDELINES.docx'
+    parser = argparse.ArgumentParser(
+        description='Convert markdown with Mermaid diagrams to DOCX with custom styling.',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python3 create_styled_conversion.py input.md
+  python3 create_styled_conversion.py input.md output.docx
+  python3 create_styled_conversion.py ../../GITHUB_POLICIES_AND_GUIDELINES.md
+        """
+    )
+
+    parser.add_argument(
+        'input_file',
+        help='Path to the input markdown file'
+    )
+
+    parser.add_argument(
+        'output_file',
+        nargs='?',
+        help='Path to the output DOCX file (optional, defaults to input filename with .docx extension)'
+    )
+
+    args = parser.parse_args()
+
+    # Validate input file exists
+    input_path = Path(args.input_file)
+    if not input_path.exists():
+        print(f"Error: Input file not found: {args.input_file}")
+        sys.exit(1)
+
+    # Determine output file
+    if args.output_file:
+        output_file = args.output_file
+    else:
+        # Use input filename with .docx extension
+        output_file = input_path.stem + '.docx'
+
     reference_doc = 'custom-reference.docx'
 
+    print(f"Input file: {args.input_file}")
+    print(f"Output file: {output_file}")
+
     # Create reference document with custom styling
-    print("Creating custom reference document...")
+    print("\nCreating custom reference document...")
     create_reference_docx()
 
     print("\nProcessing markdown and converting diagrams...")
-    process_markdown_with_mermaid(input_file, output_file, reference_doc)
+    process_markdown_with_mermaid(args.input_file, output_file, reference_doc)
 
     print("\n✓ Conversion complete!")
     print(f"  - Output: {output_file}")

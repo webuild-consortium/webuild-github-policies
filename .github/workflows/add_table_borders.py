@@ -90,9 +90,16 @@ def add_table_borders(docx_path, output_path=None):
 
 if __name__ == '__main__':
     input_file = 'GITHUB_POLICIES_AND_GUIDELINES.docx'
+    temp_file = 'GITHUB_POLICIES_AND_GUIDELINES_temp.docx'
 
     print("Adding borders to all tables...")
-    add_table_borders(input_file)
+    add_table_borders(input_file, temp_file)
+
+    # Replace original with modified version
+    import os
+    import shutil
+    shutil.move(temp_file, input_file)
+
     print("\n✓ All tables now have borders!")
     print("  - Black borders on all cells")
     print("  - Gray background on header rows")
