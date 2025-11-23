@@ -91,6 +91,8 @@ jobs:
       - name: Add table borders
         run: |
           cd .github/workflows
+          # Ensure the file has proper permissions
+          chmod 644 GITHUB_POLICIES_AND_GUIDELINES.docx 2>/dev/null || true
           python3 add_table_borders.py
 
       - name: Upload Artifact
