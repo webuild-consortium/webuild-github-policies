@@ -24,33 +24,56 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Install Python dependencies
         run: |
           pip install -r .github/workflows/requirements.txt
 
-      - name: Install Mermaid CLI
-        run: |
-          npm install -g @mermaid-js/mermaid-cli
-
-      - name: Install Chrome for Puppeteer
-        run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
       - name: Prepare for conversion
         run: |
           cp GITHUB_POLICIES_AND_GUIDELINES.md .github/workflows/
+          mkdir -p .github/workflows/mermaid-diagrams
 
-      - name: Process Mermaid diagrams
-        env:
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+      - name: Extract and render Mermaid diagrams
+        run: |
+          cd .github/workflows
+
+          # Extract mermaid blocks from markdown
+          python3 << 'EXTRACT_EOF'
+          import re
+
+          with open('GITHUB_POLICIES_AND_GUIDELINES.md', 'r') as f:
+              content = f.read()
+
+          pattern = r'```mermaid\n(.*?)```'
+          matches = list(re.finditer(pattern, content, re.DOTALL))
+
+          print(f"Found {len(matches)} mermaid diagrams")
+
+          for idx, match in enumerate(matches, 1):
+              mmd_file = f'diagram_{idx}.mmd'
+              with open(mmd_file, 'w') as f:
+                  f.write(match.group(1))
+              print(f"Created {mmd_file}")
+          EXTRACT_EOF
+
+          # Render each diagram using Docker
+          for mmd_file in diagram_*.mmd; do
+            if [ -f "$mmd_file" ]; then
+              output_file="mermaid-diagrams/${mmd_file%.mmd}.png"
+              echo "Rendering $mmd_file to $output_file using Docker..."
+              docker run --rm -v "$(pwd):/data" minlag/mermaid-cli:11.12.0 \
+                -i "/data/$mmd_file" \
+                -o "/data/$output_file" \
+                -b transparent
+            fi
+          done
+
+          # Clean up temporary .mmd files
+          rm -f diagram_*.mmd
+
+          echo "✓ All diagrams rendered successfully"
+
+      - name: Process markdown with rendered diagrams
         run: |
           cd .github/workflows
           python3 create_styled_conversion.py

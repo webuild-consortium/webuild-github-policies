@@ -105,31 +105,11 @@ def extract_mermaid_blocks(markdown_content):
     return [(match.group(1), match.start(), match.end()) for match in matches]
 
 def convert_mermaid_to_image(mermaid_code, output_path):
-    """Convert mermaid code to PNG image using mmdc."""
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.mmd', delete=False) as f:
-        f.write(mermaid_code)
-        mmd_file = f.name
-
-    # Set environment variable for Chrome executable
-    env = os.environ.copy()
-    if 'PUPPETEER_EXECUTABLE_PATH' not in env:
-        env['PUPPETEER_EXECUTABLE_PATH'] = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-
-    try:
-        subprocess.run([
-            'mmdc',
-            '-i', mmd_file,
-            '-o', output_path,
-            '-b', 'transparent',
-            '-t', 'default'
-        ], check=True, capture_output=True, env=env)
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"Error converting mermaid diagram: {e}")
-        print(f"stderr: {e.stderr.decode()}")
-        return False
-    finally:
-        os.unlink(mmd_file)
+    """
+    Check if mermaid diagram image already exists.
+    Conversion is now handled by Docker container in the workflow.
+    """
+    return Path(output_path).exists()
 
 def process_markdown_with_mermaid(input_file, output_file, reference_doc):
     """Process markdown file, convert mermaid diagrams to images, and create .docx."""
@@ -154,17 +134,12 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
         img_filename = f"diagram_{idx + 1}.png"
         img_path = img_dir / img_filename
 
-        # Check if image already exists
-        if img_path.exists():
-            print(f"Diagram {idx + 1} already exists, skipping conversion...")
-            success = True
+        # Images should already be converted by Docker container in workflow
+        success = convert_mermaid_to_image(mermaid_code, str(img_path))
+        if success:
+            print(f"Diagram {idx + 1}: Using pre-rendered image")
         else:
-            print(f"Converting diagram {idx + 1}...")
-            success = convert_mermaid_to_image(mermaid_code, str(img_path))
-            if success:
-                print(f"  ✓ Diagram {idx + 1} converted successfully")
-            else:
-                print(f"  ✗ Failed to convert diagram {idx + 1}")
+            print(f"  ✗ Warning: Diagram {idx + 1} image not found at {img_path}")
 
         if success:
             # Replace mermaid block with image reference
