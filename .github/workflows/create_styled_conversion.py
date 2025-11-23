@@ -163,24 +163,8 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
     with open(temp_md, 'w', encoding='utf-8') as f:
         f.write(modified_content)
 
-    # Convert to .docx using pandoc with reference document
-    print(f"\nConverting to .docx with custom styling...")
-    try:
-        cmd = [
-            'pandoc',
-            temp_md,
-            '-o', output_file,
-            '--reference-doc', reference_doc,
-            '--resource-path=.:mermaid-diagrams'
-        ]
-        subprocess.run(cmd, check=True)
-        print(f"✓ Successfully created {output_file}")
-    except subprocess.CalledProcessError as e:
-        print(f"Error converting to .docx: {e}")
-    finally:
-        # Clean up temporary file
-        if os.path.exists(temp_md):
-            os.unlink(temp_md)
+    print(f"\n✓ Created temporary markdown file: {temp_md}")
+    print("  (Pandoc conversion will be handled by the workflow)")
 
 if __name__ == '__main__':
     input_file = 'GITHUB_POLICIES_AND_GUIDELINES.md'
