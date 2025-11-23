@@ -143,7 +143,8 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
 
         if success:
             # Replace mermaid block with image reference
-            image_markdown = f"\n![Diagram {idx + 1}]({img_path})\n"
+            # Use absolute path from workspace root for Docker pandoc
+            image_markdown = f"\n![Diagram {idx + 1}](.github/workflows/{img_path})\n"
 
             # Adjust positions based on previous replacements
             adjusted_start = start + offset
