@@ -3,8 +3,8 @@
 
 ## Document Information
 
-**Version:** 4.0
-**Last Updated:** October 2025
+**Version:** 4.1
+**Last Updated:** November 2025
 **Status:** Active
 
 ---

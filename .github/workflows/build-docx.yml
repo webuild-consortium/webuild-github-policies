@@ -33,6 +33,26 @@ jobs:
           cp GITHUB_POLICIES_AND_GUIDELINES.md .github/workflows/
           mkdir -p .github/workflows/mermaid-diagrams
 
+          # Extract version from markdown file
+          VERSION=$(grep -m 1 '^\*\*Version:\*\*' GITHUB_POLICIES_AND_GUIDELINES.md | sed 's/\*\*Version:\*\* //' | tr -d ' ')
+          echo "DOCUMENT_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Extracted version: $VERSION"
+
+          # Get current date (YYYYMM format for brevity)
+          BUILD_DATE=$(date +%Y%m)
+          echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
+          echo "Build date: $BUILD_DATE"
+
+          # Get short commit hash
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "COMMIT_SHA=$SHORT_SHA" >> $GITHUB_ENV
+          echo "Commit SHA: $SHORT_SHA"
+
+          # Create revision identifier: YYYYMM-commithash
+          REVISION="${BUILD_DATE}-${SHORT_SHA}"
+          echo "REVISION=$REVISION" >> $GITHUB_ENV
+          echo "Revision: $REVISION"
+
       - name: Extract and render Mermaid diagrams
         run: |
           cd .github/workflows
@@ -106,7 +126,25 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           files: .github/workflows/GITHUB_POLICIES_AND_GUIDELINES.docx
-          tag_name: v${{ github.run_number }}
-          name: Release v${{ github.run_number }}
+          tag_name: v${{ env.DOCUMENT_VERSION }}-${{ env.REVISION }}
+          name: GitHub Policies and Guidelines v${{ env.DOCUMENT_VERSION }}-${{ env.REVISION }}
+          body: |
+            ## GitHub Policies and Guidelines v${{ env.DOCUMENT_VERSION }}
+
+            **Revision:** ${{ env.REVISION }}
+
+            This release contains the DOCX version of the GitHub Policies and Guidelines document.
+
+            ### Document Information
+            - **Version:** ${{ env.DOCUMENT_VERSION }}
+            - **Build Date:** ${{ env.BUILD_DATE }} (YYYYMM format)
+            - **Commit:** ${{ env.COMMIT_SHA }} ([view commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }}))
+            - **Full Revision:** ${{ env.REVISION }}
+
+            ### Changes
+            See the [changelog](https://github.com/${{ github.repository }}/blob/main/GITHUB_POLICIES_AND_GUIDELINES.md#document-history) in the document for details.
+
+            ### Download
+            📄 [GITHUB_POLICIES_AND_GUIDELINES.docx](https://github.com/${{ github.repository }}/releases/download/v${{ env.DOCUMENT_VERSION }}-${{ env.REVISION }}/GITHUB_POLICIES_AND_GUIDELINES.docx)
           draft: false
           prerelease: false
