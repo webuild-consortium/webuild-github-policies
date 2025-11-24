@@ -1,8 +1,8 @@
 # WEBUILD Consortium - GitHub Policies and Guidelines
 
-**Version:** 1.0
+**Version:** 4.1
 **Date:** November 2025
-**Status:** Draft for Review
+**Status:** Active
 
 ---
 
@@ -26,6 +26,13 @@ This is the primary deliverable document that consolidates all GitHub policies, 
 - Branching strategies and version control
 - Licensing and compliance requirements
 - Onboarding procedures for new members
+
+### Available Formats
+
+- **Markdown:** [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) (source document)
+- **DOCX:** Available as a release artifact (automatically generated via GitHub Actions)
+
+The DOCX version is automatically generated from the Markdown source and released whenever changes are made to the policies document. You can find the latest DOCX version in the [Releases](/webuild-consortium/webuild-github-policies/releases) section.
 
 > **Note:** The `docs/` folder contains supporting reference materials that were used to build the main deliverable. The [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) file is the authoritative source.
 
@@ -146,7 +153,11 @@ The WEBUILD project is co-funded by the European Union. However, the views and o
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | November 2025 | Initial draft for review | Technical Coordinator |
+| 1.0 | October 2025 | Initial version based on Project Management Handbook | WeBuild Technical Coordination |
+| 2.0 | October 2025 | Enhanced with content from 7 policy documents: GitHub Policies and Guidelines, Contribution Guidelines, Onboarding Procedures, Repository Management, Licensing Guidelines, Security and Compliance, and Branching and Workflow | WeBuild Technical Coordination |
+| 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WeBuild Technical Coordination |
+| 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WeBuild Technical Coordination |
+| 4.1 | November 2025 | Updated to reflect actual WeBuild repository structure, licenses, and communication channels. Added automated DOCX conversion via GitHub Actions | WeBuild Technical Coordination |
 
 ---
 
