@@ -76,7 +76,7 @@ jobs:
       - name: Process markdown with rendered diagrams
         run: |
           cd .github/workflows
-          python3 create_styled_conversion.py GITHUB_POLICIES_AND_GUIDELINES.md
+          python3 create_styled_conversion.py GITHUB_POLICIES_AND_GUIDELINES.md --image-path-prefix=".github/workflows"
 
       - name: Convert to DOCX using Pandoc
         uses: docker://pandoc/core:3.8

@@ -120,8 +120,13 @@ def convert_mermaid_to_image(mermaid_code, output_path):
     """
     return Path(output_path).exists()
 
-def process_markdown_with_mermaid(input_file, output_file, reference_doc):
-    """Process markdown file, convert mermaid diagrams to images, and create .docx."""
+def process_markdown_with_mermaid(input_file, image_path_prefix=''):
+    """Process markdown file and replace mermaid blocks with image references.
+
+    Args:
+        input_file: Path to the input markdown file
+        image_path_prefix: Optional prefix to prepend to image paths (e.g., '.github/workflows/')
+    """
 
     # Read the markdown file
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -143,7 +148,7 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
         img_filename = f"diagram_{idx + 1}.png"
         img_path = img_dir / img_filename
 
-        # Images should already be converted by Docker container in workflow
+        # Images should already be converted
         success = convert_mermaid_to_image(mermaid_code, str(img_path))
         if success:
             print(f"Diagram {idx + 1}: Using pre-rendered image")
@@ -152,8 +157,13 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
 
         if success:
             # Replace mermaid block with image reference
-            # Use absolute path from workspace root for Docker pandoc
-            image_markdown = f"\n![Diagram {idx + 1}](.github/workflows/{img_path})\n"
+            if image_path_prefix:
+                # Use provided prefix (e.g., for GitHub Actions)
+                full_path = f"{image_path_prefix.rstrip('/')}/{img_path}"
+                image_markdown = f"\n![Diagram {idx + 1}]({full_path})\n"
+            else:
+                # Use relative path (for local builds)
+                image_markdown = f"\n![Diagram {idx + 1}]({img_path})\n"
 
             # Adjust positions based on previous replacements
             adjusted_start = start + offset
@@ -174,7 +184,7 @@ def process_markdown_with_mermaid(input_file, output_file, reference_doc):
         f.write(modified_content)
 
     print(f"\n✓ Created temporary markdown file: {temp_md}")
-    print("  (Pandoc conversion will be handled by the workflow)")
+    return temp_md
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -194,9 +204,9 @@ Examples:
     )
 
     parser.add_argument(
-        'output_file',
-        nargs='?',
-        help='Path to the output DOCX file (optional, defaults to input filename with .docx extension)'
+        '--image-path-prefix',
+        default='',
+        help='Prefix to prepend to image paths (e.g., ".github/workflows/" for GitHub Actions)'
     )
 
     args = parser.parse_args()
@@ -207,26 +217,18 @@ Examples:
         print(f"Error: Input file not found: {args.input_file}")
         sys.exit(1)
 
-    # Determine output file
-    if args.output_file:
-        output_file = args.output_file
-    else:
-        # Use input filename with .docx extension
-        output_file = input_path.stem + '.docx'
-
-    reference_doc = 'custom-reference.docx'
-
     print(f"Input file: {args.input_file}")
-    print(f"Output file: {output_file}")
+    if args.image_path_prefix:
+        print(f"Image path prefix: {args.image_path_prefix}")
 
     # Create reference document with custom styling
     print("\nCreating custom reference document...")
     create_reference_docx()
 
-    print("\nProcessing markdown and converting diagrams...")
-    process_markdown_with_mermaid(args.input_file, output_file, reference_doc)
+    print("\nProcessing markdown and replacing mermaid diagrams with images...")
+    temp_md = process_markdown_with_mermaid(args.input_file, args.image_path_prefix)
 
-    print("\n✓ Conversion complete!")
-    print(f"  - Output: {output_file}")
-    print(f"  - Code blocks now have gray background (RGB: 240, 240, 240)")
-    print(f"  - Inline code has reddish color for distinction")
+    print("\n✓ Markdown processing complete!")
+    print(f"  - Temporary markdown: {temp_md}")
+    print(f"  - Reference document: custom-reference.docx")
+    print(f"  - Next: Run pandoc to convert to DOCX")
