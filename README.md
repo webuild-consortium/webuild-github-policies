@@ -14,30 +14,6 @@ This repository contains GitHub policies, guidelines, and procedures for the WEB
 
 ---
 
-## Main Deliverable
-
-**[GITHUB_POLICIES_AND_GUIDELINES.md](GITHUB_POLICIES_AND_GUIDELINES.md)**
-
-This is the primary deliverable document that consolidates all GitHub policies, guidelines, and procedures for the WEBUILD consortium. It covers:
-
-- Repository management and governance
-- Contribution workflows and code review processes
-- Access control and security policies
-- Branching strategies and version control
-- Licensing and compliance requirements
-- Onboarding procedures for new members
-
-### Available Formats
-
-- **Markdown:** [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) (source document)
-- **DOCX:** Available as a release artifact (automatically generated via GitHub Actions)
-
-The DOCX version is automatically generated from the Markdown source and released whenever changes are made to the policies document. You can find the latest DOCX version in the [Releases](/webuild-consortium/webuild-github-policies/releases) section.
-
-> **Note:** The `docs/` folder contains supporting reference materials that were used to build the main deliverable. The [`GITHUB_POLICIES_AND_GUIDELINES.md`](GITHUB_POLICIES_AND_GUIDELINES.md) file is the authoritative source.
-
----
-
 ## Documentation Structure
 
 ### Core Policy Documents
