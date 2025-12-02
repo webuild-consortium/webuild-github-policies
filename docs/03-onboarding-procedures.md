@@ -23,7 +23,13 @@
 
 ### 1.1 Purpose
 
-This document outlines the procedures for onboarding new members to the WEBUILD consortium's GitHub organization and offboarding members when they leave the project.
+These onboarding procedures describe how new members join the WEBUILD GitHub organization, receive the correct repository access, and start contributing productively.
+
+Because WEBUILD is an EU-funded consortium with clearly defined Work Packages (WPs) and sub-structures, onboarding is **initiated only by WP Leads or Group/UC Leads**.
+
+New members **should not request access directly** from the Technical Coordinator.
+
+---
 
 ### 1.2 Who Needs Onboarding?
 
@@ -34,24 +40,15 @@ Onboarding is required for:
 - External collaborators requiring repository access
 - Temporary contributors (interns, contractors)
 
-### 1.3 Onboarding Timeline
 
-```
-Day 1-2: Access Request & Approval
-Day 3-5: Account Setup & Initial Access
-Week 1: Training & Orientation
-Week 2: First Contributions
-Ongoing: Continuous Learning
-```
-
-### 1.4 Roles in Onboarding
+### 1.3 Roles in Onboarding
 
 | Role | Responsibility |
 |------|----------------|
 | **New Member** | Complete setup, attend training, ask questions |
-| **WP/Group Lead** | Request access, provide guidance, assign tasks |
+| **WP/Group/UC Lead** | Request access, provide guidance, assign tasks |
 | **Technical Coordinator** | Grant organization access, verify setup |
-| **Buddy/Mentor** | Provide day-to-day support, answer questions |
+
 
 ---
 
