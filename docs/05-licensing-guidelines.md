@@ -853,7 +853,7 @@ SPDX-License-Identifier: Apache-2.0
 ### Appendix C: Contact Information
 
 **For licensing questions:**
-- Technical Coordinator: Contact via consortium internal channels
+- Technical Coordinator: webuild-github-support@grnet.gr
 - WP Leads: Contact via consortium internal channels
 - Repository maintainers: Open an issue in the relevant repository
 

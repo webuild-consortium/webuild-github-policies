@@ -976,7 +976,7 @@ Submit feedback via:
 
 ### Appendix B: Contact Information
 
-**Technical Coordinator:** Contact via consortium internal channels
+**Technical Coordinator:** webuild-github-support@grnet.gr
 
 **WP4 Lead:** Contact via consortium internal channels
 

@@ -1529,7 +1529,7 @@ repos:
 
 ### C.1 Internal Contacts
 
-- **Technical Coordinator:** [Name, Email]
+- **Technical Coordinator:** webuild-github-support@grnet.gr
 - **Security Team:** [Email]
 - **WP Leads:** [Contact list]
 - **Emergency Contact:** [Phone]

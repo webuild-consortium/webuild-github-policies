@@ -1432,4 +1432,4 @@ Planning → Approval → Creation → Setup → Active → Deprecated/Archived
 
 ---
 
-*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator.*
+*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator (webuild-github-support@grnet.gr).*

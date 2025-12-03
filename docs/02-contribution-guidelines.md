@@ -1294,7 +1294,7 @@ If you have questions about these guidelines:
 1. Check the [GitHub Policies and Guidelines](01-github-policies-and-guidelines.md)
 2. Search existing issues and discussions
 3. Ask your WP/Group lead
-4. Contact the Technical Coordinator
+4. Contact the Technical Coordinator (webuild-github-support@grnet.gr)
 
 ---
 
