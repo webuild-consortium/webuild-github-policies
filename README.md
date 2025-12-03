@@ -8,7 +8,7 @@
 
 ## Overview
 
-This repository contains GitHub policies, guidelines, and procedures for the WEBUILD consortium, establishing project-wide standards for collaborative development, version control, and repository management across all Work Packages and partner organizations.
+This repository defines GitHub policies, guidelines, and procedures for the WEBUILD consortium. It sets project-wide standards for collaborative development, version control, and repository management across all Work Packages (WPs), groups, and partner organizations.
 
 **Organization:** [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
 
@@ -41,21 +41,30 @@ This repository contains GitHub policies, guidelines, and procedures for the WEB
 
 
 **Supporting Materials:**
-- `docs/guides/` - Step-by-step guides for common tasks
-- `docs/templates/` - Templates for new repositories
+- The `docs/guides/` folder contains step-by-step guides for common tasks
+- The `docs/templates/` folder provides templates for new repositories
 
 ---
 
 ## Quick Start
 
-- **New Members:** [Onboarding Procedures](docs/03-onboarding-procedures.md)
-- **Contributors:** [Contribution Guidelines](docs/02-contribution-guidelines.md)
-- **WP/Group Leads:** [Repository Management](docs/04-repository-management.md) and [GitHub Policies and Guidelines](docs/01-github-policies-and-guidelines.md)
-- **Repository Maintainers:** [Security and Compliance](docs/06-security-and-compliance.md) and [Branching and Workflow](docs/07-branching-and-workflow.md)
+### For New Members
+Start with the [Onboarding Procedures](docs/03-onboarding-procedures.md) to get access and understand the basics.
+
+### For Contributors
+Review the [Contribution Guidelines](docs/02-contribution-guidelines.md) before making your first contribution.
+
+### For WP/Group Leads
+Familiarize yourself with [Repository Management](docs/04-repository-management.md) and the governance structure in [GitHub Policies and Guidelines](docs/01-github-policies-and-guidelines.md).
+
+### For Repository Maintainers
+Ensure you understand [Security and Compliance](docs/06-security-and-compliance.md) and [Branching and Workflow](docs/07-branching-and-workflow.md) standards.
 
 ---
 
-## Repository Structure
+## WEBUILD Repository Structure
+
+The WEBUILD project organizes its code and deliverables into different types of repositories. Each repository falls into one of three categories:
 
 | Repository Type                | Description                                                         | Examples                                        |
 |--------------------------------|---------------------------------------------------------------------|-------------------------------------------------|
@@ -68,30 +77,44 @@ This repository contains GitHub policies, guidelines, and procedures for the WEB
 
 ## Key Principles
 
-1. **Open Collaboration:** Repositories are public by default for transparency and sharing
-2. **Clear Access Control:** WP and group leads manage permissions per project policies
-3. **Quality through Review:** All changes require peer review before merging
+1. **Open Collaboration:** Repositories are public by default to encourage transparency and sharing.
+2. **Clear Access Control:** WP and group leads manage permissions according to project policies.
+3. **Quality through Review:** All changes are peer-reviewed before merging to maintain high standards.
 4. **Security Conscious:** Sensitive data protection and compliance are priorities
 5. **Well Documented:** Clear documentation accompanies all technical work
 6. **EU Compliance:** All work acknowledges EU funding and follows consortium agreements
 
 ---
 
+## Document Conventions
+
+Throughout these documents, you will see formatting conventions that highlight specific content:
+
+- **Best Practices:** Recommended approaches and tips.
+- **Important:** Critical information that requires attention.
+- **Checklists:** Step-by-step procedures and reminders.
+- **Examples:** Practical illustrations or templates.
+- **Cross-references:** Links to related sections or external resources.
+
+---
+
 ## Governance
 
-These policies are maintained by the Technical Coordinator in collaboration with WP and group leads. To propose changes:
+These policies are maintained by the Technical Coordinator in collaboration with WP and group leads. To propose changes or ask questions:
 
-1. Open an issue in this repository
-2. Contact your WP or group lead
-3. Reach out to the Technical Coordinator
+1. Open an issue in the relevant GitHub repository (e.g. this one or a related policy doc).
+2. Contact your WP or group lead for guidance.
+3. Reach out to the Technical Coordinator.
 
 ---
 
 ## Contact and Support
 
-- **Slack:** [WEBUILD Workspace](https://join.slack.com/t/we-build-consortium/shared_invite/zt-3h6k2igc1-7DVjTs2yRqVChORqb4lxkw)
-- **Portal:** [portal.webuildconsortium.eu](https://portal.webuildconsortium.eu/)
-- **Email:** [webuild-github-support@grnet.gr](mailto:webuild-github-support@grnet.gr)
+For help with these GitHub policies and guidelines, you can:
+
+- **Join the WEBUILD Slack workspace:** [Slack Invite Link](https://join.slack.com/t/we-build-consortium/shared_invite/zt-3h6k2igc1-7DVjTs2yRqVChORqb4lxkw) for real-time project discussions.
+- **Visit the WEBUILD OpenSocial Portal:** [portal.webuildconsortium.eu](https://portal.webuildconsortium.eu/) for news and resources.
+- **Email the Technical Coordinator:** [webuild-github-support@grnet.gr](mailto:webuild-github-support@grnet.gr) for questions about GitHub guidelines or to report issues.
 
 ## Deliverable Information
 
@@ -123,6 +146,12 @@ The WEBUILD project is co-funded by the European Union. The views and opinions e
 | 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WeBuild Technical Coordination |
 | 4.1 | November 2025 | Updated to reflect actual WeBuild repository structure, licenses, and communication channels. Added automated DOCX conversion via GitHub Actions | WeBuild Technical Coordination |
 | 4.2 | December 2025 | General improvements & cleanup | WeBuild Technical Coordination |
+
+---
+
+## Contact
+
+For questions or support regarding these policies and guidelines, please contact your WP/Group lead or the Technical Coordinator through the consortium communication channels.
 
 ---
 
