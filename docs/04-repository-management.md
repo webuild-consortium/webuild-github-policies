@@ -43,7 +43,7 @@ These guidelines apply to:
 |------|-----------------|
 | **Technical Coordinator** | Organization-level repository management, policy enforcement |
 | **WP Lead** | WP-level repository oversight, creation approval |
-| **Group Lead** | Day-to-day repository management, maintenance |
+| **Group/UC Lead** | Day-to-day repository management, maintenance |
 | **Repository Maintainer** | Active maintenance, issue management, releases |
 | **Contributors** | Code contributions, issue reporting |
 
@@ -128,7 +128,7 @@ graph TD
 | Stage | Duration | Notes |
 |-------|----------|-------|
 | Planning | 1-2 weeks | Varies by complexity |
-| Approval | 2-5 days | Depends on availability |
+| Approval | 2-3 days | Depends on availability |
 | Creation | 1 day | Quick process |
 | Setup | 1-3 days | Initial configuration |
 | Active | Ongoing | Project duration |

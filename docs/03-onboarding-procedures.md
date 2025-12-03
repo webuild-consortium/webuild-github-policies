@@ -142,10 +142,10 @@ Before requesting access, gather:
 ```mermaid
 graph TD
     A[New Member<br/>Provides Info]
-    B[WP/Group Lead<br/>Submits Request]
+    B[WP/Group/ΘΨ Lead<br/>Submits Request]
     C[Tech Coord<br/>Reviews Request]
     D[Tech Coord<br/>Grants Access]
-    E[WP/Group Lead<br/>Assigns Teams]
+    E[WP/Group/ΘΨ Lead<br/>Assigns Teams]
     F[New Member<br/>Receives Access]
 
     A --> B
@@ -155,7 +155,7 @@ graph TD
     E --> F
 ```
 
-### 3.2 For WP/Group Leads: Submitting Access Request
+### 3.2 For WP/Group/ΘΨ Leads: Submitting Access Request
 
 #### 3.2.1 Access Request Template
 
@@ -175,7 +175,7 @@ Subject: GitHub Access Request - [Member Name]
 
 ## Access Requirements
 - Organization Access: Yes
-- Teams: [@webuild-consortium/wp4-trust]
+- Teams: [e.g. @webuild-consortium/wp4-trust]
 - Repositories: [List specific repos if limited access]
 - Permission Level: [Read/Write/Admin]
 
@@ -194,7 +194,7 @@ Subject: GitHub Access Request - [Member Name]
 #### 3.2.2 Approval Requirements
 
 Access requests require approval from:
-- WP/Group Lead (submitter)
+- WP/Group/UC Lead (submitter)
 - Partner organization representative
 - Technical Coordinator (final approval)
 
@@ -229,7 +229,7 @@ Before granting access:
 3. Enter GitHub username or email
 4. Select role: "Member" (default)
 5. Click "Send invitation"
-6. Notify WP/Group lead of invitation sent
+6. Notify WP/Group/UC lead of invitation sent
 
 #### 3.3.3 Documentation
 
@@ -453,17 +453,17 @@ Install extensions:
 cd ~/workspace
 
 # Clone repository
-git clone git@github.com:webuild-consortium/wp4-trust-group.git
+git clone git@github.com:webuild-consortium/wp4-XYZ-group.git
 
 # Navigate into repository
-cd wp4-trust-group
+cd wp4-XYZ-group
 ```
 
 **Using HTTPS:**
 
 ```bash
-git clone https://github.com/webuild-consortium/wp4-trust-group.git
-cd wp4-trust-group
+git clone https://github.com/webuild-consortium/wp4-XYZ-group.git
+cd wp4-XYZ-group
 ```
 
 #### 4.3.3 Verify Setup
@@ -516,7 +516,7 @@ If you need access to additional repositories:
 
 1. Identify repository needed
 2. Explain reason for access
-3. Contact your WP/Group lead
+3. Contact your WP/Group/UC lead
 4. Lead evaluates and approves/denies
 5. Lead grants access or escalates to Technical Coordinator
 
@@ -532,7 +532,7 @@ Complete within first week:
 - [ ] Review [Contribution Guidelines](02-contribution-guidelines.md)
 - [ ] Understand [Branching and Workflow](07-branching-and-workflow.md)
 - [ ] Read repository README files
-- [ ] Meet with WP/Group lead (if needed)
+- [ ] Meet with WP/Group/UC lead (if needed)
 - [ ] Set up development environment
 
 ### 6.2 Training Materials
@@ -555,7 +555,7 @@ Complete within first week:
 
 **Required Reading:**
 1. Project overview and objectives
-2. WP/Group specific documentation
+2. WP/Group/UC specific documentation
 3. Architecture documentation
 4. API specifications (if applicable)
 5. Testing procedures
@@ -566,34 +566,7 @@ Complete within first week:
 - Explore codebase structure
 - Read issue discussions
 
-### 6.3 Buddy/Mentor Program
-
-#### 6.3.1 For New Members
-
-Your buddy/mentor will:
-- Answer day-to-day questions
-- Review your first contributions
-- Provide guidance on processes
-- Introduce you to the team
-- Help you navigate the codebase
-
-**How to work with your buddy:**
-- Schedule regular check-ins
-- Ask questions (no question is too small)
-- Share your progress
-- Request code reviews
-- Seek feedback
-
-#### 6.3.2 For Buddies/Mentors
-
-Your responsibilities:
-- Be available and responsive
-- Provide constructive feedback
-- Share knowledge and resources
-- Review early contributions
-- Report progress to lead
-
-### 6.4 Learning Resources
+### 6.3 Learning Resources
 
 **Internal Resources:**
 - Repository documentation
@@ -655,33 +628,8 @@ Look for issues labeled:
    - Understand the reasoning
    - Apply learnings to next PR
 
-### 7.2 First Week Goals
 
-**Week 1 Checklist:**
-
-- [ ] Complete environment setup
-- [ ] Clone relevant repositories
-- [ ] Read all documentation
-- [ ] Attend team meeting
-- [ ] Make first contribution (even if small)
-- [ ] Get first PR merged
-- [ ] Introduce yourself to team
-- [ ] Set up communication channels
-
-### 7.3 First Month Goals
-
-**Month 1 Checklist:**
-
-- [ ] Make multiple contributions
-- [ ] Review others' pull requests
-- [ ] Participate in discussions
-- [ ] Understand codebase structure
-- [ ] Complete assigned tasks
-- [ ] Build relationships with team
-- [ ] Identify areas for improvement
-- [ ] Provide feedback on onboarding
-
-### 7.4 Getting Help
+### 7.2 Getting Help
 
 **When you need help:**
 
@@ -691,13 +639,13 @@ Look for issues labeled:
    - Issue discussions
    - Past pull requests
 
-2. **Ask your buddy/mentor:**
+2. **Ask your team members:**
    - Quick questions
    - Process clarifications
    - Code review requests
    - General guidance
 
-3. **Contact WP/Group lead:**
+3. **Contact WP/Group/UC lead:**
    - Access issues
    - Policy questions
    - Escalated problems
@@ -752,7 +700,7 @@ graph TD
 - [ ] Return any credentials or access tokens
 - [ ] Provide handover notes
 
-#### 8.3.2 For WP/Group Lead
+#### 8.3.2 For WP/Group/UC Lead
 
 - [ ] Notify Technical Coordinator
 - [ ] Identify knowledge transfer needs
@@ -771,29 +719,7 @@ graph TD
 - [ ] Verify access revocation complete
 - [ ] Document offboarding completion
 
-### 8.4 Knowledge Transfer
-
-**Before departure:**
-
-1. **Document work:**
-   - Current tasks and status
-   - Pending decisions
-   - Known issues
-   - Future plans
-
-2. **Transfer knowledge:**
-   - Schedule handover meetings
-   - Share documentation
-   - Explain complex areas
-   - Answer questions
-
-3. **Update documentation:**
-   - Code comments
-   - README files
-   - Architecture docs
-   - Process documentation
-
-### 8.5 Access Revocation
+### 8.4 Access Revocation
 
 **Technical Coordinator actions:**
 
@@ -816,7 +742,7 @@ graph TD
 - [ ] No pending invitations
 - [ ] Access logs updated
 
-### 8.6 Post-Offboarding
+### 8.5 Post-Offboarding
 
 **Follow-up actions:**
 
@@ -885,16 +811,18 @@ git status
 
 ### Appendix C: Contact Information
 
-**Technical Coordinator:** [Contact via consortium channels]
+**Technical Coordinator:** webuild-github-support@grnet.gr
 
 **WP4 Lead:** [Contact via consortium channels]
 
 **Group Leads:**
 - QTSP: [Contact]
+- Architecture : [Contact]
+- Testing [Contact]
 - Trust: [Contact]
 - Semantics: [Contact]
 - Wallets: [Contact]
-- Interop: [Contact]
+- PID/LPID: [Contact]
 
 ### Appendix D: Troubleshooting
 
