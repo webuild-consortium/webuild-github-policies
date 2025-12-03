@@ -1,7 +1,7 @@
 # Branching and Workflow
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 
 ---
@@ -50,14 +50,7 @@ These guidelines apply to:
 
 **Why Feature Branching?**
 
-Feature Branch Workflow is the **recommended standard approach** for WEBUILD consortium repositories because it:
-
-- ✅ **Simple and flexible** - Easy to understand and adopt
-- ✅ **Supports parallel development** - Multiple features can be developed simultaneously
-- ✅ **Maintains stability** - Main branch always remains deployable
-- ✅ **Facilitates code review** - Clear pull request workflow
-- ✅ **Scales well** - Works for teams of all sizes
-- ✅ **Minimal overhead** - No complex branching hierarchy to manage
+Feature Branch Workflow is the recommended standard approach for WEBUILD consortium repositories. It provides a simple, flexible model that maintains main branch stability while supporting parallel development and code review through pull requests.
 
 **When to Consider Alternatives:**
 
@@ -68,7 +61,7 @@ Feature Branch Workflow is the **recommended standard approach** for WEBUILD con
 | Continuous deployment with very short cycles | Trunk-Based Development | Rapid iteration |
 | Library with LTS versions | GitFlow | Multiple version support |
 
-**Note:** Most WEBUILD repositories should use Feature Branch Workflow. Alternative strategies are documented in [Appendix D](#appendix-d-alternative-branching-strategies) for specific use cases.
+Most WEBUILD repositories should use Feature Branch Workflow. Alternative strategies are documented in [Appendix D](#appendix-d-alternative-branching-strategies) for specific use cases.
 
 ---
 
@@ -78,7 +71,7 @@ Feature Branch Workflow is the **recommended standard approach** for WEBUILD con
 
 **Overview:**
 
-The Feature Branch Workflow is the **standard branching strategy** for all WEBUILD repositories. It provides a simple, effective approach to parallel development while maintaining code quality and stability.
+The Feature Branch Workflow is the standard branching strategy for all WEBUILD repositories. All development work happens in feature branches that are merged to main via pull requests.
 
 ```mermaid
 graph TD
@@ -122,7 +115,6 @@ graph TD
 - All releases tagged from `main`
 
 **2. Feature Branches**
-- All development work happens in feature branches
 - Branch from latest `main`
 - One feature/fix per branch
 - Short-lived (typically < 2 weeks)
@@ -132,14 +124,11 @@ graph TD
 - All changes merged via pull requests
 - Code review required before merge
 - Automated tests must pass
-- Conversations must be resolved
 - Squash merge recommended for clean history
 
 **4. Continuous Integration**
 - Automated testing on every push
 - CI/CD pipeline validates changes
-- Quality gates enforced
-- Fast feedback loop
 
 ### 2.3 Branch Types
 
@@ -174,23 +163,13 @@ graph TD
 
 **Advantages:**
 
-**Simple to understand and adopt** - Minimal learning curve
-**Flexible** - Adapts to different team sizes and project types
-**Maintains stability** - Main branch always deployable
-**Supports parallel work** - Multiple features developed simultaneously
-**Clear history** - Each feature is a distinct unit
-**Easy rollback** - Can revert specific features
-**Facilitates code review** - Natural PR workflow
-**Scales well** - Works for 1-100+ developers
-
-**When It Works Best:**
-
-- Most software development projects
-- Continuous deployment environments
-- Teams of any size
-- Projects requiring code review
-- Agile/iterative development
-- Open source projects
+- Simple to understand and adopt
+- Flexible across team sizes and project types
+- Main branch always deployable
+- Supports parallel development
+- Clear history with distinct feature units
+- Natural code review workflow
+- Scales from small to large teams
 
 ### 2.5 Alternative Strategies
 
@@ -199,7 +178,7 @@ For specific use cases that require different approaches, see [Appendix D: Alter
 - **GitFlow** - For projects with scheduled releases and multiple production versions
 - **Trunk-Based Development** - For teams with mature CI/CD and very short development cycles
 
-**Note:** These alternatives should only be adopted after careful consideration and approval from the Technical Coordinator.
+These alternatives should only be adopted after careful consideration and approval from the Technical Coordinator.
 
 ---
 
@@ -295,12 +274,11 @@ git branch -d feature/123-user-authentication
 
 **Best Practices:**
 
-- Always branch from latest `main`
+- Branch from latest `main`
 - Keep branches focused and small
 - Update regularly from `main`
 - Delete after merge
-- Don't let branches live too long (< 2 weeks ideal)
-- Don't mix unrelated changes
+- Keep branch lifetime under 2 weeks
 
 #### 3.2.2 Bugfix Branches
 
@@ -353,14 +331,12 @@ git push origin v1.2.1
 git branch -d hotfix/345-fix-critical-security-issue
 ```
 
-**Note:** If using GitFlow (see [Appendix D](#appendix-d-alternative-branching-strategies)), also merge to `develop` branch.
+If using GitFlow (see [Appendix D](#appendix-d-alternative-branching-strategies)), also merge to `develop` branch.
 
 **Best Practices:**
 
-- Branch from main (production)
-- Keep changes minimal
-- Test thoroughly
-- Merge to both main and develop
+- Keep changes minimal and focused
+- Test thoroughly before merge
 - Tag immediately after merge
 - Document in CHANGELOG
 
@@ -377,7 +353,7 @@ docs/456-add-deployment-guide
 
 **Usage:** Same workflow as feature branches, but for documentation-only changes.
 
-**Note:** For minor documentation updates, use feature branches or commit directly to documentation PRs.
+For minor documentation updates, use feature branches or commit directly to documentation PRs.
 
 ### 3.3 Branch Naming Rules
 
@@ -398,18 +374,11 @@ docs/456-add-deployment-guide
 
 **Description Rules:**
 
-**Do:**
-- Use lowercase
-- Use hyphens for spaces
-- Be descriptive but concise
+- Use lowercase with hyphens for spaces
+- Be descriptive but concise (under 50 characters)
 - Include issue number
 - Use present tense
-
-**Don't:**
-- Use spaces or special characters
-- Make it too long (> 50 chars)
-- Use vague descriptions
-- Include personal names
+- Avoid vague descriptions or personal names
 
 **Examples:**
 
@@ -642,7 +611,7 @@ git push origin v1.2.1
 
 ```
 
-**Note:** In Feature Branch Workflow, hotfixes follow the same process as regular fixes but with highest priority.
+In Feature Branch Workflow, hotfixes follow the same process as regular fixes but with highest priority.
 
 ### 4.4 Release Workflow
 
@@ -698,7 +667,7 @@ git push origin release/v1.3.0
 git branch -d release/v1.3.0
 ```
 
-**Note:** For GitFlow release process, see [Appendix D](#appendix-d-alternative-branching-strategies).
+For GitFlow release process, see [Appendix D](#appendix-d-alternative-branching-strategies).
 
 ---
 
@@ -747,25 +716,14 @@ Closes #123
 
 ### 5.3 Commit Best Practices
 
-**Do:**
-
-- Write clear, descriptive messages
-- Use imperative mood ("add" not "added")
+- Write clear, descriptive messages in imperative mood
 - Keep subject line under 50 characters
 - Separate subject from body with blank line
 - Wrap body at 72 characters
 - Explain what and why, not how
 - Reference issues and PRs
 - Make atomic commits (one logical change)
-
-**Don't:**
-
-- Write vague messages ("fix stuff", "updates")
-- Include multiple unrelated changes
-- Commit broken code
-- Commit debugging code
-- Use past tense
-- Exceed character limits
+- Avoid vague messages or committing broken code
 
 **Good Examples:**
 
@@ -808,22 +766,7 @@ Updated files
 
 ### 5.4 Commit Frequency
 
-**Guidelines:**
-
-- Commit often (multiple times per day)
-- Commit logical units of work
-- Commit before switching tasks
-- Don't commit broken code
-- Don't wait until feature is complete
-
-**When to Commit:**
-
-- After completing a logical unit
-- Before taking a break
-- Before switching branches
-- After fixing a bug
-- After adding tests
-- Before rebasing
+Commit logical units of work frequently throughout the day. Commit before switching tasks or branches, and before rebasing. Don't wait until a feature is complete to commit.
 
 ---
 
@@ -910,7 +853,7 @@ git merge feature/123-new-feature
 | Hotfix | Squash | Single logical fix |
 | Documentation updates | Squash | Clean history |
 
-**Note:** For Feature Branch Workflow, squash and merge is recommended for most cases to maintain a clean, readable history on `main`.
+For Feature Branch Workflow, squash and merge is recommended for most cases to maintain a clean, readable history on `main`.
 
 ### 6.3 Handling Merge Conflicts
 
@@ -949,12 +892,10 @@ git push origin feature/123 --force-with-lease
 
 **Conflict Resolution Tips:**
 
-- Understand both changes
+- Understand both changes before resolving
 - Test after resolution
-- Ask for help if unsure
-- Communicate with team
-- Don't blindly accept one side
-- Don't leave conflict markers
+- Communicate with team if unsure
+- Never leave conflict markers in code
 
 ---
 
@@ -1065,29 +1006,16 @@ Example: 1.2.3
 
 ### 8.1 General Best Practices
 
-**Do:**
-
-- Keep branches short-lived (< 2 weeks)
-- Update from main/develop frequently
+- Keep branches short-lived (under 2 weeks)
+- Update from main frequently
 - Write clear commit messages
 - Make atomic commits
 - Test before pushing
 - Review your own code first
 - Delete merged branches
-- Use branch protection rules
-- Follow naming conventions
-- Document significant decisions
-
-**Don't:**
-
-- Commit directly to main
-- Force push to shared branches
-- Leave branches unmerged for long
-- Mix unrelated changes
-- Commit broken code
-- Ignore CI failures
-- Skip code review
-- Rewrite published history
+- Never commit directly to main
+- Never force push to shared branches
+- Never rewrite published history
 
 ### 8.2 Code Review Best Practices
 
@@ -1097,17 +1025,13 @@ Example: 1.2.3
 - Provide clear description
 - Self-review before requesting review
 - Respond to feedback promptly
-- Test thoroughly
-- Update documentation
 
 **For Reviewers:**
 
-- Review promptly (within 2 days)
+- Review within 2 days
 - Be constructive and respectful
 - Focus on important issues
 - Explain reasoning
-- Approve when satisfied
-- Test if possible
 
 ### 8.3 Branch Hygiene
 
@@ -1338,7 +1262,7 @@ git config --global alias.visual 'log --oneline --graph --all'
 
 ### Appendix D: Alternative Branching Strategies
 
-**⚠️ Note:** These strategies are alternatives to the standard Feature Branch Workflow. They should only be adopted for specific use cases and require approval from the Technical Coordinator.
+**Note:** These strategies are alternatives to the standard Feature Branch Workflow. They should only be adopted for specific use cases and require approval from the Technical Coordinator.
 
 ---
 
@@ -1438,16 +1362,16 @@ git branch -d release/v1.2.0
 ```
 
 **Advantages:**
+
 - Clear separation of development and production code
 - Structured release process
 - Supports multiple production versions
-- Well-documented and widely understood
 
 **Disadvantages:**
+
 - More complex than Feature Branch Workflow
 - Additional overhead with `develop` branch
 - Can slow down deployment cycles
-- Requires discipline to maintain properly
 
 ---
 
@@ -1499,11 +1423,11 @@ graph TD
 
 **Requirements:**
 
-- **Robust CI/CD pipeline** - Automated testing and deployment
-- **Feature flags** - To hide incomplete features in production
-- **High test coverage** - Comprehensive automated tests
-- **Team discipline** - Commitment to frequent integration
-- **Monitoring** - Strong production monitoring and rollback capabilities
+- Robust CI/CD pipeline with automated testing and deployment
+- Feature flags to hide incomplete features in production
+- High test coverage with comprehensive automated tests
+- Team discipline and commitment to frequent integration
+- Strong production monitoring and rollback capabilities
 
 **Workflow:**
 
@@ -1541,17 +1465,17 @@ else:
 ```
 
 **Advantages:**
+
 - Reduces merge conflicts
 - Faster feedback loops
 - Encourages small, incremental changes
 - Simplifies branching model
-- Supports continuous deployment
 
 **Disadvantages:**
+
 - Requires mature engineering practices
 - High initial setup cost
 - Requires feature flag management
-- Not suitable for all team sizes
 - Steep learning curve
 
 ---
@@ -1572,11 +1496,7 @@ else:
 
 **Recommendation:**
 
-- **Default:** Use Feature Branch Workflow for most WEBUILD repositories
-- **Consider GitFlow:** Only for projects with strict release schedules and multiple production versions
-- **Consider Trunk-Based:** Only for teams with mature CI/CD and high automation
-
-**Migration:**
+Use Feature Branch Workflow for most WEBUILD repositories. Consider GitFlow only for projects with strict release schedules and multiple production versions. Consider Trunk-Based only for teams with mature CI/CD and high automation.
 
 If you need to switch strategies, consult with the Technical Coordinator and plan a gradual transition with team training.
 
@@ -1588,8 +1508,9 @@ If you need to switch strategies, consult with the Technical Coordinator and pla
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 

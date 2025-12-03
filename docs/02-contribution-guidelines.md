@@ -1,7 +1,7 @@
 # Contribution Guidelines
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 
 ---
@@ -25,7 +25,7 @@
 
 ### 1.1 Welcome
 
-Thank you for contributing to the WEBUILD consortium! These guidelines help ensure high-quality, consistent contributions across all repositories.
+These guidelines ensure high-quality, consistent contributions across all WEBUILD repositories.
 
 ### 1.2 Types of Contributions
 
@@ -71,10 +71,7 @@ All contributors must adhere to our Code of Conduct:
 
 ### 2.1 Prerequisites
 
-Before contributing, ensure you have:
-
 **Access:**
-- GitHub account
 - Access to WEBUILD organization (see [Onboarding Procedures](03-onboarding-procedures.md))
 - Appropriate repository permissions
 
@@ -82,11 +79,6 @@ Before contributing, ensure you have:
 - Git installed and configured
 - Development environment set up
 - Required dependencies installed
-
-**Knowledge:**
-- Familiarity with Git workflows
-- Understanding of repository purpose
-- Awareness of coding standards
 
 ### 2.2 Setting Up Your Environment
 
@@ -136,11 +128,11 @@ mvn install
 
 Before contributing:
 
-1. **Read the README.md** - Understand project purpose and setup
-2. **Review existing issues** - Check for duplicate work
-3. **Explore the codebase** - Familiarize yourself with structure
-4. **Check documentation** - Understand architecture and patterns
-5. **Run tests** - Ensure everything works locally
+1. Read the README.md
+2. Review existing issues to avoid duplicate work
+3. Explore the codebase structure
+4. Check documentation for architecture and patterns
+5. Run tests locally
 
 ---
 
@@ -172,31 +164,18 @@ graph TD
 
 #### Step 1: Find or Create an Issue
 
-<details>
-<summary>📹 Video: How to open an issue</summary>
+**Video: How to open an issue**
 
 ![How to open an issue](gifs/1-how-to-open-an-issue.gif)
 
-</details>
-
-**Before starting work:**
-
 1. Search existing issues for similar work
-2. If no issue exists, create one describing:
-   - Problem or feature request
-   - Proposed solution
-   - Expected impact
-   - Any relevant context
-
+2. If no issue exists, create one describing the problem, proposed solution, and expected impact
 3. Wait for maintainer feedback/approval
 4. Get issue assigned to you
 
-<details>
-<summary>📹 Video: Discussion on the issue</summary>
+**Video: Discussion on the issue**
 
 ![Discussion on the issue](gifs/2-discussion-on-the-issue.gif)
-
-</details>
 
 **Issue Template Example:**
 
@@ -224,12 +203,9 @@ Any other relevant information
 
 #### Step 2: Create a Feature Branch
 
-<details>
-<summary>📹 Video: Create a new branch</summary>
+**Video: Create a new branch**
 
 ![Create a new branch](gifs/3-1-crete-new-branch.gif)
-
-</details>
 
 ```bash
 # Update your local main branch
@@ -251,31 +227,22 @@ git checkout -b bugfix/issue-456-fix-login-error
 
 #### Step 3: Make Your Changes
 
-**Best Practices:**
-
 **Do:**
 - Make focused, logical changes
-- Follow coding standards
-- Write clear, self-documenting code
 - Add comments for complex logic
 - Update relevant documentation
 - Add/update tests
 
 **Don't:**
 - Mix unrelated changes
-- Include debugging code
-- Commit commented-out code
-- Leave TODO comments without issues
-- Break existing functionality
+- Include debugging code or commented-out code
+- Leave TODO comments without linked issues
 
 #### Step 4: Commit Your Changes
 
-<details>
-<summary>📹 Video: How to commit changes</summary>
+**Video: How to commit changes**
 
 ![How to commit changes](gifs/3-2-how-to-commit-changes.gif)
-
-</details>
 
 **Commit Message Format:**
 
@@ -310,19 +277,14 @@ git commit -m "feat: add user authentication mechanism
 Closes #123"
 ```
 
-**Commit Best Practices:**
-
 **Good commits:**
-- Atomic (one logical change)
-- Clear, descriptive messages
+- Atomic (one logical change per commit)
 - Reference related issues
 - Explain "why" not just "what"
 
 **Bad commits:**
 - Multiple unrelated changes
 - Vague messages ("fix stuff", "updates")
-- No context or explanation
-- Breaking changes without notice
 
 #### Step 5: Push Your Branch
 
@@ -330,20 +292,15 @@ Closes #123"
 # Push branch to remote
 git push origin feature/issue-123-add-authentication
 
-# If branch already exists remotely
+# If branch already exists remotely, use --force-with-lease to avoid overwriting others' work
 git push origin feature/issue-123-add-authentication --force-with-lease
 ```
 
-⚠️ **Note:** Use `--force-with-lease` instead of `--force` to avoid overwriting others' work.
-
 #### Step 6: Create a Pull Request
 
-<details>
-<summary>📹 Video: How to open a pull request</summary>
+**Video: How to open a pull request**
 
 ![How to open a pull request](gifs/3-3-how-to-open-a-pr.gif)
-
-</details>
 
 1. Navigate to repository on GitHub
 2. Click "Pull requests" → "New pull request"
@@ -553,7 +510,6 @@ src/
 - Logical grouping by feature or layer
 - Clear separation of concerns
 - Consistent structure across projects
-- Easy to navigate and understand
 
 ### 4.4 Error Handling
 
@@ -577,9 +533,8 @@ except Exception:
 
 **Best Practices:**
 - Catch specific exceptions
-- Log errors appropriately
+- Log errors with context
 - Provide meaningful error messages
-- Don't swallow exceptions silently
 - Clean up resources properly
 
 ### 4.5 Security Considerations
@@ -748,10 +703,9 @@ Use tools like:
 
 ### 6.1 Testing Principles
 
-**All code changes must include tests:**
+All code changes must include tests:
 - New features require new tests
 - Bug fixes require regression tests
-- Refactoring maintains test coverage
 - Tests must pass before merging
 
 ### 6.2 Types of Tests
@@ -845,15 +799,11 @@ mvn test jacoco:report
 - Test one thing per test
 - Use arrange-act-assert pattern
 - Make tests independent
-- Use fixtures and mocks appropriately
-- Keep tests maintainable
 
 **Don't:**
 - Write flaky tests
 - Test implementation details
 - Create test dependencies
-- Ignore failing tests
-- Skip tests without good reason
 
 ---
 
@@ -867,11 +817,9 @@ mvn test jacoco:report
 - [ ] All tests pass locally
 - [ ] New tests added for new functionality
 - [ ] Documentation updated
-- [ ] Commit messages are clear
 - [ ] No merge conflicts with main
 - [ ] Self-review completed
 - [ ] No debugging code or console logs
-- [ ] Dependencies updated if needed
 
 ### 7.2 PR Title and Description
 
@@ -960,91 +908,58 @@ Use draft PRs for:
 
 **Preparing for Review:**
 
-1. **Self-review first:**
-   - Read through all changes
-   - Check for obvious issues
-   - Verify tests pass
-   - Update documentation
-
-2. **Provide context:**
-   - Clear PR description
-   - Link to relevant issues
-   - Explain design decisions
-   - Highlight areas needing attention
-
-3. **Be responsive:**
-   - Respond to comments promptly
-   - Ask questions if unclear
-   - Make requested changes
-   - Thank reviewers for feedback
+1. Self-review all changes before requesting review
+2. Provide clear PR description with context
+3. Link to relevant issues and explain design decisions
+4. Highlight areas needing special attention
 
 **Responding to Feedback:**
 
-**Do:**
-- Be open to suggestions
-- Explain your reasoning
-- Make changes promptly
-- Mark conversations as resolved
+- Be open to suggestions and explain your reasoning
+- Respond to comments promptly
+- Mark conversations as resolved when addressed
 - Request re-review when ready
-
-**Don't:**
-- Take feedback personally
-- Argue defensively
-- Ignore comments
-- Make changes without discussion
-- Rush through revisions
 
 ### 8.2 For Reviewers
 
 **Review Checklist:**
 
-- [ ] **Functionality:** Does it work as intended?
-- [ ] **Code Quality:** Is it well-written and maintainable?
-- [ ] **Tests:** Are there adequate tests?
-- [ ] **Documentation:** Is it properly documented?
-- [ ] **Security:** Are there security concerns?
-- [ ] **Performance:** Are there performance issues?
-- [ ] **Standards:** Does it follow coding standards?
+- [ ] Functionality: Does it work as intended?
+- [ ] Code Quality: Is it well-written and maintainable?
+- [ ] Tests: Are there adequate tests?
+- [ ] Documentation: Is it properly documented?
+- [ ] Security: Are there security concerns?
+- [ ] Performance: Are there performance issues?
+- [ ] Standards: Does it follow coding standards?
 
 **Providing Feedback:**
 
 #### Option 1: Leave Quick Feedback
 
-<details>
-<summary>📹 Video: Review with comment</summary>
+**Video: Review with comment**
 
 ![Review with comment](gifs/4-1-review-with-comment.gif)
 
-</details>
-
-Point your cursor over a line number so that a blue "+" icon will appear. Click the "+" to open a comment box on that specific line, then write your comment and click "Add single comment".
+Click the "+" icon next to a line number to add a comment on that line.
 
 #### Option 2: Make a Suggestion
 
-<details>
-<summary>📹 Video: Review with suggestion</summary>
+**Video: Review with suggestion**
 
 ![Review with suggestion](gifs/4-2-review-with-suggestion.gif)
 
-</details>
-
-If you want to propose an actual edit to that line of code or text, add a code suggestion block using markdown syntax. GitHub automatically formats this as a suggested change box in your comment. When the PR author sees it, they'll have a button labeled "Apply suggestion" that automatically updates the code.
+Use markdown code suggestion blocks to propose specific edits. The PR author can apply suggestions with one click.
 
 #### Option 3: Submit a Complete Review
 
-<details>
-<summary>📹 Video: Submit a review</summary>
+**Video: Submit a review**
 
 ![Submit a review](gifs/4-3-submit-a-review.gif)
 
-</details>
-
-If you want to review several changes together, click "Add review comment" on multiple lines. When finished, click "Review changes" → "Submit review", then choose:
+Add multiple review comments, then click "Review changes" → "Submit review":
 - **Comment:** General feedback
 - **Approve:** Ready to merge
 - **Request changes:** Needs updates before merging
-
-**Feedback Examples:**
 
 **Good feedback:**
 ```markdown
@@ -1059,20 +974,11 @@ This is wrong.
 
 **Review Etiquette:**
 
-**Do:**
 - Be respectful and constructive
 - Explain the "why" behind suggestions
-- Praise good work
-- Ask questions to understand
-- Suggest alternatives
+- Ask questions to understand intent
 - Focus on the code, not the person
-
-**Don't:**
-- Be dismissive or rude
-- Make personal comments
-- Nitpick minor style issues
-- Block on personal preferences
-- Approve without reviewing
+- Don't block on personal preferences
 
 ### 8.3 Review Response Times
 
@@ -1117,12 +1023,7 @@ This is wrong.
 
 ### 9.2 Asking for Help
 
-**Before asking:**
-1. Search existing issues and documentation
-2. Try to solve the problem yourself
-3. Gather relevant information
-
-**When asking:**
+Before asking, search existing issues and documentation. When asking:
 - Provide context and details
 - Include error messages
 - Describe what you've tried
@@ -1274,7 +1175,7 @@ git push origin --force --all
 # Update .gitignore to prevent recurrence
 ```
 
-⚠️ **Important:** Notify maintainers immediately if secrets are exposed.
+**Important:** Notify maintainers immediately if secrets are exposed.
 
 ### 10.2 Getting Unstuck
 
@@ -1397,18 +1298,15 @@ If you have questions about these guidelines:
 
 ---
 
-**Thank you for contributing to WEBUILD! 🎉**
-
----
-
 **Document Control:**
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 

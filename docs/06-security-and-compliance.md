@@ -1,8 +1,8 @@
 
 # Security and Compliance
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 
 ---
@@ -66,7 +66,7 @@ Security is everyone's responsibility:
 
 #### 2.1.1 Defense in Depth
 
-Implement multiple layers of security:
+Implement multiple layers of security controls to protect against threats:
 
 ```mermaid
 graph TD
@@ -82,19 +82,7 @@ graph TD
 
 #### 2.1.2 Least Privilege
 
-Grant minimum necessary permissions:
-
-**Do:**
-- Start with minimal access
-- Grant additional access as needed
-- Review permissions regularly
-- Revoke unused access promptly
-
-**Don't:**
-- Give admin access by default
-- Share accounts or credentials
-- Leave inactive accounts active
-- Grant permanent access for temporary needs
+Grant minimum necessary permissions. Start with minimal access and grant additional permissions only as needed. Review permissions regularly and revoke unused access promptly.
 
 #### 2.1.3 Secure by Default
 
@@ -124,8 +112,6 @@ Never trust, always verify:
 **All members MUST:**
 
 - [ ] Enable two-factor authentication (2FA)
-- [ ] Use strong, unique passwords
-- [ ] Protect credentials and secrets
 - [ ] Report security incidents immediately
 - [ ] Follow secure coding practices
 - [ ] Complete security training
@@ -135,14 +121,10 @@ Never trust, always verify:
 #### 2.2.2 Prohibited Activities
 
 **Never:**
-
-**Never:**
 - Commit secrets or credentials
 - Store sensitive data in repositories
-- Share accounts or credentials
 - Disable security features
 - Ignore security warnings
-- Use weak or reused passwords
 - Access unauthorized resources
 - Bypass security controls
 
@@ -170,7 +152,6 @@ Never trust, always verify:
 **Recovery Codes:**
 - Store in secure password manager
 - Keep offline backup
-- Don't share with anyone
 - Generate new codes if compromised
 
 **Lost 2FA Device:**
@@ -202,7 +183,6 @@ cat ~/.ssh/id_ed25519.pub
 **Key Management:**
 - Use separate keys for different devices
 - Protect private keys with passphrase
-- Never share private keys
 - Rotate keys annually
 - Remove old/unused keys
 - Report compromised keys immediately
@@ -231,9 +211,6 @@ cat ~/.ssh/id_ed25519.pub
 - Limit scopes to minimum needed
 - Rotate tokens regularly
 - Revoke unused tokens
-- Never commit tokens to code
-- Don't share tokens
-- Don't use tokens in URLs
 
 ### 3.2 Authorization
 
@@ -280,8 +257,6 @@ Follow least privilege principle:
 - Lock screen when away
 - Clear browser cache on shared devices
 - Review active sessions regularly
-- Stay logged in on public computers (don't)
-- Save passwords in browsers on shared devices (don't)
 
 **Review Active Sessions:**
 
@@ -576,9 +551,6 @@ def require_auth(f):
 - Use secure session management
 - Implement proper authorization checks
 - Use HTTPS for all communications
-- Never store passwords in plain text
-- Don't use weak hashing (MD5, SHA1)
-- Don't trust client-side validation alone
 
 #### 5.1.3 Error Handling
 
@@ -603,8 +575,6 @@ except DatabaseError as e:
 
 - Log detailed errors server-side
 - Return generic messages to users
-- Don't expose stack traces
-- Don't reveal system information
 - Handle errors gracefully
 
 #### 5.1.4 Cryptography
@@ -635,9 +605,6 @@ def decrypt(encrypted_data, key):
 - Use strong algorithms (AES-256, RSA-2048+)
 - Generate secure random keys
 - Protect encryption keys
-- Never implement your own crypto
-- Don't use weak algorithms (DES, RC4)
-- Don't hardcode keys
 
 ### 5.2 Code Review for Security
 
@@ -895,7 +862,6 @@ pip freeze > requirements.txt
 
 **Never store in repositories:**
 
-**Never store in repositories:**
 - Names and contact information
 - Email addresses
 - Phone numbers
@@ -906,7 +872,6 @@ pip freeze > requirements.txt
 
 **If personal data needed for testing:**
 
-**If personal data needed for testing:**
 - Use synthetic/fake data
 - Anonymize real data
 - Use data generators
@@ -975,7 +940,6 @@ pip freeze > requirements.txt
 
 **Encrypt:**
 
-**Encrypt:**
 - Data at rest (databases, files)
 - Data in transit (HTTPS, TLS)
 - Backups
@@ -1035,9 +999,8 @@ graph TD
 
 **Immediate Actions:**
 
-1. **Don't panic**
-2. **Document everything**
-3. **Report immediately:**
+1. **Document everything**
+2. **Report immediately:**
    - Technical Coordinator
    - WP/Group Lead
    - Security team
@@ -1061,18 +1024,10 @@ graph TD
 
 **For security researchers:**
 
-**Do:**
-**Do:**
 - Report privately first
 - Provide detailed information
 - Allow time for fix (90 days)
 - Coordinate disclosure
-
-**Don't:**
-- Publicly disclose immediately
-- Exploit vulnerabilities
-- Access unauthorized data
-- Disrupt services
 
 #### 8.2.2 Reporting Vulnerabilities
 
@@ -1197,8 +1152,7 @@ Include:
 - [ ] Data breach procedures
 - [ ] Data subject rights procedures
 
-#### 9.1.2 NIS2 Directive (Network an
-d Information Systems Security)
+#### 9.1.2 NIS2 Directive (Network and Information Systems Security)
 
 **Key Requirements:**
 
@@ -1209,15 +1163,6 @@ d Information Systems Security)
 - **Security Measures:** Implement appropriate technical and organizational measures
 - **Reporting:** Report significant incidents to authorities
 
-**Implementation:**
-
-- [ ] Cybersecurity risk assessment
-- [ ] Incident response plan
-- [ ] Business continuity plan
-- [ ] Supply chain security measures
-- [ ] Security monitoring and logging
-- [ ] Incident reporting procedures
-
 #### 9.1.3 eIDAS Regulation
 
 **For digital identity and trust services:**
@@ -1227,14 +1172,6 @@ d Information Systems Security)
 - **Trust Services:** Certified trust service providers
 - **Security Requirements:** High security standards
 - **Cross-Border Recognition:** EU-wide interoperability
-
-**Implementation:**
-
-- [ ] Secure authentication implementation
-- [ ] Digital signature support
-- [ ] Trust service integration
-- [ ] Security certification
-- [ ] Compliance documentation
 
 ### 9.2 Consortium Agreements
 
@@ -1248,14 +1185,6 @@ d Information Systems Security)
 - **Ethical Requirements:** Ethics compliance
 - **Reporting:** Regular progress reporting
 
-**Implementation:**
-
-- [ ] Open access publication plan
-- [ ] Data management plan
-- [ ] IP agreement documentation
-- [ ] Ethics approval (if required)
-- [ ] Reporting procedures
-
 #### 9.2.2 Consortium Agreement
 
 **Internal Consortium Rules:**
@@ -1265,14 +1194,6 @@ d Information Systems Security)
 - **Publication:** Publication approval process
 - **Liability:** Liability and indemnification
 - **Dispute Resolution:** Conflict resolution procedures
-
-**Implementation:**
-
-- [ ] Access rights documentation
-- [ ] Confidentiality procedures
-- [ ] Publication approval workflow
-- [ ] Liability insurance
-- [ ] Dispute resolution process
 
 ### 9.3 Licensing Compliance
 
@@ -1327,14 +1248,6 @@ license-checker --failOn 'GPL-2.0'
 - Check country-specific restrictions
 - Document cryptographic capabilities
 
-**Implementation:**
-
-- [ ] Identify cryptographic components
-- [ ] Check export control requirements
-- [ ] Obtain necessary authorizations
-- [ ] Document compliance
-- [ ] Update export documentation
-
 #### 9.4.2 Restricted Countries
 
 **Be aware of:**
@@ -1358,7 +1271,6 @@ license-checker --failOn 'GPL-2.0'
 - [ ] Use full disk encryption
 - [ ] Enable firewall
 - [ ] Install antivirus/antimalware
-- [ ] Use strong passwords
 - [ ] Enable screen lock
 - [ ] Regular backups
 - [ ] Secure Wi-Fi connections
@@ -1388,7 +1300,6 @@ Host github.com
 - Review extension permissions
 - Keep IDE updated
 - Configure security plugins
-- Disable telemetry if concerned
 
 ### 10.2 Secure Communication
 
@@ -1401,8 +1312,9 @@ Host github.com
 | General Discussion | GitHub Discussions | Public |
 | Code Review | GitHub Pull Requests | Public/Private |
 | Security Issues | Private Security Advisory | Private |
-| Sensitive Topics | Encrypted Email | Encrypted |
-| Real-time Chat | Secure Messaging | Encrypted |
+| Sensitive Topics | Encrypted Email |
+
+ Encrypted |
 
 #### 10.2.2 Email Security
 
@@ -1410,8 +1322,6 @@ Host github.com
 
 - Use PGP/GPG encryption for sensitive emails
 - Verify sender identity
-- Don't click suspicious links
-- Don't open unexpected attachments
 - Use secure email providers
 - Enable spam filtering
 
@@ -1466,45 +1376,9 @@ gpg --armor --export your.email@example.com > public-key.asc
 - Schneier on Security
 - GitHub Security Blog
 
-### 10.4 Security Checklist
+### 10.4 Security Metrics
 
-#### 10.4.1 Daily Security Tasks
-
-- [ ] Review security alerts
-- [ ] Check for suspicious activity
-- [ ] Verify access logs
-- [ ] Monitor CI/CD pipelines
-- [ ] Review new issues/PRs for security concerns
-
-#### 10.4.2 Weekly Security Tasks
-
-- [ ] Review Dependabot alerts
-- [ ] Update dependencies
-- [ ] Check security scan results
-- [ ] Review access permissions
-- [ ] Backup important data
-
-#### 10.4.3 Monthly Security Tasks
-
-- [ ] Full security audit
-- [ ] Access review
-- [ ] Update security documentation
-- [ ] Review incident logs
-- [ ] Security training updates
-- [ ] Compliance check
-
-#### 10.4.4 Quarterly Security Tasks
-
-- [ ] Comprehensive security assessment
-- [ ] Penetration testing (if applicable)
-- [ ] Policy review and updates
-- [ ] Team security training
-- [ ] Disaster recovery testing
-- [ ] Compliance audit
-
-### 10.5 Security Metrics
-
-#### 10.5.1 Key Metrics
+#### 10.4.1 Key Metrics
 
 **Track and monitor:**
 
@@ -1517,7 +1391,7 @@ gpg --armor --export your.email@example.com > public-key.asc
 | Security training completion | 100% | Quarterly |
 | Code security scan pass rate | > 95% | Per PR |
 
-#### 10.5.2 Reporting
+#### 10.4.2 Reporting
 
 **Monthly Security Report:**
 
@@ -1691,8 +1565,9 @@ repos:
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 

@@ -1,7 +1,7 @@
 # Licensing Guidelines
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 
 ---
@@ -27,24 +27,11 @@ This document establishes licensing policies and guidelines for all code, docume
 
 ### 1.2 Scope
 
-These guidelines apply to:
-
-- All source code repositories
-- Documentation and specifications
-- Test suites and tools
-- Examples and tutorials
-- Configuration files and scripts
-- Any other project outputs
+These guidelines apply to all source code repositories, documentation and specifications, test suites and tools, examples and tutorials, configuration files and scripts, and any other project outputs.
 
 ### 1.3 Legal Framework
 
-Licensing within WEBUILD must comply with:
-
-- **EU Grant Agreement** - Open access requirements
-- **Consortium Agreement** - IP rights and obligations
-- **Partner Agreements** - Individual partner IP policies
-- **Open Source Licenses** - License terms and conditions
-- **Export Control** - Applicable regulations
+Licensing within WEBUILD must comply with the EU Grant Agreement (open access requirements), Consortium Agreement (IP rights and obligations), Partner Agreements (individual partner IP policies), Open Source Licenses (license terms and conditions), and Export Control regulations.
 
 ### 1.4 Key Principles
 
@@ -82,35 +69,17 @@ Most WeBuild repositories use Apache License 2.0, including:
 
 ### 2.2 When to Use Apache 2.0
 
-Use Apache License 2.0 for:
-
-**Source code** - All programming languages
-**Libraries and frameworks** - Reusable components
-**Tools and utilities** - Development tools
-**APIs and interfaces** - Public interfaces
-**Examples and samples** - Code examples
-**Scripts and automation** - Build and deployment scripts
+Use Apache License 2.0 for all code-related content including source code, libraries, tools, APIs, examples, and scripts.
 
 ### 2.3 Exceptions to Default License
 
-**Alternative licenses may be considered for:**
-
-- Documentation (Creative Commons)
-- Specifications (W3C, IETF standards)
-- Data sets (Open Data Commons)
-- Media files (Creative Commons)
-- Special requirements (case-by-case)
+Alternative licenses may be considered for documentation (Creative Commons), specifications (W3C, IETF standards), data sets (Open Data Commons), media files (Creative Commons), or special requirements on a case-by-case basis.
 
 **Approval Required:** Technical Coordinator + Legal review
 
 ### 2.4 License Declaration
 
-Every repository MUST include:
-
-1. **LICENSE file** in repository root
-2. **License headers** in source files (where applicable)
-3. **README notice** stating the license
-4. **NOTICE file** for attributions (if needed)
+Every repository must include a LICENSE file in the repository root, license headers in source files (where applicable), a README notice stating the license, and a NOTICE file for attributions (if needed).
 
 ---
 
@@ -126,21 +95,15 @@ Every repository MUST include:
 ### 3.2 Key Terms
 
 **Permissions:**
-- Commercial use
-- Modification
-- Distribution
-- Patent use
-- Private use
+- Commercial use, modification, distribution, patent use, private use
 
 **Conditions:**
-- ⚠️ License and copyright notice
-- ⚠️ State changes
-- ⚠️ Include NOTICE file (if present)
+- License and copyright notice required
+- State changes in modified files
+- Include NOTICE file if present
 
 **Limitations:**
-- Trademark use
-- Liability
-- Warranty
+- No trademark use, liability, or warranty
 
 ### 3.3 License Text
 
@@ -263,28 +226,15 @@ limitations under the License.
 
 #### 3.5.3 When to Include Headers
 
-**Include headers in:**
-- All source code files
-- Configuration files (where comments allowed)
-- Build scripts
-- SQL files
-- Shell scripts
+Include headers in all source code files, configuration files (where comments are allowed), build scripts, SQL files, and shell scripts.
 
-**May omit headers in:**
-- Generated files (note generation in header)
-- Very small files (< 10 lines)
-- Data files (JSON, CSV, etc.)
-- Binary files
+Omit headers in generated files (note generation in header), very small files (< 10 lines), data files (JSON, CSV, etc.), and binary files.
 
 ### 3.6 NOTICE File
 
 **When to include NOTICE:**
 
-Create a NOTICE file when:
-- Using third-party code with attribution requirements
-- Including code from other Apache projects
-- Required by dependencies
-- Consortium-specific attributions needed
+Create a NOTICE file when using third-party code with attribution requirements, including code from other Apache projects, when required by dependencies, or for consortium-specific attributions.
 
 **NOTICE File Format:**
 
@@ -334,25 +284,18 @@ graph TD
 
 **Alternative Options:**
 - **MIT License** - Simpler, less patent protection
-- **BSD 3-Clause** - Similar to MIT, explicit patent clause
+- **BSD 3-Clause** - Similar to MIT
 - **GPL 3.0** - Copyleft, requires derivative works to be open
 
-**Selection Criteria:**
-- Patent protection needed? → Apache 2.0
-- Maximum simplicity? → MIT
-- Copyleft required? → GPL 3.0
+Use Apache 2.0 for patent protection, MIT for simplicity, or GPL 3.0 when copyleft is required.
 
 #### 4.2.2 For Documentation
 
 **Recommended:** Creative Commons Attribution 4.0 (CC BY 4.0)
 
-**Rationale:**
-- Designed for creative works
-- Allows commercial use
-- Requires attribution
-- Widely recognized
+Designed for creative works, allows commercial use with attribution requirement.
 
-**Alternative:**
+**Alternatives:**
 - **CC BY-SA 4.0** - Share-alike requirement
 - **CC0** - Public domain dedication
 
@@ -363,10 +306,7 @@ graph TD
 - **IETF Trust License** - For internet standards
 - **Apache 2.0** - General specifications
 
-**Choose based on:**
-- Standards body requirements
-- Intended use and audience
-- Compatibility needs
+Choose based on standards body requirements, intended use, and compatibility needs.
 
 #### 4.2.4 For Data
 
@@ -394,7 +334,7 @@ Apache 2.0 is compatible with:
 
 #### 4.3.2 Incompatible Licenses
 
-⚠️ **Incompatible with:**
+**Incompatible with:**
 - GPL 2.0 (without exception)
 - Some proprietary licenses
 - Licenses with field-of-use restrictions
@@ -419,35 +359,20 @@ Apache 2.0 is compatible with:
 
 #### 5.1.1 Setup Checklist
 
-When creating a new repository:
-
-- [ ] Add LICENSE file to root
-- [ ] Add copyright notice to README
-- [ ] Add license headers to source files
-- [ ] Create NOTICE file (if needed)
-- [ ] Configure repository license on GitHub
-- [ ] Document license in package metadata
-- [ ] Add license badge to README
+When creating a new repository, add LICENSE file, copyright notice in README, license headers in source files, NOTICE file (if needed), configure GitHub license detection, document in package metadata, and add license badge.
 
 #### 5.1.2 LICENSE File
 
-**Steps:**
+Download and add the Apache 2.0 license:
 
-1. Download Apache 2.0 license text:
 ```bash
 curl -o LICENSE https://www.apache.org/licenses/LICENSE-2.0.txt
-```
-
-2. Add to repository:
-```bash
 git add LICENSE
 git commit -m "chore: add Apache 2.0 license"
 git push origin main
 ```
 
-3. Configure on GitHub:
-   - Go to repository settings
-   - Verify license detected as "Apache-2.0"
+Verify license is detected as "Apache-2.0" in repository settings.
 
 #### 5.1.3 README License Section
 
@@ -480,7 +405,7 @@ Add badge to README.md:
 
 #### 5.2.1 Manual Addition
 
-For new files, include header at the top:
+For new files, include the header at the top:
 
 ```python
 # Copyright 2025 WeBuild Consortium
@@ -608,14 +533,7 @@ license = {text = "Apache-2.0"}
 
 #### 6.1.1 Before Adding Dependencies
 
-**Review Checklist:**
-
-- [ ] Check dependency license
-- [ ] Verify license compatibility
-- [ ] Review license obligations
-- [ ] Check for patent clauses
-- [ ] Assess security implications
-- [ ] Document license in project
+Before adding dependencies, verify license compatibility, check for patent clauses, and document the license in your project.
 
 #### 6.1.2 Acceptable Licenses
 
@@ -628,9 +546,9 @@ license = {text = "Apache-2.0"}
 - Unlicense / Public Domain
 
 **Copyleft licenses (use with caution):**
-- ⚠️ LGPL 2.1, 3.0 (linking allowed)
-- ⚠️ MPL 2.0 (file-level copyleft)
-- ⚠️ EPL 2.0 (Eclipse Public License)
+- LGPL 2.1, 3.0 (linking allowed)
+- MPL 2.0 (file-level copyleft)
+- EPL 2.0 (Eclipse Public License)
 
 **Problematic licenses (avoid):**
 - GPL 2.0 (incompatible with Apache 2.0)
@@ -665,11 +583,7 @@ mvn license:aggregate-third-party-report
 
 #### 6.2.1 When Attribution is Required
 
-Provide attribution when:
-- License requires it (Apache, BSD, MIT)
-- Using substantial portions of code
-- Modifying third-party code
-- Redistributing dependencies
+Provide attribution when the license requires it, when using substantial code portions, modifying third-party code, or redistributing dependencies.
 
 #### 6.2.2 Attribution Methods
 
@@ -751,13 +665,7 @@ mvn license:aggregate-add-third-party
 
 ### 7.1 Consortium IP Agreement
 
-**Key Points:**
-
-1. **Background IP:** Each partner retains ownership of pre-existing IP
-2. **Foreground IP:** New IP created during project is jointly owned
-3. **Access Rights:** Partners have access rights per consortium agreement
-4. **Publication:** Open access publication required by EU grant
-5. **Exploitation:** Partners may exploit results per agreement
+Partners retain ownership of pre-existing IP (Background IP). New IP created during the project (Foreground IP) is jointly owned. Partners have access rights per consortium agreement. Open access publication is required by EU grant, and partners may exploit results per agreement.
 
 ### 7.2 Contributor Rights
 
@@ -774,51 +682,27 @@ Licensed under the Apache License, Version 2.0...
 
 #### 7.2.2 Contributor License Agreement (CLA)
 
-**Not required for consortium members** (covered by consortium agreement)
-
-**May be required for:**
-- External contributors
-- Non-partner organizations
-- Individual contributors outside consortium
+Not required for consortium members (covered by consortium agreement). May be required for external contributors, non-partner organizations, or individual contributors outside the consortium.
 
 ### 7.3 Patent Rights
 
 #### 7.3.1 Apache 2.0 Patent Grant
 
-Apache 2.0 includes patent grant:
-- Contributors grant patent license for their contributions
-- Protects users from patent claims
-- Terminates if user initiates patent litigation
+Apache 2.0 includes a patent grant where contributors license their patents for their contributions, protecting users from patent claims. The grant terminates if the user initiates patent litigation.
 
 #### 7.3.2 Consortium Patent Policy
 
-Follow consortium agreement regarding:
-- Patent filing procedures
-- Patent ownership
-- Patent licensing
-- Patent enforcement
+Follow consortium agreement regarding patent filing procedures, ownership, licensing, and enforcement.
 
 ### 7.4 Trademark Rights
 
 #### 7.4.1 WEBUILD Trademarks
 
-**Protected:**
-- WEBUILD name and logo
-- Project names and logos
-- Service marks
-
-**Usage:**
-- Requires permission for commercial use
-- Attribution allowed for factual reference
-- Follow trademark usage guidelines
+WEBUILD name, logo, project names, and service marks are protected. Commercial use requires permission. Attribution is allowed for factual reference following trademark usage guidelines.
 
 #### 7.4.2 Third-Party Trademarks
 
-**Respect third-party trademarks:**
-- Don't use without permission
-- Provide proper attribution
-- Follow trademark guidelines
-- Remove if requested
+Respect third-party trademarks by obtaining permission before use, providing proper attribution, following trademark guidelines, and removing upon request.
 
 ---
 
@@ -828,16 +712,7 @@ Follow consortium agreement regarding:
 
 #### 8.1.1 Compliance Checklist
 
-**For each repository:**
-
-- [ ] LICENSE file present and correct
-- [ ] Source files have license headers
-- [ ] README includes license information
-- [ ] NOTICE file if required
-- [ ] Dependencies documented
-- [ ] License compatibility verified
-- [ ] Attribution requirements met
-- [ ] Package metadata correct
+Ensure each repository has: LICENSE file, license headers in source files, README license information, NOTICE file (if required), documented dependencies with verified compatibility, proper attributions, and correct package metadata.
 
 #### 8.1.2 Automated Compliance Checks
 
@@ -869,12 +744,7 @@ jobs:
 
 #### 8.2.1 Identifying Violations
 
-**Common violations:**
-- Missing LICENSE file
-- Missing license headers
-- Incompatible dependencies
-- Missing attributions
-- Incorrect license statements
+Common violations include missing LICENSE files, missing license headers, incompatible dependencies, missing attributions, and incorrect license statements.
 
 #### 8.2.2 Remediation Process
 
@@ -894,33 +764,17 @@ graph TD
     E --> F
 ```
 
-**Steps:**
-
-1. **Identify:** Detect violation through audit or report
-2. **Assess:** Determine severity and impact
-3. **Notify:** Inform repository maintainer and WP lead
-4. **Remediate:** Fix the violation
-5. **Verify:** Confirm fix is correct
-6. **Document:** Record violation and resolution
+Process: Identify violation through audit or report, assess severity and impact, notify repository maintainer and WP lead, remediate the issue, verify the fix, and document the violation and resolution.
 
 ### 8.3 License Audits
 
 #### 8.3.1 Regular Audits
 
-**Schedule:**
-- **Quarterly:** Review all active repositories
-- **Before releases:** Verify compliance
-- **On request:** Ad-hoc audits as needed
+Conduct quarterly reviews of all active repositories, verify compliance before releases, and perform ad-hoc audits as needed.
 
 **Audit Checklist:**
 
-- [ ] All repositories have LICENSE file
-- [ ] License headers present in source files
-- [ ] Dependencies documented
-- [ ] No incompatible licenses
-- [ ] Attributions complete
-- [ ] NOTICE files correct
-- [ ] Package metadata accurate
+Verify LICENSE files, license headers, documented dependencies, license compatibility, complete attributions, correct NOTICE files, and accurate package metadata.
 
 #### 8.3.2 Audit Tools
 
@@ -944,30 +798,24 @@ fossology
 
 #### 8.4.1 Getting Help
 
-**For licensing questions:**
-
-1. Review this documentation
-2. Check FAQ below
-3. Consult WP/Group lead
-4. Contact Technical Coordinator
-5. Seek legal advice (if needed)
+For licensing questions, review this documentation, check the FAQ below, consult your WP/Group lead, contact the Technical Coordinator, or seek legal advice if needed.
 
 #### 8.4.2 FAQ
 
 **Q: Can I use GPL code in WEBUILD projects?**
-A: GPL 3.0 code can be used (one-way compatibility), but GPL 2.0 is incompatible with Apache 2.0. Consult Technical Coordinator before using any GPL code.
+A: GPL 3.0 is compatible (one-way), but GPL 2.0 is not. Consult the Technical Coordinator before using GPL code.
 
 **Q: Do I need to add license headers to every file?**
 A: Yes, for all source code files. Small files (< 10 lines) and generated files may be exempt.
 
 **Q: Can I use a different license for my contribution?**
-A: No, all contributions must use the repository's license (Apache 2.0 by default). Exceptions require approval.
+A: No, all contributions must use Apache 2.0 unless an exception is approved.
 
 **Q: What if a dependency has an incompatible license?**
-A: Find an alternative dependency or seek approval for an exception. Do not use incompatible dependencies without approval.
+A: Find an alternative or seek approval. Do not use incompatible dependencies without approval.
 
 **Q: How do I handle code from Stack Overflow?**
-A: Stack Overflow content is licensed under CC BY-SA. Small snippets (< 10 lines) are generally acceptable with attribution. Larger portions require careful consideration.
+A: Small snippets (< 10 lines) are acceptable with attribution. Larger portions require careful consideration due to CC BY-SA licensing.
 
 ---
 
@@ -1017,8 +865,9 @@ SPDX-License-Identifier: Apache-2.0
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 

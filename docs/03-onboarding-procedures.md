@@ -1,7 +1,7 @@
 # Onboarding Procedures
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 
 ---
@@ -59,9 +59,9 @@ Onboarding is required for:
 New members must:
 
 **Have a GitHub Account:**
-- Create account at [github.com](https://github.com)
-- Use professional username (preferably real name)
-- Add profile picture
+- Personal GitHub accounts are acceptable and encouraged
+- Use a professional username (preferably your real name)
+- Add a profile picture
 - Enable two-factor authentication (2FA)
 
 **Complete Consortium Onboarding:**
@@ -72,7 +72,6 @@ New members must:
 - Review project overview
 - Understand WP/Group objectives
 - Identify role and responsibilities
-- Know reporting structure
 
 ### 2.2 GitHub Account Setup
 
@@ -91,11 +90,11 @@ If you don't have a GitHub account:
 - Good: `john-smith`, `jsmith`, `john.smith`
 - Avoid: `cooldude123`, `hackerman`, random strings
 
+**Note:** You can use your existing personal GitHub account. There's no requirement to create a separate work account or add company details to your profile.
+
 #### 2.2.2 Enabling Two-Factor Authentication (2FA)
 
-**Required for all consortium members.**
-
-**Steps:**
+Required for all consortium members.
 
 1. Go to Settings → Password and authentication
 2. Click "Enable two-factor authentication"
@@ -107,20 +106,18 @@ If you don't have a GitHub account:
 6. Save recovery codes securely
 7. Verify 2FA is enabled
 
-⚠️ **Important:** Store recovery codes in a secure location. You'll need them if you lose access to your authentication device.
+**Important:** Store recovery codes in a secure location. You'll need them if you lose access to your authentication device.
 
 #### 2.2.3 Profile Setup
 
-Complete your GitHub profile:
+Optionally complete your GitHub profile:
 
 ```markdown
 Name: Your Full Name
 Bio: Role | WEBUILD Consortium
 ```
 
-**Add Profile Picture (Optional):**
-- Professional photo preferred
-- Clear, recognizable image
+Adding a professional photo is helpful but not required.
 
 ### 2.3 Required Information
 
@@ -130,7 +127,6 @@ Before requesting access, gather:
 - [ ] Email address
 - [ ] Organization/Partner name
 - [ ] Work Package assignment
-- [ ] Group assignment (if applicable)
 - [ ] Required repository access
 
 ---
@@ -142,10 +138,10 @@ Before requesting access, gather:
 ```mermaid
 graph TD
     A[New Member<br/>Provides Info]
-    B[WP/Group/ΘΨ Lead<br/>Submits Request]
+    B[WP/Group/UC Lead<br/>Submits Request]
     C[Tech Coord<br/>Reviews Request]
     D[Tech Coord<br/>Grants Access]
-    E[WP/Group/ΘΨ Lead<br/>Assigns Teams]
+    E[WP/Group/UC Lead<br/>Assigns Teams]
     F[New Member<br/>Receives Access]
 
     A --> B
@@ -155,7 +151,7 @@ graph TD
     E --> F
 ```
 
-### 3.2 For WP/Group/ΘΨ Leads: Submitting Access Request
+### 3.2 For WP/Group/UC Leads: Submitting Access Request
 
 #### 3.2.1 Access Request Template
 
@@ -330,21 +326,13 @@ sudo dnf install git
 #### 4.1.2 Configure Git
 
 ```bash
-# Set your name (use real name)
 git config --global user.name "Your Full Name"
-
-# Set your email
 git config --global user.email "your.email@organization.com"
-
-# Set default branch name
 git config --global init.defaultBranch main
-
-# Enable credential caching
 git config --global credential.helper cache
 
-# Set default editor (optional)
+# Optional: Set default editor
 git config --global core.editor "code --wait"  # VS Code
-# or
 git config --global core.editor "vim"  # Vim
 
 # Verify configuration
@@ -531,40 +519,36 @@ Complete within first week:
 - [ ] Read [GitHub Policies and Guidelines](01-github-policies-and-guidelines.md)
 - [ ] Review [Contribution Guidelines](02-contribution-guidelines.md)
 - [ ] Understand [Branching and Workflow](07-branching-and-workflow.md)
-- [ ] Read repository README files
-- [ ] Meet with WP/Group/UC lead (if needed)
 - [ ] Set up development environment
 
 ### 6.2 Training Materials
 
 #### 6.2.1 Git and GitHub Basics
 
-**If new to Git:**
+If new to Git:
 - [Git Handbook](https://guides.github.com/introduction/git-handbook/)
 - [GitHub Skills](https://skills.github.com/)
 - [Pro Git Book](https://git-scm.com/book) (free online)
 
-**Key Concepts to Learn:**
+Key concepts to learn:
 - Repositories and commits
 - Branches and merging
 - Pull requests
 - Code review
 - Conflict resolution
 
-#### 6.2.2 WEBUILD-Specific Training
+#### 6.2.2 WEBUILD-Specific Resources
 
-**Required Reading:**
+Recommended reading:
 1. Project overview and objectives
 2. WP/Group/UC specific documentation
-3. Architecture documentation
-4. API specifications (if applicable)
-5. Testing procedures
+3. Repository README files
+4. Recent pull requests and issues
 
-**Recommended:**
+Recommended activities:
 - Attend weekly team meetings
 - Review recent pull requests
 - Explore codebase structure
-- Read issue discussions
 
 ### 6.3 Learning Resources
 
@@ -669,7 +653,6 @@ Offboarding is necessary when:
 - Partner organization exits project
 - Contract/assignment ends
 - Role changes (no longer needs access)
-- Security incident requires access revocation
 
 ### 8.2 Offboarding Workflow
 
@@ -693,74 +676,30 @@ graph TD
 
 - [ ] Complete assigned work or hand over
 - [ ] Document ongoing tasks
-- [ ] Transfer knowledge to team
-- [ ] Update documentation
 - [ ] Close or reassign issues
 - [ ] Finish open pull requests
-- [ ] Return any credentials or access tokens
-- [ ] Provide handover notes
 
 #### 8.3.2 For WP/Group/UC Lead
 
 - [ ] Notify Technical Coordinator
-- [ ] Identify knowledge transfer needs
 - [ ] Reassign open issues and PRs
 - [ ] Update team documentation
-- [ ] Conduct exit interview (optional)
-- [ ] Document lessons learned
 
 #### 8.3.3 For Technical Coordinator
 
 - [ ] Remove from organization
 - [ ] Remove from all teams
 - [ ] Revoke repository access
-- [ ] Remove from communication channels
 - [ ] Update access logs
-- [ ] Verify access revocation complete
-- [ ] Document offboarding completion
 
 ### 8.4 Access Revocation
 
-**Technical Coordinator actions:**
+Technical Coordinator removes member via GitHub UI: Organization → People → Remove member
 
-```bash
-# Remove from organization
-# Via GitHub UI: Organization → People → Remove member
-
-# Verify removal
-# Check member no longer appears in:
-# - Organization members list
-# - Team members lists
-# - Repository collaborators
-```
-
-**Verification:**
-
+Verification checklist:
 - [ ] Organization access removed
 - [ ] Team memberships removed
 - [ ] Repository access revoked
-- [ ] No pending invitations
-- [ ] Access logs updated
-
-### 8.5 Post-Offboarding
-
-**Follow-up actions:**
-
-1. **Review access:**
-   - Audit remaining team members
-   - Verify no orphaned permissions
-   - Update team documentation
-
-2. **Update records:**
-   - Access logs
-   - Team rosters
-   - Contact lists
-   - Documentation
-
-3. **Lessons learned:**
-   - What went well?
-   - What could improve?
-   - Update onboarding based on feedback
 
 ---
 
@@ -843,20 +782,15 @@ git status
 
 ---
 
-**Welcome to WEBUILD! 🎉**
-
-We're excited to have you on the team. If you have any questions during onboarding, don't hesitate to ask!
-
----
-
 **Document Control:**
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 

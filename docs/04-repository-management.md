@@ -1,8 +1,8 @@
 
 # Repository Management
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 
 ---
@@ -69,57 +69,28 @@ graph TD
 ### 2.2 Stage Descriptions
 
 #### 2.2.1 Planning
-- Identify need for new repository
-- Define purpose and scope
-- Determine ownership and team
-- Plan initial structure
+Define repository purpose, scope, ownership, and initial structure.
 
 #### 2.2.2 Approval
-- Submit creation request
-- Review by WP/Group lead
-- Approval by Technical Coordinator
-- Resource allocation
+Submit creation request through WP/Group lead to Technical Coordinator for approval and resource allocation.
 
 #### 2.2.3 Creation
-- Repository created in organization
-- Initial structure set up
-- Access permissions configured
-- Basic files added
+Repository is created in the organization with initial structure, access permissions, and basic files.
 
 #### 2.2.4 Setup
-- Complete configuration
-- Add required files
-- Configure branch protection
-- Set up CI/CD (if needed)
-- Add team members
+Complete configuration including required files, branch protection, CI/CD setup, and team member access.
 
 #### 2.2.5 Active
-- Regular development activity
-- Issue management
-- Pull request reviews
-- Release management
-- Documentation updates
-- Community engagement
+Repository is under active development with regular issue management, pull request reviews, releases, and documentation updates.
 
 #### 2.2.6 Deprecated
-- No longer actively maintained
-- Security updates only
-- Migration path provided
-- Clear deprecation notice
-- Scheduled for archival
+Repository receives security updates only. Migration path and deprecation notice provided, with scheduled archival date.
 
 #### 2.2.7 Archived
-- Read-only status
-- No further changes
-- Preserved for reference
-- Clear archival notice
-- Historical record maintained
+Repository is read-only and preserved for reference with clear archival notice.
 
 #### 2.2.8 Deleted
-- Permanently removed
-- Only in exceptional cases
-- Full backup maintained
-- Documented reason for deletion
+Permanent removal in exceptional cases only, with full backup and documented justification.
 
 ### 2.3 Lifecycle Duration
 
@@ -143,18 +114,14 @@ graph TD
 
 Create a new repository when:
 
-**Starting a new component or service**
-**Separating concerns** (e.g., API from UI)
-**Creating standalone tools or libraries**
-**Establishing new group workspace**
-**Developing specifications or standards**
-**Setting up test frameworks**
+- Starting a new component or service
+- Separating concerns (e.g., API from UI)
+- Creating standalone tools or libraries
+- Establishing new group workspace
+- Developing specifications or standards
+- Setting up test frameworks
 
-**Don't create new repository for:**
-- Small features (use branches instead)
-- Temporary experiments (use personal repos)
-- Duplicate functionality
-- Single files or scripts
+Avoid creating repositories for small features, temporary experiments, duplicate functionality, or single files.
 
 ### 3.2 Repository Creation Request
 
@@ -167,43 +134,26 @@ Submit to WP/Group lead:
 
 ### Basic Information
 - **Repository Name:** [e.g., wp4-new-component]
-- **Purpose:** [Brief description of purpose]
+- **Purpose:** [Brief description]
 - **Type:** [Code/Documentation/Specification]
 - **Work Package:** [e.g., WP4]
 - **Group:** [e.g., Trust Infrastructure]
-- **Visibility:** Public (default)
 
 ### Justification
-Explain why this repository is needed and how it fits into the project.
+[Why this repository is needed and how it fits into the project]
 
 ### Scope
-- What will be included
-- What will NOT be included
-- Boundaries and interfaces
+[What will be included, excluded, and key boundaries]
 
 ### Team
 - **Owner:** [Group Lead Name]
-- **Maintainers:** [List names]
-- **Initial Contributors:** [List names]
+- **Maintainers:** [Names]
+- **Initial Contributors:** [Names]
 
-### Technical Details (if applicable)
+### Technical Details
 - **Primary Language:** [e.g., Python, TypeScript]
-- **Key Dependencies:** [List main dependencies]
+- **Key Dependencies:** [Main dependencies]
 - **Integration Points:** [Other repos/services]
-
-### Initial Structure
-```
-[repository-name]/
-├── docs/
-├── [src/ or other relevant directories]
-├── README.md
-├── LICENSE
-└── CONTRIBUTING.md
-```
-
-### Timeline
-- **Requested Start Date:** [YYYY-MM-DD]
-- **Expected First Activity:** [YYYY-MM-DD]
 
 ### Approvals
 - [ ] Group Lead: [Name]
@@ -496,16 +446,16 @@ Create `SECURITY.md`:
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| 1.x.x   | Yes       |
+| < 1.0   | No        |
 
 ## Reporting a Vulnerability
 
-**Do not report security vulnerabilities through public GitHub issues.**
+Do not report security vulnerabilities through public GitHub issues.
 
-Instead, please report them via:
+Report via:
 1. Email to [security contact]
 2. Private security advisory on GitHub
 
@@ -644,71 +594,22 @@ Closes #
 
 #### 5.1.1 Daily/Weekly Tasks
 
-**For Active Repositories:**
-
-- [ ] **Monitor Issues:**
-  - Triage new issues
-  - Respond to questions
-  - Label appropriately
-  - Assign to team members
-
-- [ ] **Review Pull Requests:**
-  - Review new PRs within 2 days
-  - Provide constructive feedback
-  - Approve or request changes
-  - Merge approved PRs
-
-- [ ] **Check CI/CD:**
-  - Monitor build status
-  - Fix failing builds
-  - Update dependencies
-  - Review security alerts
+- Monitor and triage new issues
+- Review pull requests within 2 days
+- Monitor CI/CD build status and security alerts
 
 #### 5.1.2 Monthly Tasks
 
-- [ ] **Dependency Updates:**
-  - Review Dependabot PRs
-  - Update dependencies
-  - Test compatibility
-  - Merge updates
-
-- [ ] **Security Review:**
-  - Check security alerts
-  - Review access permissions
-  - Audit recent changes
-  - Update security policy
-
-- [ ] **Documentation:**
-  - Update README if needed
-  - Review and update docs
-  - Check for broken links
-  - Update examples
-
-- [ ] **Cleanup:**
-  - Close stale issues
-  - Delete merged branches
-  - Archive old discussions
-  - Update milestones
+- Review and merge Dependabot dependency updates
+- Address security alerts and review access permissions
+- Update documentation and check for broken links
+- Close stale issues and delete merged branches
 
 #### 5.1.3 Quarterly Tasks
 
-- [ ] **Access Review:**
-  - Review team members
-  - Remove inactive users
-  - Update permissions
-  - Verify access levels
-
-- [ ] **Performance Review:**
-  - Analyze repository metrics
-  - Review contribution patterns
-  - Identify bottlenecks
-  - Plan improvements
-
-- [ ] **Strategic Planning:**
-  - Review roadmap
-  - Update milestones
-  - Plan next release
-  - Gather feedback
+- Review team membership and remove inactive users
+- Analyze repository metrics and contribution patterns
+- Review roadmap and plan next release
 
 ### 5.2 Issue Management
 
@@ -730,25 +631,10 @@ graph TD
 
 **Triage Checklist:**
 
-1. **Understand the issue:**
-   - Read description carefully
-   - Ask clarifying questions
-   - Reproduce if bug report
-
-2. **Categorize:**
-   - Add type label (bug, enhancement, etc.)
-   - Add priority label (high, medium, low)
-   - Add component label (api, docs, tests)
-
-3. **Assign:**
-   - Assign to appropriate team member
-   - Add to project board
-   - Link to milestone
-
-4. **Respond:**
-   - Acknowledge receipt
-   - Provide timeline estimate
-   - Ask for additional info if needed
+1. Read and understand the issue, reproduce if necessary
+2. Add appropriate labels (type, priority, component)
+3. Assign to team member and link to milestone
+4. Acknowledge and provide timeline estimate
 
 #### 5.2.2 Issue Labels
 
@@ -1041,9 +927,9 @@ Archive a repository when:
 **Add to README.md:**
 
 ```markdown
-# ⚠️ DEPRECATED
+# DEPRECATED
 
-**This repository is deprecated and no longer maintained.**
+This repository is deprecated and no longer maintained.
 
 **Reason:** [Explain why deprecated]
 
@@ -1129,7 +1015,7 @@ git push origin main
 
 ### 8.1 When Deletion is Appropriate
 
-⚠️ **Deletion is rare and requires strong justification.**
+**Note:** Deletion is rare and requires strong justification.
 
 **Valid reasons:**
 - Created by mistake
@@ -1138,10 +1024,7 @@ git push origin main
 - Legal requirement
 - Security incident
 
-**Invalid reasons:**
-- No longer needed (use archival instead)
-- Low activity (use archival instead)
-- Outdated (use archival instead)
+Use archival instead for repositories that are no longer needed, have low activity, or are outdated.
 
 ### 8.2 Deletion Process
 
@@ -1205,100 +1088,41 @@ Deleted By: [Name]
 
 ### 9.1 Repository Organization
 
-**Do:**
-- Use clear, descriptive names
-- Follow naming conventions
-- Maintain consistent structure
-- Keep documentation up to date
-- Use meaningful commit messages
-- Tag releases appropriately
-
-**Don't:**
-- Create repositories without approval
-- Mix unrelated concerns
-- Ignore naming conventions
-- Leave repositories unmaintained
+Use clear, descriptive names following established naming conventions. Maintain consistent structure and keep documentation current. Always obtain approval before creating repositories.
 
 ### 9.2 Naming Conventions
 
-**Repository Names:**
-- Use lowercase with hyphens
-- Include WP prefix if applicable
-- Be descriptive but concise
-- Avoid abbreviations unless standard
+Repository names should use lowercase with hyphens, include WP prefix when applicable, and be descriptive but concise.
 
 **Examples:**
-- Good: `wp4-trust-infrastructure`
-- Good: `webuild-documentation`
-- Good: `interoperability-test-suite`
-- Bad: `WP4_Trust`
-- Bad: `repo1`
-- Bad: `temp-test`
+- `wp4-trust-infrastructure`
+- `webuild-documentation`
+- `interoperability-test-suite`
+
+Avoid patterns like `WP4_Trust`, `repo1`, or `temp-test`.
 
 ### 9.3 Documentation Standards
 
-**Every repository must have:**
+Every repository must include:
 - Clear README with purpose and usage
 - Contributing guidelines
 - License information
 - Security policy
 - Code of conduct
 
-**Documentation should be:**
-- Up to date
-- Clear and concise
-- Well-structured
-- Accessible to newcomers
-- Maintained regularly
+Keep documentation current, well-structured, and accessible to newcomers.
 
 ### 9.4 Security Best Practices
 
-**Always:**
-- Enable security features
-- Review Dependabot alerts
-- Use branch protection
-- Require code reviews
-- Keep dependencies updated
-- Follow security policies
-
-**Never:**
-- Commit secrets or credentials
-- Disable security features
-- Ignore security alerts
-- Grant excessive permissions
-- Skip security reviews
+Enable all security features including Dependabot alerts, branch protection, and required code reviews. Keep dependencies updated and never commit secrets or credentials. Review security alerts promptly and follow established security policies.
 
 ### 9.5 Collaboration Best Practices
 
-**Communication:**
-- Use issues for discussions
-- Provide clear PR descriptions
-- Respond to feedback promptly
-- Be respectful and constructive
-- Document decisions
-
-**Code Review:**
-- Review PRs within 2 days
-- Provide constructive feedback
-- Test changes locally
-- Check documentation updates
-- Verify CI/CD passes
+Use issues for discussions and provide clear pull request descriptions. Review PRs within 2 days, test changes locally, and verify CI/CD passes before merging. Document decisions and maintain respectful communication.
 
 ### 9.6 Maintenance Best Practices
 
-**Regular Tasks:**
-- Triage issues weekly
-- Review PRs promptly
-- Update dependencies monthly
-- Review access quarterly
-- Clean up stale branches
-
-**Long-term Health:**
-- Monitor repository metrics
-- Gather user feedback
-- Plan improvements
-- Update documentation
-- Maintain roadmap
+Triage issues weekly, review PRs promptly, and update dependencies monthly. Review team access quarterly and clean up stale branches regularly. Monitor repository metrics, gather feedback, and maintain an updated roadmap.
 
 ---
 
@@ -1602,8 +1426,9 @@ Planning → Approval → Creation → Setup → Active → Deprecated/Archived
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 

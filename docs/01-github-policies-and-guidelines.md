@@ -1,7 +1,7 @@
 # GitHub Policies and Guidelines
 
-**Document Version:** 1.0
-**Last Updated:** October 2025
+**Document Version:** 1.2
+**Last Updated:** December 2025
 **Status:** Draft for Review
 **Owner:** Technical Coordinator
 
@@ -177,7 +177,7 @@ graph TD
 
 ### 3.4 Owner Consolidation
 
-⚠️ **Current Status:** The organization currently has multiple owners. This will be consolidated to improve security and governance.
+**Current Status:** The organization currently has multiple owners. This will be consolidated to improve security and governance.
 
 **Target State:**
 - **Primary Owner:** Technical Coordinator
@@ -351,7 +351,7 @@ Access must be revoked immediately when:
 
 ### 6.1 Current State
 
-⚠️ **Important:** All WEBUILD consortium repositories are currently **public**.
+**Important:** All WEBUILD consortium repositories are currently **public**.
 
 This reflects the consortium's commitment to:
 - Open science and transparency
@@ -386,7 +386,7 @@ This reflects the consortium's commitment to:
 
 #### 6.2.3 Content Requiring Private Repositories
 
-⚠️ **Must remain private:**
+**Must remain private:**
 - Credentials, API keys, passwords
 - Personal or sensitive data
 - Pre-publication research (if applicable)
@@ -1005,8 +1005,9 @@ Submit feedback via:
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
+| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
 
-**Next Review Date:** January 2026
+**Next Review Date:** March 2026
 
 ---
 
