@@ -1086,43 +1086,438 @@ Deleted By: [Name]
 
 ## 9. Best Practices
 
-### 9.1 Repository Organization
+### 9.1 Create a Comprehensive README
 
-Use clear, descriptive names following established naming conventions. Maintain consistent structure and keep documentation current. Always obtain approval before creating repositories.
+**Why it matters:** A well-crafted README is the first thing people see and is essential for understanding and navigating your work.
 
-### 9.2 Naming Conventions
+**Every repository MUST include a README.md with:**
 
-Repository names should use lowercase with hyphens, include WP prefix when applicable, and be descriptive but concise.
+- **Project name and clear description** - What does this repository do?
+- **Purpose and objectives** - Why does this exist in the WEBUILD project?
+- **Getting started instructions** - How to begin using or contributing
+- **Installation/setup guide** - Step-by-step setup instructions
+- **Usage examples** - Practical examples showing how to use the code
+- **Contributing guidelines link** - Point to [`CONTRIBUTING.md`](02-contribution-guidelines.md)
+- **License information** - Reference to [`LICENSE`](05-licensing-guidelines.md) file
+- **EU funding acknowledgment** - Required for all consortium repositories
+- **Contact information** - How to get help or report issues
+
+**Template Example:**
+
+```markdown
+# WP4 Trust Infrastructure
+
+A comprehensive trust framework for the WEBUILD digital wallet ecosystem.
+
+## Overview
+
+This repository implements the trust infrastructure components including...
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Docker 20+
+
+### Installation
+\`\`\`bash
+npm install
+docker-compose up -d
+\`\`\`
+
+### Usage
+\`\`\`bash
+npm start
+\`\`\`
+
+## Documentation
+
+See [`docs/`](docs/) for detailed documentation.
+
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines.
+
+## License
+
+Licensed under Apache License 2.0 - see [`LICENSE`](LICENSE)
+
+## Funding
+
+![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
+
+The WEBUILD project is co-funded by the European Union...
+```
+
+For more information, see GitHub's guide on [About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes).
+
+### 9.2 Secure Your Repository
+
+**Security is not optional.** Protect your code from vulnerabilities, unauthorized access, and security threats.
+
+#### 9.2.1 Essential Security Features
+
+**At minimum, enable these features (free for public repositories):**
+
+1. **Dependabot Alerts**
+   - Notifies you of security vulnerabilities in dependencies
+   - Automatically suggests updates to secure versions
+   - **Enable:** Settings → Security & analysis → Dependabot alerts
+
+2. **Secret Scanning**
+   - Scans repository for exposed secrets (API keys, tokens, passwords)
+   - Alerts you immediately when secrets are detected
+   - **Enable:** Settings → Security & analysis → Secret scanning
+
+3. **Push Protection**
+   - Prevents secrets from being committed in the first place
+   - Blocks pushes containing supported secrets
+   - **Enable:** Settings → Security & analysis → Push protection
+
+4. **Code Scanning**
+   - Identifies vulnerabilities and errors in your code
+   - Provides automated security analysis
+   - **Enable:** Settings → Security & analysis → Code scanning
+
+#### 9.2.2 Additional Security Measures
+
+**Also consider:**
+
+- **Add `SECURITY.md` file** - Provides instructions for reporting security vulnerabilities and encourages responsible disclosure
+- **Enable Private Vulnerability Reporting** - Allows collaborators to privately disclose vulnerabilities
+- **Implement branch protection rules** - Require reviews and status checks before merging
+- **Use signed commits** - Verify commit authenticity with GPG signatures
+- **Regular security audits** - Review access permissions and security settings quarterly
+
+**Example `SECURITY.md`:**
+
+```markdown
+# Security Policy
+
+## Reporting a Vulnerability
+
+**Do not report security vulnerabilities through public GitHub issues.**
+
+Please report via:
+1. Email to security@webuild-consortium.eu
+2. Private security advisory on GitHub
+
+Include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
+
+We will respond within 48 hours.
+```
+
+For comprehensive guidance, see [Quickstart for securing your repository](https://docs.github.com/en/code-security/getting-started/quickstart-for-securing-your-repository).
+
+### 9.3 Favor Branching Over Forking
+
+**For consortium collaboration, use branches instead of forks.**
+
+#### 9.3.1 Why Branching?
+
+**Branching streamlines collaboration by:**
+- Keeping all work in a single repository
+- Simplifying code review and discussion
+- Maintaining clear project history
+- Enabling better access control
+- Facilitating CI/CD integration
+
+**When to use branching:**
+- Regular consortium members and collaborators
+- Internal development work
+- Features and bug fixes
+- Documentation updates
+
+**When to use forking:**
+- External contributors not affiliated with the project
+- Open-source community contributions
+- Experimental work that may not be merged
+
+#### 9.3.2 Implementing Branch-Based Workflow
+
+**Use protected branches to maintain quality:**
+
+```yaml
+Branch Protection Rules for 'main':
+- ✓ Require pull request reviews (minimum 1 approval)
+- ✓ Require status checks to pass
+- ✓ Require conversation resolution
+- ✓ Require linear history (optional)
+- ✓ Include administrators
+- ✗ Allow force pushes
+- ✗ Allow deletions
+```
+
+**Workflow example:**
+
+```bash
+# Create feature branch from main
+git checkout main
+git pull origin main
+git checkout -b feature/123-new-feature
+
+# Make changes and commit
+git add .
+git commit -m "feat: implement new feature"
+
+# Push and create pull request
+git push origin feature/123-new-feature
+# Create PR via GitHub UI
+
+# After approval and merge, delete branch
+git branch -d feature/123-new-feature
+```
+
+For more information, see [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+
+### 9.4 Use Git Large File Storage (LFS)
+
+**GitHub limits file sizes to optimize performance.**
+
+#### 9.4.1 File Size Limits
+
+GitHub has the following limits:
+- **Warning:** Files larger than 50 MB
+- **Block:** Files larger than 100 MB
+- **Repository size:** Recommended under 1 GB, ideally under 5 GB
+
+#### 9.4.2 When to Use Git LFS
+
+**Use Git LFS for:**
+- Binary files (images, videos, audio)
+- Large datasets
+- Compiled binaries
+- Design files (PSD, AI, Sketch)
+- 3D models
+- Large documentation assets
+
+**Don't use Git LFS for:**
+- Source code files
+- Text-based configuration
+- Small images (< 1 MB)
+- Files that change frequently
+
+#### 9.4.3 Setting Up Git LFS
+
+```bash
+# Install Git LFS
+git lfs install
+
+# Track large file types
+git lfs track "*.psd"
+git lfs track "*.zip"
+git lfs track "*.mp4"
+
+# Commit .gitattributes
+git add .gitattributes
+git commit -m "chore: configure Git LFS"
+
+# Add and commit large files normally
+git add large-file.psd
+git commit -m "docs: add design mockup"
+git push origin main
+```
+
+**`.gitattributes` example:**
+
+```
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+```
+
+For more information, see:
+- [About large files on GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
+- [About Git Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage)
+
+### 9.5 Repository Naming Conventions
+
+**Clear, consistent naming improves discoverability and organization.**
+
+#### 9.5.1 Naming Rules
+
+**Do:**
+- Use lowercase letters
+- Use hyphens (-) to separate words
+- Be descriptive and specific
+- Include WP prefix when applicable
+- Keep names concise (< 50 characters)
+- Use consistent terminology
+
+**Don't:**
+- Use spaces or special characters
+- Use camelCase or PascalCase
+- Create ambiguous names
+- Use abbreviations without context
+- Include version numbers in name
 
 **Examples:**
+
+**Good:**
 - `wp4-trust-infrastructure`
 - `webuild-documentation`
 - `interoperability-test-suite`
+- `wp4-qtsp-group`
 
-Avoid patterns like `WP4_Trust`, `repo1`, or `temp-test`.
+**Bad:**
+- `WP4_Trust` (wrong case and separator)
+- `repo1` (not descriptive)
+- `temp-test` (temporary naming)
+- `myProject` (camelCase)
 
-### 9.3 Documentation Standards
+### 9.6 Documentation Standards
 
-Every repository must include:
-- Clear README with purpose and usage
-- Contributing guidelines
-- License information
-- Security policy
-- Code of conduct
+**Documentation is as important as code.**
 
-Keep documentation current, well-structured, and accessible to newcomers.
+#### 9.6.1 Required Files
 
-### 9.4 Security Best Practices
+Every repository MUST include:
 
-Enable all security features including Dependabot alerts, branch protection, and required code reviews. Keep dependencies updated and never commit secrets or credentials. Review security alerts promptly and follow established security policies.
+- **[`README.md`](#91-create-a-comprehensive-readme)** - Project overview and getting started
+- **[`LICENSE`](05-licensing-guidelines.md)** - Apache License 2.0 (default)
+- **[`CONTRIBUTING.md`](02-contribution-guidelines.md)** - How to contribute
+- **[`CODE_OF_CONDUCT.md`](02-contribution-guidelines.md#12-code-of-conduct)** - Community standards
+- **[`SECURITY.md`](#922-additional-security-measures)** - Security policy
+- **`.gitignore`** - Files to exclude from version control
 
-### 9.5 Collaboration Best Practices
+#### 9.6.2 Recommended Files
 
-Use issues for discussions and provide clear pull request descriptions. Review PRs within 2 days, test changes locally, and verify CI/CD passes before merging. Document decisions and maintain respectful communication.
+- **`CHANGELOG.md`** - Version history and changes
+- **`docs/`** - Additional documentation directory
+- **`.github/`** - GitHub-specific configurations
+  - `ISSUE_TEMPLATE/` - Issue templates
+  - `PULL_REQUEST_TEMPLATE.md` - PR template
+  - `workflows/` - GitHub Actions workflows
 
-### 9.6 Maintenance Best Practices
+#### 9.6.3 Documentation Best Practices
 
-Triage issues weekly, review PRs promptly, and update dependencies monthly. Review team access quarterly and clean up stale branches regularly. Monitor repository metrics, gather feedback, and maintain an updated roadmap.
+- **Keep documentation up-to-date** - Update docs with code changes
+- **Use clear, simple language** - Write for your audience
+- **Include examples** - Show, don't just tell
+- **Organize logically** - Structure information hierarchically
+- **Link related documents** - Create a documentation web
+- **Review in pull requests** - Treat docs like code
+
+### 9.7 Security Best Practices
+
+**Beyond enabling security features, follow these practices:**
+
+#### 9.7.1 Access Control
+
+- **Apply least privilege principle** - Grant minimum necessary permissions
+- **Review access regularly** - Audit team membership quarterly
+- **Use teams, not individuals** - Manage access through teams
+- **Revoke access promptly** - Remove access when no longer needed
+- **Enable 2FA for all members** - Require two-factor authentication
+
+#### 9.7.2 Secrets Management
+
+- **Never commit secrets** - Use environment variables or secret management
+- **Use GitHub Secrets** - For CI/CD workflows
+- **Rotate credentials regularly** - Change passwords and tokens periodically
+- **Scan for exposed secrets** - Use secret scanning and pre-commit hooks
+- **Remove secrets from history** - If accidentally committed, remove completely
+
+#### 9.7.3 Dependency Management
+
+- **Keep dependencies updated** - Review and merge Dependabot PRs
+- **Audit dependencies** - Check for known vulnerabilities
+- **Use lock files** - Commit `package-lock.json`, `yarn.lock`, etc.
+- **Review dependency licenses** - Ensure compatibility
+- **Minimize dependencies** - Only add what you need
+
+### 9.8 Collaboration Best Practices
+
+**Effective collaboration requires clear communication and processes.**
+
+#### 9.8.1 Pull Request Guidelines
+
+- **Keep PRs small and focused** - One feature or fix per PR
+- **Write clear descriptions** - Explain what, why, and how
+- **Link related issues** - Use "Closes #123" syntax
+- **Request appropriate reviewers** - Tag relevant team members
+- **Respond to feedback promptly** - Address comments within 1-2 days
+- **Test before requesting review** - Ensure all checks pass
+
+#### 9.8.2 Code Review Guidelines
+
+- **Review within 2 business days** - Don't block progress
+- **Be constructive and respectful** - Focus on code, not person
+- **Explain your reasoning** - Help others learn
+- **Approve when ready** - Don't nitpick minor issues
+- **Test changes locally** - Verify functionality
+
+#### 9.8.3 Issue Management
+
+- **Triage new issues within 48 hours** - Acknowledge and label
+- **Use descriptive titles** - Summarize the issue clearly
+- **Provide context** - Include steps to reproduce, environment details
+- **Label appropriately** - Use consistent labeling scheme
+- **Link related issues** - Connect related work
+- **Close resolved issues** - Keep issue tracker clean
+
+### 9.9 Maintenance Best Practices
+
+**Regular maintenance keeps repositories healthy and productive.**
+
+#### 9.9.1 Daily/Weekly Tasks
+
+- **Monitor new issues and PRs** - Stay on top of incoming work
+- **Review pull requests** - Don't let PRs go stale
+- **Check CI/CD status** - Ensure builds are passing
+- **Review security alerts** - Address vulnerabilities promptly
+
+#### 9.9.2 Monthly Tasks
+
+- **Update dependencies** - Review and merge Dependabot PRs
+- **Review access permissions** - Ensure appropriate access levels
+- **Update documentation** - Keep docs current with code
+- **Check for broken links** - Validate documentation links
+- **Clean up stale branches** - Delete merged feature branches
+- **Close stale issues** - Address or close inactive issues
+
+#### 9.9.3 Quarterly Tasks
+
+- **Review team membership** - Remove inactive users
+- **Analyze repository metrics** - Review contribution patterns
+- **Update roadmap** - Plan next quarter's work
+- **Security audit** - Comprehensive security review
+- **Performance review** - Check repository health metrics
+
+#### 9.9.4 Automation Opportunities
+
+**Automate repetitive tasks:**
+
+- **Stale issue management** - Auto-close inactive issues
+- **Dependency updates** - Automated Dependabot PRs
+- **Code quality checks** - Automated linting and testing
+- **Security scanning** - Automated vulnerability detection
+- **Branch cleanup** - Auto-delete merged branches
+
+### 9.10 Hands-On Practice
+
+**Learn by doing with GitHub Skills exercises.**
+
+GitHub provides free, interactive courses to improve your repository management skills:
+
+- **[Introduction to Repository Management](https://github.com/skills/introduction-to-repository-management/)** - Practical experience with repository management fundamentals
+
+**Topics covered:**
+- Creating and configuring repositories
+- Managing branches and protection rules
+- Working with issues and pull requests
+- Implementing security best practices
+- Collaborating effectively with teams
+
+**Recommended for:**
+- New consortium members
+- Team leads setting up repositories
+- Anyone wanting to improve their GitHub skills
 
 ---
 

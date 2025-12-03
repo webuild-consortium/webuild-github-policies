@@ -210,6 +210,42 @@ Branch: main
 - Restrict deletions
 ```
 
+**Detailed Protection Settings:**
+
+1. **Require Pull Request Reviews**
+   - Minimum 1 approval required
+   - Dismiss stale approvals when new commits pushed
+   - Require review from Code Owners (if [`CODEOWNERS`](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file exists)
+   - Require approval from someone other than last pusher (optional)
+
+2. **Require Status Checks**
+   - All required checks must pass before merge
+   - **Strict mode** (recommended): Branch must be up-to-date with base branch
+   - **Loose mode**: Branch doesn't need to be up-to-date (fewer builds, but risk of incompatible changes)
+   - Select specific status checks to require (CI/CD, linting, tests)
+
+3. **Require Conversation Resolution**
+   - All PR comments must be resolved before merge
+   - Ensures all feedback is addressed or acknowledged
+
+4. **Require Signed Commits** (optional, recommended)
+   - Contributors can only push verified signed commits
+   - Provides commit authenticity verification
+   - See [About commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
+
+5. **Require Linear History** (optional)
+   - Prevents merge commits
+   - Only allows squash merge or rebase merge
+   - Creates cleaner, more readable history
+   - Makes reverting changes easier
+
+6. **Include Administrators**
+   - Apply protection rules to repository admins too
+   - Ensures consistent process for everyone
+   - Recommended for accountability
+
+For more information, see [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+
 #### 3.1.2 develop Branch (GitFlow only)
 
 **Purpose:** Integration branch for features
@@ -243,14 +279,34 @@ feature/123-user-authentication
 feature/456-api-rate-limiting
 ```
 
-**Lifecycle:**
+**Creating Branches:**
 
+**Method 1: Command Line (Recommended)**
 ```bash
 # Create feature branch from main
 git checkout main
 git pull origin main
 git checkout -b feature/123-user-authentication
+```
 
+**Method 2: GitHub UI - From Branches Page**
+1. Go to repository → Branches
+2. Click "New branch"
+3. Enter branch name: `feature/123-user-authentication`
+4. Select source branch: `main`
+5. Click "Create branch"
+
+**Method 3: GitHub UI - From Issue**
+1. Open the issue you want to work on
+2. In the right sidebar, under "Development"
+3. Click "Create a branch"
+4. Select branch name and source
+5. Click "Create branch"
+6. Checkout locally: `git fetch origin && git checkout feature/123-user-authentication`
+
+**Lifecycle:**
+
+```bash
 # Work on feature
 # ... make changes ...
 git add .
@@ -279,6 +335,9 @@ git branch -d feature/123-user-authentication
 - Update regularly from `main`
 - Delete after merge
 - Keep branch lifetime under 2 weeks
+- Enable "Automatically delete head branches" in repository settings
+
+For more information, see [Creating and deleting branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository).
 
 #### 3.2.2 Bugfix Branches
 
