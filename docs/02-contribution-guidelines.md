@@ -1034,9 +1034,7 @@ Before asking, search existing issues and documentation. When asking:
 I'm getting an authentication error when testing the login endpoint.
 
 ## Error Message
-```
 AuthenticationError: Invalid token format
-```
 
 ## What I've Tried
 - Verified token generation
