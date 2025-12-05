@@ -644,7 +644,6 @@ Apache 2.0 - See [LICENSE](LICENSE)
 ## Funding
 
 EU funding acknowledgment
-```
 
 ### 5.3 API Documentation
 
@@ -681,7 +680,6 @@ Authenticate a user and return a JWT token.
 **Errors:**
 - 401: Invalid credentials
 - 429: Too many attempts
-```
 
 ### 5.4 Architecture Documentation
 
