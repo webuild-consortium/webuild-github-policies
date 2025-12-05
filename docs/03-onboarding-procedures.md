@@ -23,11 +23,9 @@
 
 ### 1.1 Purpose
 
-These onboarding procedures describe how new members join the WEBUILD GitHub organization, receive the correct repository access, and start contributing productively.
+This document describes the procedures for onboarding new members to the WEBUILD GitHub organization, granting appropriate repository access, and enabling productive contributions.
 
-Because WEBUILD is an EU-funded consortium with clearly defined Work Packages (WPs) and sub-structures, onboarding is **initiated only by WP Leads or Group/UC Leads**.
-
-New members **should not request access directly** from the Technical Coordinator.
+WEBUILD is an EU-funded consortium with clearly defined Work Packages (WPs) and organizational sub-structures. Onboarding is **initiated exclusively by WP Leads or Group/UC Leads**. New members **must not request access directly** from the Technical Coordinator.
 
 ---
 
@@ -56,19 +54,19 @@ Onboarding is required for:
 
 ### 2.1 Before Requesting Access
 
-New members must:
+New members must complete the following requirements:
 
-**Have a GitHub Account:**
-- Personal GitHub accounts are acceptable and encouraged
+**GitHub Account:**
+- Create or use an existing personal GitHub account
 - Use a professional username (preferably your real name)
 - Add a profile picture
 - Enable two-factor authentication (2FA)
 
-**Complete Consortium Onboarding:**
+**Consortium Onboarding:**
 - Sign consortium agreement
 - Receive partner organization approval
 
-**Understand Project Context:**
+**Project Context:**
 - Review project overview
 - Understand WP/Group objectives
 - Identify role and responsibilities
@@ -77,26 +75,26 @@ New members must:
 
 #### 2.2.1 Creating a GitHub Account
 
-If you don't have a GitHub account:
+If you do not have a GitHub account:
 
-1. Go to [https://github.com/signup](https://github.com/signup)
+1. Navigate to [https://github.com/signup](https://github.com/signup)
 2. Enter your email address
 3. Create a strong password
-4. Choose a username (professional, preferably your name)
+4. Choose a professional username (preferably your name)
 5. Verify your email address
 6. Complete the setup wizard
 
 **Username Guidelines:**
-- Good: `john-smith`, `jsmith`, `john.smith`
+- Recommended: `john-smith`, `jsmith`, `john.smith`
 - Avoid: `cooldude123`, `hackerman`, random strings
 
-**Note:** You can use your existing personal GitHub account. There's no requirement to create a separate work account or add company details to your profile.
+**Note:** You may use your existing personal GitHub account. Creating a separate work account or adding company details to your profile is not required.
 
 #### 2.2.2 Enabling Two-Factor Authentication (2FA)
 
-Required for all consortium members.
+Two-factor authentication is required for all consortium members.
 
-1. Go to Settings → Password and authentication
+1. Navigate to Settings → Password and authentication
 2. Click "Enable two-factor authentication"
 3. Choose authentication method:
    - **Recommended:** Authenticator app (Google Authenticator, Authy)
@@ -106,11 +104,11 @@ Required for all consortium members.
 6. Save recovery codes securely
 7. Verify 2FA is enabled
 
-**Important:** Store recovery codes in a secure location. You'll need them if you lose access to your authentication device.
+**Important:** Store recovery codes in a secure location. You will need them if you lose access to your authentication device.
 
 #### 2.2.3 Profile Setup
 
-Optionally complete your GitHub profile:
+Complete your GitHub profile (optional):
 
 ```markdown
 Name: Your Full Name
@@ -121,7 +119,7 @@ Adding a professional photo is helpful but not required.
 
 ### 2.3 Required Information
 
-Before requesting access, gather:
+Before requesting access, gather the following information:
 
 - [ ] GitHub username
 - [ ] Email address
@@ -155,7 +153,7 @@ graph TD
 
 #### 3.2.1 Access Request Template
 
-Send to Technical Coordinator:
+Send the following information to the Technical Coordinator:
 
 ```markdown
 Subject: GitHub Access Request - [Member Name]
@@ -198,7 +196,7 @@ Access requests require approval from:
 
 #### 3.3.1 Verification Steps
 
-Before granting access:
+Before granting access, complete the following verification:
 
 1. **Verify Request:**
    - Check request completeness
@@ -220,7 +218,7 @@ Before granting access:
 
 **Steps:**
 
-1. Go to [https://github.com/orgs/webuild-consortium/people](https://github.com/orgs/webuild-consortium/people)
+1. Navigate to [https://github.com/orgs/webuild-consortium/people](https://github.com/orgs/webuild-consortium/people)
 2. Click "Invite member"
 3. Enter GitHub username or email
 4. Select role: "Member" (default)
@@ -229,7 +227,7 @@ Before granting access:
 
 #### 3.3.3 Documentation
 
-Log the access grant:
+Log the access grant using the following template:
 
 ```markdown
 ## Access Grant Log
@@ -246,11 +244,11 @@ Notes: [Any relevant notes]
 
 ### 3.4 For WP/Group Leads: Team Assignment
 
-After organization access granted:
+After organization access is granted:
 
 #### 3.4.1 Add to Team
 
-1. Go to team page (e.g., `@webuild-consortium/wp4-trust`)
+1. Navigate to team page (e.g., `@webuild-consortium/wp4-trust`)
 2. Click "Members" tab
 3. Click "Add a member"
 4. Search for username
@@ -263,7 +261,7 @@ After organization access granted:
 
 Grant repository-specific access if needed:
 
-1. Go to repository Settings → Collaborators and teams
+1. Navigate to repository Settings → Collaborators and teams
 2. Click "Add teams"
 3. Select team
 4. Choose permission level:
@@ -281,13 +279,13 @@ Grant repository-specific access if needed:
 2. Click "Join @webuild-consortium"
 3. Review organization profile
 4. Click "Join webuild-consortium"
-5. Verify you see organization in your profile
+5. Verify organization appears in your profile
 
 #### 3.5.2 Verify Access
 
 Check your access:
 
-1. Go to [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
+1. Navigate to [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
 2. Verify you can see repositories
 3. Check team memberships in your profile
 4. Test cloning a repository
@@ -372,7 +370,7 @@ cat ~/.ssh/id_ed25519.pub
 clip < ~/.ssh/id_ed25519.pub
 ```
 
-2. Go to GitHub Settings → SSH and GPG keys
+2. Navigate to GitHub Settings → SSH and GPG keys
 3. Click "New SSH key"
 4. Add title: "Work Laptop" or similar
 5. Paste key
@@ -428,7 +426,7 @@ Install extensions:
 
 #### 4.3.1 Find Repository
 
-1. Go to [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
+1. Navigate to [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
 2. Find your WP/Group repository
 3. Click on repository name
 
@@ -488,7 +486,7 @@ webuild-consortium/
 
 ### 5.2 Repository Permissions
 
-Your access level determines what you can do:
+Your access level determines available actions:
 
 | Permission | Can Do |
 |-----------|--------|
@@ -505,7 +503,7 @@ If you need access to additional repositories:
 1. Identify repository needed
 2. Explain reason for access
 3. Contact your WP/Group/UC lead
-4. Lead evaluates and approves/denies
+4. Lead evaluates and approves or denies
 5. Lead grants access or escalates to Technical Coordinator
 
 ---
@@ -525,7 +523,7 @@ Complete within first week:
 
 #### 6.2.1 Git and GitHub Basics
 
-If new to Git:
+If new to Git, review the following resources:
 - [Git Handbook](https://guides.github.com/introduction/git-handbook/)
 - [GitHub Skills](https://skills.github.com/)
 - [Pro Git Book](https://git-scm.com/book) (free online)
@@ -539,13 +537,13 @@ Key concepts to learn:
 
 #### 6.2.2 WEBUILD-Specific Resources
 
-Recommended reading:
+**Recommended Reading:**
 1. Project overview and objectives
 2. WP/Group/UC specific documentation
 3. Repository README files
 4. Recent pull requests and issues
 
-Recommended activities:
+**Recommended Activities:**
 - Attend weekly team meetings
 - Review recent pull requests
 - Explore codebase structure
@@ -580,9 +578,9 @@ Look for issues labeled:
 - `documentation` - Documentation improvements
 - `beginner-friendly` - Easy to start with
 
-**How to find issues:**
+**How to Find Issues:**
 
-1. Go to repository
+1. Navigate to repository
 2. Click "Issues" tab
 3. Filter by labels
 4. Read issue descriptions
@@ -591,23 +589,23 @@ Look for issues labeled:
 
 #### 7.1.2 Your First Pull Request
 
-**Recommended approach:**
+**Recommended Approach:**
 
-1. **Start small:**
+1. **Start Small:**
    - Fix typos in documentation
    - Update README
    - Add code comments
    - Improve error messages
 
-2. **Get familiar with process:**
+2. **Familiarize with Process:**
    - Create branch
    - Make changes
    - Commit with good messages
    - Push and create PR
    - Respond to review feedback
 
-3. **Learn from feedback:**
-   - Don't take it personally
+3. **Learn from Feedback:**
+   - Maintain professional perspective
    - Ask questions
    - Understand the reasoning
    - Apply learnings to next PR
@@ -615,27 +613,27 @@ Look for issues labeled:
 
 ### 7.2 Getting Help
 
-**When you need help:**
+**When You Need Help:**
 
-1. **Check documentation first:**
+1. **Check Documentation First:**
    - README files
    - Contributing guidelines
    - Issue discussions
    - Past pull requests
 
-2. **Ask your team members:**
+2. **Ask Team Members:**
    - Quick questions
    - Process clarifications
    - Code review requests
    - General guidance
 
-3. **Contact WP/Group/UC lead:**
+3. **Contact WP/Group/UC Lead:**
    - Access issues
    - Policy questions
    - Escalated problems
    - Strategic decisions
 
-4. **Use GitHub discussions:**
+4. **Use GitHub Discussions:**
    - Technical questions
    - Design discussions
    - Community input
@@ -651,7 +649,7 @@ Offboarding is necessary when:
 
 - Member leaves the consortium
 - Partner organization exits project
-- Contract/assignment ends
+- Contract or assignment ends
 - Role changes (no longer needs access)
 
 ### 8.2 Offboarding Workflow
@@ -722,7 +720,7 @@ Verification checklist:
 **Week 1:**
 - [ ] Read all documentation
 - [ ] Set up development environment
-- [ ] Meet buddy/mentor
+- [ ] Meet buddy or mentor
 - [ ] Make first contribution
 
 ### Appendix B: Useful Commands
@@ -756,8 +754,8 @@ git status
 
 **Group Leads:**
 - QTSP: [Contact]
-- Architecture : [Contact]
-- Testing [Contact]
+- Architecture: [Contact]
+- Testing: [Contact]
 - Trust: [Contact]
 - Semantics: [Contact]
 - Wallets: [Contact]
@@ -765,17 +763,17 @@ git status
 
 ### Appendix D: Troubleshooting
 
-**Can't accept invitation:**
+**Cannot Accept Invitation:**
 - Check spam folder
 - Verify GitHub username correct
 - Contact Technical Coordinator
 
-**Can't clone repository:**
+**Cannot Clone Repository:**
 - Verify SSH key added
 - Check repository access
 - Try HTTPS instead
 
-**2FA issues:**
+**2FA Issues:**
 - Use recovery codes
 - Contact GitHub support
 - Reset 2FA with Technical Coordinator approval

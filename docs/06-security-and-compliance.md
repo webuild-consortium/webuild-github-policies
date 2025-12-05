@@ -40,15 +40,17 @@ These guidelines apply to:
 
 ### 1.3 Security Objectives
 
+The following objectives guide all security practices:
+
 1. **Confidentiality:** Protect sensitive information from unauthorized access
-2. **Integrity:** Ensure code and data are not tampered with
-3. **Availability:** Maintain access to resources when needed
-4. **Accountability:** Track and audit all activities
+2. **Integrity:** Ensure code and data remain unaltered and trustworthy
+3. **Availability:** Maintain reliable access to resources when needed
+4. **Accountability:** Track and audit all activities for transparency
 5. **Compliance:** Meet all legal and regulatory requirements
 
 ### 1.4 Shared Responsibility
 
-Security is everyone's responsibility:
+Security is a shared responsibility across all roles:
 
 | Role | Security Responsibilities |
 |------|--------------------------|
@@ -56,7 +58,7 @@ Security is everyone's responsibility:
 | **Contributors** | Write secure code, review for vulnerabilities, use secure practices |
 | **Maintainers** | Enforce security policies, review security issues, manage access |
 | **WP/Group Leads** | Oversee security compliance, coordinate responses, train team |
-| **Technical Coordinator** | Set security policies, manage organization security, incident coordination |
+| **Technical Coordinator** | Set security policies, manage organization security, coordinate incidents |
 
 ---
 
@@ -82,22 +84,22 @@ graph TD
 
 #### 2.1.2 Least Privilege
 
-Grant minimum necessary permissions. Start with minimal access and grant additional permissions only as needed. Review permissions regularly and revoke unused access promptly.
+Grant only the minimum necessary permissions. Start with minimal access and add permissions only when required. Review permissions regularly and revoke unused access promptly.
 
 #### 2.1.3 Secure by Default
 
-Security should be the default state:
+Security must be the default state for all systems and configurations:
 
 **Default Settings:**
-- 2FA required for all members
-- Branch protection enabled
+- Two-factor authentication required for all members
+- Branch protection enabled on all repositories
 - Secret scanning active
 - Dependency alerts enabled
-- Private by default (then make public after review)
+- Repositories private by default (make public after review)
 
 #### 2.1.4 Zero Trust
 
-Never trust, always verify:
+Never trust, always verify. This principle applies to all access and operations:
 
 - Verify all access requests
 - Authenticate all users
@@ -109,7 +111,7 @@ Never trust, always verify:
 
 #### 2.2.1 Mandatory Requirements
 
-**All members MUST:**
+All members must complete the following:
 
 - [ ] Enable two-factor authentication (2FA)
 - [ ] Report security incidents immediately
@@ -120,8 +122,9 @@ Never trust, always verify:
 
 #### 2.2.2 Prohibited Activities
 
-**Never:**
-- Commit secrets or credentials
+The following activities are strictly forbidden:
+
+- Commit secrets or credentials to repositories
 - Store sensitive data in repositories
 - Disable security features
 - Ignore security warnings
@@ -136,33 +139,33 @@ Never trust, always verify:
 
 #### 3.1.1 Two-Factor Authentication (2FA)
 
-**Required for all members.**
+Two-factor authentication is required for all members.
 
-**Setup:**
+**Setup Instructions:**
 
-1. Go to GitHub Settings → Password and authentication
+1. Navigate to GitHub Settings → Password and authentication
 2. Click "Enable two-factor authentication"
-3. Choose method:
+3. Choose your authentication method:
    - **Recommended:** Authenticator app (Google Authenticator, Authy, 1Password)
    - **Alternative:** Security key (YubiKey, etc.)
-   - **Fallback:** SMS (least secure)
+   - **Fallback:** SMS (least secure option)
 4. Save recovery codes securely
-5. Verify 2FA is active
+5. Verify that 2FA is active
 
-**Recovery Codes:**
-- Store in secure password manager
-- Keep offline backup
-- Generate new codes if compromised
+**Recovery Code Management:**
+- Store codes in a secure password manager
+- Keep an offline backup in a safe location
+- Generate new codes immediately if compromised
 
-**Lost 2FA Device:**
-1. Use recovery codes
-2. Contact Technical Coordinator if codes unavailable
-3. Verify identity through alternative means
+**Lost 2FA Device Recovery:**
+1. Use your saved recovery codes
+2. Contact the Technical Coordinator if codes are unavailable
+3. Verify your identity through alternative means
 4. Reset 2FA after regaining access
 
 #### 3.1.2 SSH Keys
 
-**Best Practices:**
+**Best Practices for SSH Key Management:**
 
 ```bash
 # Generate strong SSH key
@@ -180,43 +183,43 @@ cat ~/.ssh/id_ed25519.pub
 # Copy and add to GitHub Settings → SSH Keys
 ```
 
-**Key Management:**
+**Key Management Guidelines:**
 - Use separate keys for different devices
-- Protect private keys with passphrase
+- Protect private keys with strong passphrases
 - Rotate keys annually
-- Remove old/unused keys
+- Remove old or unused keys promptly
 - Report compromised keys immediately
 
 #### 3.1.3 Personal Access Tokens (PATs)
 
-**When to use:**
+**When to Use PATs:**
 - API access
 - CI/CD pipelines
 - Automation scripts
 - Command-line operations
 
-**Creating secure PATs:**
+**Creating Secure PATs:**
 
-1. Go to Settings → Developer settings → Personal access tokens
+1. Navigate to Settings → Developer settings → Personal access tokens
 2. Click "Generate new token (classic)"
-3. Set descriptive name: "CI/CD Pipeline - Project X"
-4. Set expiration: 90 days maximum
-5. Select minimum required scopes
-6. Generate and copy token immediately
+3. Set a descriptive name (example: "CI/CD Pipeline - Project X")
+4. Set expiration to 90 days maximum
+5. Select only the minimum required scopes
+6. Generate and copy the token immediately
 7. Store securely (never commit to code)
 
-**Token Security:**
+**Token Security Guidelines:**
 - Use fine-grained tokens when possible
-- Set shortest practical expiration
-- Limit scopes to minimum needed
+- Set the shortest practical expiration period
+- Limit scopes to minimum requirements
 - Rotate tokens regularly
-- Revoke unused tokens
+- Revoke unused tokens immediately
 
 ### 3.2 Authorization
 
 #### 3.2.1 Permission Levels
 
-Follow least privilege principle:
+Follow the least privilege principle when assigning permissions:
 
 | Level | Use For | Avoid For |
 |-------|---------|-----------|
@@ -229,41 +232,41 @@ Follow least privilege principle:
 
 #### 3.2.2 Access Reviews
 
-**Regular Reviews:**
+**Regular Review Schedule:**
 
-**Monthly:**
+**Monthly Reviews:**
 - Review new access grants
 - Check for anomalies
 - Verify active users
 
-**Quarterly:**
-- Full access audit
+**Quarterly Reviews:**
+- Conduct full access audit
 - Remove inactive users
-- Update permissions
-- Document changes
+- Update permissions as needed
+- Document all changes
 
-**Annually:**
-- Comprehensive security review
+**Annual Reviews:**
+- Perform comprehensive security review
 - Update access policies
-- Refresh training
-- Audit compliance
+- Refresh security training
+- Audit compliance status
 
 ### 3.3 Session Security
 
 **Best Practices:**
 
-- Log out when finished
-- Use private browsing for shared devices
-- Lock screen when away
+- Log out when finished working
+- Use private browsing mode on shared devices
+- Lock your screen when stepping away
 - Clear browser cache on shared devices
 - Review active sessions regularly
 
 **Review Active Sessions:**
 
-1. Go to Settings → Sessions
-2. Review active sessions
-3. Revoke suspicious sessions
-4. Report unauthorized access
+1. Navigate to Settings → Sessions
+2. Review all active sessions
+3. Revoke any suspicious sessions
+4. Report unauthorized access immediately
 
 ---
 
@@ -271,7 +274,7 @@ Follow least privilege principle:
 
 ### 4.1 What Are Secrets?
 
-**Secrets include:**
+Secrets include any sensitive information that must be protected:
 
 - API keys and tokens
 - Passwords and passphrases
@@ -286,7 +289,7 @@ Follow least privilege principle:
 
 #### 4.2.1 Prevention
 
-**Use .gitignore:**
+**Use .gitignore to Exclude Sensitive Files:**
 
 ```gitignore
 # Secrets and credentials
@@ -309,7 +312,7 @@ config/secrets.yml
 Thumbs.db
 ```
 
-**Pre-commit Hooks:**
+**Pre-commit Hooks Configuration:**
 
 ```yaml
 # .pre-commit-config.yaml
@@ -321,7 +324,7 @@ repos:
         args: ['--baseline', '.secrets.baseline']
 ```
 
-**Git Hooks:**
+**Git Hooks for Secret Detection:**
 
 ```bash
 # .git/hooks/pre-commit
@@ -338,19 +341,19 @@ fi
 
 **GitHub Secret Scanning:**
 
-Automatically enabled for public repositories:
+Automatically enabled for public repositories with the following features:
 - Detects known secret patterns
-- Alerts repository admins
+- Alerts repository administrators
 - Notifies secret providers
-- Blocks pushes with secrets (if push protection enabled)
+- Blocks pushes with secrets (when push protection is enabled)
 
 **Enable Push Protection:**
 
-1. Go to Settings → Code security and analysis
+1. Navigate to Settings → Code security and analysis
 2. Enable "Secret scanning"
 3. Enable "Push protection"
 
-**Manual Scanning:**
+**Manual Scanning Tools:**
 
 ```bash
 # Using TruffleHog
@@ -365,14 +368,14 @@ detect-secrets scan
 
 #### 4.2.3 If Secrets Are Committed
 
-**Immediate Actions:**
+**Immediate Actions Required:**
 
-1. **Rotate the secret immediately**
+1. **Rotate the secret immediately:**
    - Generate new credentials
-   - Update all services
+   - Update all services using the secret
    - Revoke old credentials
 
-2. **Remove from history:**
+2. **Remove from Git history:**
 
 ```bash
 # Using BFG Repo-Cleaner (recommended)
@@ -384,18 +387,18 @@ git filter-branch --force --index-filter \
   'git rm --cached --ignore-unmatch path/to/secret' \
   --prune-empty --tag-name-filter cat -- --all
 
-# Force push (coordinate with team!)
+# Force push (coordinate with team first)
 git push origin --force --all
 git push origin --force --tags
 ```
 
-3. **Notify:**
+3. **Notify relevant parties:**
    - Technical Coordinator
    - Security team
    - Affected services
    - Team members
 
-4. **Document:**
+4. **Document the incident:**
    - What was exposed
    - When it was exposed
    - Actions taken
@@ -405,16 +408,16 @@ git push origin --force --tags
 
 #### 4.3.1 Environment Variables
 
-**For local development:**
+**For Local Development:**
 
 ```bash
-# .env (never commit!)
+# .env (never commit this file)
 DATABASE_URL=postgresql://user:pass@localhost/db
 API_KEY=your-api-key-here
 SECRET_KEY=your-secret-key-here
 ```
 
-**Load in application:**
+**Load in Application:**
 
 ```python
 # Python
@@ -433,14 +436,14 @@ const apiKey = process.env.API_KEY;
 
 #### 4.3.2 GitHub Secrets
 
-**For CI/CD:**
+**For CI/CD Workflows:**
 
-1. Go to repository Settings → Secrets and variables → Actions
+1. Navigate to repository Settings → Secrets and variables → Actions
 2. Click "New repository secret"
-3. Add name and value
+3. Enter name and value
 4. Click "Add secret"
 
-**Use in workflows:**
+**Use in Workflows:**
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -457,15 +460,15 @@ jobs:
 ```
 
 **Secret Scopes:**
-- **Repository secrets:** Available to repository workflows
-- **Environment secrets:** Scoped to specific environments
-- **Organization secrets:** Shared across repositories
+- **Repository secrets:** Available to repository workflows only
+- **Environment secrets:** Scoped to specific deployment environments
+- **Organization secrets:** Shared across multiple repositories
 
 #### 4.3.3 Secret Management Services
 
-**For production:**
+**For Production Environments:**
 
-Use dedicated secret management:
+Use dedicated secret management services:
 
 - **AWS Secrets Manager**
 - **Azure Key Vault**
@@ -474,11 +477,11 @@ Use dedicated secret management:
 - **Doppler**
 
 **Benefits:**
-- Centralized management
-- Automatic rotation
-- Access control
-- Audit logging
-- Encryption at rest
+- Centralized secret management
+- Automatic credential rotation
+- Fine-grained access control
+- Comprehensive audit logging
+- Encryption at rest and in transit
 
 ---
 
@@ -488,7 +491,7 @@ Use dedicated secret management:
 
 #### 5.1.1 Input Validation
 
-**Always validate and sanitize input:**
+Always validate and sanitize all user input:
 
 ```python
 # Bad: No validation
@@ -507,21 +510,21 @@ def process_user_input(user_id):
 **Validation Checklist:**
 
 - [ ] Validate data type
-- [ ] Check length/size limits
-- [ ] Verify format (regex)
+- [ ] Check length and size limits
+- [ ] Verify format using regex
 - [ ] Whitelist allowed values
 - [ ] Sanitize special characters
 - [ ] Encode output properly
 
 #### 5.1.2 Authentication and Authorization
 
-**Implement properly:**
+**Implement Secure Authentication:**
 
 ```python
 # Bad: Weak authentication
 def login(username, password):
     user = db.query(f"SELECT * FROM users WHERE username='{username}'")
-    if user and user.password == password:  # Plain text!
+    if user and user.password == password:  # Plain text password!
         return user
 
 # Good: Secure authentication
@@ -546,43 +549,43 @@ def require_auth(f):
 
 **Security Requirements:**
 
-- Use strong password hashing (bcrypt, Argon2)
-- Implement rate limiting
+- Use strong password hashing algorithms (bcrypt, Argon2)
+- Implement rate limiting to prevent brute force attacks
 - Use secure session management
 - Implement proper authorization checks
 - Use HTTPS for all communications
 
 #### 5.1.3 Error Handling
 
-**Secure error handling:**
+**Secure Error Handling:**
 
 ```python
 # Bad: Exposes sensitive information
 try:
     result = database.query(sql)
 except Exception as e:
-    return f"Database error: {str(e)}"  # Exposes DB structure!
+    return f"Database error: {str(e)}"  # Exposes database structure!
 
 # Good: Generic error message
 try:
     result = database.query(sql)
 except DatabaseError as e:
-    logger.error(f"Database error: {str(e)}")  # Log details
-    return "An error occurred. Please try again."  # Generic message
+    logger.error(f"Database error: {str(e)}")  # Log details server-side
+    return "An error occurred. Please try again."  # Generic user message
 ```
 
 **Best Practices:**
 
-- Log detailed errors server-side
-- Return generic messages to users
-- Handle errors gracefully
+- Log detailed errors server-side for debugging
+- Return generic error messages to users
+- Handle errors gracefully without exposing system details
 
 #### 5.1.4 Cryptography
 
-**Use established libraries:**
+**Use Established Cryptographic Libraries:**
 
 ```python
-# Bad: Custom encryption
+# Bad: Custom encryption (never do this)
 def encrypt(data, key):
     return ''.join(chr(ord(c) ^ ord(key[i % len(key)]))
                    for i, c in enumerate(data))
@@ -602,32 +605,32 @@ def decrypt(encrypted_data, key):
 **Cryptography Rules:**
 
 - Use established libraries (cryptography, libsodium)
-- Use strong algorithms (AES-256, RSA-2048+)
+- Use strong algorithms (AES-256, RSA-2048 or higher)
 - Generate secure random keys
-- Protect encryption keys
+- Protect encryption keys properly
 
 ### 5.2 Code Review for Security
 
 #### 5.2.1 Security Review Checklist
 
-**During code review, check for:**
+During code review, verify the following:
 
-- [ ] **Input Validation:** All inputs validated and sanitized
-- [ ] **Authentication:** Proper authentication implemented
-- [ ] **Authorization:** Access controls enforced
+- [ ] **Input Validation:** All inputs are validated and sanitized
+- [ ] **Authentication:** Proper authentication is implemented
+- [ ] **Authorization:** Access controls are enforced
 - [ ] **Secrets:** No hardcoded credentials
-- [ ] **Cryptography:** Secure algorithms used
+- [ ] **Cryptography:** Secure algorithms are used
 - [ ] **Error Handling:** No information leakage
 - [ ] **Dependencies:** No known vulnerabilities
-- [ ] **Logging:** Sensitive data not logged
-- [ ] **SQL Injection:** Parameterized queries used
-- [ ] **XSS:** Output properly encoded
-- [ ] **CSRF:** CSRF protection implemented
-- [ ] **File Upload:** Proper validation and restrictions
+- [ ] **Logging:** Sensitive data is not logged
+- [ ] **SQL Injection:** Parameterized queries are used
+- [ ] **XSS:** Output is properly encoded
+- [ ] **CSRF:** CSRF protection is implemented
+- [ ] **File Upload:** Proper validation and restrictions are in place
 
 #### 5.2.2 Common Vulnerabilities
 
-**OWASP Top 10:**
+**OWASP Top 10 Security Risks:**
 
 1. **Broken Access Control**
 2. **Cryptographic Failures**
@@ -640,13 +643,13 @@ def decrypt(encrypted_data, key):
 9. **Security Logging and Monitoring Failures**
 10. **Server-Side Request Forgery (SSRF)**
 
-**Review for these vulnerabilities in every PR.**
+Review for these vulnerabilities in every pull request.
 
 ### 5.3 Security Testing
 
 #### 5.3.1 Static Analysis
 
-**Automated scanning:**
+**Automated Security Scanning:**
 
 ```yaml
 # .github/workflows/security.yml
@@ -686,7 +689,7 @@ jobs:
 
 #### 5.3.2 Dynamic Analysis
 
-**Runtime testing:**
+**Runtime Testing Methods:**
 
 - Penetration testing
 - Fuzzing
@@ -695,7 +698,7 @@ jobs:
 
 #### 5.3.3 Dependency Scanning
 
-**Automated scanning:**
+**Automated Dependency Scanning:**
 
 ```yaml
 # .github/workflows/dependency-scan.yml
@@ -727,9 +730,9 @@ jobs:
 
 #### 6.1.1 Dependency Scanning
 
-**Enable GitHub Features:**
+**Enable GitHub Security Features:**
 
-1. Go to Settings → Code security and analysis
+1. Navigate to Settings → Code security and analysis
 2. Enable "Dependency graph"
 3. Enable "Dependabot alerts"
 4. Enable "Dependabot security updates"
@@ -754,7 +757,7 @@ updates:
 
 #### 6.1.2 Vulnerability Response
 
-**When vulnerability detected:**
+**Vulnerability Response Process:**
 
 ```mermaid
 graph TD
@@ -777,7 +780,7 @@ graph TD
     G --> H
 ```
 
-**Response Times:**
+**Response Time Requirements:**
 
 | Severity | Response Time | Action |
 |----------|--------------|--------|
@@ -788,7 +791,7 @@ graph TD
 
 #### 6.1.3 Dependency Updates
 
-**Regular Updates:**
+**Regular Update Commands:**
 
 ```bash
 # Python
@@ -807,16 +810,16 @@ npm audit fix
 **Update Strategy:**
 
 - **Patch versions:** Update automatically (1.2.3 → 1.2.4)
-- **Minor versions:** Review and test (1.2.0 → 1.3.0)
-- **Major versions:** Careful review and testing (1.0.0 → 2.0.0)
+- **Minor versions:** Review and test before updating (1.2.0 → 1.3.0)
+- **Major versions:** Careful review and thorough testing required (1.0.0 → 2.0.0)
 
 ### 6.2 Supply Chain Security
 
 #### 6.2.1 Verify Dependencies
 
-**Before adding dependency:**
+Before adding any new dependency, complete the following checks:
 
-- [ ] Check package popularity and maintenance
+- [ ] Check package popularity and maintenance status
 - [ ] Review package source code
 - [ ] Verify package signatures
 - [ ] Check for known vulnerabilities
@@ -825,7 +828,7 @@ npm audit fix
 
 #### 6.2.2 Lock Files
 
-**Use lock files:**
+**Use Lock Files for Reproducible Builds:**
 
 ```bash
 # Python
@@ -840,17 +843,17 @@ pip freeze > requirements.txt
 # Use dependency management in pom.xml or build.gradle
 ```
 
-**Commit lock files to repository.**
+Always commit lock files to your repository.
 
 #### 6.2.3 Private Package Registries
 
-**For internal packages:**
+**For Internal Packages:**
 
 - Use private npm registry
 - Use private PyPI server
 - Use private Maven repository
 - Implement access controls
-- Scan private packages too
+- Scan private packages for vulnerabilities
 
 ---
 
@@ -860,7 +863,7 @@ pip freeze > requirements.txt
 
 #### 7.1.1 Personal Data
 
-**Never store in repositories:**
+**Never Store in Repositories:**
 
 - Names and contact information
 - Email addresses
@@ -870,25 +873,25 @@ pip freeze > requirements.txt
 - User IDs (if personally identifiable)
 - Any other personal data
 
-**If personal data needed for testing:**
+**For Testing Purposes:**
 
-- Use synthetic/fake data
+- Use synthetic or fake data
 - Anonymize real data
 - Use data generators
-- Obtain explicit consent (if real data required)
+- Obtain explicit consent (only if real data is absolutely required)
 
 #### 7.1.2 Data Minimization
 
-**Collect only what's necessary:**
+**Principles to Follow:**
 
-- Minimize data collection
-- Limit data retention
+- Collect only necessary data
+- Limit data retention periods
 - Delete data when no longer needed
-- Anonymize where possible
+- Anonymize data where possible
 
 #### 7.1.3 Data Subject Rights
 
-**Support GDPR rights:**
+**Support GDPR Rights:**
 
 - Right to access
 - Right to rectification
@@ -900,37 +903,35 @@ pip freeze > requirements.txt
 
 #### 7.2.1 Classification
 
-**Data Classification:**
+**Data Classification Levels:**
 
 | Level | Examples | Handling |
 |-------|----------|----------|
-| **Public** | Published docs, open source code | No restrictions |
-| **Internal** | Internal docs, non-sensitive code | Consortium only |
+| **Public** | Published documentation, open source code | No restrictions |
+| **Internal** | Internal documentation, non-sensitive code | Consortium members only |
 | **Confidential** | Partner data, unpublished research | Restricted access |
-| **Restricted** | Credentials, personal data | Never in repos |
+| **Restricted** | Credentials, personal data | Never in repositories |
 
 #### 7.2.2 Handling Guidelines
 
-**For each classification:**
-
-**Public:**
-- Can be in public repositories
+**Public Data:**
+- Can be stored in public repositories
 - No special handling required
 
-**Internal:**
+**Internal Data:**
 - Private repositories only
 - Consortium member access
 - Standard security practices
 
-**Confidential:**
-- Private repositories
+**Confidential Data:**
+- Private repositories only
 - Restricted team access
 - Additional access controls
 - Encryption recommended
 
-**Restricted:**
-- Never in repositories
-- Use secret management
+**Restricted Data:**
+- Never store in repositories
+- Use secret management services
 - Encrypt at rest and in transit
 - Strict access controls
 
@@ -938,7 +939,7 @@ pip freeze > requirements.txt
 
 #### 7.3.1 Encryption Requirements
 
-**Encrypt:**
+**Encrypt the Following:**
 
 - Data at rest (databases, files)
 - Data in transit (HTTPS, TLS)
@@ -948,7 +949,7 @@ pip freeze > requirements.txt
 
 #### 7.3.2 Encryption Standards
 
-**Use strong encryption:**
+**Use Strong Encryption:**
 
 - **Symmetric:** AES-256
 - **Asymmetric:** RSA-2048 or higher, ECC
@@ -964,7 +965,7 @@ pip freeze > requirements.txt
 
 #### 8.1.1 What is a Security Incident?
 
-**Examples:**
+**Examples of Security Incidents:**
 
 - Unauthorized access to repositories
 - Compromised credentials
@@ -999,35 +1000,35 @@ graph TD
 
 **Immediate Actions:**
 
-1. **Document everything**
-2. **Report immediately:**
+1. **Document everything** you observe
+2. **Report immediately to:**
    - Technical Coordinator
    - WP/Group Lead
    - Security team
 
-**Report via:**
+**Reporting Channels:**
 - Email: [security contact]
 - Emergency: [phone number]
 - GitHub Security Advisory (for vulnerabilities)
 
-**Include in report:**
+**Include in Your Report:**
 - What happened
 - When it happened
 - What was affected
 - Current status
-- Actions taken
+- Actions already taken
 - Evidence collected
 
 ### 8.2 Vulnerability Disclosure
 
 #### 8.2.1 Responsible Disclosure
 
-**For security researchers:**
+**For Security Researchers:**
 
-- Report privately first
+- Report vulnerabilities privately first
 - Provide detailed information
-- Allow time for fix (90 days)
-- Coordinate disclosure
+- Allow time for fix (90 days standard)
+- Coordinate public disclosure
 
 #### 8.2.2 Reporting Vulnerabilities
 
@@ -1061,15 +1062,15 @@ Include:
 
 | Version | Supported |
 |---------|-----------|
-| 1.x.x   | Yes    |
-| < 1.0   | No     |
+| 1.x.x   | Yes       |
+| < 1.0   | No        |
 ```
 
 #### 8.2.3 Security Advisories
 
-**Creating Advisory:**
+**Creating a Security Advisory:**
 
-1. Go to repository → Security → Advisories
+1. Navigate to repository → Security → Advisories
 2. Click "New draft security advisory"
 3. Fill in details:
    - Title
@@ -1083,7 +1084,7 @@ Include:
 
 ### 8.3 Incident Documentation
 
-**Document:**
+**Document the Following:**
 
 - Incident timeline
 - Actions taken
@@ -1092,7 +1093,7 @@ Include:
 - Lessons learned
 - Preventive measures
 
-**Template:**
+**Incident Report Template:**
 
 ```markdown
 # Security Incident Report
@@ -1144,7 +1145,7 @@ Include:
 - **Security:** Implement appropriate security measures
 - **Accountability:** Document compliance efforts
 
-**Implementation:**
+**Implementation Checklist:**
 
 - [ ] Data protection impact assessment
 - [ ] Privacy by design
@@ -1165,7 +1166,7 @@ Include:
 
 #### 9.1.3 eIDAS Regulation
 
-**For digital identity and trust services:**
+**For Digital Identity and Trust Services:**
 
 - **Electronic Identification:** Secure authentication mechanisms
 - **Electronic Signatures:** Legally binding digital signatures
@@ -1215,7 +1216,7 @@ Include:
 
 #### 9.3.2 Dependency Licenses
 
-**Check all dependencies:**
+**Check All Dependencies:**
 
 ```bash
 # Python
@@ -1229,7 +1230,7 @@ license-checker --summary
 license-checker --failOn 'GPL-2.0'
 ```
 
-**License Review:**
+**License Review Checklist:**
 
 - [ ] Review all dependency licenses
 - [ ] Check compatibility with Apache 2.0
@@ -1250,7 +1251,7 @@ license-checker --failOn 'GPL-2.0'
 
 #### 9.4.2 Restricted Countries
 
-**Be aware of:**
+**Be Aware Of:**
 
 - EU sanctions and embargoes
 - US export restrictions
@@ -1265,15 +1266,15 @@ license-checker --failOn 'GPL-2.0'
 
 #### 10.1.1 Secure Workstation
 
-**Workstation Security:**
+**Workstation Security Checklist:**
 
-- [ ] Keep OS and software updated
+- [ ] Keep operating system and software updated
 - [ ] Use full disk encryption
 - [ ] Enable firewall
-- [ ] Install antivirus/antimalware
-- [ ] Enable screen lock
-- [ ] Regular backups
-- [ ] Secure Wi-Fi connections
+- [ ] Install antivirus and antimalware software
+- [ ] Enable automatic screen lock
+- [ ] Perform regular backups
+- [ ] Use secure Wi-Fi connections only
 
 #### 10.1.2 Development Tools
 
@@ -1312,9 +1313,7 @@ Host github.com
 | General Discussion | GitHub Discussions | Public |
 | Code Review | GitHub Pull Requests | Public/Private |
 | Security Issues | Private Security Advisory | Private |
-| Sensitive Topics | Encrypted Email |
-
- Encrypted |
+| Sensitive Topics | Encrypted Email | Encrypted |
 
 #### 10.2.2 Email Security
 
@@ -1342,7 +1341,7 @@ gpg --armor --export your.email@example.com > public-key.asc
 
 #### 10.3.1 Required Training
 
-**All members must complete:**
+**All Members Must Complete:**
 
 - [ ] Security awareness training
 - [ ] GDPR compliance training
@@ -1380,7 +1379,7 @@ gpg --armor --export your.email@example.com > public-key.asc
 
 #### 10.4.1 Key Metrics
 
-**Track and monitor:**
+**Track and Monitor:**
 
 | Metric | Target | Frequency |
 |--------|--------|-----------|
@@ -1393,7 +1392,7 @@ gpg --armor --export your.email@example.com > public-key.asc
 
 #### 10.4.2 Reporting
 
-**Monthly Security Report:**
+**Monthly Security Report Template:**
 
 ```markdown
 # Security Report - [Month Year]

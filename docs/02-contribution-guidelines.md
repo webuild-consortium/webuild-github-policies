@@ -25,11 +25,11 @@
 
 ### 1.1 Welcome
 
-These guidelines ensure high-quality, consistent contributions across all WEBUILD repositories.
+These guidelines ensure high-quality, consistent contributions across all WEBUILD repositories. Following these standards helps maintain code quality, facilitates collaboration, and streamlines the review process.
 
 ### 1.2 Types of Contributions
 
-We welcome various types of contributions:
+WEBUILD welcomes various types of contributions:
 
 **Code Contributions:**
 - Bug fixes
@@ -57,7 +57,7 @@ We welcome various types of contributions:
 
 ### 1.3 Code of Conduct
 
-All contributors must adhere to our Code of Conduct:
+All contributors must adhere to the Code of Conduct:
 
 - Be respectful and inclusive
 - Welcome diverse perspectives
@@ -111,7 +111,7 @@ cd repository-name
 
 #### 2.2.3 Install Dependencies
 
-Follow repository-specific instructions in the README.md:
+Follow repository-specific instructions in the README.md file:
 
 ```bash
 # Example for Node.js projects
@@ -126,13 +126,13 @@ mvn install
 
 ### 2.3 Understanding the Repository
 
-Before contributing:
+Before contributing, complete the following steps:
 
-1. Read the README.md
+1. Read the README.md file
 2. Review existing issues to avoid duplicate work
 3. Explore the codebase structure
 4. Check documentation for architecture and patterns
-5. Run tests locally
+5. Run tests locally to verify the setup
 
 ---
 
@@ -170,8 +170,8 @@ graph TD
 
 1. Search existing issues for similar work
 2. If no issue exists, create one describing the problem, proposed solution, and expected impact
-3. Wait for maintainer feedback/approval
-4. Get issue assigned to you
+3. Wait for maintainer feedback and approval
+4. Request assignment to the issue
 
 **Video: Discussion on the issue**
 
@@ -192,7 +192,7 @@ What should happen
 ## Steps to Reproduce (for bugs)
 1. Step one
 2. Step two
-3. ...
+3. Step three
 
 ## Proposed Solution
 Your suggested approach
@@ -231,9 +231,9 @@ git checkout -b bugfix/issue-456-fix-login-error
 - Make focused, logical changes
 - Add comments for complex logic
 - Update relevant documentation
-- Add/update tests
+- Add or update tests
 
-**Don't:**
+**Do Not:**
 - Mix unrelated changes
 - Include debugging code or commented-out code
 - Leave TODO comments without linked issues
@@ -277,12 +277,12 @@ git commit -m "feat: add user authentication mechanism
 Closes #123"
 ```
 
-**Good commits:**
+**Good Commits:**
 - Atomic (one logical change per commit)
 - Reference related issues
 - Explain "why" not just "what"
 
-**Bad commits:**
+**Bad Commits:**
 - Multiple unrelated changes
 - Vague messages ("fix stuff", "updates")
 
@@ -302,10 +302,10 @@ git push origin feature/issue-123-add-authentication --force-with-lease
 
 ![How to open a pull request](gifs/3-3-how-to-open-a-pr.gif)
 
-1. Navigate to repository on GitHub
-2. Click "Pull requests" → "New pull request"
+1. Navigate to the repository on GitHub
+2. Click "Pull requests" then "New pull request"
 3. Select your branch as the source
-4. Fill in PR template:
+4. Fill in the PR template:
 
 ```markdown
 ## Description
@@ -341,7 +341,7 @@ Closes #123
 **When you receive feedback:**
 
 1. Read all comments carefully
-2. Ask questions if unclear
+2. Ask questions if anything is unclear
 3. Make requested changes
 4. Commit changes with clear messages
 5. Push updates to your branch
@@ -352,7 +352,7 @@ Closes #123
 
 ```bash
 # Make changes based on feedback
-# ... edit files ...
+# Edit files as needed
 
 # Commit changes
 git add .
@@ -372,7 +372,7 @@ Once approved:
 
 1. Ensure all checks pass
 2. Resolve any conflicts
-3. Maintainer merges PR
+3. Maintainer merges the PR
 4. Delete feature branch (optional)
 5. Close related issues
 
@@ -603,7 +603,7 @@ class AuthenticationService:
 
 ### 5.2 README Documentation
 
-Every repository must have a comprehensive README.md:
+Every repository must have a comprehensive README.md file:
 
 ```markdown
 # Project Name
@@ -644,6 +644,7 @@ Apache 2.0 - See [LICENSE](LICENSE)
 ## Funding
 
 EU funding acknowledgment
+```
 
 ### 5.3 API Documentation
 
@@ -680,6 +681,7 @@ Authenticate a user and return a JWT token.
 **Errors:**
 - 401: Invalid credentials
 - 429: Too many attempts
+```
 
 ### 5.4 Architecture Documentation
 
@@ -690,7 +692,7 @@ Include diagrams and descriptions for:
 - Deployment architecture
 - Integration points
 
-Use tools like:
+Use tools such as:
 - Mermaid for diagrams in Markdown
 - PlantUML for UML diagrams
 - Draw.io for complex diagrams
@@ -798,7 +800,7 @@ mvn test jacoco:report
 - Use arrange-act-assert pattern
 - Make tests independent
 
-**Don't:**
+**Do Not:**
 - Write flaky tests
 - Test implementation details
 - Create test dependencies
@@ -864,9 +866,9 @@ Related to #456
 ### 7.3 PR Size Guidelines
 
 **Ideal PR Size:**
-- Small: < 200 lines changed (preferred)
+- Small: Less than 200 lines changed (preferred)
 - Medium: 200-500 lines changed
-- Large: > 500 lines changed (should be split if possible)
+- Large: More than 500 lines changed (should be split if possible)
 
 **For Large PRs:**
 - Provide detailed description
@@ -884,7 +886,7 @@ Fixes #456
 Related to #789
 ```
 
-This automatically closes issues when PR is merged.
+This automatically closes issues when the PR is merged.
 
 ### 7.5 Draft Pull Requests
 
@@ -954,18 +956,18 @@ Use markdown code suggestion blocks to propose specific edits. The PR author can
 
 ![Submit a review](gifs/4-3-submit-a-review.gif)
 
-Add multiple review comments, then click "Review changes" → "Submit review":
+Add multiple review comments, then click "Review changes" and "Submit review":
 - **Comment:** General feedback
 - **Approve:** Ready to merge
 - **Request changes:** Needs updates before merging
 
-**Good feedback:**
+**Good Feedback:**
 ```markdown
 Consider using a more descriptive variable name here.
 `userAuthToken` would be clearer than `token`.
 ```
 
-**Poor feedback:**
+**Poor Feedback:**
 ```markdown
 This is wrong.
 ```
@@ -976,7 +978,7 @@ This is wrong.
 - Explain the "why" behind suggestions
 - Ask questions to understand intent
 - Focus on the code, not the person
-- Don't block on personal preferences
+- Do not block on personal preferences
 
 ### 8.3 Review Response Times
 
@@ -985,7 +987,7 @@ This is wrong.
 - Follow-up reviews: Within 1 business day
 - Urgent fixes: Same day
 
-**If delayed:**
+**If Delayed:**
 - Communicate expected timeline
 - Suggest alternative reviewers
 - Prioritize critical PRs
@@ -1024,19 +1026,19 @@ This is wrong.
 Before asking, search existing issues and documentation. When asking:
 - Provide context and details
 - Include error messages
-- Describe what you've tried
+- Describe what you have tried
 - Be specific about what you need
 
 **Example:**
 
 ```markdown
 ## Problem
-I'm getting an authentication error when testing the login endpoint.
+I am getting an authentication error when testing the login endpoint.
 
 ## Error Message
 AuthenticationError: Invalid token format
 
-## What I've Tried
+## What I Have Tried
 - Verified token generation
 - Checked token expiration
 - Reviewed authentication middleware
@@ -1164,7 +1166,7 @@ git filter-branch --force --index-filter \
   'git rm --cached --ignore-unmatch path/to/secret/file' \
   --prune-empty --tag-name-filter cat -- --all
 
-# Force push (coordinate with team first!)
+# Force push (coordinate with team first)
 git push origin --force --all
 
 # Rotate the exposed secret immediately
@@ -1175,7 +1177,7 @@ git push origin --force --all
 
 ### 10.2 Getting Unstuck
 
-If you're stuck:
+If you are stuck:
 
 1. **Review documentation** - Check README and guides
 2. **Search issues** - Someone may have had the same problem
@@ -1300,7 +1302,7 @@ If you have questions about these guidelines:
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
-| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
+| 1.2 | December 2025 | Technical Coordinator | General improvements and cleanup |
 
 **Next Review Date:** March 2026
 

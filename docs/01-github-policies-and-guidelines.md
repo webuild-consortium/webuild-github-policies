@@ -37,6 +37,7 @@ The WEBUILD consortium is a collaborative European project focused on building d
 ### 1.2 Role of GitHub
 
 GitHub serves as the primary platform for:
+
 - Source code management and version control
 - Technical collaboration across partners
 - Documentation and knowledge sharing
@@ -46,7 +47,8 @@ GitHub serves as the primary platform for:
 
 ### 1.3 Document Purpose
 
-This document establishes the comprehensive policies and guidelines for using GitHub within the WEBUILD consortium. It ensures:
+This document establishes comprehensive policies and guidelines for using GitHub within the WEBUILD consortium. It ensures:
+
 - Consistent practices across all Work Packages
 - Secure and compliant repository management
 - Effective collaboration among partners
@@ -81,6 +83,7 @@ These policies apply to:
 ### 2.3 Relationship to Other Policies
 
 These GitHub policies complement and must be read in conjunction with:
+
 - WEBUILD Consortium Agreement
 - Data Management Plan
 - Intellectual Property Rights Agreement
@@ -110,21 +113,21 @@ graph TD
 
 #### 3.2.1 Technical Coordinator
 
-**Who:** [Technical Coordinator Name]
+**Responsibilities:**
 
-**What they do:**
-- Manages GitHub organization settings and security
-- Adds/removes members from the organization
-- Approves new repositories and major changes
-- Updates policies when needed
-- Helps resolve conflicts between teams
+- Manage GitHub organization settings and security
+- Add and remove members from the organization
+- Approve new repositories and major changes
+- Update policies as needed
+- Resolve conflicts between teams
 
 **GitHub Permission:** Organization Owner
 
 #### 3.2.2 Work Package (WP) Leads
 
-**What they do:**
-- Oversee repositories in their Work Package
+**Responsibilities:**
+
+- Oversee repositories within their Work Package
 - Approve repository creation requests
 - Manage team member access within their WP
 - Ensure quality of WP deliverables
@@ -133,33 +136,36 @@ graph TD
 
 #### 3.2.3 Group Leads
 
-**What they do:**
+**Responsibilities:**
+
 - Manage day-to-day repository operations
-- Add/remove team members in their group
+- Add and remove team members within their group
 - Coordinate code reviews
 - Manage issues and project boards
-- Keep documentation up to date
+- Maintain up-to-date documentation
 
 **GitHub Permission:** Admin on repositories they manage
 
 #### 3.2.4 Maintainers
 
-**What they do:**
+**Responsibilities:**
+
 - Review and merge pull requests
 - Triage and manage issues
 - Create releases
 - Update documentation
-- Help contributors
+- Support contributors
 
 **GitHub Permission:** Write access with merge rights
 
 #### 3.2.5 Contributors
 
-**What they do:**
+**Responsibilities:**
+
 - Submit code and documentation changes
 - Report issues and bugs
 - Participate in discussions
-- Review others' pull requests
+- Review pull requests from other contributors
 
 **GitHub Permission:** Write or Read (depending on repository)
 
@@ -180,11 +186,13 @@ graph TD
 **Current Status:** The organization currently has multiple owners. This will be consolidated to improve security and governance.
 
 **Target State:**
+
 - **Primary Owner:** Technical Coordinator
 - **Backup Owner:** Designated deputy (1-2 persons maximum)
 - **Rationale:** Minimize security risks, clarify accountability, simplify administration
 
 **Transition Plan:**
+
 1. Audit current owner list
 2. Identify essential owner roles
 3. Communicate changes to affected parties
@@ -213,24 +221,28 @@ webuild-consortium/
 ### 4.2 Repository Categories
 
 #### 4.2.1 Technical Implementation Repositories
+
 - Source code for components and services
-- APIs and interfaces
+- APIs (Application Programming Interfaces) and interfaces
 - Test frameworks and tools
 - Example implementations
 
 #### 4.2.2 Specification Repositories
+
 - Technical specifications
 - Standards documentation
 - Architecture documents
 - Interface definitions
 
 #### 4.2.3 Documentation Repositories
+
 - User guides and manuals
 - API documentation
 - Tutorials and examples
-- Project documentation (like this repository)
+- Project documentation (such as this repository)
 
 #### 4.2.4 Test and Validation Repositories
+
 - Test suites and test cases
 - Conformance testing tools
 - Validation frameworks
@@ -276,6 +288,7 @@ graph TD
 ```
 
 **Process:**
+
 1. New member completes onboarding (see [Onboarding Procedures](03-onboarding-procedures.md))
 2. WP/Group lead submits access request to Technical Coordinator
 3. Technical Coordinator adds member to organization
@@ -285,19 +298,20 @@ graph TD
 #### 5.2.2 For Existing Members (Additional Access)
 
 **Process:**
+
 1. Member requests access from their WP/Group lead
-2. Lead evaluates need and approves/denies
-3. Lead grants access to specific repositories/teams
-4. Access logged in team records
+2. Lead evaluates need and approves or denies request
+3. Lead grants access to specific repositories or teams
+4. Access is logged in team records
 
 ### 5.3 Permission Levels
 
 | Level | Capabilities | Typical Role |
 |-------|-------------|--------------|
 | **Read** | View code, clone, download | External collaborators, observers |
-| **Triage** | Read + manage issues/PRs | Community managers |
+| **Triage** | Read + manage issues and pull requests | Community managers |
 | **Write** | Triage + push to branches | Contributors |
-| **Maintain** | Write + manage repo settings | Maintainers |
+| **Maintain** | Write + manage repository settings | Maintainers |
 | **Admin** | Full control except deletion | Group leads |
 | **Owner** | Full organizational control | Technical Coordinator |
 
@@ -315,6 +329,7 @@ Teams are organized hierarchically:
 ```
 
 **Team Permissions:**
+
 - Parent teams can access child team repositories
 - Child teams inherit parent team members
 - Permissions can be customized per repository
@@ -326,6 +341,7 @@ Teams are organized hierarchically:
 Access rights are reviewed as needed to ensure members have appropriate permissions.
 
 **Review Process:**
+
 1. WP/Group leads review team membership when changes occur
 2. Identify inactive or departed members
 3. Submit revocation requests to Technical Coordinator
@@ -334,16 +350,18 @@ Access rights are reviewed as needed to ensure members have appropriate permissi
 #### 5.5.2 Immediate Revocation
 
 Access must be revoked immediately when:
+
 - Member leaves the consortium
 - Member changes role (no longer needs access)
 - Security incident involving the account
 - Violation of policies or code of conduct
 
 **Revocation Process:**
+
 1. WP/Group lead notifies Technical Coordinator
 2. Technical Coordinator removes organization access
-3. All repository access automatically revoked
-4. Incident logged if security-related
+3. All repository access is automatically revoked
+4. Incident is logged if security-related
 
 ---
 
@@ -354,6 +372,7 @@ Access must be revoked immediately when:
 **Important:** All WEBUILD consortium repositories are currently **public**.
 
 This reflects the consortium's commitment to:
+
 - Open science and transparency
 - Community engagement
 - Knowledge sharing
@@ -366,6 +385,7 @@ This reflects the consortium's commitment to:
 **Default:** Public (unless specific reasons require private status)
 
 **Rationale:**
+
 - Promotes collaboration and community input
 - Aligns with EU open access mandates
 - Increases project visibility and impact
@@ -375,6 +395,7 @@ This reflects the consortium's commitment to:
 #### 6.2.2 Content Suitable for Public Repositories
 
 **Appropriate for public repositories:**
+
 - Open source code and libraries
 - Technical specifications and standards
 - API documentation and examples
@@ -387,6 +408,7 @@ This reflects the consortium's commitment to:
 #### 6.2.3 Content Requiring Private Repositories
 
 **Must remain private:**
+
 - Credentials, API keys, passwords
 - Personal or sensitive data
 - Pre-publication research (if applicable)
@@ -396,7 +418,7 @@ This reflects the consortium's commitment to:
 
 ### 6.3 Process for Making Repositories Public
 
-Even though repositories are public by default, formal approval is required:
+Even though repositories are public by default, formal approval is required.
 
 #### 6.3.1 Pre-Publication Checklist
 
@@ -432,6 +454,7 @@ graph TD
 ```
 
 **Steps:**
+
 1. Repository maintainer completes pre-publication checklist
 2. Group lead reviews repository content and checklist
 3. WP lead provides approval
@@ -442,6 +465,7 @@ graph TD
 #### 6.3.3 Documentation Requirements
 
 When making a repository public, document:
+
 - Date made public
 - Approval chain (who approved)
 - Checklist completion status
@@ -450,12 +474,13 @@ When making a repository public, document:
 
 ### 6.4 Private Repository Exceptions
 
-In rare cases, repositories may remain private:
+In rare cases, repositories may remain private.
 
 **Valid Reasons:**
+
 - Contains pre-release security fixes
 - Includes partner confidential information
-- Under legal review or IP assessment
+- Under legal review or intellectual property (IP) assessment
 - Temporary private status during initial development
 - Contractual obligations require privacy
 
@@ -475,9 +500,10 @@ In rare cases, repositories may remain private:
 [wp-number]-[group-name]-[purpose]
 ```
 
-**Examples from actual WeBuild repositories:**
-- `architecture` - Conformance Specifications and ADRs
-- `wp4-qtsp-group` - QTSP group public resources
+**Examples from actual WEBUILD repositories:**
+
+- `architecture` - Conformance Specifications and ADRs (Architecture Decision Records)
+- `wp4-qtsp-group` - QTSP (Qualified Trust Service Provider) group public resources
 - `wp4-trust-group` - Trust Infrastructure group resources
 - `wp4-interop-test-bed` - Interoperability test bed
 - `wp4-semantics-group` - Semantics group resources
@@ -486,14 +512,16 @@ In rare cases, repositories may remain private:
 #### 7.1.2 Naming Rules
 
 **Do:**
+
 - Use lowercase letters
 - Use hyphens (-) to separate words
 - Be descriptive and specific
 - Include WP number prefix
-- Keep names concise (< 50 characters)
+- Keep names concise (under 50 characters)
 - Use consistent terminology
 
-**Don't:**
+**Do Not:**
+
 - Use spaces or special characters
 - Use camelCase or PascalCase
 - Create ambiguous names
@@ -515,6 +543,7 @@ In rare cases, repositories may remain private:
 See [Branching and Workflow](07-branching-and-workflow.md) for detailed branch naming conventions.
 
 **Quick Reference:**
+
 - `main` - Production-ready code
 - `develop` - Integration branch
 - `feature/[name]` - New features
@@ -525,16 +554,19 @@ See [Branching and Workflow](07-branching-and-workflow.md) for detailed branch n
 ### 7.3 Tag Naming
 
 **Version Tags:**
+
 ```
 v[MAJOR].[MINOR].[PATCH]
 ```
 
 **Examples:**
+
 - `v1.0.0` - Major release
 - `v1.1.0` - Minor release with new features
 - `v1.1.1` - Patch release with bug fixes
 
 **Pre-release Tags:**
+
 - `v1.0.0-alpha.1` - Alpha release
 - `v1.0.0-beta.2` - Beta release
 - `v1.0.0-rc.1` - Release candidate
@@ -555,7 +587,7 @@ v[MAJOR].[MINOR].[PATCH]
 - `.gitignore` - Git ignore patterns
 - `.github/` - GitHub-specific configurations
 - `.editorconfig` - Editor configuration
-- `package.json`, `pom.xml`, etc. - Language-specific configs
+- `package.json`, `pom.xml`, etc. - Language-specific configurations
 
 ---
 
@@ -568,10 +600,11 @@ Every repository MUST include:
 #### 8.1.1 README.md
 
 **Minimum Content:**
+
 - Project name and description
 - Purpose and objectives
 - Getting started instructions
-- Installation/setup guide
+- Installation and setup guide
 - Usage examples
 - Contributing guidelines link
 - License information
@@ -585,6 +618,7 @@ Every repository MUST include:
 **Default License:** Apache License 2.0
 
 **Requirements:**
+
 - License file in repository root
 - License headers in source files (where applicable)
 - Clear attribution to WEBUILD Consortium
@@ -595,6 +629,7 @@ See [Licensing Guidelines](05-licensing-guidelines.md) for details.
 #### 8.1.3 CONTRIBUTING.md
 
 **Minimum Content:**
+
 - How to contribute
 - Code of conduct reference
 - Development setup
@@ -631,6 +666,7 @@ Repositories SHOULD include:
 #### 8.3.2 Branch Protection
 
 **For `main` branch:**
+
 - Require pull request reviews (minimum 1 approval)
 - Require status checks to pass
 - Require conversation resolution
@@ -646,12 +682,14 @@ See [Branching and Workflow](07-branching-and-workflow.md) for complete branch p
 Use topics to improve discoverability:
 
 **Consortium Topics:**
+
 - `webuild-consortium`
 - `eudi-wallet`
 - `digital-identity`
 - `eu-project`
 
 **Technical Topics:**
+
 - Technology stack (e.g., `python`, `java`, `typescript`)
 - Domain (e.g., `trust-infrastructure`, `qtsp`, `semantics`)
 - Type (e.g., `specification`, `implementation`, `testing`)
@@ -663,6 +701,7 @@ Use topics to improve discoverability:
 ### 9.1 Code Review Requirements
 
 All code changes MUST:
+
 1. Be submitted via pull request
 2. Undergo review by at least one other developer
 3. Pass all automated checks (CI/CD, linting, tests)
@@ -674,23 +713,27 @@ All code changes MUST:
 Reviewers should verify:
 
 **Functionality:**
+
 - Code works as intended
 - Meets requirements
 - Handles edge cases
 
 **Quality:**
+
 - Follows coding standards
 - Well-structured and maintainable
 - Properly documented
 - Includes appropriate tests
 
 **Security:**
+
 - No security vulnerabilities
 - No hardcoded credentials
 - Proper input validation
 - Secure dependencies
 
 **Compliance:**
+
 - Follows repository guidelines
 - Appropriate license headers
 - No sensitive data
@@ -700,14 +743,15 @@ Reviewers should verify:
 Repositories SHOULD implement:
 
 - **Linting:** Code style and quality checks
-- **Testing:** Unit, integration, and e2e tests
+- **Testing:** Unit, integration, and end-to-end tests
 - **Security Scanning:** Dependency and code vulnerability scanning
 - **Coverage:** Code coverage reporting
 - **Build Verification:** Successful build confirmation
 
 ### 9.4 Continuous Integration
 
-Use GitHub Actions or similar CI/CD tools for:
+Use GitHub Actions or similar CI/CD (Continuous Integration/Continuous Deployment) tools for:
+
 - Automated testing on pull requests
 - Build verification
 - Security scanning
@@ -749,7 +793,7 @@ Use GitHub Actions or similar CI/CD tools for:
 - Configuration instructions
 - Usage tutorials
 - Troubleshooting guides
-- FAQ sections
+- FAQ (Frequently Asked Questions) sections
 
 ### 10.3 Developer Documentation
 
@@ -777,7 +821,7 @@ Use GitHub Actions or similar CI/CD tools for:
 
 Use labels to categorize issues:
 
-- `bug` - Something isn't working
+- `bug` - Something is not working
 - `enhancement` - New feature or request
 - `documentation` - Documentation improvements
 - `question` - Further information requested
@@ -788,6 +832,7 @@ Use labels to categorize issues:
 #### 11.1.2 Issue Templates
 
 Repositories SHOULD provide templates for:
+
 - Bug reports
 - Feature requests
 - Security vulnerabilities
@@ -804,12 +849,14 @@ Repositories SHOULD provide templates for:
 ### 11.2 Project Boards
 
 Use GitHub Projects for:
+
 - Sprint planning
 - Feature tracking
 - Release management
 - Roadmap visualization
 
 **Recommended Columns:**
+
 - Backlog
 - To Do
 - In Progress
@@ -819,6 +866,7 @@ Use GitHub Projects for:
 ### 11.3 Milestones
 
 Use milestones for:
+
 - Release planning
 - Deliverable tracking
 - Sprint goals
@@ -833,6 +881,7 @@ Use milestones for:
 All repositories MUST include EU funding acknowledgment:
 
 **Required Text:**
+
 ```markdown
 ## Funding
 
@@ -857,7 +906,7 @@ nor the granting authority can be held responsible.
 ### 12.3 Data Protection
 
 - No personal data in repositories
-- GDPR compliance required
+- GDPR (General Data Protection Regulation) compliance required
 - Anonymize test data
 - Secure credential management
 - See [Security and Compliance](06-security-and-compliance.md)
@@ -876,6 +925,7 @@ nor the granting authority can be held responsible.
 ### 13.1 Getting Help
 
 **For GitHub Issues:**
+
 1. Check repository documentation
 2. Search existing issues
 3. Open an issue in the relevant repository
@@ -883,13 +933,15 @@ nor the granting authority can be held responsible.
 5. Escalate to WP/Group lead
 
 **For Policy Questions:**
+
 1. Review this documentation
 2. Contact your WP/Group lead
 3. Reach out to Technical Coordinator
 
 **Communication Channels:**
+
 - GitHub Issues (for technical questions)
-- Consortium internal channels (for policy/administrative questions)
+- Consortium internal channels (for policy and administrative questions)
 - Note: Additional support channels (e.g., Slack) may be established as needed
 
 ### 13.2 Training and Onboarding
@@ -902,12 +954,14 @@ nor the granting authority can be held responsible.
 ### 13.3 Useful Resources
 
 **Internal:**
+
 - [Contribution Guidelines](02-contribution-guidelines.md)
 - [Onboarding Procedures](03-onboarding-procedures.md)
 - [Repository Management](04-repository-management.md)
 - [Branching and Workflow](07-branching-and-workflow.md)
 
 **External:**
+
 - [GitHub Documentation](https://docs.github.com)
 - [Git Documentation](https://git-scm.com/doc)
 - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
@@ -919,6 +973,7 @@ nor the granting authority can be held responsible.
 ### 14.1 Review Schedule
 
 These policies are reviewed:
+
 - **Quarterly:** Minor updates and clarifications
 - **Annually:** Major review and updates
 - **As Needed:** In response to incidents or changes
@@ -936,6 +991,7 @@ These policies are reviewed:
 ### 14.3 Version Control
 
 Policy versions tracked in this repository:
+
 - Major changes: New version number
 - Minor updates: Revision number
 - All changes documented in CHANGELOG.md
@@ -943,6 +999,7 @@ Policy versions tracked in this repository:
 ### 14.4 Feedback and Suggestions
 
 Submit feedback via:
+
 - GitHub issues in this repository
 - Direct communication with Technical Coordinator
 - WP/Group lead channels
@@ -955,6 +1012,7 @@ Submit feedback via:
 ### Appendix A: Quick Reference Checklist
 
 **New Repository Setup:**
+
 - [ ] Repository created with appropriate name
 - [ ] README.md with required content
 - [ ] LICENSE file (Apache 2.0)
@@ -966,6 +1024,7 @@ Submit feedback via:
 - [ ] EU funding acknowledgment included
 
 **Before Making Repository Public:**
+
 - [ ] Pre-publication checklist completed
 - [ ] No secrets or credentials
 - [ ] No sensitive data
@@ -983,19 +1042,24 @@ Submit feedback via:
 **Group Leads:** Contact via consortium internal channels or repository discussions
 
 **Support:**
+
 - For technical issues: Open an issue in the relevant repository
 - For policy questions: Contact your WP/Group lead
 - For access requests: Contact Technical Coordinator through consortium channels
 
 ### Appendix C: Glossary
 
-- **Consortium:** WEBUILD project partners
-- **WP:** Work Package
-- **PR:** Pull Request
+- **ADR:** Architecture Decision Record
+- **API:** Application Programming Interface
 - **CI/CD:** Continuous Integration/Continuous Deployment
+- **Consortium:** WEBUILD project partners
+- **EUDI:** European Digital Identity
+- **FAQ:** Frequently Asked Questions
 - **GDPR:** General Data Protection Regulation
 - **IP:** Intellectual Property
-- **EUDI:** European Digital Identity
+- **PR:** Pull Request
+- **QTSP:** Qualified Trust Service Provider
+- **WP:** Work Package
 
 ---
 
@@ -1005,7 +1069,7 @@ Submit feedback via:
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
-| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
+| 1.2 | December 2025 | Technical Coordinator | General improvements and cleanup |
 
 **Next Review Date:** March 2026
 

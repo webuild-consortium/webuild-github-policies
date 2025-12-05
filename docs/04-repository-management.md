@@ -69,27 +69,35 @@ graph TD
 ### 2.2 Stage Descriptions
 
 #### 2.2.1 Planning
+
 Define repository purpose, scope, ownership, and initial structure.
 
 #### 2.2.2 Approval
+
 Submit creation request through WP/Group lead to Technical Coordinator for approval and resource allocation.
 
 #### 2.2.3 Creation
+
 Repository is created in the organization with initial structure, access permissions, and basic files.
 
 #### 2.2.4 Setup
+
 Complete configuration including required files, branch protection, CI/CD setup, and team member access.
 
 #### 2.2.5 Active
+
 Repository is under active development with regular issue management, pull request reviews, releases, and documentation updates.
 
 #### 2.2.6 Deprecated
+
 Repository receives security updates only. Migration path and deprecation notice provided, with scheduled archival date.
 
 #### 2.2.7 Archived
+
 Repository is read-only and preserved for reference with clear archival notice.
 
 #### 2.2.8 Deleted
+
 Permanent removal in exceptional cases only, with full backup and documented justification.
 
 ### 2.3 Lifecycle Duration
@@ -178,6 +186,7 @@ graph TD
 ```
 
 **Approval Criteria:**
+
 - Clear purpose and scope
 - No duplication of existing repos
 - Appropriate team identified
@@ -319,6 +328,7 @@ For questions and support, please open an issue in this repository.
 **Navigate to:** Settings → General
 
 **Configure:**
+
 ```
 Name: [repository-name]
 Description: [Brief description for WeBuild project]
@@ -327,6 +337,7 @@ Topics: webuild-consortium, eudi-wallet, [relevant-topics]
 ```
 
 **Features:**
+
 - ☑ Issues
 - ☑ Projects (if used)
 - ☐ Wiki (use docs/ instead)
@@ -334,6 +345,7 @@ Topics: webuild-consortium, eudi-wallet, [relevant-topics]
 - ☑ Sponsorships (disabled)
 
 **Pull Requests:**
+
 - ☑ Allow merge commits
 - ☑ Allow squash merging (recommended)
 - ☑ Allow rebase merging
@@ -380,6 +392,7 @@ If your repository uses GitFlow or another strategy requiring a `develop` branch
 **Branch name pattern:** `develop`
 
 **Protection rules:**
+
 - Require pull request reviews: 1
 - Require status checks to pass
 - May allow force pushes for maintainers
@@ -404,6 +417,7 @@ If your repository uses GitFlow or another strategy requiring a `develop` branch
 #### 4.3.2 Individual Collaborators
 
 Only add individual collaborators for:
+
 - External contributors
 - Temporary access
 - Special cases
@@ -642,7 +656,7 @@ graph TD
 
 | Label | Color | Description |
 |-------|-------|-------------|
-| `bug` | #d73a4a | Something isn't working |
+| `bug` | #d73a4a | Something is not working |
 | `enhancement` | #a2eeef | New feature or request |
 | `documentation` | #0075ca | Documentation improvements |
 | `question` | #d876e3 | Further information requested |
@@ -692,12 +706,14 @@ Follow [Semantic Versioning 2.0.0](https://semver.org/):
 - **PATCH:** Backwards-compatible bug fixes
 
 **Examples:**
+
 - `1.0.0` - Initial release
 - `1.1.0` - New feature added
 - `1.1.1` - Bug fix
 - `2.0.0` - Breaking changes
 
 **Pre-release versions:**
+
 - `1.0.0-alpha.1` - Alpha release
 - `1.0.0-beta.1` - Beta release
 - `1.0.0-rc.1` - Release candidate
@@ -854,6 +870,7 @@ docs/
 ### 6.1 Using Templates
 
 **Benefits of templates:**
+
 - Consistent structure
 - Required files included
 - Faster repository creation
@@ -973,6 +990,7 @@ This repository is deprecated and no longer maintained.
 **Steps:**
 
 1. **Final Update:**
+
 ```bash
 # Add archive notice
 echo "# ARCHIVED\n\nThis repository has been archived..." > ARCHIVE.md
@@ -993,6 +1011,7 @@ git push origin main
    - Confirm archival
 
 **Effects of archiving:**
+
 - Repository becomes read-only
 - No new issues or PRs
 - No new commits
@@ -1018,6 +1037,7 @@ git push origin main
 **Note:** Deletion is rare and requires strong justification.
 
 **Valid reasons:**
+
 - Created by mistake
 - Duplicate repository
 - Contains sensitive data (after cleanup)
@@ -1031,6 +1051,7 @@ Use archival instead for repositories that are no longer needed, have low activi
 #### 8.2.1 Pre-Deletion Requirements
 
 **Must have:**
+
 - [ ] Written justification
 - [ ] Approval from WP lead
 - [ ] Approval from Technical Coordinator
@@ -1069,6 +1090,7 @@ tar -czf repo-name-backup-$(date +%Y%m%d).tar.gz repo-name.git/
    - Click "I understand, delete this repository"
 
 3. **Document Deletion:**
+
 ```markdown
 ## Repository Deletion Log
 
@@ -1220,6 +1242,7 @@ For comprehensive guidance, see [Quickstart for securing your repository](https:
 #### 9.3.1 Why Branching?
 
 **Branching streamlines collaboration by:**
+
 - Keeping all work in a single repository
 - Simplifying code review and discussion
 - Maintaining clear project history
@@ -1227,12 +1250,14 @@ For comprehensive guidance, see [Quickstart for securing your repository](https:
 - Facilitating CI/CD integration
 
 **When to use branching:**
+
 - Regular consortium members and collaborators
 - Internal development work
 - Features and bug fixes
 - Documentation updates
 
 **When to use forking:**
+
 - External contributors not affiliated with the project
 - Open-source community contributions
 - Experimental work that may not be merged
@@ -1281,6 +1306,7 @@ For more information, see [About protected branches](https://docs.github.com/en/
 #### 9.4.1 File Size Limits
 
 GitHub has the following limits:
+
 - **Warning:** Files larger than 50 MB
 - **Block:** Files larger than 100 MB
 - **Repository size:** Recommended under 1 GB, ideally under 5 GB
@@ -1288,6 +1314,7 @@ GitHub has the following limits:
 #### 9.4.2 When to Use Git LFS
 
 **Use Git LFS for:**
+
 - Binary files (images, videos, audio)
 - Large datasets
 - Compiled binaries
@@ -1295,7 +1322,8 @@ GitHub has the following limits:
 - 3D models
 - Large documentation assets
 
-**Don't use Git LFS for:**
+**Do not use Git LFS for:**
+
 - Source code files
 - Text-based configuration
 - Small images (< 1 MB)
@@ -1342,6 +1370,7 @@ For more information, see:
 #### 9.5.1 Naming Rules
 
 **Do:**
+
 - Use lowercase letters
 - Use hyphens (-) to separate words
 - Be descriptive and specific
@@ -1349,7 +1378,8 @@ For more information, see:
 - Keep names concise (< 50 characters)
 - Use consistent terminology
 
-**Don't:**
+**Do not:**
+
 - Use spaces or special characters
 - Use camelCase or PascalCase
 - Create ambiguous names
@@ -1359,12 +1389,14 @@ For more information, see:
 **Examples:**
 
 **Good:**
+
 - `wp4-trust-infrastructure`
 - `webuild-documentation`
 - `interoperability-test-suite`
 - `wp4-qtsp-group`
 
 **Bad:**
+
 - `WP4_Trust` (wrong case and separator)
 - `repo1` (not descriptive)
 - `temp-test` (temporary naming)
@@ -1398,7 +1430,7 @@ Every repository MUST include:
 
 - **Keep documentation up-to-date** - Update docs with code changes
 - **Use clear, simple language** - Write for your audience
-- **Include examples** - Show, don't just tell
+- **Include examples** - Show, do not just tell
 - **Organize logically** - Structure information hierarchically
 - **Link related documents** - Create a documentation web
 - **Review in pull requests** - Treat docs like code
@@ -1446,10 +1478,10 @@ Every repository MUST include:
 
 #### 9.8.2 Code Review Guidelines
 
-- **Review within 2 business days** - Don't block progress
+- **Review within 2 business days** - Do not block progress
 - **Be constructive and respectful** - Focus on code, not person
 - **Explain your reasoning** - Help others learn
-- **Approve when ready** - Don't nitpick minor issues
+- **Approve when ready** - Do not nitpick minor issues
 - **Test changes locally** - Verify functionality
 
 #### 9.8.3 Issue Management
@@ -1468,7 +1500,7 @@ Every repository MUST include:
 #### 9.9.1 Daily/Weekly Tasks
 
 - **Monitor new issues and PRs** - Stay on top of incoming work
-- **Review pull requests** - Don't let PRs go stale
+- **Review pull requests** - Do not let PRs go stale
 - **Check CI/CD status** - Ensure builds are passing
 - **Review security alerts** - Address vulnerabilities promptly
 
@@ -1508,6 +1540,7 @@ GitHub provides free, interactive courses to improve your repository management 
 - **[Introduction to Repository Management](https://github.com/skills/introduction-to-repository-management/)** - Practical experience with repository management fundamentals
 
 **Topics covered:**
+
 - Creating and configuring repositories
 - Managing branches and protection rules
 - Working with issues and pull requests
@@ -1515,6 +1548,7 @@ GitHub provides free, interactive courses to improve your repository management 
 - Collaborating effectively with teams
 
 **Recommended for:**
+
 - New consortium members
 - Team leads setting up repositories
 - Anyone wanting to improve their GitHub skills
@@ -1530,9 +1564,10 @@ GitHub provides free, interactive courses to improve your repository management 
 **Problem:** Cannot push to repository
 
 **Solutions:**
+
 1. Verify you have write access
 2. Check if branch is protected
-3. Ensure you're authenticated
+3. Ensure you are authenticated
 4. Contact repository maintainer
 
 ```bash
@@ -1548,6 +1583,7 @@ gh auth status
 **Problem:** Cannot merge PR due to protection rules
 
 **Solutions:**
+
 1. Ensure all required reviews are approved
 2. Verify CI/CD checks pass
 3. Resolve all conversations
@@ -1559,6 +1595,7 @@ gh auth status
 **Problem:** Automated tests failing
 
 **Solutions:**
+
 1. Review build logs
 2. Run tests locally
 3. Check for dependency issues
@@ -1579,6 +1616,7 @@ go test ./...
 **Problem:** Cannot merge due to conflicts
 
 **Solutions:**
+
 1. Update your branch with latest main
 2. Resolve conflicts locally
 3. Test after resolving
@@ -1603,6 +1641,7 @@ git push origin feature-branch
 **Problem:** Repository lacks required files
 
 **Solutions:**
+
 1. Add missing files from templates
 2. Follow repository structure guidelines
 3. Update documentation
@@ -1615,8 +1654,9 @@ git push origin feature-branch
 **Problem:** Repository not visible or accessible
 
 **Checklist:**
-- [ ] Verify you're logged into GitHub
-- [ ] Check if you're member of organization
+
+- [ ] Verify you are logged into GitHub
+- [ ] Check if you are member of organization
 - [ ] Confirm repository exists
 - [ ] Verify repository visibility (public/private)
 - [ ] Check if you have required team membership
@@ -1628,6 +1668,7 @@ git push origin feature-branch
 **Problem:** No permission to create repository
 
 **Solution:**
+
 - Only Technical Coordinator can create repositories
 - Submit repository creation request
 - Follow approval process
@@ -1635,9 +1676,10 @@ git push origin feature-branch
 
 #### 10.2.3 Lost Access to Repository
 
-**Problem:** Previously had access, now don't
+**Problem:** Previously had access, now do not
 
 **Possible Causes:**
+
 - Team membership changed
 - Repository archived
 - Access permissions updated
@@ -1652,6 +1694,7 @@ git push origin feature-branch
 **Problem:** Protection rules not enforced
 
 **Verification:**
+
 1. Go to Settings → Branches
 2. Check rule configuration
 3. Verify pattern matches branch name
@@ -1663,6 +1706,7 @@ git push origin feature-branch
 **Problem:** GitHub Actions not executing
 
 **Checklist:**
+
 - [ ] Workflow file exists in `.github/workflows/`
 - [ ] Workflow syntax is correct
 - [ ] Trigger conditions are met
@@ -1670,6 +1714,7 @@ git push origin feature-branch
 - [ ] No workflow run limits exceeded
 
 **Debug:**
+
 ```bash
 # Validate workflow syntax locally
 gh workflow view [workflow-name]
@@ -1683,6 +1728,7 @@ gh run list
 **Problem:** No automatic dependency updates
 
 **Solutions:**
+
 1. Verify Dependabot is enabled
 2. Check for `dependabot.yml` configuration
 3. Review Dependabot logs
@@ -1696,12 +1742,14 @@ gh run list
 **Problem:** Archive option not available
 
 **Requirements:**
+
 - Must be repository admin
 - Must have organization permissions
 - Repository must not have active dependencies
 - All issues/PRs should be resolved
 
 **Process:**
+
 1. Complete pre-archive checklist
 2. Get necessary approvals
 3. Contact Technical Coordinator if needed
@@ -1711,6 +1759,7 @@ gh run list
 **Problem:** Delete option not available or fails
 
 **Requirements:**
+
 - Must be organization owner
 - Must have written justification
 - Must have approvals
@@ -1723,6 +1772,7 @@ gh run list
 **Problem:** Need to transfer repository
 
 **Process:**
+
 1. Contact Technical Coordinator
 2. Provide justification
 3. Specify target organization/user
@@ -1734,12 +1784,14 @@ gh run list
 #### 10.5.1 Internal Support
 
 **For repository-specific issues:**
+
 1. Check repository documentation
 2. Search existing issues
 3. Ask in repository discussions
 4. Contact repository maintainer
 
 **For organization-level issues:**
+
 1. Contact WP Lead
 2. Contact Technical Coordinator
 3. Refer to this documentation
@@ -1748,6 +1800,7 @@ gh run list
 #### 10.5.2 GitHub Support
 
 **For GitHub platform issues:**
+
 - [GitHub Documentation](https://docs.github.com)
 - [GitHub Community](https://github.community)
 - [GitHub Support](https://support.github.com)
@@ -1771,6 +1824,7 @@ graph TD
 ```
 
 **Escalation Guidelines:**
+
 1. Try to resolve using documentation
 2. Contact repository maintainer
 3. Escalate to Group Lead if unresolved
@@ -1799,18 +1853,21 @@ graph TD
 ### A. Quick Reference
 
 **Repository Creation:**
+
 1. Submit request to WP/Group lead
 2. Wait for approval
 3. Technical Coordinator creates repository
 4. Complete post-creation setup
 
 **Repository Maintenance:**
+
 - Daily: Monitor issues and PRs
 - Weekly: Triage and respond
 - Monthly: Update dependencies and docs
 - Quarterly: Review access and metrics
 
 **Repository Lifecycle:**
+
 Planning → Approval → Creation → Setup → Active → Deprecated/Archived
 
 ---

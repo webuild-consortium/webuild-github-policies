@@ -1,3 +1,4 @@
+
 # Branching and Workflow
 
 **Document Version:** 1.2
@@ -38,11 +39,11 @@ These guidelines apply to:
 
 ### 1.3 Workflow Goals
 
-1. **Enable Parallel Development:** Multiple features developed simultaneously
+1. **Enable Parallel Development:** Support multiple features developed simultaneously
 2. **Maintain Stability:** Keep main branch always deployable
-3. **Facilitate Collaboration:** Clear processes for team coordination
-4. **Support Quality:** Built-in review and testing processes
-5. **Enable Traceability:** Clear history of changes and decisions
+3. **Facilitate Collaboration:** Provide clear processes for team coordination
+4. **Support Quality:** Include built-in review and testing processes
+5. **Enable Traceability:** Maintain clear history of changes and decisions
 
 ### 1.4 Choosing a Strategy
 
@@ -116,8 +117,8 @@ graph TD
 
 **2. Feature Branches**
 - Branch from latest `main`
-- One feature/fix per branch
-- Short-lived (typically < 2 weeks)
+- One feature or fix per branch
+- Short-lived (typically under 2 weeks)
 - Descriptive naming convention
 
 **3. Pull Request Workflow**
@@ -193,7 +194,7 @@ These alternatives should only be adopted after careful consideration and approv
 **Characteristics:**
 - Always stable and deployable
 - Protected branch
-- Only accepts merges via PR
+- Only accepts merges via pull request
 - Tagged for releases
 - Never commit directly
 
@@ -221,11 +222,11 @@ Branch: main
 2. **Require Status Checks**
    - All required checks must pass before merge
    - **Strict mode** (recommended): Branch must be up-to-date with base branch
-   - **Loose mode**: Branch doesn't need to be up-to-date (fewer builds, but risk of incompatible changes)
+   - **Loose mode**: Branch does not need to be up-to-date (fewer builds, but risk of incompatible changes)
    - Select specific status checks to require (CI/CD, linting, tests)
 
 3. **Require Conversation Resolution**
-   - All PR comments must be resolved before merge
+   - All pull request comments must be resolved before merge
    - Ensures all feedback is addressed or acknowledged
 
 4. **Require Signed Commits** (optional, recommended)
@@ -240,7 +241,7 @@ Branch: main
    - Makes reverting changes easier
 
 6. **Include Administrators**
-   - Apply protection rules to repository admins too
+   - Apply protection rules to repository administrators
    - Ensures consistent process for everyone
    - Recommended for accountability
 
@@ -350,7 +351,7 @@ bugfix/789-fix-login-timeout
 bugfix/012-resolve-memory-leak
 ```
 
-**Similar to feature branches but for bug fixes.**
+Similar to feature branches but for bug fixes.
 
 #### 3.2.3 Hotfix Branches
 
@@ -376,7 +377,7 @@ git checkout -b hotfix/345-fix-critical-security-issue
 git add .
 git commit -m "fix: resolve critical security vulnerability"
 
-# Push and create PR
+# Push and create pull request
 git push origin hotfix/345-fix-critical-security-issue
 
 # After merge to main:
@@ -412,7 +413,7 @@ docs/456-add-deployment-guide
 
 **Usage:** Same workflow as feature branches, but for documentation-only changes.
 
-For minor documentation updates, use feature branches or commit directly to documentation PRs.
+For minor documentation updates, use feature branches or commit directly to documentation pull requests.
 
 ### 3.3 Branch Naming Rules
 
@@ -428,7 +429,7 @@ For minor documentation updates, use feature branches or commit directly to docu
 - `release/` - Release preparation
 - `docs/` - Documentation only
 - `refactor/` - Code refactoring
-- `test/` - Test additions/changes
+- `test/` - Test additions or changes
 - `chore/` - Maintenance tasks
 
 **Description Rules:**
@@ -468,10 +469,10 @@ FEATURE-123-ADD-AUTHENTICATION
 
 #### Step 1: Plan the Feature
 
-- [ ] Create issue describing feature
-- [ ] Discuss approach with team
-- [ ] Get approval from maintainer
-- [ ] Assign issue to yourself
+- Create issue describing feature
+- Discuss approach with team
+- Get approval from maintainer
+- Assign issue to yourself
 
 #### Step 2: Create Feature Branch
 
@@ -528,7 +529,7 @@ git add .
 git rebase --continue  # or git commit for merge
 ```
 
-#### Step 5: Push and Create PR
+#### Step 5: Push and Create Pull Request
 
 ```bash
 # Push feature branch
@@ -543,7 +544,7 @@ git push origin feature/123-add-user-profile --force-with-lease
 1. Go to GitHub repository
 2. Click "Pull requests" → "New pull request"
 3. Select your branch
-4. Fill in PR template
+4. Fill in pull request template
 5. Request reviewers
 6. Link related issues
 
@@ -589,7 +590,7 @@ git push origin --delete feature/123-add-user-profile
 
 ### 4.2 Bug Fix Workflow
 
-**Similar to feature workflow but:**
+Similar to feature workflow but with the following differences:
 
 1. **Branch from:** `main`
 2. **Branch name:** `bugfix/[issue]-[description]`
@@ -620,7 +621,7 @@ git commit -m "fix: resolve login timeout issue
 
 Fixes #456"
 
-# Push and create PR
+# Push and create pull request
 git push origin bugfix/456-fix-login-timeout
 ```
 
@@ -658,7 +659,7 @@ git commit -m "fix: patch critical security vulnerability
 SECURITY: Fixes CVE-2025-XXXX
 Fixes #789"
 
-# Push and create PR
+# Push and create pull request
 git push origin hotfix/789-fix-security-vulnerability
 
 # After merge and deployment:
@@ -667,7 +668,6 @@ git checkout main
 git pull origin main
 git tag -a v1.2.1 -m "Hotfix: Security patch"
 git push origin v1.2.1
-
 ```
 
 In Feature Branch Workflow, hotfixes follow the same process as regular fixes but with highest priority.
@@ -676,7 +676,7 @@ In Feature Branch Workflow, hotfixes follow the same process as regular fixes bu
 
 **For Feature Branch Workflow:**
 
-Releases are created directly from the `main` branch since it's always in a deployable state.
+Releases are created directly from the `main` branch since it is always in a deployable state.
 
 ```bash
 # 1. Ensure main is up to date
@@ -719,7 +719,7 @@ git add .
 git commit -m "chore: prepare release v1.3.0"
 git push origin release/v1.3.0
 
-# 3. Create PR to merge back to main
+# 3. Create pull request to merge back to main
 # After approval and merge, tag the release on main
 
 # 4. Delete release branch
@@ -766,7 +766,7 @@ Closes #123
 | `docs` | Documentation only | `docs: update API guide` |
 | `style` | Code style changes | `style: format code with prettier` |
 | `refactor` | Code refactoring | `refactor: simplify auth logic` |
-| `test` | Test additions/changes | `test: add integration tests` |
+| `test` | Test additions or changes | `test: add integration tests` |
 | `chore` | Maintenance tasks | `chore: update dependencies` |
 | `perf` | Performance improvements | `perf: optimize database queries` |
 | `ci` | CI/CD changes | `ci: add deployment workflow` |
@@ -780,7 +780,7 @@ Closes #123
 - Separate subject from body with blank line
 - Wrap body at 72 characters
 - Explain what and why, not how
-- Reference issues and PRs
+- Reference issues and pull requests
 - Make atomic commits (one logical change)
 - Avoid vague messages or committing broken code
 
@@ -825,7 +825,7 @@ Updated files
 
 ### 5.4 Commit Frequency
 
-Commit logical units of work frequently throughout the day. Commit before switching tasks or branches, and before rebasing. Don't wait until a feature is complete to commit.
+Commit logical units of work frequently throughout the day. Commit before switching tasks or branches, and before rebasing. Do not wait until a feature is complete to commit.
 
 ---
 
@@ -868,7 +868,7 @@ feature:                E (squashed F+G+H)
 - Clean, linear history desired
 - Many small commits in feature
 - Single logical change
-- **Recommended for most PRs**
+- **Recommended for most pull requests**
 
 **Command:**
 ```bash
@@ -1057,7 +1057,7 @@ Example: 1.2.3
 - Before each release
 - Use clear, user-focused language
 - Group by change type
-- Link to issues/PRs
+- Link to issues and pull requests
 
 ---
 
@@ -1080,7 +1080,7 @@ Example: 1.2.3
 
 **For Authors:**
 
-- Keep PRs small and focused
+- Keep pull requests small and focused
 - Provide clear description
 - Self-review before requesting review
 - Respond to feedback promptly
@@ -1128,7 +1128,7 @@ git checkout -b feature/123-new-feature
 git add .
 git commit -m "feat: implement new feature"
 git push origin feature/123-new-feature
-# Create PR on GitHub
+# Create pull request on GitHub
 ```
 
 ### 9.2 Updating Feature Branch
@@ -1252,7 +1252,7 @@ git checkout -b recovery-branch
 - [Git Documentation](https://git-scm.com/doc)
 - [GitHub Guides](https://guides.github.com)
 - Repository maintainers
-- WP/Group leads
+- Work Package or Group leads
 - Technical Coordinator
 
 **When to Ask:**
@@ -1466,7 +1466,7 @@ graph TD
 **Key Principles:**
 
 - Single main branch (trunk)
-- Very short-lived feature branches (< 2 days)
+- Very short-lived feature branches (under 2 days)
 - Frequent integration (multiple times per day)
 - Feature flags for incomplete features
 - Strong CI/CD pipeline required
@@ -1501,7 +1501,7 @@ git checkout -b feature/123-small-change
 git add .
 git commit -m "feat: add small feature"
 
-# 3. Push and create PR immediately
+# 3. Push and create pull request immediately
 git push origin feature/123-small-change
 
 # 4. Merge quickly (same day)
@@ -1567,7 +1567,7 @@ If you need to switch strategies, consult with the Technical Coordinator and pla
 |---------|------|--------|---------|
 | 1.0 | October 2025 | Technical Coordinator | Initial draft |
 | 1.1 | November 2025 | Technical Coordinator | General improvements |
-| 1.2 | December 2025 | Technical Coordinator | General improvements & cleanup |
+| 1.2 | December 2025 | Technical Coordinator | General improvements and cleanup |
 
 **Next Review Date:** March 2026
 
