@@ -64,14 +64,15 @@ Ensure you understand [Security and Compliance](docs/06-security-and-compliance.
 
 ## WEBUILD Repository Structure
 
-The WEBUILD project organizes its code and deliverables into different types of repositories. Each repository falls into one of three categories:
+The WEBUILD project organizes its code and deliverables into different types of repositories. Each repository falls into one of the following categories:
 
 | Repository Type                | Description                                                         | Examples                                        |
 |--------------------------------|---------------------------------------------------------------------|-------------------------------------------------|
 | **Group-specific repositories**   | Owned by a specific  group; contains that group’s code or deliverables. | `wp4-qtsp-group`, `wp4-wallets-group`           |
 | **UC-specific repositories**    | Created for a particular Use case.             | `wp3-pa2-consumer-payments`, `wp2-bu5-issue-micro-credentials` |
-| **Task-specific repositories**    | Created for a particular task, work package deliverable, or component.             | `wp4-architecture`, `eudi-wallet-rulebooks-and-schemas` |
-| **Shared collaboration repositories** | Used by multiple groups or the whole consortium for shared standards, tools, or templates. | `webuild-github-policies`, `wp3-technology-standards` |
+| **WP-specific repositories**    | Created for a particular work package(e.g. WP Working Group).             | `wp3-technology-standards` |
+| **Task-specific repositories**    | Created for a particular task, deliverable, or component.             | `wp4-architecture`, `eudi-wallet-rulebooks-and-schemas` |
+| **Shared collaboration repositories** | Used by multiple groups or the whole consortium for shared standards, tools, or templates. | `webuild-github-policies` |
 
 ---
 
@@ -112,7 +113,7 @@ These policies are maintained by the Technical Coordinator in collaboration with
 
 For help with these GitHub policies and guidelines, you can:
 
-- **Join the WEBUILD Slack workspace:** [Slack Invite Link](https://join.slack.com/t/we-build-consortium/shared_invite/zt-3h6k2igc1-7DVjTs2yRqVChORqb4lxkw) for real-time project discussions.
+- **Join the WEBUILD Slack workspace:** Use WeBuild Slack channels for real-time project discussions.
 - **Visit the WEBUILD OpenSocial Portal:** [portal.webuildconsortium.eu](https://portal.webuildconsortium.eu/) for news and resources.
 - **Email the Technical Coordinator:** [webuild-github-support@grnet.gr](mailto:webuild-github-support@grnet.gr) for questions about GitHub guidelines or to report issues.
 
