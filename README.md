@@ -49,30 +49,22 @@ This repository defines GitHub policies, guidelines, and procedures for the WEBU
 ## Quick Start
 
 ### For New Members
-Start with the [Onboarding Procedures](docs/03-onboarding-procedures.md) to get access and understand the basics.
+1. **Start:** [Quick Start Guide](docs/00-quick-start.md) (5-10 min)
+2. **Then:** [Onboarding Procedures](docs/03-onboarding-procedures.md)
 
 ### For Contributors
-Review the [Contribution Guidelines](docs/02-contribution-guidelines.md) before making your first contribution.
+1. **Contributing:** [Contribution Guidelines](docs/02-contribution-guidelines.md)
+2. **Code of Conduct:** [Community Standards](docs/templates/CODE_OF_CONDUCT.md)
 
-### For WP/Group Leads
-Familiarize yourself with [Repository Management](docs/04-repository-management.md) and the governance structure in [GitHub Policies and Guidelines](docs/01-github-policies-and-guidelines.md).
+### WP/Group Lead
+1. **Governance:** [Roles & Responsibilities](docs/01-github-policies-and-guidelines.md#32-roles-and-responsibilities)
+2. **Access:** [Access Management](docs/01-github-policies-and-guidelines.md#5-access-control-and-permissions)
+3. **Repositories:** [Creation Process](docs/04-repository-management.md#3-creating-new-repositories)
 
-### For Repository Maintainers
-Ensure you understand [Security and Compliance](docs/06-security-and-compliance.md) and [Branching and Workflow](docs/07-branching-and-workflow.md) standards.
-
----
-
-## WEBUILD Repository Structure
-
-The WEBUILD project organizes its code and deliverables into different types of repositories. Each repository falls into one of the following categories:
-
-| Repository Type                | Description                                                         | Examples                                        |
-|--------------------------------|---------------------------------------------------------------------|-------------------------------------------------|
-| **Group-specific repositories**   | Owned by a specific  group; contains that group’s code or deliverables. | `wp4-qtsp-group`, `wp4-wallets-group`           |
-| **UC-specific repositories**    | Created for a particular Use case.             | `wp3-pa2-consumer-payments`, `wp2-bu5-issue-micro-credentials` |
-| **WP-specific repositories**    | Created for a particular work package(e.g. WP Working Group).             | `wp3-technology-standards` |
-| **Task-specific repositories**    | Created for a particular task, deliverable, or component.             | `wp4-architecture`, `eudi-wallet-rulebooks-and-schemas` |
-| **Shared collaboration repositories** | Used by multiple groups or the whole consortium for shared standards, tools, or templates. | `webuild-github-policies` |
+### For Repository Maintainer
+1. **Essential:** [Repository Management Best Practices](docs/04-repository-management.md#9-best-practices)
+2. **Security:** [Security Checklist](docs/06-security-and-compliance.md#22-security-policies)
+3. **Workflow:** [Branching Strategy](docs/07-branching-and-workflow.md#21-feature-branch-workflow-standard-approach)
 
 ---
 
