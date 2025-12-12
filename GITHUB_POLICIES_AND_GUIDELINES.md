@@ -3,13 +3,10 @@
 
 ## Document Information
 
-**Version:** 4.2
-
-**Last Updated:** December 2025
-
-**Status:** Active
-
-**Owner:** Technical Coordinator
+**Version:** 4.2<br/>
+**Last Updated:** December 2025<br/>
+**Status:** Active<br/>
+**Owner:** Technical Coordinator  webuild-github-support@grnet.gr
 
 ---
 
@@ -2044,4 +2041,4 @@ As the consortium's work evolves, these policies may be refined based on practic
 
 ---
 
-*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator.*
+*This document is maintained in the `webuild-policies` repository. For questions or suggestions, please open an issue or contact the Technical Coordinator webuild-github-support@grnet.gr.*
