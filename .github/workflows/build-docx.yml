@@ -76,7 +76,7 @@ jobs:
               print(f"Created {mmd_file}")
           EXTRACT_EOF
 
-          # Render each diagram using Docker
+          # Render each diagram using Docker at high resolution
           for mmd_file in diagram_*.mmd; do
             if [ -f "$mmd_file" ]; then
               output_file="mermaid-diagrams/${mmd_file%.mmd}.png"
@@ -84,7 +84,9 @@ jobs:
               docker run --rm -v "$(pwd):/data" minlag/mermaid-cli:11.12.0 \
                 -i "/data/$mmd_file" \
                 -o "/data/$output_file" \
-                -b transparent
+                -b transparent \
+                -s 2 \
+                -w 1600
             fi
           done
 
