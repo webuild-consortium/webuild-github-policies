@@ -1,11 +1,11 @@
 name: Build DOCX
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - 'GITHUB_POLICIES_AND_GUIDELINES.md'
+  push:
+    branches:
+      - main
+    paths:
+      - 'GITHUB_POLICIES_AND_GUIDELINES.md'
   workflow_dispatch:
 
 permissions:
