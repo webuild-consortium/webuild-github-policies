@@ -138,7 +138,7 @@ The WEBUILD project is co-funded by the European Union. The views and opinions e
 | 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WeBuild Technical Coordination |
 | 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WeBuild Technical Coordination |
 | 4.1 | November 2025 | Updated to reflect actual WeBuild repository structure, licenses, and communication channels. Added automated DOCX conversion via GitHub Actions | WeBuild Technical Coordination |
-| 4.2 | December 2025 | General improvements & cleanup | WeBuild Technical Coordination |
+| 4.2 | December 2025 | General improvements, cleanup and quick start guide | WeBuild Technical Coordination |
 
 ---
 
