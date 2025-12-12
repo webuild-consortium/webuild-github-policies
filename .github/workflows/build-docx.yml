@@ -57,29 +57,13 @@ jobs:
         run: |
           cd .github/workflows
 
-          # Extract mermaid blocks from markdown
-          python3 << 'EXTRACT_EOF'
-          import re
-
-          with open('GITHUB_POLICIES_AND_GUIDELINES.md', 'r') as f:
-              content = f.read()
-
-          pattern = r'```mermaid\n(.*?)```'
-          matches = list(re.finditer(pattern, content, re.DOTALL))
-
-          print(f"Found {len(matches)} mermaid diagrams")
-
-          for idx, match in enumerate(matches, 1):
-              mmd_file = f'diagram_{idx}.mmd'
-              with open(mmd_file, 'w') as f:
-                  f.write(match.group(1))
-              print(f"Created {mmd_file}")
-          EXTRACT_EOF
+          # Extract mermaid blocks using extract_mermaid.py
+          python3 extract_mermaid.py GITHUB_POLICIES_AND_GUIDELINES.md
 
           # Render each diagram using Docker at high resolution
-          for mmd_file in diagram_*.mmd; do
+          for mmd_file in mermaid-diagrams/diagram_*.mmd; do
             if [ -f "$mmd_file" ]; then
-              output_file="mermaid-diagrams/${mmd_file%.mmd}.png"
+              output_file="${mmd_file%.mmd}.png"
               echo "Rendering $mmd_file to $output_file using Docker..."
               docker run --rm -v "$(pwd):/data" minlag/mermaid-cli:11.12.0 \
                 -i "/data/$mmd_file" \
@@ -91,7 +75,7 @@ jobs:
           done
 
           # Clean up temporary .mmd files
-          rm -f diagram_*.mmd
+          rm -f mermaid-diagrams/diagram_*.mmd
 
           echo "✓ All diagrams rendered successfully"
 
