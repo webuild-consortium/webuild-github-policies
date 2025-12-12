@@ -6,6 +6,8 @@ docs/webm
 docs/convert*.sh
 docs/PROJECT_MANAGEMENT_HANDBOOK.md
 tasks/
+scripts/
+github-docs/
 .github/workflows/Makefile
 .github/workflows/mermaid-diagrams/
 .github/workflows/*.md
