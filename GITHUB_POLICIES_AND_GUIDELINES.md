@@ -120,12 +120,17 @@ The WeBuild Consortium maintains a dedicated GitHub organization at [`https://gi
 
 The governance structure follows a clear hierarchy:
 
-```
-Technical Coordinator (Overall GitHub Administration)
-├── WP Leads (WP-level oversight)
-├── Group Leads (Group-level management)
-├── Repository Maintainers (Day-to-day operations)
-└── Contributors (Active participation)
+```mermaid
+graph TD
+    TC[Technical Coordinator<br/>Overall GitHub Administration]
+    WP[WP Leads<br/>WP-level]
+    GL[Group Leads<br/>Group-level]
+    MC[Maintainers<br/>Contributors]
+
+    TC --> WP
+    TC --> GL
+    WP --> MC
+    GL --> MC
 ```
 
 ### 3.3 Repository Organization
