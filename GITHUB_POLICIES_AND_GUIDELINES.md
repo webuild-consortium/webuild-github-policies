@@ -141,19 +141,18 @@ Each Work Package (WP) and specialized groups within Work Packages maintain thei
 
 The WeBuild Consortium organization contains 10 repositories:
 
-```
-webuild-consortium/
-├── .github/                           # Organization-level GitHub configuration (public)
-├── eudi-wallet-rulebooks-and-schemas/ # Rulebooks and data schemas for WeBuild LSP use cases (public)
-├── webuild-github-policies/           # GitHub Policies and Guidelines for WE BUILD Consortium (public)
-├── wp3-technology-standards/          # WP3 Technology & Standards Working Group (private)
-├── wp4-architecture/                  # Drafts and ADRs for Large Scale Pilot use cases (public)
-├── wp4-interop-test-bed/              # Interoperability Test Bed implementing conformance (public)
-├── wp4-qtsp-group/                    # Public resources shared within WP4 QTSP group (public)
-├── wp4-semantics-group/               # Semantics group resources (public)
-├── wp4-trust-group/                   # Public resources shared within WP4 Trust Infrastructure group (public)
-└── wp4-wallets-group/                 # Repository for WP4 Wallet Providers Group (public)
-```
+| Repository | Description | Visibility |
+|------------|-------------|------------|
+| [`.github`](https://github.com/webuild-consortium/.github) | Organization-level GitHub configuration | Public |
+| [`eudi-wallet-rulebooks-and-schemas`](https://github.com/webuild-consortium/eudi-wallet-rulebooks-and-schemas) | Rulebooks and data schemas for WeBuild LSP use cases | Public |
+| [`webuild-github-policies`](https://github.com/webuild-consortium/webuild-github-policies) | GitHub Policies and Guidelines for WE BUILD Consortium | Public |
+| [`wp3-technology-standards`](https://github.com/webuild-consortium/wp3-technology-standards) | WP3 Technology & Standards Working Group | Private |
+| [`wp4-architecture`](https://github.com/webuild-consortium/wp4-architecture) | Drafts and ADRs for Large Scale Pilot use cases | Public |
+| [`wp4-interop-test-bed`](https://github.com/webuild-consortium/wp4-interop-test-bed) | Interoperability Test Bed implementing conformance | Public |
+| [`wp4-qtsp-group`](https://github.com/webuild-consortium/wp4-qtsp-group) | Public resources shared within WP4 QTSP group | Public |
+| [`wp4-semantics-group`](https://github.com/webuild-consortium/wp4-semantics-group) | Semantics group resources | Public |
+| [`wp4-trust-group`](https://github.com/webuild-consortium/wp4-trust-group) | Public resources shared within WP4 Trust Infrastructure group | Public |
+| [`wp4-wallets-group`](https://github.com/webuild-consortium/wp4-wallets-group) | Repository for WP4 Wallet Providers Group | Public |
 
 **Repositories typically contain:**
 
