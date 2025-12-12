@@ -3,25 +3,65 @@
 
 ## Document Information
 
-**Version:** 4.1
-**Last Updated:** November 2025
+**Version:** 4.2
+**Last Updated:** December 2025
 **Status:** Active
+**Owner:** Technical Coordinator
 
 ---
 
-## Introduction
+## Table of Contents
 
-The WeBuild Consortium leverages GitHub as its primary platform for technology collaboration across all Work Packages (WPs). This document establishes the foundational policies and guidelines that govern how GitHub is utilized throughout the consortium to facilitate joint development, review, and management of technical artifacts.
-
-GitHub serves as the central hub where consortium partners collaborate on specifications, interface definitions, test environments, source code, and other technical deliverables. By standardizing our approach to GitHub usage, we ensure that all partners can work together efficiently while maintaining the highest standards of transparency, security, and accountability.
+1. [Introduction](#1-introduction)
+2. [Purpose and Objectives](#2-purpose-and-objectives)
+3. [Governance and Organizational Structure](#3-governance-and-organizational-structure)
+4. [Access Management and Role Definitions](#4-access-management-and-role-definitions)
+5. [Working Practices and Workflows](#5-working-practices-and-workflows)
+6. [Repository Management](#6-repository-management)
+7. [Licensing and Intellectual Property](#7-licensing-and-intellectual-property)
+8. [Security and Compliance](#8-security-and-compliance)
+9. [Contribution Guidelines](#9-contribution-guidelines)
+10. [Onboarding and Offboarding Procedures](#10-onboarding-and-offboarding-procedures)
+11. [Best Practices Summary](#11-best-practices-summary)
+12. [Support and Resources](#12-support-and-resources)
+13. [Appendices](#13-appendices)
 
 ---
 
-## Purpose and Objectives
+## 1. Introduction
 
-This policy framework serves multiple critical purposes within the WEBUILD Consortium:
+### 1.1 About WeBuild Consortium
 
-### Primary Objectives
+The WeBuild Consortium is a collaborative European project focused on building digital wallet infrastructure and related technologies. The consortium brings together multiple partners across Europe to develop interoperable, secure, and standards-compliant solutions for the European Digital Identity ecosystem.
+
+**GitHub Organization:** [https://github.com/webuild-consortium](https://github.com/webuild-consortium)
+
+### 1.2 Role of GitHub
+
+GitHub serves as the primary platform for technology collaboration across all Work Packages (WPs). It functions as the central hub where consortium partners collaborate on specifications, interface definitions, test environments, source code, and other technical deliverables.
+
+**Primary Functions:**
+
+- Source code management and version control
+- Technical collaboration across partners
+- Documentation and knowledge sharing
+- Issue tracking and project management
+- Continuous integration and deployment
+- Community engagement and transparency
+
+### 1.3 Document Purpose
+
+This document establishes comprehensive policies and guidelines for using GitHub within the WeBuild consortium. It ensures consistent practices across all Work Packages, secure and compliant repository management, effective collaboration among partners, quality assurance and accountability, and alignment with EU project requirements.
+
+By standardizing our approach to GitHub usage, we ensure that all partners can work together efficiently while maintaining the highest standards of transparency, security, and accountability.
+
+---
+
+## 2. Purpose and Objectives
+
+### 2.1 Primary Objectives
+
+This policy framework serves multiple critical purposes within the WeBuild Consortium:
 
 **Establish a Common Framework**
 Create a unified approach to using GitHub that all consortium partners can follow. This common framework reduces friction in cross-organizational collaboration and ensures that all partners understand the expected workflows and procedures.
@@ -41,20 +81,42 @@ Maintain clear records of who contributed what, when, and why. This traceability
 **Uphold Compliance Standards**
 Ensure that all GitHub activities comply with project governance requirements, data protection regulations (including GDPR), and consortium-wide policies regarding intellectual property and information security.
 
+### 2.2 Scope of Application
+
+These policies apply to:
+
+- All repositories under the `webuild-consortium` GitHub organization
+- All consortium members with GitHub access
+- All Work Packages and technical groups
+- All types of content (code, documentation, specifications, tests)
+- All development environments (DEV, TEST, PROD)
+
+### 2.3 Relationship to Other Policies
+
+These GitHub policies complement and must be read in conjunction with:
+
+- WeBuild Consortium Agreement
+- Data Management Plan
+- Intellectual Property Rights Agreement
+- Security and Privacy Policies
+- EU Grant Agreement requirements
+
 ---
 
-## Governance and Organizational Structure
+## 3. Governance and Organizational Structure
 
-### Consortium GitHub Organization
+### 3.1 Consortium GitHub Organization
 
-The WeBuild Consortium maintains a dedicated GitHub organization at [`https://github.com/webuild-consortium/`](https://github.com/webuild-consortium/). This organization serves as the authoritative location for all technical collaboration within the project. Hosting all repositories under a single organization provides several key benefits:
+The WeBuild Consortium maintains a dedicated GitHub organization at [`https://github.com/webuild-consortium/`](https://github.com/webuild-consortium/). This organization serves as the authoritative location for all technical collaboration within the project.
+
+**Benefits of Centralized Organization:**
 
 - **Centralized Access Management:** Simplifies the process of granting and revoking access as partners join or leave the consortium
 - **Unified Visibility:** Enables consortium leadership to maintain oversight of all technical activities
 - **Consistent Branding:** Presents a cohesive identity for the consortium's technical work
 - **Simplified Archival:** Facilitates long-term preservation of project outputs at the conclusion of the consortium
 
-### Organizational Hierarchy
+### 3.2 Organizational Hierarchy
 
 The governance structure follows a clear hierarchy:
 
@@ -66,89 +128,94 @@ Technical Coordinator (Overall GitHub Administration)
 └── Contributors (Active participation)
 ```
 
-### Repository Organization
+### 3.3 Repository Organization
 
 Each Work Package (WP) and specialized groups within Work Packages maintain their own repositories within the consortium organization. This distributed ownership model recognizes that different technical areas require autonomy while still benefiting from the shared organizational infrastructure.
 
-The repository structure follows this pattern:
+**Repository Structure:**
+
+The WeBuild Consortium organization contains 10 repositories:
 
 ```
 webuild-consortium/
-├── .github/                    # Organization profile
-├── architecture/               # Conformance Specifications and ADRs
-├── wp4-interop-test-bed/      # Interoperability test bed
-├── wp4-qtsp-group/            # QTSP group resources
-├── wp4-semantics-group/       # Semantics group resources
-├── wp4-trust-group/           # Trust infrastructure group
-└── wp4-wallets-group/         # Wallet providers group
+├── .github/                           # Organization-level GitHub configuration (public)
+├── eudi-wallet-rulebooks-and-schemas/ # Rulebooks and data schemas for WeBuild LSP use cases (public)
+├── webuild-github-policies/           # GitHub Policies and Guidelines for WE BUILD Consortium (public)
+├── wp3-technology-standards/          # WP3 Technology & Standards Working Group (private)
+├── wp4-architecture/                  # Drafts and ADRs for Large Scale Pilot use cases (public)
+├── wp4-interop-test-bed/              # Interoperability Test Bed implementing conformance (public)
+├── wp4-qtsp-group/                    # Public resources shared within WP4 QTSP group (public)
+├── wp4-semantics-group/               # Semantics group resources (public)
+├── wp4-trust-group/                   # Public resources shared within WP4 Trust Infrastructure group (public)
+└── wp4-wallets-group/                 # Repository for WP4 Wallet Providers Group (public)
 ```
 
-Repositories typically contain:
+**Repositories typically contain:**
 
-- **Technical Specifications:** Formal definitions of interfaces, protocols, and standards
-- **API Definitions:** Machine-readable and human-readable API documentation
-- **Test Tools and Environments:** Software and configurations for testing implementations
-- **Example Implementations:** Reference code demonstrating how to implement specifications
-- **Supporting Documentation:** Guides, tutorials, and explanatory materials
+- Technical Specifications: Formal definitions of interfaces, protocols, and standards
+- API Definitions: Machine-readable and human-readable API documentation
+- Test Tools and Environments: Software and configurations for testing implementations
+- Example Implementations: Reference code demonstrating how to implement specifications
+- Supporting Documentation: Guides, tutorials, and explanatory materials
 
-### Roles and Responsibilities
+### 3.4 Roles and Responsibilities
 
-#### Technical Coordinator
+#### 3.4.1 Technical Coordinator
 
-**Who:** [Technical Coordinator Name]
-
-**What they do:**
-- Manages GitHub organization settings and security
-- Adds/removes members from the organization
-- Approves new repositories and major changes
-- Updates policies when needed
-- Helps resolve conflicts between teams
+**Responsibilities:**
+- Manage GitHub organization settings and security
+- Add and remove members from the organization
+- Approve new repositories and major changes
+- Update policies as needed
+- Resolve conflicts between teams
 
 **GitHub Permission:** Organization Owner
 
-#### Work Package (WP) Leads
+**Contact:** webuild-github-support@grnet.gr
 
-**What they do:**
-- Oversee repositories in their Work Package
+#### 3.4.2 Work Package (WP) Leads
+
+**Responsibilities:**
+- Oversee repositories within their Work Package
 - Approve repository creation requests
 - Manage team member access within their WP
 - Ensure quality of WP deliverables
 
 **GitHub Permission:** Admin on WP team
 
-#### Group Leads
+#### 3.4.3 Group Leads
 
-**What they do:**
+**Responsibilities:**
 - Manage day-to-day repository operations
-- Add/remove team members in their group
+- Add and remove team members within their group
 - Coordinate code reviews
 - Manage issues and project boards
-- Keep documentation up to date
+- Maintain up-to-date documentation
 
 **GitHub Permission:** Admin on repositories they manage
 
-#### Maintainers
+#### 3.4.4 Maintainers
 
-**What they do:**
+**Responsibilities:**
 - Review and merge pull requests
 - Triage and manage issues
 - Create releases
 - Update documentation
-- Help contributors
+- Support contributors
 
 **GitHub Permission:** Write access with merge rights
 
-#### Contributors
+#### 3.4.5 Contributors
 
-**What they do:**
+**Responsibilities:**
 - Submit code and documentation changes
 - Report issues and bugs
 - Participate in discussions
-- Review others' pull requests
+- Review pull requests from other contributors
 
 **GitHub Permission:** Write or Read (depending on repository)
 
-### Decision-Making Authority
+### 3.5 Decision-Making Authority
 
 | Decision | Who Decides | Who to Consult |
 |----------|-------------|----------------|
@@ -160,7 +227,7 @@ Repositories typically contain:
 | Change license | Technical Coordinator | WP Lead |
 | Update policies | Technical Coordinator | WP Leads |
 
-### Essential Repository Components
+### 3.6 Essential Repository Components
 
 Every repository within the consortium organization must include these foundational documents:
 
@@ -178,22 +245,22 @@ Additional documentation may include architecture diagrams, decision records, me
 
 ---
 
-## Access Management and Role Definitions
+## 4. Access Management and Role Definitions
 
-### Account Requirements
+### 4.1 Account Requirements
 
 All consortium members participating in GitHub activities must have their own GitHub accounts.
 
 **You may use your personal GitHub account.** There is no requirement to create a separate work account or use a work email address in your GitHub account.
 
-Configure your Git client to ensure commits are properly attributed:
+**Configure your Git client** to ensure commits are properly attributed:
 
 ```bash
 git config --global user.name "Your Full Name"
 git config --global user.email "your.email@organization.com"
 ```
 
-### Two-Factor Authentication (2FA)
+### 4.2 Two-Factor Authentication (2FA)
 
 Two-factor authentication is **required for all consortium members**. This is a mandatory security requirement that significantly enhances account security.
 
@@ -214,9 +281,9 @@ Two-factor authentication is **required for all consortium members**. This is a 
 - Never share with anyone
 - Generate new codes if compromised
 
-### Access Request Process
+### 4.3 Access Request Process
 
-#### For New Consortium Members
+#### 4.3.1 For New Consortium Members
 
 ```mermaid
 flowchart LR
@@ -263,7 +330,7 @@ Subject: GitHub Access Request - [Member Name]
 - End Date: [YYYY-MM-DD or "Ongoing"]
 ```
 
-### Permission Levels
+### 4.4 Permission Levels
 
 | Level | Capabilities | Typical Role |
 |-------|-------------|--------------|
@@ -274,7 +341,7 @@ Subject: GitHub Access Request - [Member Name]
 | **Admin** | Full control except deletion | Group leads |
 | **Owner** | Full organizational control | Technical Coordinator |
 
-### Access Review and Maintenance
+### 4.5 Access Review and Maintenance
 
 Access rights are reviewed as needed to ensure that:
 
@@ -287,7 +354,7 @@ Access rights are reviewed as needed to ensure that:
 
 WP/Group leads review team membership when changes occur and submit access updates to the Technical Coordinator as needed.
 
-### Access Revocation
+### 4.6 Access Revocation
 
 Access must be revoked immediately when:
 - Member leaves the consortium
@@ -319,9 +386,9 @@ flowchart LR
 
 ---
 
-## Working Practices and Workflows
+## 5. Working Practices and Workflows
 
-### Branching Strategy
+### 5.1 Branching Strategy
 
 The consortium employs the **Feature Branch Workflow** as the standard branching strategy. This approach balances stability with the need for ongoing development:
 
@@ -374,7 +441,7 @@ docs/012-update-api-documentation
 
 This branching strategy provides clear separation between stable outputs and individual contributions, making it easier to manage complex collaborative efforts. The strategy isolates work in progress from stable code, enables parallel development, and facilitates easier testing and rollback if needed.
 
-### Pull Request Workflow
+### 5.2 Pull Request Workflow
 
 All contributions to repositories must follow the pull request (PR) workflow. This requirement is fundamental to maintaining quality and fostering collaboration:
 
@@ -468,7 +535,7 @@ For Reviewers:
 - Test changes when possible
 - Approve when satisfied with the quality
 
-### Commit Guidelines
+### 5.3 Commit Guidelines
 
 **Commit Message Format:**
 
@@ -523,7 +590,7 @@ Keep commits atomic—each commit should represent a single unit of work. This m
 - Revert specific changes without side effects
 - Track down bugs using git bisect
 
-### Issue Tracking
+### 5.4 Issue Tracking
 
 GitHub Issues serve as the primary mechanism for tracking technical work, documenting decisions, and managing discussions:
 
@@ -564,7 +631,7 @@ Effective issue management requires:
 - Closure with a summary of the resolution when work is complete
 - Linking related issues and pull requests for traceability
 
-### Version Tagging and Releases
+### 5.5 Version Tagging and Releases
 
 Version tags mark important milestones in the evolution of technical artifacts. Tags should follow semantic versioning principles:
 
@@ -614,9 +681,9 @@ git tag -l
 
 ---
 
-## Repository Management
+## 6. Repository Management
 
-### Repository Lifecycle
+### 6.1 Repository Lifecycle
 
 Repositories progress through distinct lifecycle stages:
 
@@ -659,7 +726,7 @@ stateDiagram-v2
 6. **Deprecated:** No longer actively maintained, security updates only
 7. **Archived:** Read-only status, preserved for reference
 
-### Creating New Repositories
+### 6.2 Creating New Repositories
 
 **When to Create a New Repository:**
 
@@ -721,9 +788,9 @@ Explain why this repository is needed and how it fits into the project.
 - [ ] Technical Coordinator: [Pending]
 ```
 
-### Repository Configuration
+### 6.3 Repository Configuration
 
-#### Required Files
+#### 6.3.1 Required Files
 
 Every repository MUST include:
 
@@ -734,7 +801,7 @@ Every repository MUST include:
 - **CODE_OF_CONDUCT.md** - Community standards
 - **SECURITY.md** - Security policy
 
-#### Repository Topics
+#### 6.3.2 Repository Topics
 
 Classify repositories with topics to improve discoverability and organization:
 
@@ -743,7 +810,7 @@ Classify repositories with topics to improve discoverability and organization:
 - Topics help with searching, filtering, and organizing repositories
 - Use consistent topics across similar repositories
 
-#### Branch Protection Rules
+#### 6.3.3 Branch Protection Rules
 
 **For [`main`](main) branch:**
 
@@ -755,7 +822,7 @@ Classify repositories with topics to improve discoverability and organization:
 - Restrict deletions (disabled)
 - Require linear history (optional, for cleaner history)
 
-#### Security Settings
+#### 6.3.4 Security Settings
 
 **Enable:**
 
@@ -765,7 +832,7 @@ Classify repositories with topics to improve discoverability and organization:
 - Secret scanning
 - Code scanning (if applicable)
 
-### Repository Maintenance
+### 6.4 Repository Maintenance
 
 **Regular Maintenance Tasks:**
 
@@ -788,7 +855,7 @@ Classify repositories with topics to improve discoverability and organization:
 - Analyze repository metrics
 - Plan improvements
 
-### Archiving and Deprecation
+### 6.5 Archiving and Deprecation
 
 **When to Archive:**
 
@@ -825,9 +892,9 @@ Classify repositories with topics to improve discoverability and organization:
 
 ---
 
-## Licensing and Intellectual Property
+## 7. Licensing and Intellectual Property
 
-### Default License Policy
+### 7.1 Default License Policy
 
 **Standard License:** Apache License 2.0
 
@@ -849,7 +916,7 @@ Most WeBuild repositories use Apache License 2.0, including:
 - Allows derivative works
 - Minimal restrictions on use
 
-### License Implementation
+### 7.2 License Implementation
 
 **Every repository MUST include:**
 
@@ -883,7 +950,7 @@ limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 ```
 
-### Third-Party Dependencies
+### 7.3 Third-Party Dependencies
 
 **Before Adding Dependencies:**
 
@@ -918,7 +985,7 @@ limitations under the License.
 - Regularly review and update dependencies
 - Use automated tools to track dependency vulnerabilities
 
-### Intellectual Property
+### 7.4 Intellectual Property
 
 **Key Points:**
 
@@ -932,9 +999,9 @@ limitations under the License.
 
 ---
 
-## Security and Compliance
+## 8. Security and Compliance
 
-### Security Principles
+### 8.1 Security Principles
 
 **Core Principles:**
 
@@ -969,7 +1036,7 @@ Never:
 - Access unauthorized resources
 - Bypass security controls
 
-### Secrets Management
+### 8.2 Secrets Management
 
 **What Are Secrets?**
 
@@ -1022,7 +1089,7 @@ config/secrets.yml
 - Never print secrets in logs or output
 - Use secret scanning to detect accidental commits
 
-### Code Security
+### 8.3 Code Security
 
 **Secure Coding Practices:**
 
@@ -1054,7 +1121,7 @@ config/secrets.yml
 - Protect encryption keys
 - Never implement your own crypto
 
-### Dependency Security
+### 8.4 Dependency Security
 
 ```mermaid
 flowchart TD
@@ -1119,7 +1186,7 @@ flowchart TD
 - Monitor security advisories
 - Test updates in non-production environments first
 
-### Data Protection and GDPR Compliance
+### 8.5 Data Protection and GDPR Compliance
 
 **Never store in repositories:**
 
@@ -1147,7 +1214,7 @@ flowchart TD
 | **Confidential** | Partner data, unpublished research | Restricted access |
 | **Restricted** | Credentials, personal data | Never in repos |
 
-### Incident Response
+### 8.6 Incident Response
 
 ```mermaid
 flowchart TD
@@ -1210,7 +1277,7 @@ flowchart TD
 - Actions taken
 - Evidence collected
 
-### Compliance Requirements
+### 8.7 Compliance Requirements
 
 **EU Regulations:**
 
@@ -1234,22 +1301,22 @@ flowchart TD
 
 ---
 
-## Contribution Guidelines
+## 9. Contribution Guidelines
 
-### Getting Started
+### 9.1 Getting Started
 
 **Prerequisites:**
 
 Before contributing, ensure you have:
 
 - GitHub account with 2FA enabled
-- Access to WEBUILD organization
+- Access to WeBuild organization
 - Appropriate repository permissions
 - Git installed and configured
 - Development environment set up
 - Familiarity with Git workflows
 
-### Contribution Workflow
+### 9.2 Contribution Workflow
 
 ```mermaid
 flowchart TD
@@ -1318,8 +1385,8 @@ git commit -m "feat: add user profile management
 - Create profile API endpoints
 - Add comprehensive tests
 
-Closes #123
-"
+Closes #123"
+```
 
 #### Step 4: Keep Branch Updated
 
@@ -1370,7 +1437,7 @@ After approval:
 4. Merge pull request
 5. Delete feature branch
 
-### Code Standards
+### 9.3 Code Standards
 
 **General Principles:**
 
@@ -1408,7 +1475,7 @@ Never:
 - Use deprecated security libraries
 - Ignore security warnings
 
-### Testing Requirements
+### 9.4 Testing Requirements
 
 **All code changes must include tests:**
 
@@ -1430,7 +1497,7 @@ Never:
 - New code: Must include tests
 - Bug fixes: Must include regression tests
 
-### Code Review Guidelines
+### 9.5 Code Review Guidelines
 
 **For Authors:**
 
@@ -1462,7 +1529,9 @@ Never:
 
 ---
 
-## Onboarding Procedures
+## 10. Onboarding and Offboarding Procedures
+
+### 10.1 Onboarding Journey
 
 ```mermaid
 journey
@@ -1487,7 +1556,7 @@ journey
       Get first PR merged: 5: Member, Reviewer
 ```
 
-### Pre-Onboarding Requirements
+### 10.2 Pre-Onboarding Requirements
 
 Before requesting access, new members must:
 
@@ -1507,7 +1576,7 @@ Before requesting access, new members must:
 - Identify role and responsibilities
 - Know reporting structure
 
-### Initial Setup
+### 10.3 Initial Setup
 
 **Git Configuration:**
 
@@ -1542,7 +1611,7 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 ```
 
-### First Week Goals
+### 10.4 First Week Goals
 
 **Week 1 Checklist:**
 
@@ -1555,7 +1624,7 @@ cat ~/.ssh/id_ed25519.pub
 - [ ] Introduce yourself to team
 - [ ] Set up communication channels
 
-### Offboarding Procedures
+### 10.5 Offboarding Procedures
 
 ```mermaid
 flowchart TD
@@ -1615,66 +1684,9 @@ flowchart TD
 
 ---
 
-## EU Funding Acknowledgment
+## 11. Best Practices Summary
 
-All repositories MUST include EU funding acknowledgment:
-
-**Required Text:**
-
-```markdown
-## Funding
-
-![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
-
-The WeBuild project is co-funded by the European Union. However, the views and
-opinions expressed are those of the author(s) only and do not necessarily reflect
-those of the European Union or the granting authority. Neither the European Union
-nor the granting authority can be held responsible.
-```
-
-**Placement:** In README.md and major documentation files
-
----
-
-## Archival and Long-Term Preservation
-
-### Ongoing Maintenance Responsibilities
-
-Each Work Package Lead bears responsibility for:
-
-**Repository Structure Maintenance**
-Ensuring that repositories remain well-organized, with clear directory structures, up-to-date documentation, and appropriate use of GitHub features like wikis or project boards.
-
-**Documentation Currency**
-Keeping README files, CONTRIBUTING guides, and other documentation current as the repository evolves. Outdated documentation can be more harmful than no documentation, as it misleads contributors.
-
-**Change Documentation**
-Ensuring that significant changes are properly documented through commit messages, pull request descriptions, and release notes. This documentation creates a narrative of how the technical work evolved.
-
-**Quality Assurance**
-Maintaining the quality and integrity of repository contents through consistent application of review processes and quality standards.
-
-### Project Closure and Archival
-
-At the conclusion of the WeBuild project, all repositories will be archived under the consortium GitHub organization. This archival process ensures:
-
-**Long-Term Preservation**
-Technical outputs remain accessible for future reference, even after the consortium has concluded its active work. This preservation is important for demonstrating project impact and enabling future work to build on consortium achievements.
-
-**Historical Record**
-The complete history of technical collaboration is preserved, including all commits, issues, pull requests, and discussions. This historical record has value for understanding how technical decisions were made and how solutions evolved.
-
-**Compliance with Funding Requirements**
-Many funding agencies require that project outputs remain accessible for specified periods after project completion. Archival in the consortium GitHub organization helps meet these requirements.
-
-**Continued Access**
-Archived repositories remain readable, allowing former partners and the broader community (for public repositories) to access the technical outputs of the consortium's work.
-
----
-
-## Best Practices Summary
-
-### General Best Practices
+### 11.1 General Best Practices
 
 **Do:**
 
@@ -1704,7 +1716,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Commit dependencies or configuration files
 - Hardcode secrets or credentials
 
-### Security Best Practices
+### 11.2 Security Best Practices
 
 **Always:**
 
@@ -1730,7 +1742,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Use deprecated security libraries
 - Expose secrets in logs
 
-### Code Quality Best Practices
+### 11.3 Code Quality Best Practices
 
 **Write Clean Code:**
 
@@ -1756,7 +1768,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Prefer clarity over cleverness
 - Make code maintainable
 
-### Repository Management Best Practices
+### 11.4 Repository Management Best Practices
 
 **Organization:**
 
@@ -1776,9 +1788,9 @@ Archived repositories remain readable, allowing former partners and the broader 
 
 ---
 
-## Support and Resources
+## 12. Support and Resources
 
-### Getting Help
+### 12.1 Getting Help
 
 **For GitHub Issues:**
 
@@ -1799,7 +1811,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 - Consortium internal channels (for policy/administrative questions)
 - Note: Additional support channels (e.g., Slack) may be established as needed
 
-### Training and Resources
+### 12.2 Training and Resources
 
 **Internal Resources:**
 
@@ -1817,9 +1829,9 @@ Archived repositories remain readable, allowing former partners and the broader 
 - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 - [SPDX License List](https://spdx.org/licenses/)
 
-### Contact Information
+### 12.3 Contact Information
 
-**Technical Coordinator:** Contact via consortium internal channels
+**Technical Coordinator:** webuild-github-support@grnet.gr
 
 **WP4 Lead:** Contact via consortium internal channels
 
@@ -1832,7 +1844,7 @@ Archived repositories remain readable, allowing former partners and the broader 
 
 ---
 
-## Appendices
+## 13. Appendices
 
 ### Appendix A: Quick Reference Checklist
 
@@ -1960,7 +1972,7 @@ git push origin branch-name --force-with-lease
 
 ### Appendix D: Glossary
 
-- **Consortium:** WEBUILD project partners
+- **Consortium:** WeBuild project partners
 - **WP:** Work Package
 - **PR:** Pull Request
 - **CI/CD:** Continuous Integration/Continuous Deployment
@@ -1979,6 +1991,25 @@ git push origin branch-name --force-with-lease
 - **Rebase:** Reapplying commits on top of another base
 - **Semantic Versioning:** Version numbering scheme (MAJOR.MINOR.PATCH)
 - **Tag:** Named reference to a specific commit
+
+### Appendix E: EU Funding Acknowledgment
+
+All repositories MUST include EU funding acknowledgment:
+
+**Required Text:**
+
+```markdown
+## Funding
+
+![Co-funded by the European Union](https://github.com/EWC-consortium/ewc-wiki/assets/455274/1ac9b4e3-06b9-4c3c-a2af-ec5fbf584517)
+
+The WeBuild project is co-funded by the European Union. However, the views and
+opinions expressed are those of the author(s) only and do not necessarily reflect
+those of the European Union or the granting authority. Neither the European Union
+nor the granting authority can be held responsible.
+```
+
+**Placement:** In README.md and major documentation files
 
 ---
 
@@ -2001,8 +2032,7 @@ As the consortium's work evolves, these policies may be refined based on practic
 | 3.0 | October 2025 | Incorporated insights from best practices documents covering branching strategies, version control workflows, secrets management, repository management, and general GitHub best practices | WeBuild Technical Coordination |
 | 4.0 | October 2025 | Replaced ASCII diagrams with Mermaid diagrams and added additional visual diagrams for improved clarity and understanding | WeBuild Technical Coordination |
 | 4.1 | November 2025 | Updated to reflect actual WeBuild repository structure, licenses, and communication channels | WeBuild Technical Coordination |
-
-**Next Review Date:** January 2026
+| 4.2 | December 2025 | Improved structure, eliminated redundancies, and enhanced readability | WeBuild Technical Coordination |
 
 ---
 
