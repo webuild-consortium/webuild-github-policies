@@ -1,7 +1,6 @@
 # Project-Specific Files
 WEBUILD-GitHub-Policies-and-Guidelines-v*.md
 tips/*.md
-tasks/*.md
 docs/mp4
 docs/webm
 docs/convert*.sh
