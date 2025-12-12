@@ -3,9 +3,12 @@
 
 ## Document Information
 
-**Version:** 4.2<br/>
-**Last Updated:** December 2025<br/>
-**Status:** Active<br/>
+**Version:** 4.2
+
+**Last Updated:** December 2025
+
+**Status:** Active
+
 **Owner:** Technical Coordinator  webuild-github-support@grnet.gr
 
 ---
