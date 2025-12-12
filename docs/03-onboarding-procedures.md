@@ -476,15 +476,16 @@ git status
 
 ```
 webuild-consortium/
-├── wp4-architecture/                     # CS and ADRs to align towards the Large Scale Pilot (LSP) usecases
-├── eudi-wallet-rulebooks-and-schemas/    # Rulebooks and data schemas used across the WE BUILD Large Scale Pilot (LSP) 
-├── wp4-trust-group/                      # Trust Infrastructure Group
-├── wp4-semantics-group/                  # Semantics Group
-├── wp4-wallets-group/                    # Wallet Providers Group
-├── wp4-qtsp-group/                       # QTSP Infrastructure
-├── wp4-interop-test-bed/                 # Interoperability Testing
-└── wp3-technology-standards/             # WP3 Technology & Standards Working Group 
-└── webuild-policies/                     # This documentation
+├── .github/                               # Organization-level GitHub configuration (public)
+├── eudi-wallet-rulebooks-and-schemas/     # Rulebooks and data schemas for WeBuild LSP use cases (public)
+├── webuild-github-policies/               # GitHub Policies and Guidelines for WE BUILD Consortium (public)
+├── wp3-technology-standards/              # WP3 Technology & Standards Working Group (private)
+├── wp4-architecture/                      # Drafts and ADRs for Large Scale Pilot use cases (public)
+├── wp4-interop-test-bed/                  # Interoperability Test Bed implementing conformance (public)
+├── wp4-qtsp-group/                        # Public resources shared within WP4 QTSP group (public)
+├── wp4-semantics-group/                   # Semantics group resources (public)
+├── wp4-trust-group/                       # Public resources shared within WP4 Trust Infrastructure group (public)
+└── wp4-wallets-group/                     # Repository for WP4 Wallet Providers Group (public)
 ```
 
 ### 5.2 Repository Permissions
